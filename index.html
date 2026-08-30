@@ -3,39 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blockium — Ultra-Fast Manifest V3 Ad Blocker & Privacy Shield</title>
-  <meta name="description" content="Block ads, trackers, malware, and popups on YouTube, Hotstar, Amazon Prime, and across the web with Blockium. Next-Gen Manifest V3 privacy shield.">
+  <title>Blockium — Next-Gen Ad Blocker, Malware Shield & Privacy Suite</title>
+  <meta name="description" content="Block ads, trackers, phishing, crypto-miners, and video popups on YouTube, Prime, Hotstar, and across the web with Blockium. Next-Gen Manifest V3 security shield.">
   <link rel="icon" type="image/png" href="assets/logo.png">
   
-  <!-- Open Graph -->
-  <meta property="og:title" content="Blockium — Fast Ad Blocker & Privacy Shield">
-  <meta property="og:description" content="Block intrusive ads, tracking pixels, and video popups with near-zero CPU overhead. Powered by Manifest V3.">
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Blockium — Fast Ad Blocker & Security Shield">
+  <meta property="og:description" content="Block intrusive ads, malicious scripts, and video popups with near-zero CPU overhead. Powered by Manifest V3.">
   <meta property="og:image" content="assets/marquee_promo_1400x560.jpg">
-  <meta property="og:url" content="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh">
+  <meta property="og:url" content="https://krjangid.github.io/blockium-website/">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --bg-dark: #070a12;
+      --bg-surface: #0c111e;
       --bg-card: rgba(14, 20, 35, 0.75);
-      --bg-card-hover: rgba(22, 32, 54, 0.9);
+      --bg-card-hover: rgba(22, 32, 54, 0.95);
       --border: rgba(255, 255, 255, 0.08);
-      --border-accent: rgba(16, 185, 129, 0.3);
+      --border-accent: rgba(16, 185, 129, 0.35);
+      --border-crimson: rgba(239, 68, 68, 0.35);
       --text-main: #f3f4f6;
       --text-muted: #9ca3af;
       --accent-green: #10b981;
       --accent-green-glow: rgba(16, 185, 129, 0.4);
+      --accent-crimson: #ef4444;
+      --accent-cyan: #06b6d4;
+      --accent-amber: #f59e0b;
       --accent-gradient: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+      --crimson-gradient: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -46,15 +56,20 @@
       line-height: 1.6;
     }
 
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Ambient Background Glows */
     .glow-bg {
       position: fixed;
       top: -20%;
       left: 50%;
       transform: translateX(-50%);
-      width: 800px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(6, 182, 212, 0.05) 50%, transparent 70%);
-      filter: blur(100px);
+      width: 900px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.14) 0%, rgba(6, 182, 212, 0.05) 50%, transparent 70%);
+      filter: blur(120px);
       z-index: 0;
       pointer-events: none;
     }
@@ -67,14 +82,15 @@
       z-index: 1;
     }
 
+    /* Header */
     header {
-      padding: 24px 0;
+      padding: 20px 0;
       border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(16px);
+      backdrop-filter: blur(20px);
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(7, 10, 18, 0.8);
+      background: rgba(7, 10, 18, 0.85);
     }
 
     .nav-wrapper {
@@ -86,21 +102,21 @@
     .logo-link {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       text-decoration: none;
       color: #fff;
     }
 
     .logo-img {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      box-shadow: 0 0 24px rgba(16, 185, 129, 0.35);
     }
 
     .logo-text {
       font-family: 'Outfit', sans-serif;
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 800;
       letter-spacing: -0.5px;
       background: var(--accent-gradient);
@@ -126,7 +142,8 @@
       color: #fff;
     }
 
-    .btn-cta {
+    /* Buttons */
+    .btn-chrome {
       display: inline-flex;
       align-items: center;
       gap: 10px;
@@ -138,78 +155,12 @@
       border-radius: 12px;
       text-decoration: none;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 4px 20px var(--accent-green-glow);
+      box-shadow: 0 4px 24px var(--accent-green-glow);
     }
 
-    .btn-cta:hover {
+    .btn-chrome:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(16, 185, 129, 0.6);
-    }
-
-    .btn-cta svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    .hero {
-      padding: 90px 0 60px;
-      text-align: center;
-    }
-
-    .badge-mv3 {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid var(--border-accent);
-      color: var(--accent-green);
-      padding: 6px 16px;
-      border-radius: 100px;
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 24px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .badge-dot {
-      width: 8px;
-      height: 8px;
-      background: var(--accent-green);
-      border-radius: 50%;
-      box-shadow: 0 0 10px var(--accent-green);
-    }
-
-    h1 {
-      font-family: 'Outfit', sans-serif;
-      font-size: clamp(38px, 6vw, 64px);
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -1.5px;
-      margin-bottom: 24px;
-    }
-
-    .gradient-text {
-      background: linear-gradient(135deg, #ffffff 30%, #9ca3af 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-subtitle {
-      font-size: clamp(18px, 2.5vw, 21px);
-      color: var(--text-muted);
-      max-width: 720px;
-      margin: 0 auto 40px;
-      font-weight: 400;
-    }
-
-    .hero-ctas {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 60px;
+      box-shadow: 0 8px 32px rgba(16, 185, 129, 0.6);
     }
 
     .btn-secondary {
@@ -232,14 +183,84 @@
       border-color: rgba(255, 255, 255, 0.2);
     }
 
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 40px;
+      text-align: center;
+    }
+
+    .badge-mv3 {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid var(--border-accent);
+      color: var(--accent-green);
+      padding: 6px 18px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--accent-green);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--accent-green);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.7; }
+    }
+
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(38px, 6vw, 66px);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -1.8px;
+      margin-bottom: 24px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 40%, #9ca3af 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(18px, 2.3vw, 21px);
+      color: var(--text-muted);
+      max-width: 760px;
+      margin: 0 auto 40px;
+      font-weight: 400;
+    }
+
+    .hero-ctas {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+
+    /* Clean Showcase Image Container */
     .showcase-wrapper {
       position: relative;
       border-radius: 20px;
-      padding: 8px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.02) 100%);
-      box-shadow: 0 20px 80px rgba(0, 0, 0, 0.8), 0 0 40px rgba(16, 185, 129, 0.15);
+      padding: 6px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.02) 100%);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.9), 0 0 60px rgba(16, 185, 129, 0.15);
       max-width: 1050px;
       margin: 0 auto 100px;
+      overflow: hidden;
     }
 
     .showcase-img {
@@ -249,6 +270,7 @@
       display: block;
     }
 
+    /* Stats Grid */
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -259,7 +281,7 @@
     .stat-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 18px;
       padding: 28px 24px;
       text-align: center;
       backdrop-filter: blur(12px);
@@ -267,43 +289,55 @@
 
     .stat-val {
       font-family: 'Outfit', sans-serif;
-      font-size: 38px;
+      font-size: 40px;
       font-weight: 800;
       color: var(--accent-green);
       margin-bottom: 4px;
     }
 
     .stat-label {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--text-muted);
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-weight: 600;
+      letter-spacing: 0.6px;
+      font-weight: 700;
     }
 
+    /* Section Headings */
     .section-title {
       text-align: center;
       margin-bottom: 60px;
     }
 
+    .section-tag {
+      color: var(--accent-green);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
     .section-title h2 {
       font-family: 'Outfit', sans-serif;
-      font-size: 38px;
+      font-size: clamp(30px, 4vw, 42px);
       font-weight: 800;
       letter-spacing: -1px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .section-title p {
       color: var(--text-muted);
       font-size: 17px;
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto;
     }
 
+    /* Security & Features Grid */
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 24px;
       margin-bottom: 120px;
     }
@@ -311,11 +345,10 @@
     .feature-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 32px;
-      transition: all 0.3s;
+      border-radius: 22px;
+      padding: 34px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
-      overflow: hidden;
     }
 
     .feature-card:hover {
@@ -324,32 +357,89 @@
       transform: translateY(-4px);
     }
 
+    .feature-card.security-focused:hover {
+      border-color: var(--border-crimson);
+    }
+
+    .feature-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+
+    .badge-sec { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+    .badge-speed { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .badge-ux { background: rgba(6, 182, 212, 0.15); color: #38bdf8; border: 1px solid rgba(6, 182, 212, 0.3); }
+
     .feature-icon {
-      width: 52px;
-      height: 52px;
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid var(--border-accent);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      margin-bottom: 20px;
+      font-size: 32px;
+      margin-bottom: 14px;
     }
 
     .feature-card h3 {
       font-family: 'Outfit', sans-serif;
-      font-size: 20px;
+      font-size: 21px;
       font-weight: 700;
       margin-bottom: 12px;
+      color: #fff;
     }
 
     .feature-card p {
       color: var(--text-muted);
       font-size: 15px;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
+    /* Video Platform Table */
+    .table-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px;
+      margin-bottom: 120px;
+      backdrop-filter: blur(16px);
+    }
+
+    .streaming-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+    }
+
+    .streaming-table th {
+      text-align: left;
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .streaming-table td {
+      padding: 18px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      font-size: 15px;
+    }
+
+    .streaming-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .platform-tag {
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Screenshots Gallery Section */
     .screenshots-section {
       margin-bottom: 120px;
     }
@@ -361,7 +451,7 @@
     }
 
     .screenshot-card {
-      border-radius: 16px;
+      border-radius: 18px;
       overflow: hidden;
       border: 1px solid var(--border);
       background: #000;
@@ -372,13 +462,38 @@
       width: 100%;
       height: auto;
       display: block;
-      transition: transform 0.3s;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .screenshot-card:hover img {
       transform: scale(1.03);
     }
 
+    /* Themes Showcase */
+    .themes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+      margin-bottom: 120px;
+    }
+
+    .theme-pill {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 14px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+
+    .theme-pill:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+
+    /* Privacy & FAQ */
     .faq-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -389,52 +504,86 @@
     .faq-item {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
+      border-radius: 18px;
+      padding: 28px;
     }
 
     .faq-item h4 {
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       color: #fff;
     }
 
     .faq-item p {
       color: var(--text-muted);
-      font-size: 14px;
-      line-height: 1.6;
+      font-size: 14.5px;
+      line-height: 1.65;
     }
 
-    .cta-banner {
-      background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(6, 182, 212, 0.1) 100%);
+    /* Support Card */
+    .support-card {
+      background: linear-gradient(135deg, rgba(14, 20, 35, 0.9) 0%, rgba(7, 10, 18, 0.95) 100%);
       border: 1px solid var(--border-accent);
-      border-radius: 28px;
-      padding: 60px 40px;
+      border-radius: 24px;
+      padding: 40px;
       text-align: center;
       margin-bottom: 100px;
-      box-shadow: 0 0 50px rgba(16, 185, 129, 0.1);
+    }
+
+    .support-email-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid var(--border-accent);
+      color: var(--accent-green);
+      padding: 10px 24px;
+      border-radius: 100px;
+      font-size: 16px;
+      font-weight: 700;
+      margin-top: 20px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .support-email-badge:hover {
+      background: rgba(16, 185, 129, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* CTA Banner */
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.18) 0%, rgba(6, 182, 212, 0.12) 100%);
+      border: 1px solid var(--border-accent);
+      border-radius: 28px;
+      padding: 64px 40px;
+      text-align: center;
+      margin-bottom: 100px;
+      box-shadow: 0 0 60px rgba(16, 185, 129, 0.15);
     }
 
     .cta-banner h2 {
       font-family: 'Outfit', sans-serif;
-      font-size: 38px;
+      font-size: clamp(32px, 5vw, 44px);
       font-weight: 800;
       margin-bottom: 16px;
+      letter-spacing: -1px;
     }
 
     .cta-banner p {
       color: var(--text-muted);
-      font-size: 17px;
-      margin-bottom: 32px;
-      max-width: 600px;
+      font-size: 18px;
+      margin-bottom: 34px;
+      max-width: 620px;
       margin-left: auto;
       margin-right: auto;
     }
 
+    /* Footer */
     footer {
       border-top: 1px solid var(--border);
-      padding: 40px 0;
+      padding: 48px 0;
       color: var(--text-muted);
       font-size: 14px;
     }
@@ -449,7 +598,7 @@
 
     .footer-links {
       display: flex;
-      gap: 24px;
+      gap: 28px;
     }
 
     .footer-links a {
@@ -463,12 +612,9 @@
     }
 
     @media (max-width: 768px) {
-      .faq-grid {
-        grid-template-columns: 1fr;
-      }
-      .nav-links {
-        display: none;
-      }
+      .faq-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .features-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -485,17 +631,19 @@
       </a>
 
       <nav class="nav-links">
+        <a href="#security">Security</a>
+        <a href="#streaming">Video Ad-Skip</a>
         <a href="#features">Features</a>
         <a href="#screenshots">Screenshots</a>
         <a href="#privacy">Privacy</a>
         <a href="#support">Support</a>
       </nav>
 
-      <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" class="btn-cta">
-        <svg fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+      <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" class="btn-chrome">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
         </svg>
-        Add to Chrome
+        Add to Chrome — Free
       </a>
     </div>
   </header>
@@ -505,111 +653,168 @@
     <div class="container">
       <div class="badge-mv3">
         <div class="badge-dot"></div>
-        Powered by Manifest V3
+        Manifest V3 Certified • Zero Memory Leaks
       </div>
 
       <h1>
-        <span class="gradient-text">Ultra-Fast Adblocker &</span><br>
-        <span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Cyber Privacy Shield</span>
+        <span class="gradient-text">Next-Gen Ad Blocker &</span><br>
+        <span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Cyber Threat Shield</span>
       </h1>
 
       <p class="hero-subtitle">
-        Block intrusive banner ads, video interruptions, crypto miners, and tracking telemetry across the web — with 0ms network lag and zero browsing slowdowns.
+        Eliminate ads, invasive trackers, phishing scams, crypto-miners, and video interruptions — with 0ms network latency and zero memory bloat.
       </p>
 
       <div class="hero-ctas">
-        <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" class="btn-cta" style="font-size: 16px; padding: 14px 32px;">
-          <svg fill="currentColor" viewBox="0 0 24 24" style="width: 22px; height: 22px;">
+        <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" class="btn-chrome" style="font-size: 16px; padding: 14px 34px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
           </svg>
-          Install on Chrome — Free
+          Add to Chrome — It's Free
         </a>
-        <a href="#features" class="btn-secondary">
-          Explore Features ↓
+        <a href="#security" class="btn-secondary">
+          View Security Features ↓
         </a>
       </div>
 
-      <!-- Main Showcase Preview -->
+      <!-- Clean Cropped Hero Screenshot -->
       <div class="showcase-wrapper">
-        <img src="assets/dashboard-full.png" alt="Blockium Privacy Dashboard & Popup Preview" class="showcase-img">
+        <img src="assets/dashboard-full.png" alt="Blockium Privacy Dashboard & Tactical HUD" class="showcase-img">
       </div>
 
-      <!-- Stats Grid -->
+      <!-- Performance Stats Grid -->
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="stat-val">0 ms</div>
+          <div class="stat-val mono">0 ms</div>
           <div class="stat-label">Network Latency Overhead</div>
         </div>
         <div class="stat-card">
-          <div class="stat-val">100%</div>
+          <div class="stat-val mono">100%</div>
           <div class="stat-label">Native C++ Declarative Net Request</div>
         </div>
         <div class="stat-card">
-          <div class="stat-val">0</div>
-          <div class="stat-label">User Data Collected or Sent</div>
+          <div class="stat-val mono">0 MB</div>
+          <div class="stat-label">Background RAM Leaks</div>
         </div>
         <div class="stat-card">
-          <div class="stat-val">7</div>
-          <div class="stat-label">Cyber & Minimal Themes</div>
+          <div class="stat-val mono">7</div>
+          <div class="stat-label">Cyber Tactical Themes</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section id="features" style="padding: 60px 0;">
+  <!-- Security Features Section -->
+  <section id="security" style="padding: 60px 0;">
     <div class="container">
       <div class="section-title">
-        <h2>Engineered for Maximum Speed & Privacy</h2>
-        <p>Blockium replaces heavy legacy adblockers with Chrome's modern Manifest V3 declarative engine.</p>
+        <span class="section-tag">Cyber Defense & Telemetry</span>
+        <h2>Military-Grade Threat Protection</h2>
+        <p>Blockium isn't just an adblocker. It is a full-spectrum browser security layer defending you from malicious cyber threats.</p>
       </div>
 
       <div class="features-grid">
-        <div class="feature-card">
+        <div class="feature-card security-focused">
+          <span class="feature-badge badge-sec">🛡️ Malware Defense</span>
+          <div class="feature-icon">☣️</div>
+          <h3>Phishing & Badware Neutralization</h3>
+          <p>Auto-compiles the uBlock Origin community badware database into native DNR rules, blocking malicious main-frame navigations, fake banking portals, and CoinHive crypto miners.</p>
+        </div>
+
+        <div class="feature-card security-focused">
+          <span class="feature-badge badge-sec">📡 Live Telemetry</span>
+          <div class="feature-icon">🚨</div>
+          <h3>Navigation Threat Interceptor</h3>
+          <p>Utilizes <code>chrome.webNavigation.onErrorOccurred</code> to capture intercepted dangerous websites in real-time and log them to your Live Threat Feed and Malware Counter.</p>
+        </div>
+
+        <div class="feature-card security-focused">
+          <span class="feature-badge badge-sec">🔒 SSL / TLS Analysis</span>
           <div class="feature-icon">🛡️</div>
-          <h3>Native MV3 Ad & Tracker Blocking</h3>
-          <p>Filters ad networks, tracking pixels, and analytics telemetry directly at the browser network layer before JavaScript even evaluates.</p>
+          <h3>Calibrated Site Security Rating (0 - 100%)</h3>
+          <p>Dynamically calculates domain trust scores based on SSL encryption status and tracker density. Insecure unencrypted HTTP sites deduct 40 points with an amber warning gauge.</p>
         </div>
 
         <div class="feature-card">
-          <div class="feature-icon">🎬</div>
-          <h3>Video Streaming Ad Skipper</h3>
-          <p>Seamlessly fast-forwards unskippable ads and dismisses overlays on YouTube, Disney+ Hotstar, Amazon Prime Video, and SonyLIV.</p>
+          <span class="feature-badge badge-speed">⚡ Zero Lag</span>
+          <div class="feature-icon">🚀</div>
+          <h3>Strict Manifest V3 Architecture</h3>
+          <p>Executes zero blocking logic in slow JavaScript loops. All network filtering runs natively inside Chrome's compiled C++ engine for unmatched battery and speed efficiency.</p>
         </div>
 
         <div class="feature-card">
+          <span class="feature-badge badge-ux">🎯 Point & Click</span>
           <div class="feature-icon">🎯</div>
-          <h3>Visual Element Zapper</h3>
-          <p>Point-and-click on any annoying newsletter popup or video player to permanently zap it, with 1-click per-site restore.</p>
+          <h3>Visual Element Zapper + 1-Click Reset</h3>
+          <p>Point and click on any stubborn overlay or floating video to permanently zap it. Features a discrete <code>[ X Zapped 🗑️ ]</code> popup badge for instant 1-click domain restores.</p>
         </div>
 
         <div class="feature-card">
+          <span class="feature-badge badge-ux">🍪 Smart CMP</span>
           <div class="feature-icon">🍪</div>
-          <h3>Smart Cookie Consent Manager</h3>
-          <p>Auto-dismisses GDPR and CCPA banners across OneTrust, Cookiebot, and Didomi, with a dedicated whitelist for banking portals.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">🔒</div>
-          <h3>Live Site Health & Trust Gauge</h3>
-          <p>Live 0-100% site security rating that calculates SSL encryption, ad density, and warns against insecure unencrypted HTTP pages.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">⏱️</div>
-          <h3>Time Saved Browsing Metrics</h3>
-          <p>Real-time analytics showing how much data bandwidth and browsing time you've saved across Today, 7 Days, and All-Time.</p>
+          <h3>Dedicated Cookie Notice Whitelist</h3>
+          <p>Auto-dismisses GDPR/CCPA popups across OneTrust, Cookiebot, and Didomi, while allowing a 1-click site toggle (<code>🍪 AUTO</code> / <code>🍪 ALLOWED</code>) to prevent banking login breakage.</p>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- Video Streaming Section -->
+  <section id="streaming" class="table-section container">
+    <div class="section-title" style="margin-bottom: 30px;">
+      <span class="section-tag">OTT & Video Protection</span>
+      <h2>Ad-Skipping for Video Streaming Services</h2>
+      <p>Enjoy uninterrupted entertainment without unskippable 30-second ad breaks.</p>
+    </div>
+
+    <table class="streaming-table">
+      <thead>
+        <tr>
+          <th>Platform</th>
+          <th>Protection Technology</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="platform-tag">
+            <span style="color: #ef4444;">▶</span> YouTube
+          </td>
+          <td>Fast-forwards unskippable ads at 16× speed, mutes ad audio, and automatically triggers "Skip Ad" buttons.</td>
+          <td><span style="color: var(--accent-green); font-weight: 700;">● Active & Throttled</span></td>
+        </tr>
+        <tr>
+          <td class="platform-tag">
+            <span style="color: #3b82f6;">⭐</span> Disney+ Hotstar
+          </td>
+          <td>DOM-based streaming ad-skipper that fast-forwards pre-rolls and mid-rolls without breaking segment sync.</td>
+          <td><span style="color: var(--accent-green); font-weight: 700;">● Active</span></td>
+        </tr>
+        <tr>
+          <td class="platform-tag">
+            <span style="color: #06b6d4;">🎬</span> Amazon Prime Video
+          </td>
+          <td>Duration-aware detection (< 3 min) skips promotional trailers and pre-roll ad blocks automatically.</td>
+          <td><span style="color: var(--accent-green); font-weight: 700;">● Active</span></td>
+        </tr>
+        <tr>
+          <td class="platform-tag">
+            <span style="color: #a855f7;">📺</span> SonyLIV & Movie Embeds
+          </td>
+          <td>Bypasses anti-adblock detection banners, mocks ad tags, and unlocks high-speed player playback.</td>
+          <td><span style="color: var(--accent-green); font-weight: 700;">● Active</span></td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <!-- Screenshots Gallery Section -->
   <section id="screenshots" class="screenshots-section">
     <div class="container">
       <div class="section-title">
+        <span class="section-tag">User Experience</span>
         <h2>Tactical Cyber Ops Interface</h2>
-        <p>Switch between Compact Simple Mode and Full Power-User Advanced Mode with 7 customizable neon themes.</p>
+        <p>Switch seamlessly between Compact Simple Mode and Full Power-User Advanced Mode.</p>
       </div>
 
       <div class="screenshot-grid">
@@ -629,42 +834,73 @@
     </div>
   </section>
 
+  <!-- 7 Themes Section -->
+  <section class="container" style="margin-bottom: 100px;">
+    <div class="section-title" style="margin-bottom: 30px;">
+      <span class="section-tag">Customization</span>
+      <h2>7 Built-In Dynamic Themes</h2>
+      <p>Matches your desktop setup with instant theme synchronization across popup and dashboard.</p>
+    </div>
+
+    <div class="themes-grid">
+      <div class="theme-pill" style="border-color: rgba(239,68,68,0.4); color: #f87171;">🔴 Red Team HUD</div>
+      <div class="theme-pill" style="border-color: rgba(6,182,212,0.4); color: #38bdf8;">🌌 Cyber Neon</div>
+      <div class="theme-pill" style="border-color: rgba(16,185,129,0.4); color: #34d399;">🖤 OLED Obsidian</div>
+      <div class="theme-pill" style="border-color: rgba(99,102,241,0.4); color: #818cf8;">❄️ Nordic Aurora</div>
+      <div class="theme-pill">⚪ Pure Minimal</div>
+      <div class="theme-pill">🌗 Liquid Dark</div>
+      <div class="theme-pill">☀️ Liquid Light</div>
+    </div>
+  </section>
+
   <!-- Privacy & Support Section -->
   <section id="privacy" style="padding: 60px 0;">
     <div class="container">
       <div class="section-title">
-        <h2>Privacy by Design & Frequently Asked Questions</h2>
-        <p>We believe privacy is a fundamental human right. Here is our exact commitment to you.</p>
+        <span class="section-tag">Transparency</span>
+        <h2>Privacy by Design & FAQ</h2>
+        <p>We believe privacy is an absolute human right. Here is our strict commitment to you.</p>
       </div>
 
       <div class="faq-grid">
         <div class="faq-item">
-          <h4>🔒 Do you collect or sell my browsing data?</h4>
-          <p><strong>Never.</strong> Blockium operates 100% locally inside your browser. Your browsing history, visited URLs, and personal information never leave your machine.</p>
+          <h4>🔒 Do you collect or transmit my browsing data?</h4>
+          <p><strong>Never.</strong> Blockium processes 100% of network rules, stats, and custom filters locally on your device. We do not track, log, or transmit visited URLs or user telemetry.</p>
         </div>
 
         <div class="faq-item">
-          <h4>⚡ Why is Blockium faster than other adblockers?</h4>
-          <p>Blockium uses native Manifest V3 <code>declarativeNetRequest</code> rules compiled directly into Chrome's C++ network core, eliminating JavaScript blocking latency.</p>
+          <h4>⚡ Does Blockium slow down my browser or drain CPU?</h4>
+          <p><strong>No.</strong> Blockium operates via Chrome's native Manifest V3 C++ engine. All background observers automatically pause when tabs are hidden, ensuring zero CPU and memory leaks.</p>
         </div>
 
         <div class="faq-item">
           <h4>🍪 How does the Cookie Whitelist work?</h4>
-          <p>If a specific banking or login portal requires cookie notices to work, you can toggle "ALLOW" in the popup to bypass cookie auto-dismissal for just that website.</p>
+          <p>If a specific banking or e-commerce website requires cookie banners to work, you can toggle <code>🍪 ALLOWED</code> in the popup to whitelist cookie prompts for just that domain.</p>
         </div>
 
-        <div class="faq-item" id="support">
-          <h4>💬 How can I report a broken site or contact support?</h4>
-          <p>You can report broken websites directly via the popup's "Report Site" button, or email our developer team at <strong><a href="mailto:blockium.support@gmail.com" style="color: var(--accent-green);">blockium.support@gmail.com</a></strong>.</p>
+        <div class="faq-item">
+          <h4>⏱️ What is the "Time Saved" Metric?</h4>
+          <p>Blockium measures the cumulative network bandwidth and seconds saved by preemptively dropping heavy ad scripts and skipping video commercials.</p>
         </div>
+      </div>
+
+      <!-- Support Card -->
+      <div class="support-card" id="support">
+        <h3 style="font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; margin-bottom: 12px;">Need Help or Found a Broken Site?</h3>
+        <p style="color: var(--text-muted); font-size: 16px; max-width: 600px; margin: 0 auto;">
+          Our developer team is here to support you. You can report broken sites via the popup or contact our official support desk directly:
+        </p>
+        <a href="mailto:blockiumapps@gmail.com" class="support-email-badge">
+          ✉️ blockiumapps@gmail.com
+        </a>
       </div>
 
       <!-- CTA Banner -->
       <div class="cta-banner">
-        <h2>Ready for a Clean, Ad-Free Web?</h2>
-        <p>Join thousands of users enjoying high-speed, private browsing with Blockium.</p>
-        <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" class="btn-cta" style="font-size: 16px; padding: 14px 36px;">
-          Add Blockium to Chrome — It's 100% Free
+        <h2>Ready for a Fast, Ad-Free & Secure Web?</h2>
+        <p>Install Blockium now to experience modern Manifest V3 adblocking and cyber threat protection.</p>
+        <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" class="btn-chrome" style="font-size: 16px; padding: 14px 38px;">
+          Add Blockium to Chrome — 100% Free
         </a>
       </div>
     </div>
@@ -674,12 +910,12 @@
   <footer>
     <div class="container footer-wrapper">
       <div>
-        © 2026 Blockium. Built with ❤️ using Manifest V3 standards.
+        © 2026 <strong>Blockium Apps</strong>. All rights reserved.
       </div>
       <div class="footer-links">
         <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank">Chrome Web Store</a>
         <a href="#privacy">Privacy Policy</a>
-        <a href="mailto:blockium.support@gmail.com">Support</a>
+        <a href="mailto:blockiumapps@gmail.com">Support</a>
       </div>
     </div>
   </footer>
