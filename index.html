@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blockium – Fast, Clean & Private Chrome Ad Blocker</title>
   <meta name="description" content="Blockium is an efficient browser extension that eliminates intrusive ads, stops trackers, and keeps your browsing secure and distraction-free.">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="canonical" href="https://blockium.pages.dev/">
   <meta property="og:title" content="Blockium – Fast, Clean & Private Chrome Ad Blocker">
@@ -763,11 +765,11 @@
         </ul>
       </nav>
 
-      <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" class="btn btn-primary">
+      <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
         Add to Chrome
       </a>
 
-      <button class="mobile-toggle" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Toggle Menu">
+      <button class="mobile-toggle"  aria-label="Toggle Menu">
         <svg width="24" height="24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
       </button>
     </div>
@@ -775,12 +777,12 @@
 
   <!-- Mobile Drawer -->
   <div id="mobileNav" class="mobile-nav">
-    <a href="#features" onclick="document.getElementById('mobileNav').classList.remove('open')">Features</a>
-    <a href="#protection" onclick="document.getElementById('mobileNav').classList.remove('open')">Protection</a>
-    <a href="#product" onclick="document.getElementById('mobileNav').classList.remove('open')">Product</a>
-    <a href="#privacy" onclick="document.getElementById('mobileNav').classList.remove('open')">Privacy</a>
-    <a href="#faq" onclick="document.getElementById('mobileNav').classList.remove('open')">FAQ</a>
-    <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" class="btn btn-primary btn-large" style="margin-top: 8px;">
+    <a href="#features" >Features</a>
+    <a href="#protection" >Protection</a>
+    <a href="#product" >Product</a>
+    <a href="#privacy" >Privacy</a>
+    <a href="#faq" >FAQ</a>
+    <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large" style="margin-top: 8px;">
       Add to Chrome — Free
     </a>
   </div>
@@ -800,7 +802,7 @@
         </p>
 
         <div class="hero-actions">
-          <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" class="btn btn-primary btn-large">
+          <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
             Add to Chrome — It's Free
           </a>
           <a href="#product" class="btn btn-secondary btn-large">
@@ -1116,7 +1118,7 @@
 
       <div class="faq-wrapper">
         <div class="faq-item">
-          <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('active')">
+          <button class="faq-question-btn" >
             Is Blockium free?
             <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
@@ -1126,7 +1128,7 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('active')">
+          <button class="faq-question-btn" >
             How does Blockium block ads?
             <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
@@ -1136,7 +1138,7 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('active')">
+          <button class="faq-question-btn" >
             Does Blockium collect my browsing history?
             <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
@@ -1146,7 +1148,7 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('active')">
+          <button class="faq-question-btn" >
             Does Blockium slow down Chrome?
             <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
@@ -1156,7 +1158,7 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('active')">
+          <button class="faq-question-btn" >
             Can I disable Blockium for a website?
             <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
@@ -1166,7 +1168,7 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('active')">
+          <button class="faq-question-btn" >
             Does Blockium work on video websites?
             <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
@@ -1176,7 +1178,7 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('active')">
+          <button class="faq-question-btn" >
             How does threat protection work?
             <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
@@ -1193,7 +1195,7 @@
     <div class="wrap">
       <h2>Take back control of your browsing.</h2>
       <p>Browse cleaner. Browse faster. Browse with Blockium.</p>
-      <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" class="btn btn-primary btn-large">
+      <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
         Add Blockium to Chrome — Free
       </a>
     </div>
@@ -1224,13 +1226,41 @@
       <div class="footer-legal">
         <div>© 2026 Blockium. All rights reserved.</div>
         <div>
-          <a href="https://github.com/krjangid/adblocker/blob/main/PRIVACY_POLICY.md" target="_blank">Privacy Policy</a>
+          <a href="https://github.com/krjangid/adblocker/blob/main/PRIVACY_POLICY.md" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
           &nbsp;·&nbsp;
-          <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank">Chrome Web Store</a>
+          <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer">Chrome Web Store</a>
         </div>
       </div>
     </div>
   </footer>
 
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var mobileToggle = document.querySelector('.mobile-toggle');
+      var mobileNav = document.getElementById('mobileNav');
+      if (mobileToggle && mobileNav) {
+        mobileToggle.addEventListener('click', function () {
+          mobileNav.classList.toggle('open');
+        });
+        var navLinks = mobileNav.querySelectorAll('a');
+        for (var i = 0; i < navLinks.length; i++) {
+          navLinks[i].addEventListener('click', function () {
+            mobileNav.classList.remove('open');
+          });
+        }
+      }
+
+      var faqButtons = document.querySelectorAll('.faq-question-btn');
+      for (var j = 0; j < faqButtons.length; j++) {
+        faqButtons[j].addEventListener('click', function () {
+          var item = this.parentElement;
+          if (item) {
+            item.classList.toggle('active');
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>
