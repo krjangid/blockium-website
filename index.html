@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blockium – Fast, Clean & Private Chrome Ad Blocker</title>
-  <meta name="description" content="Blockium is a lightweight browser extension that blocks intrusive ads, trackers, popups and malware while keeping your browsing fast and private.">
+  <meta name="description" content="Blockium is an efficient browser extension that eliminates intrusive ads, stops trackers, and keeps your browsing secure and distraction-free.">
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="canonical" href="https://blockium.pages.dev/">
   <meta property="og:title" content="Blockium – Fast, Clean & Private Chrome Ad Blocker">
@@ -42,12 +42,12 @@
       --border-medium: #cbd5e1;
       
       --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 6px 16px -3px rgba(15, 23, 42, 0.08);
-      --shadow-dark: 0 16px 36px -8px rgba(0, 0, 0, 0.4);
+      --shadow-md: 0 4px 14px -2px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 12px 28px -6px rgba(15, 23, 42, 0.12);
 
       --radius-sm: 8px;
       --radius-md: 12px;
-      --radius-lg: 14px;
+      --radius-lg: 16px;
       --radius-full: 9999px;
     }
 
@@ -56,13 +56,13 @@
       background: var(--bg-white);
       color: var(--text-body);
       line-height: 1.6;
-      font-size: 17px;
+      font-size: 16.5px;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
 
     .wrap {
-      max-width: 1080px;
+      max-width: 1060px;
       margin: 0 auto;
       padding: 0 24px;
     }
@@ -124,7 +124,7 @@
       gap: 8px;
       font-weight: 600;
       font-size: 15px;
-      padding: 10px 20px;
+      padding: 9px 18px;
       border-radius: var(--radius-sm);
       text-decoration: none;
       transition: all 0.15s ease;
@@ -185,12 +185,12 @@
       text-decoration: none;
     }
 
-    /* ---- Section Layout & Spacing Rules ---- */
+    /* ---- Section Shells ---- */
     .section {
-      padding: 56px 0;
+      padding: 60px 0;
     }
     .section-compact {
-      padding: 44px 0;
+      padding: 48px 0;
     }
     .section-white {
       background: var(--bg-white);
@@ -209,7 +209,7 @@
 
     .section-label {
       display: inline-block;
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -220,7 +220,7 @@
       color: #60a5fa;
     }
     .section-heading {
-      font-size: clamp(32px, 3.6vw, 42px);
+      font-size: clamp(30px, 3.4vw, 40px);
       font-weight: 700;
       color: var(--text-heading);
       letter-spacing: -0.025em;
@@ -231,33 +231,32 @@
       color: #ffffff;
     }
     .section-desc {
-      font-size: 17.5px;
+      font-size: 17px;
       color: var(--text-muted);
       line-height: 1.6;
-      max-width: 620px;
+      max-width: 600px;
     }
     .section-dark .section-desc {
       color: var(--text-light-muted);
     }
     .section-header-center {
       text-align: center;
-      max-width: 660px;
+      max-width: 640px;
       margin: 0 auto 36px;
     }
     .section-header-center .section-desc {
       margin: 0 auto;
     }
 
-    /* ---- 2. HERO ---- */
+    /* ---- 1. HERO (Centered, Clean Product Presentation) ---- */
     .hero {
-      padding: 52px 0 44px;
+      padding: 64px 0 52px;
       background: var(--bg-white);
+      text-align: center;
     }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 300px;
-      gap: 40px;
-      align-items: center;
+    .hero-content-max {
+      max-width: 720px;
+      margin: 0 auto;
     }
     .hero-badge {
       display: inline-flex;
@@ -267,29 +266,29 @@
       color: var(--accent-blue);
       font-size: 13.5px;
       font-weight: 600;
-      padding: 4px 12px;
+      padding: 4px 14px;
       border-radius: var(--radius-full);
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       border: 1px solid rgba(37, 99, 235, 0.12);
     }
     .hero h1 {
-      font-size: clamp(40px, 4.8vw, 54px);
+      font-size: clamp(42px, 5vw, 56px);
       font-weight: 800;
       color: var(--text-heading);
-      line-height: 1.12;
+      line-height: 1.1;
       letter-spacing: -0.035em;
       margin-bottom: 16px;
     }
     .hero-p {
-      font-size: 18.5px;
+      font-size: 19px;
       color: var(--text-body);
       line-height: 1.55;
-      margin-bottom: 22px;
-      max-width: 500px;
+      margin-bottom: 24px;
     }
     .hero-actions {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 12px;
       flex-wrap: wrap;
       margin-bottom: 16px;
@@ -297,6 +296,7 @@
     .hero-trust {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
       font-size: 14px;
       color: var(--text-muted);
@@ -308,52 +308,34 @@
       background: var(--border-medium);
     }
 
-    .hero-screenshot-frame {
-      max-width: 290px;
-      margin: 0 auto;
-      background: #090d16;
-      border: 1px solid #1e293b;
-      border-radius: var(--radius-md);
-      padding: 6px;
-      box-shadow: var(--shadow-md);
-    }
-    .hero-screenshot-frame img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      display: block;
-    }
-
-    /* ---- 3. FEATURES (3x2 Compact Grid) ---- */
+    /* ---- 2. FEATURES (Clean 3x2 Editorial Grid) ---- */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 20px;
     }
     .feature-card {
       background: var(--bg-white);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 22px;
+      padding: 24px;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
     .feature-card:hover {
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
-      border-color: var(--border-medium);
     }
     .feature-icon-box {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       border-radius: var(--radius-sm);
       background: var(--accent-blue-subtle);
-      border: 1px solid rgba(37, 99, 235, 0.12);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--accent-blue);
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
     .feature-card h3 {
       font-size: 18px;
@@ -362,26 +344,40 @@
       margin-bottom: 6px;
     }
     .feature-card p {
-      font-size: 14.5px;
+      font-size: 15px;
       color: var(--text-muted);
       line-height: 1.5;
     }
 
-    /* ---- 4. PROTECTION (2-Column Balanced) ---- */
-    .protection-grid {
+    /* ---- 3. PROTECTION (Clean Card UI without Screenshot) ---- */
+    .protection-content-grid {
       display: grid;
-      grid-template-columns: 1fr 310px;
+      grid-template-columns: 1fr 1fr;
       gap: 40px;
       align-items: center;
+    }
+    .protection-status-card {
+      background: var(--bg-dark-card);
+      border: 1px solid #334155;
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+    .protection-status-card h4 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     .indicators-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      margin-top: 20px;
+      gap: 12px;
     }
     .indicator-row {
-      background: var(--bg-dark-card);
+      background: #0f172a;
       border: 1px solid #334155;
       border-radius: var(--radius-sm);
       padding: 14px 18px;
@@ -413,31 +409,11 @@
     .pill-protected { background: rgba(251, 191, 36, 0.15); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.3); }
     .pill-reduced { background: rgba(96, 165, 250, 0.15); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.3); }
 
-    .protection-screenshot-box {
-      max-width: 300px;
-      margin: 0 auto;
-      background: #090d16;
-      border: 1px solid #334155;
-      border-radius: var(--radius-md);
-      padding: 6px;
-      box-shadow: var(--shadow-dark);
-    }
-    .protection-screenshot-box img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      display: block;
-    }
-
-    /* ---- 5. HOW IT WORKS (Horizontal Timeline) ---- */
+    /* ---- 4. HOW IT WORKS (Horizontal Timeline) ---- */
     .timeline-steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      position: relative;
-    }
-    .timeline-step {
-      position: relative;
+      gap: 32px;
     }
     .step-header {
       display: flex;
@@ -470,93 +446,117 @@
       line-height: 1.5;
     }
 
-    /* ---- 6 & 7 & 8. PRODUCT PREVIEW (Tight 2-Col Showcase) ---- */
-    .product-preview-container {
+    /* ---- 5. PRODUCT SHOWCASE (Dedicated 2-Column Tabs / Comparison) ---- */
+    .showcase-comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
       max-width: 960px;
       margin: 0 auto;
     }
-    .product-row {
-      display: grid;
-      grid-template-columns: 1.15fr 300px;
-      gap: 36px;
+    .showcase-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      margin-bottom: 38px;
+      text-align: center;
     }
-    .product-row.reverse {
-      grid-template-columns: 300px 1.15fr;
+    .showcase-card-header {
+      margin-bottom: 20px;
     }
-    .product-screenshot-frame {
-      max-width: 290px;
-      margin: 0 auto;
+    .showcase-card-header h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 6px;
+    }
+    .showcase-card-header p {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 340px;
+    }
+    .showcase-screenshot-wrapper {
+      width: 100%;
+      max-width: 280px;
       background: #090d16;
       border: 1px solid #1e293b;
       border-radius: var(--radius-md);
       padding: 6px;
       box-shadow: var(--shadow-md);
+      margin-bottom: 20px;
     }
-    .product-screenshot-frame img {
+    .showcase-screenshot-wrapper img {
       width: 100%;
       height: auto;
       border-radius: 8px;
       display: block;
     }
-    .product-content h3 {
-      font-size: 30px;
-      font-weight: 700;
-      color: var(--text-heading);
-      letter-spacing: -0.02em;
-      margin-bottom: 8px;
-    }
-    .product-content p {
-      font-size: 17px;
-      color: var(--text-muted);
-      line-height: 1.55;
-      margin-bottom: 16px;
-    }
-    .compact-bullets {
+    .showcase-features-list {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 8px;
+      width: 100%;
+      max-width: 280px;
+      text-align: left;
     }
-    .compact-bullets li {
+    .showcase-features-list li {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 15.5px;
+      gap: 9px;
+      font-size: 14.5px;
       font-weight: 600;
       color: var(--text-heading);
     }
-    .compact-bullets svg {
+    .showcase-features-list svg {
       color: var(--accent-green);
       flex-shrink: 0;
     }
 
-    /* Analytics Integrated Sub-section */
-    .analytics-integrated-box {
-      margin-top: 36px;
-      padding-top: 32px;
-      border-top: 1px solid var(--border-subtle);
+    /* Analytics Banner (Single wide overview at bottom of product section) */
+    .analytics-banner-container {
+      max-width: 960px;
+      margin: 44px auto 0;
+      background: var(--bg-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
       display: grid;
-      grid-template-columns: 1fr 1.25fr;
+      grid-template-columns: 1fr 1.35fr;
       gap: 32px;
       align-items: center;
     }
-    .analytics-visual-box {
+    .analytics-banner-info h3 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 8px;
+    }
+    .analytics-banner-info p {
+      font-size: 15.5px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    .analytics-banner-img {
       background: #090d16;
       border: 1px solid #1e293b;
       border-radius: var(--radius-md);
       padding: 6px;
       box-shadow: var(--shadow-md);
     }
-    .analytics-visual-box img {
+    .analytics-banner-img img {
       width: 100%;
       height: auto;
       border-radius: 8px;
       display: block;
     }
 
-    /* ---- 10. PRIVACY (Editorial 2-Column) ---- */
+    /* ---- 6. PRIVACY (Editorial 2-Column) ---- */
     .privacy-grid {
       display: grid;
       grid-template-columns: 1fr 1.15fr;
@@ -591,7 +591,7 @@
       line-height: 1.45;
     }
 
-    /* ---- 11. FAQ (Compact Accordion) ---- */
+    /* ---- 7. FAQ (Accordion) ---- */
     .faq-wrapper {
       max-width: 820px;
       margin: 0 auto;
@@ -726,33 +726,10 @@
 
     /* ---- Responsive Design ---- */
     @media (max-width: 960px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 32px;
-      }
-      .hero-p { margin: 0 auto 20px; }
-      .hero-actions { justify-content: center; }
-      .hero-trust { justify-content: center; }
-
       .features-grid { grid-template-columns: repeat(2, 1fr); }
-      .protection-grid { grid-template-columns: 1fr; gap: 32px; }
-      
-      .product-row, .product-row.reverse {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-      .product-row .product-content { order: 1; }
-      .product-row .product-screenshot-frame { order: 2; }
-      
-      .product-row.reverse .product-screenshot-frame { order: 1; }
-      .product-row.reverse .product-content { order: 2; }
-
-      .analytics-integrated-box {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
+      .protection-content-grid { grid-template-columns: 1fr; gap: 32px; }
+      .showcase-comparison-grid { grid-template-columns: 1fr; gap: 24px; }
+      .analytics-banner-container { grid-template-columns: 1fr; gap: 24px; }
       .privacy-grid { grid-template-columns: 1fr; gap: 28px; }
       .timeline-steps { grid-template-columns: 1fr; gap: 20px; }
     }
@@ -780,7 +757,7 @@
         <ul class="nav-links">
           <li><a href="#features">Features</a></li>
           <li><a href="#protection">Protection</a></li>
-          <li><a href="#preview">Product</a></li>
+          <li><a href="#product">Product</a></li>
           <li><a href="#privacy">Privacy</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
@@ -800,7 +777,7 @@
   <div id="mobileNav" class="mobile-nav">
     <a href="#features" onclick="document.getElementById('mobileNav').classList.remove('open')">Features</a>
     <a href="#protection" onclick="document.getElementById('mobileNav').classList.remove('open')">Protection</a>
-    <a href="#preview" onclick="document.getElementById('mobileNav').classList.remove('open')">Product</a>
+    <a href="#product" onclick="document.getElementById('mobileNav').classList.remove('open')">Product</a>
     <a href="#privacy" onclick="document.getElementById('mobileNav').classList.remove('open')">Privacy</a>
     <a href="#faq" onclick="document.getElementById('mobileNav').classList.remove('open')">FAQ</a>
     <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" class="btn btn-primary btn-large" style="margin-top: 8px;">
@@ -808,10 +785,10 @@
     </a>
   </div>
 
-  <!-- 2. HERO SECTION -->
+  <!-- 1. HERO SECTION (High-Impact Minimalist) -->
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
+    <div class="wrap">
+      <div class="hero-content-max">
         <div class="hero-badge">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           Chrome Extension
@@ -826,8 +803,8 @@
           <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" class="btn btn-primary btn-large">
             Add to Chrome — It's Free
           </a>
-          <a href="#features" class="btn btn-secondary btn-large">
-            See how it works
+          <a href="#product" class="btn btn-secondary btn-large">
+            Explore Product
           </a>
         </div>
 
@@ -839,14 +816,10 @@
           <span>No account required</span>
         </div>
       </div>
-
-      <div class="hero-screenshot-frame">
-        <img src="assets/popup-simple-new.png" alt="Blockium Extension Interface Running in Chrome" loading="eager">
-      </div>
     </div>
   </section>
 
-  <!-- 3. FEATURES (Light Neutral - 3x2 Grid) -->
+  <!-- 2. FEATURES (3x2 Clean Editorial Grid) -->
   <section id="features" class="section section-neutral">
     <div class="wrap">
       <div class="section-header-center">
@@ -858,7 +831,7 @@
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon-box">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
           </div>
           <h3>Ad Blocking</h3>
           <p>Filters banners, video overlays, and cluttered sponsored segments before page elements finish loading.</p>
@@ -866,7 +839,7 @@
 
         <div class="feature-card">
           <div class="feature-icon-box">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
           </div>
           <h3>Tracker Protection</h3>
           <p>Halts cross-site tracking scripts, analytics beacons, and behavioral profiling networks.</p>
@@ -874,7 +847,7 @@
 
         <div class="feature-card">
           <div class="feature-icon-box">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <h3>Malware & Phishing</h3>
           <p>Scans domain reputations locally and prevents connection to known deceptive destinations.</p>
@@ -882,7 +855,7 @@
 
         <div class="feature-card">
           <div class="feature-icon-box">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
           </div>
           <h3>Popup Blocking</h3>
           <p>Suppresses intrusive pop-unders, new-tab spawns, and deceptive click redirects.</p>
@@ -890,7 +863,7 @@
 
         <div class="feature-card">
           <div class="feature-icon-box">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
           </div>
           <h3>Cookie Consent</h3>
           <p>Automatically clears repetitive GDPR and cookie banners without accepting tracking permissions.</p>
@@ -898,7 +871,7 @@
 
         <div class="feature-card">
           <div class="feature-icon-box">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
           </div>
           <h3>Faster Pages</h3>
           <p>Conserves RAM and bandwidth by dropping heavy advertising code before it renders.</p>
@@ -907,22 +880,29 @@
     </div>
   </section>
 
-  <!-- 4. PROTECTION (Contrasting Dark Background - 2-Column Balanced) -->
+  <!-- 3. PROTECTION (Sleek UI Cards - No Redundant Screenshot) -->
   <section id="protection" class="section section-dark">
     <div class="wrap">
-      <div class="protection-grid">
+      <div class="protection-content-grid">
         <div>
           <span class="section-label">SECURITY & PROTECTION</span>
           <h2 class="section-heading">Protection that works quietly in the background.</h2>
           <p class="section-desc">
-            Local browser inspection flags and stops suspicious web requests without compromising browsing speed.
+            Local browser inspection flags and stops suspicious web requests without compromising browsing speed or transmitting your private browsing data.
           </p>
+        </div>
+
+        <div class="protection-status-card">
+          <h4>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Active Defense Engine
+          </h4>
 
           <div class="indicators-list">
             <div class="indicator-row">
               <div>
                 <span class="indicator-label">Ad Engine</span>
-                <span class="indicator-title">Network Filtering</span>
+                <span class="indicator-title">Network Request Filtering</span>
               </div>
               <span class="indicator-pill pill-active">Active</span>
             </div>
@@ -944,15 +924,11 @@
             </div>
           </div>
         </div>
-
-        <div class="protection-screenshot-box">
-          <img src="assets/popup-advanced-new.png" alt="Blockium Security Interface" loading="lazy">
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. HOW IT WORKS (White Background - Horizontal Timeline) -->
+  <!-- 4. HOW IT WORKS (Timeline) -->
   <section class="section section-compact section-white">
     <div class="wrap">
       <div class="section-header-center">
@@ -989,99 +965,98 @@
     </div>
   </section>
 
-  <!-- 6 & 7 & 8 & 9. PRODUCT PREVIEW (Tight 2-Col Showcase) -->
-  <section id="preview" class="section section-neutral">
-    <div class="wrap product-preview-container">
+  <!-- 5. PRODUCT SHOWCASE (Dedicated Side-by-Side Comparison) -->
+  <section id="product" class="section section-neutral">
+    <div class="wrap">
       <div class="section-header-center">
-        <span class="section-label">PRODUCT PREVIEW</span>
+        <span class="section-label">PRODUCT SHOWCASE</span>
         <h2 class="section-heading">Simple when you want it. Powerful when you need it.</h2>
         <p class="section-desc">
           Blockium keeps everyday protection simple while giving you advanced controls when you want more control.
         </p>
       </div>
 
-      <!-- PRODUCT ROW 1: SIMPLE MODE -->
-      <div class="product-row">
-        <div class="product-content">
-          <span class="section-label">SIMPLE MODE</span>
-          <h3>Protection at a glance.</h3>
-          <p>
-            See your protection status, blocked requests and essential controls without unnecessary complexity.
-          </p>
-          <ul class="compact-bullets">
+      <!-- Side-by-Side Mode Cards -->
+      <div class="showcase-comparison-grid">
+        <!-- Card 1: Simple Mode -->
+        <div class="showcase-card">
+          <div class="showcase-card-header">
+            <span class="section-label">SIMPLE MODE</span>
+            <h3>Protection at a glance</h3>
+            <p>Clear metrics, current site safety ratings, and one-click site pause switches.</p>
+          </div>
+
+          <div class="showcase-screenshot-wrapper">
+            <img src="assets/popup-simple-new.png" alt="Blockium Simple Mode Interface">
+          </div>
+
+          <ul class="showcase-features-list">
             <li>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               Protection status
             </li>
             <li>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Blocked activity
+              Blocked activity & data saved
             </li>
             <li>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              One-click pause
+              One-click pause toggle
             </li>
           </ul>
         </div>
 
-        <div class="product-screenshot-frame">
-          <img src="assets/popup-simple-new.png" alt="Blockium Simple Mode" loading="lazy">
+        <!-- Card 2: Advanced Mode -->
+        <div class="showcase-card">
+          <div class="showcase-card-header">
+            <span class="section-label">ADVANCED CONTROLS</span>
+            <h3>Granular control</h3>
+            <p>Fine-tune threat alerts, cookie dismissals, and customize UI themes.</p>
+          </div>
+
+          <div class="showcase-screenshot-wrapper">
+            <img src="assets/popup-advanced-new.png" alt="Blockium Advanced Mode Interface">
+          </div>
+
+          <ul class="showcase-features-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Site controls & shields
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Threat & phishing alerts
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Cookie auto-dismiss
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              7 custom themes
+            </li>
+          </ul>
         </div>
       </div>
 
-      <!-- PRODUCT ROW 2: ADVANCED CONTROLS -->
-      <div class="product-row reverse">
-        <div class="product-screenshot-frame">
-          <img src="assets/popup-advanced-new.png" alt="Blockium Advanced Controls" loading="lazy">
-        </div>
-
-        <div class="product-content">
-          <span class="section-label">ADVANCED CONTROLS</span>
-          <h3>More control when you need it.</h3>
+      <!-- Integrated Analytics Banner -->
+      <div class="analytics-banner-container">
+        <div class="analytics-banner-info">
+          <span class="section-label">ANALYTICS COMMAND CENTER</span>
+          <h3>Everything you need, right in your browser.</h3>
           <p>
-            Fine-tune Blockium's behavior with advanced protection, site controls and customization options.
-          </p>
-          <ul class="compact-bullets">
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Site controls
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Threat alerts
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Cookie controls
-            </li>
-            <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Themes
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 8. INTEGRATED ANALYTICS COMMAND CENTER -->
-      <div class="analytics-integrated-box">
-        <div>
-          <span class="section-label">ANALYTICS</span>
-          <h3 style="font-size: 26px; font-weight: 700; color: var(--text-heading); margin-bottom: 8px;">
-            Everything you need, right in your browser.
-          </h3>
-          <p style="font-size: 16.5px; color: var(--text-muted); line-height: 1.55;">
-            Track historical blocking statistics, monitor high-frequency tracking domains, and review bandwidth savings over time.
+            Track historical blocking statistics, monitor high-frequency tracking domains, and review bandwidth savings over time without cloud sync.
           </p>
         </div>
 
-        <div class="analytics-visual-box">
+        <div class="analytics-banner-img">
           <img src="assets/dashboard-new.png" alt="Blockium Privacy Analytics Dashboard" loading="lazy">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 10. PRIVACY (White Background - Editorial 2-Column) -->
+  <!-- 6. PRIVACY (Editorial 2-Column) -->
   <section id="privacy" class="section section-white">
     <div class="wrap">
       <div class="privacy-grid">
@@ -1130,7 +1105,7 @@
     </div>
   </section>
 
-  <!-- 11. FAQ (Light Neutral - Compact Accordion) -->
+  <!-- 7. FAQ (Accordion) -->
   <section id="faq" class="section section-neutral">
     <div class="wrap">
       <div class="section-header-center">
@@ -1213,7 +1188,7 @@
     </div>
   </section>
 
-  <!-- FINAL CTA (Dark Blockium Section) -->
+  <!-- FINAL CTA -->
   <section class="final-cta-section">
     <div class="wrap">
       <h2>Take back control of your browsing.</h2>
@@ -1239,7 +1214,7 @@
         <nav class="footer-nav">
           <a href="#features">Features</a>
           <a href="#protection">Protection</a>
-          <a href="#preview">Product</a>
+          <a href="#product">Product</a>
           <a href="#privacy">Privacy</a>
           <a href="#faq">FAQ</a>
           <a href="mailto:blockiumapps@gmail.com">Support</a>
