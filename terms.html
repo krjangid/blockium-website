@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service – Blockium</title>
+  <meta name="description" content="Blockium's official Terms of Service. Review the terms governing the use of the Blockium browser extension and website.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <link rel="icon" type="image/png" href="/assets/logo.png">
+  <link rel="canonical" href="https://blockium.pages.dev/terms">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
+    
+    :root {
+      --bg-canvas: #F4F3EE;
+      --surface-white: #FFFFFF;
+      --dark-card: #111215;
+      --neon: #D4F639;
+      --text-dark: #111215;
+      --text-body: #4A4E5C;
+      --text-muted: #727685;
+      --border-light-medium: rgba(17, 18, 21, 0.12);
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 1px 3px rgba(17, 18, 21, 0.05);
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-dark);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      padding-top: 100px;
+    }
+
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* Floating Capsule Navbar */
+    .nav-wrapper {
+      position: fixed;
+      top: 16px;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+    .nav-capsule {
+      max-width: 880px;
+      margin: 0 auto;
+      background: rgba(244, 243, 238, 0.9);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-light-medium);
+      box-shadow: 0 6px 20px -6px rgba(17, 18, 21, 0.08);
+      border-radius: var(--radius-full);
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+    .nav-brand img { width: 26px; height: 26px; border-radius: 6px; }
+    .nav-links { display: flex; align-items: center; gap: 20px; list-style: none; }
+    .nav-links a { font-size: 13.5px; font-weight: 600; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text-dark); }
+
+    .terms-header {
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-light-medium);
+    }
+    .terms-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .terms-title {
+      font-size: clamp(32px, 4vw, 44px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .terms-meta {
+      font-size: 13.5px;
+      color: var(--text-muted);
+    }
+
+    .terms-card {
+      background: var(--surface-white);
+      border: 1px solid var(--border-light-medium);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 32px;
+    }
+
+    .terms-section {
+      margin-bottom: 32px;
+    }
+    .terms-section:last-child {
+      margin-bottom: 0;
+    }
+    .terms-section h2 {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      color: var(--text-dark);
+    }
+    .terms-section p {
+      font-size: 14.5px;
+      color: var(--text-body);
+      line-height: 1.65;
+      margin-bottom: 12px;
+    }
+    .terms-section ul {
+      margin-left: 20px;
+      margin-bottom: 12px;
+      color: var(--text-body);
+      font-size: 14px;
+    }
+    .terms-section li { margin-bottom: 6px; }
+
+    .terms-footer {
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-light-medium);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .terms-footer a { color: var(--text-dark); text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Navigation -->
+  <div class="nav-wrapper">
+    <div class="nav-capsule">
+      <a href="/" class="nav-brand">
+        <img src="/assets/logo.png" alt="Blockium">
+        <span>Blockium</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/report">Report an Issue</a></li>
+        <li><a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer">Chrome Web Store</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap">
+    
+    <div class="terms-header">
+      <span class="terms-eyebrow">LEGAL AGREEMENT</span>
+      <h1 class="terms-title">Terms of Service</h1>
+      <div class="terms-meta">
+        <span>Last Updated: September 4, 2026 • Version 3.1.2</span>
+      </div>
+    </div>
+
+    <div class="terms-card">
+      
+      <div class="terms-section">
+        <h2>1. Acceptance of Terms</h2>
+        <p>
+          By downloading, installing, or using the Blockium browser extension ("Extension") or accessing the Blockium website located at <a href="https://blockium.pages.dev" style="color: var(--text-dark); text-decoration: underline;">blockium.pages.dev</a> ("Site"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not install or use the Extension.
+        </p>
+      </div>
+
+      <div class="terms-section">
+        <h2>2. Description of Service</h2>
+        <p>
+          Blockium is a free browser extension designed to enhance user browsing speed, privacy, and readability by blocking unwanted network requests, advertisement banners, tracking beacons, and disruptive video advertisements using native Declarative Net Request rules.
+        </p>
+      </div>
+
+      <div class="terms-section">
+        <h2>3. License &amp; Permitted Use</h2>
+        <p>
+          Subject to these Terms, Blockium grants you a personal, non-exclusive, non-transferable, revocable license to use the Extension for personal, non-commercial, or internal business browsing purposes. You agree not to:
+        </p>
+        <ul>
+          <li>Reverse engineer, decompile, or disassemble any part of the Extension except to the extent permitted by applicable open-source licenses.</li>
+          <li>Distribute malicious modifications or repackage the Extension under deceptive names.</li>
+          <li>Use the Extension in any manner that violates local or international laws.</li>
+        </ul>
+      </div>
+
+      <div class="terms-section">
+        <h2>4. User Privacy</h2>
+        <p>
+          Your privacy is paramount. Blockium operates on a strict Zero-Telemetry model. We do not collect, monitor, or transmit your browsing history, visited URLs, or personal data. Please review our full <a href="/privacy" style="color: var(--text-dark); font-weight: 700; text-decoration: underline;">Privacy Policy</a> for detailed disclosures.
+        </p>
+      </div>
+
+      <div class="terms-section">
+        <h2>5. Website Compatibility &amp; Third-Party Content</h2>
+        <p>
+          Websites frequently update their page structures, video players, and script configurations. While Blockium strives to filter ads without breaking site functionality:
+        </p>
+        <ul>
+          <li>We do not guarantee that all ads or tracking scripts will be blocked on 100% of websites.</li>
+          <li>Occasionally, a website's layout or video player may break due to anti-adblock mechanisms. In such cases, you can toggle protection OFF for that specific domain or report the issue via our <a href="/report" style="color: var(--text-dark); text-decoration: underline;">Report Form</a>.</li>
+        </ul>
+      </div>
+
+      <div class="terms-section">
+        <h2>6. Disclaimer of Warranties</h2>
+        <p>
+          The Extension and Site are provided on an <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> basis without warranties of any kind, whether express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement.
+        </p>
+      </div>
+
+      <div class="terms-section">
+        <h2>7. Limitation of Liability</h2>
+        <p>
+          To the maximum extent permitted by law, the developers and contributors of Blockium shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use the Extension.
+        </p>
+      </div>
+
+      <div class="terms-section">
+        <h2>8. Modifications to Service &amp; Terms</h2>
+        <p>
+          We reserve the right to update the Extension, its filter rules, or these Terms at any time. Continued use of the Extension following updates constitutes your acceptance of the revised Terms.
+        </p>
+      </div>
+
+      <div class="terms-section">
+        <h2>9. Contact Us</h2>
+        <p>
+          If you have questions regarding these Terms, please contact us at: <a href="mailto:blockiumapps@gmail.com" style="color: var(--text-dark); font-weight: 700;">blockiumapps@gmail.com</a>.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="terms-footer">
+      &copy; 2026 Blockium. All rights reserved. Zero telemetry.
+    </div>
+
+  </div>
+
+</body>
+</html>

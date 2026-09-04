@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Page Not Found – Blockium</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/png" href="/assets/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: #F4F3EE;
+      color: #111215;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+    }
+    .card-404 {
+      background: #FFFFFF;
+      border: 1px solid rgba(17, 18, 21, 0.12);
+      border-radius: 24px;
+      padding: 56px 40px;
+      max-width: 520px;
+      box-shadow: 0 16px 36px -8px rgba(17, 18, 21, 0.1);
+    }
+    .badge-404 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: #DC2626;
+      background: #FEE2E2;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 15.5px;
+      color: #4A4E5C;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #D4F639;
+      color: #111215;
+      font-weight: 700;
+      font-size: 14.5px;
+      padding: 12px 26px;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(212, 246, 57, 0.35);
+    }
+    .btn:hover {
+      background-color: #C2E42B;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="card-404">
+    <div class="badge-404">ERROR 404 • ELEMENT NOT FOUND</div>
+    <h1>Looks like this page got zapped.</h1>
+    <p>The page you are looking for might have been moved, deleted, or was filtered out by our strict annoyance filter.</p>
+    <a href="/" class="btn">
+      ← Return to Homepage
+    </a>
+  </div>
+</body>
+</html>
