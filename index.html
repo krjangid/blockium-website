@@ -4,1007 +4,1741 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blockium – Fast, Clean & Private Chrome Ad Blocker</title>
-  <meta name="description" content="Blockium is an efficient browser extension that eliminates intrusive ads, stops trackers, and keeps your browsing secure and distraction-free.">
-      <meta name="google-site-verification" content="googleb0482c3313fd3da3.html">
+  <meta name="description" content="Blockium blocks intrusive ads, trackers, popups, cookie consent banners, and video ads with zero telemetry, keeping your browsing fast, clean, and distraction-free.">
+  <meta name="google-site-verification" content="googleb0482c3313fd3da3.html">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="canonical" href="https://blockium.pages.dev/">
   <meta property="og:title" content="Blockium – Fast, Clean & Private Chrome Ad Blocker">
-  <meta property="og:description" content="Blockium blocks intrusive ads, trackers, popups and malicious websites while helping pages load faster and keeping your browsing private.">
+  <meta property="og:description" content="Block video ads, intrusive trackers, cookie popups, and malicious domains with zero telemetry and 0ms latency.">
   <meta property="og:image" content="assets/dashboard-new.png">
   <meta property="og:url" content="https://blockium.pages.dev/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blockium – Fast, Clean & Private Chrome Ad Blocker">
+  <meta name="twitter:description" content="Block video ads, trackers, cookie consent banners, and popups natively with zero telemetry and 0ms latency.">
+  <meta name="twitter:image" content="https://blockium.pages.dev/assets/dashboard-new.png">
 
+
+  <!-- Refined Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    :root {
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --bg-white: #ffffff;
-      --bg-neutral: #f8fafc;
-      --bg-dark: #0f172a;
-      --bg-dark-card: #1e293b;
-      
-      --text-heading: #0f172a;
-      --text-body: #334155;
-      --text-muted: #64748b;
-      --text-light: #f8fafc;
-      --text-light-muted: #94a3b8;
-
-      --accent-blue: #2563eb;
-      --accent-blue-hover: #1d4ed8;
-      --accent-blue-subtle: #eff6ff;
-      --accent-green: #10b981;
-      
-      --border-subtle: #e2e8f0;
-      --border-medium: #cbd5e1;
-      
-      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 14px -2px rgba(15, 23, 42, 0.08);
-      --shadow-lg: 0 12px 28px -6px rgba(15, 23, 42, 0.12);
-
-      --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
-      --radius-full: 9999px;
+    /* ==========================================================================
+       PRODUCTION-GRADE FINTRA DESIGN SYSTEM
+       ========================================================================== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    body {
-      font-family: var(--font-sans);
-      background: var(--bg-white);
-      color: var(--text-body);
-      line-height: 1.6;
-      font-size: 16.5px;
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
 
-    .wrap {
-      max-width: 1060px;
-      margin: 0 auto;
-      padding: 0 24px;
+    :root {
+      /* Fintra Color Tokens */
+      --bg-canvas: #F4F3EE;
+      --bg-canvas-subtle: #EAE9E2;
+      --surface-white: #FFFFFF;
+      --dark-card: #111215;
+      --dark-card-inner: #18191E;
+      --dark-card-elevated: #22242B;
+
+      /* Electric Lime Accent */
+      --neon: #D4F639;
+      --neon-hover: #C2E42B;
+      --neon-glow: rgba(212, 246, 57, 0.28);
+      --neon-subtle: rgba(212, 246, 57, 0.12);
+
+      /* Typography Colors */
+      --text-dark: #111215;
+      --text-body: #4A4E5C;
+      --text-muted: #727685;
+      --text-light: #FFFFFF;
+      --text-light-muted: #9498A8;
+
+      /* Refined Hairline Borders */
+      --border-light: rgba(17, 18, 21, 0.08);
+      --border-light-medium: rgba(17, 18, 21, 0.12);
+      --border-dark: rgba(255, 255, 255, 0.09);
+      --border-dark-hover: rgba(212, 246, 57, 0.35);
+
+      /* Fonts */
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      /* Radii */
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --radius-full: 9999px;
+
+      /* Shadows */
+      --shadow-sm: 0 1px 3px rgba(17, 18, 21, 0.05);
+      --shadow-md: 0 8px 24px -4px rgba(17, 18, 21, 0.08);
+      --shadow-lg: 0 16px 36px -8px rgba(17, 18, 21, 0.12);
+      --shadow-dark: 0 24px 48px -12px rgba(0, 0, 0, 0.35);
     }
 
-    /* ---- Header ---- */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 200;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-subtle);
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-dark);
+      font-family: var(--font-sans);
+      line-height: 1.55;
+      overflow-x: hidden;
     }
-    .header-inner {
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: 
+        linear-gradient(to right, rgba(17, 18, 21, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(17, 18, 21, 0.025) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 11px 22px;
+      border-radius: var(--radius-full);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+
+    .btn-neon {
+      background-color: var(--neon);
+      color: var(--text-dark);
+      box-shadow: 0 2px 10px var(--neon-glow);
+    }
+    .btn-neon:hover {
+      background-color: var(--neon-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px var(--neon-glow);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--text-dark);
+      border: 1px solid var(--border-light-medium);
+    }
+    .btn-outline:hover {
+      background-color: rgba(17, 18, 21, 0.04);
+      transform: translateY(-2px);
+    }
+
+    .btn-large {
+      padding: 13px 26px;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    /* Pills & Badges */
+    .pill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border: 1px solid var(--border-light-medium);
+      background-color: rgba(255, 255, 255, 0.75);
+    }
+
+    .pill-tag-dark {
+      background-color: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.12);
+      color: var(--text-light);
+    }
+
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #10B981;
+      box-shadow: 0 0 8px #10B981;
+    }
+
+    /* Section Headers */
+    .section-header {
+      margin-bottom: 40px;
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 3.4vw, 40px);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+
+    .section-desc {
+      font-size: 15.5px;
+      color: var(--text-body);
+      max-width: 620px;
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       FLOATING CAPSULE NAVBAR
+       ========================================================================== */
+    .nav-wrapper {
+      position: fixed;
+      top: 16px;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      pointer-events: none;
+    }
+
+    .nav-capsule {
+      pointer-events: auto;
+      max-width: 1140px;
+      margin: 0 auto;
+      background: rgba(244, 243, 238, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-light-medium);
+      box-shadow: 0 6px 20px -6px rgba(17, 18, 21, 0.08);
+      border-radius: var(--radius-full);
+      padding: 7px 10px 7px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 64px;
     }
-    .logo {
+
+    .nav-brand {
       display: flex;
       align-items: center;
       gap: 10px;
-      text-decoration: none;
-      color: var(--text-heading);
-    }
-    .logo img {
-      width: 32px;
-      height: 32px;
-      border-radius: 7px;
-    }
-    .logo span {
-      font-weight: 700;
-      font-size: 19px;
+      font-size: 18px;
+      font-weight: 800;
       letter-spacing: -0.02em;
+      color: var(--text-dark);
     }
+
+    .nav-brand img {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      display: block;
+    }
+
     .nav-links {
       display: flex;
       align-items: center;
       gap: 28px;
       list-style: none;
     }
+
     .nav-links a {
-      color: var(--text-body);
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 500;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-muted);
       transition: color 0.15s ease;
     }
     .nav-links a:hover {
-      color: var(--accent-blue);
+      color: var(--text-dark);
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-weight: 600;
-      font-size: 15px;
-      padding: 9px 18px;
-      border-radius: var(--radius-sm);
-      text-decoration: none;
-      transition: all 0.15s ease;
-      cursor: pointer;
-      border: 1px solid transparent;
-      white-space: nowrap;
-    }
-    .btn-primary {
-      background: var(--accent-blue);
-      color: #ffffff;
-    }
-    .btn-primary:hover {
-      background: var(--accent-blue-hover);
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-    }
-    .btn-secondary {
-      background: #ffffff;
-      color: var(--text-heading);
-      border-color: var(--border-medium);
-    }
-    .btn-secondary:hover {
-      background: var(--bg-neutral);
-      border-color: var(--text-body);
-    }
-    .btn-large {
-      padding: 13px 26px;
-      font-size: 16px;
-      border-radius: 10px;
-    }
-
-    .mobile-toggle {
+    .mobile-menu-btn {
       display: none;
-      background: none;
+      background: transparent;
       border: none;
       cursor: pointer;
-      padding: 6px;
+      padding: 8px;
+      color: var(--text-dark);
     }
-    .mobile-nav {
+
+    .mobile-drawer {
       display: none;
       position: fixed;
-      top: 64px;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(16px);
-      z-index: 190;
+      top: 76px;
+      left: 16px;
+      right: 16px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-light-medium);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow-lg);
+      z-index: 999;
       flex-direction: column;
-      align-items: center;
-      padding-top: 36px;
-      gap: 20px;
+      gap: 14px;
     }
-    .mobile-nav.open { display: flex; }
-    .mobile-nav a {
-      font-size: 18px;
+    .mobile-drawer.open {
+      display: flex;
+    }
+    .mobile-drawer a {
+      font-size: 15px;
       font-weight: 600;
-      color: var(--text-heading);
-      text-decoration: none;
+      color: var(--text-dark);
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border-light);
     }
 
-    /* ---- Section Shells ---- */
-    .section {
-      padding: 60px 0;
-    }
-    .section-compact {
-      padding: 48px 0;
-    }
-    .section-white {
-      background: var(--bg-white);
-    }
-    .section-neutral {
-      background: var(--bg-neutral);
-      border-top: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-    .section-dark {
-      background: var(--bg-dark);
-      color: var(--text-light-muted);
-      border-top: 1px solid #1e293b;
-      border-bottom: 1px solid #1e293b;
+    /* ==========================================================================
+       HERO SECTION — BALANCED PROPORTIONS WITH ZERO WASTED WHITESPACE
+       ========================================================================== */
+    .hero-section {
+      padding-top: 116px;
+      padding-bottom: 64px;
+      position: relative;
     }
 
-    .section-label {
-      display: inline-block;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent-blue);
-      margin-bottom: 8px;
-    }
-    .section-dark .section-label {
-      color: #60a5fa;
-    }
-    .section-heading {
-      font-size: clamp(30px, 3.4vw, 40px);
-      font-weight: 700;
-      color: var(--text-heading);
-      letter-spacing: -0.025em;
-      line-height: 1.2;
-      margin-bottom: 10px;
-    }
-    .section-dark .section-heading {
-      color: #ffffff;
-    }
-    .section-desc {
-      font-size: 17px;
-      color: var(--text-muted);
-      line-height: 1.6;
-      max-width: 600px;
-    }
-    .section-dark .section-desc {
-      color: var(--text-light-muted);
-    }
-    .section-header-center {
-      text-align: center;
-      max-width: 640px;
-      margin: 0 auto 36px;
-    }
-    .section-header-center .section-desc {
-      margin: 0 auto;
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.95fr;
+      gap: 48px;
+      align-items: center;
     }
 
-    /* ---- 1. HERO (Centered, Clean Product Presentation) ---- */
-    .hero {
-      padding: 64px 0 52px;
-      background: var(--bg-white);
-      text-align: center;
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-    .hero-content-max {
-      max-width: 720px;
-      margin: 0 auto;
+
+    .hero-headline {
+      font-size: clamp(36px, 4.2vw, 52px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--text-dark);
+      margin-top: 12px;
+      margin-bottom: 16px;
     }
-    .hero-badge {
+
+    .hero-headline span.highlight {
+      background: linear-gradient(135deg, #111215 20%, #4B5563 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-p {
+      font-size: 16.5px;
+      color: var(--text-body);
+      line-height: 1.55;
+      margin-bottom: 22px;
+      max-width: 530px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    /* Quick Feature Highlights in Hero (Fills whitespace & educates immediately) */
+    .hero-highlight-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .chip-item {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: var(--accent-blue-subtle);
-      color: var(--accent-blue);
-      font-size: 13.5px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid var(--border-light-medium);
+      border-radius: var(--radius-sm);
+      padding: 6px 12px;
+      font-size: 12.5px;
       font-weight: 600;
-      padding: 4px 14px;
-      border-radius: var(--radius-full);
-      margin-bottom: 16px;
-      border: 1px solid rgba(37, 99, 235, 0.12);
+      color: var(--text-dark);
     }
-    .hero h1 {
-      font-size: clamp(42px, 5vw, 56px);
-      font-weight: 800;
-      color: var(--text-heading);
-      line-height: 1.1;
-      letter-spacing: -0.035em;
-      margin-bottom: 16px;
-    }
-    .hero-p {
-      font-size: 19px;
-      color: var(--text-body);
-      line-height: 1.55;
-      margin-bottom: 24px;
-    }
-    .hero-actions {
+    .chip-icon {
+      color: #10B981;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 16px;
     }
+
     .hero-trust {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: 14px;
+      gap: 10px;
+      font-size: 12.5px;
+      font-weight: 600;
       color: var(--text-muted);
     }
     .trust-dot {
       width: 4px;
       height: 4px;
       border-radius: 50%;
-      background: var(--border-medium);
+      background-color: var(--text-muted);
     }
 
-    /* ---- 2. FEATURES (Clean 3x2 Editorial Grid) ---- */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-    .feature-card {
-      background: var(--bg-white);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 24px;
-      box-shadow: var(--shadow-sm);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-    .feature-card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
-    .feature-icon-box {
-      width: 40px;
-      height: 40px;
-      border-radius: var(--radius-sm);
-      background: var(--accent-blue-subtle);
+    /* Hero Real Image Mockup Frame (Shorted & Balanced to match left column) */
+    .hero-visual {
       display: flex;
-      align-items: center;
       justify-content: center;
-      color: var(--accent-blue);
-      margin-bottom: 14px;
-    }
-    .feature-card h3 {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text-heading);
-      margin-bottom: 6px;
-    }
-    .feature-card p {
-      font-size: 15px;
-      color: var(--text-muted);
-      line-height: 1.5;
     }
 
-    /* ---- 3. PROTECTION (Clean Card UI without Screenshot) ---- */
-    .protection-content-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
+    .hero-image-frame {
+      background-color: var(--dark-card);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      box-shadow: var(--shadow-dark);
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      max-width: 380px;
+      max-height: 470px;
+      transition: transform 0.3s ease;
     }
-    .protection-status-card {
-      background: var(--bg-dark-card);
-      border: 1px solid #334155;
-      border-radius: var(--radius-md);
-      padding: 24px;
+    .hero-image-frame:hover {
+      transform: translateY(-2px);
     }
-    .protection-status-card h4 {
-      font-size: 17px;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+
+    .hero-image-frame::after {
+      content: "";
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, var(--neon-glow) 0%, transparent 70%);
+      pointer-events: none;
     }
-    .indicators-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .indicator-row {
-      background: #0f172a;
-      border: 1px solid #334155;
-      border-radius: var(--radius-sm);
-      padding: 14px 18px;
+
+    .frame-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border-dark);
     }
-    .indicator-label {
-      font-size: 12px;
+
+    .frame-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
       font-weight: 700;
+      color: var(--text-light);
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--text-light-muted);
-      display: block;
-      margin-bottom: 2px;
+      letter-spacing: 0.05em;
     }
-    .indicator-title {
-      font-size: 16px;
-      font-weight: 600;
-      color: #ffffff;
-    }
-    .indicator-pill {
-      font-size: 12.5px;
+
+    .frame-badge {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
       font-weight: 700;
-      padding: 3px 10px;
+      padding: 2px 7px;
       border-radius: var(--radius-full);
+      background: rgba(212, 246, 57, 0.12);
+      border: 1px solid rgba(212, 246, 57, 0.3);
+      color: var(--neon);
     }
-    .pill-active { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
-    .pill-protected { background: rgba(251, 191, 36, 0.15); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.3); }
-    .pill-reduced { background: rgba(96, 165, 250, 0.15); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.3); }
 
-    /* ---- 4. HOW IT WORKS (Horizontal Timeline) ---- */
-    .timeline-steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-    }
-    .step-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 10px;
-    }
-    .step-badge {
-      font-size: 15px;
-      font-weight: 800;
-      color: var(--accent-blue);
-      background: var(--accent-blue-subtle);
-      width: 38px;
-      height: 38px;
+    .hero-real-img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      object-position: top;
       border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(37, 99, 235, 0.15);
-      flex-shrink: 0;
-    }
-    .timeline-step h3 {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text-heading);
-    }
-    .timeline-step p {
-      font-size: 15px;
-      color: var(--text-muted);
-      line-height: 1.5;
+      display: block;
+      box-shadow: 0 8px 18px -4px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    /* ---- 5. PRODUCT SHOWCASE (Dedicated 2-Column Tabs / Comparison) ---- */
-    .showcase-comparison-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
-      max-width: 960px;
-      margin: 0 auto;
+    /* ==========================================================================
+       SECTION: NUMBERED PILLARS (01 02 03 04) — PRODUCTION SPECIFICATIONS
+       ========================================================================== */
+    .pillars-section {
+      padding: 72px 0;
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+      background-color: var(--bg-canvas);
     }
-    .showcase-card {
-      background: var(--bg-white);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 28px 24px;
-      box-shadow: var(--shadow-sm);
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-left: 1px solid var(--border-light-medium);
+    }
+
+    .pillar-card {
+      padding: 28px 22px;
+      border-right: 1px solid var(--border-light-medium);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
+      justify-content: space-between;
+      min-height: 290px;
+      transition: background-color 0.2s ease;
     }
+    .pillar-card:hover {
+      background-color: rgba(255, 255, 255, 0.55);
+    }
+
+    .pillar-num {
+      font-family: var(--font-mono);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-muted);
+      opacity: 0.65;
+      margin-bottom: 18px;
+    }
+    .pillar-card:hover .pillar-num {
+      color: var(--text-dark);
+      opacity: 1;
+    }
+
+    .pillar-body h3 {
+      font-size: 16.5px;
+      font-weight: 800;
+      letter-spacing: -0.015em;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .pillar-body p {
+      font-size: 13.5px;
+      color: var(--text-body);
+      line-height: 1.55;
+    }
+
+    .pillar-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: #059669;
+      background: #D1FAE5;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-top: 12px;
+    }
+
+    /* ==========================================================================
+       SECTION: DEEP DIVE BENTO GRID (PRODUCTION-GRADE FEATURE DETAILS)
+       ========================================================================== */
+    .bento-section {
+      padding: 84px 0;
+      background-color: var(--bg-canvas-subtle);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 22px;
+      margin-top: 36px;
+    }
+
+    .bento-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light-medium);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.22s ease;
+      box-shadow: var(--shadow-sm);
+    }
+    .bento-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .bento-card-dark {
+      background: var(--dark-card);
+      border-color: var(--border-dark);
+      color: var(--text-light);
+      box-shadow: var(--shadow-dark);
+    }
+    .bento-card-dark:hover {
+      border-color: var(--border-dark-hover);
+    }
+
+    .bento-card-7 { grid-column: span 7; }
+    .bento-card-5 { grid-column: span 5; }
+    .bento-card-6 { grid-column: span 6; }
+    .bento-card-12 { grid-column: span 12; }
+
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .lang-card {
+      background: var(--bg-canvas);
+      border: 1px solid var(--border-light-medium);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      transition: all 0.2s ease;
+    }
+    .lang-card:hover {
+      background: #FFFFFF;
+      border-color: rgba(17, 18, 21, 0.25);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .lang-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    .lang-card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .lang-code {
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      background: rgba(17, 18, 21, 0.06);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .lang-card-sub {
+      font-size: 12px;
+      color: var(--text-body);
+      line-height: 1.4;
+    }
+
+    @media (max-width: 1024px) {
+      .lang-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .lang-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .lang-grid { grid-template-columns: 1fr; }
+    }
+
+    .bento-badge {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      color: var(--text-muted);
+    }
+    .bento-card-dark .bento-badge {
+      color: var(--neon);
+    }
+
+    .bento-title {
+      font-size: 21px;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .bento-desc {
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+    .bento-card-dark .bento-desc {
+      color: var(--text-light-muted);
+    }
+
+    .feature-point-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-bottom: 20px;
+    }
+
+    .feature-point-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13.5px;
+      line-height: 1.45;
+    }
+
+    .bento-card-dark .feature-point-list li {
+      color: #D1D5DB;
+    }
+
+    .check-bullet {
+      color: #10B981;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .badge-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .badge-chip {
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      background: var(--bg-canvas);
+      border: 1px solid var(--border-light-medium);
+      color: var(--text-dark);
+    }
+    .bento-card-dark .badge-chip {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.12);
+      color: var(--text-light);
+    }
+    .badge-chip-neon {
+      background: rgba(212, 246, 57, 0.12) !important;
+      border-color: rgba(212, 246, 57, 0.3) !important;
+      color: var(--neon) !important;
+    }
+
+    /* ==========================================================================
+       SECTION: PRODUCT SHOWCASE (REAL SCREENSHOTS)
+       ========================================================================== */
+    .showcase-section {
+      padding: 84px 0;
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 36px;
+    }
+
+    .showcase-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light-medium);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.22s ease;
+    }
+    .showcase-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
     .showcase-card-header {
       margin-bottom: 20px;
     }
+
     .showcase-card-header h3 {
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--text-heading);
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-top: 4px;
       margin-bottom: 6px;
     }
+
     .showcase-card-header p {
-      font-size: 15px;
-      color: var(--text-muted);
-      max-width: 340px;
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.5;
     }
-    .showcase-screenshot-wrapper {
-      width: 100%;
-      max-width: 280px;
-      background: #090d16;
-      border: 1px solid #1e293b;
+
+    .showcase-img-wrap {
+      background: var(--bg-canvas);
+      border: 1px solid var(--border-light);
       border-radius: var(--radius-md);
-      padding: 6px;
-      box-shadow: var(--shadow-md);
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 20px;
+      overflow: hidden;
     }
-    .showcase-screenshot-wrapper img {
-      width: 100%;
+
+    .showcase-img-wrap img {
+      max-width: 100%;
       height: auto;
-      border-radius: 8px;
+      max-height: 350px;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-md);
       display: block;
     }
+
     .showcase-features-list {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 8px;
-      width: 100%;
-      max-width: 280px;
-      text-align: left;
+      border-top: 1px solid var(--border-light);
+      padding-top: 18px;
     }
+
     .showcase-features-list li {
       display: flex;
       align-items: center;
       gap: 9px;
-      font-size: 14.5px;
+      font-size: 13px;
       font-weight: 600;
-      color: var(--text-heading);
+      color: var(--text-dark);
     }
-    .showcase-features-list svg {
-      color: var(--accent-green);
+
+    .check-icon {
+      width: 15px;
+      height: 15px;
+      color: #10B981;
       flex-shrink: 0;
     }
 
-    /* Analytics Banner (Single wide overview at bottom of product section) */
-    .analytics-banner-container {
-      max-width: 960px;
-      margin: 44px auto 0;
-      background: var(--bg-white);
-      border: 1px solid var(--border-subtle);
+    /* Wide Command Center Showcase Card */
+    .dashboard-wide-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border-dark);
       border-radius: var(--radius-lg);
-      padding: 28px;
-      box-shadow: var(--shadow-sm);
+      padding: 40px;
+      color: var(--text-light);
+      margin-top: 28px;
+      box-shadow: var(--shadow-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dashboard-wide-card::after {
+      content: "";
+      position: absolute;
+      top: -100px;
+      left: 30%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, var(--neon-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .dash-header-split {
       display: grid;
-      grid-template-columns: 1fr 1.35fr;
+      grid-template-columns: 1.2fr 1fr;
       gap: 32px;
-      align-items: center;
+      align-items: flex-end;
+      margin-bottom: 28px;
     }
-    .analytics-banner-info h3 {
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--text-heading);
-      margin-bottom: 8px;
+
+    .dash-header-split h3 {
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
     }
-    .analytics-banner-info p {
-      font-size: 15.5px;
-      color: var(--text-muted);
-      line-height: 1.55;
-    }
-    .analytics-banner-img {
-      background: #090d16;
-      border: 1px solid #1e293b;
+
+    .dash-img-frame {
+      background: var(--dark-card-inner);
+      border: 1px solid var(--border-dark);
       border-radius: var(--radius-md);
-      padding: 6px;
-      box-shadow: var(--shadow-md);
+      padding: 12px;
+      overflow: hidden;
     }
-    .analytics-banner-img img {
+
+    .dash-img-frame img {
       width: 100%;
       height: auto;
-      border-radius: 8px;
+      border-radius: var(--radius-sm);
       display: block;
     }
 
-    /* ---- 6. PRIVACY (Editorial 2-Column) ---- */
+    /* ==========================================================================
+       SECTION: PRIVACY & QUALITY STANDARDS
+       ========================================================================== */
+    .privacy-section {
+      padding: 80px 0;
+    }
+
     .privacy-grid {
       display: grid;
-      grid-template-columns: 1fr 1.15fr;
-      gap: 40px;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 44px;
       align-items: center;
     }
-    .privacy-items {
+
+    .privacy-points {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 18px;
+      gap: 16px;
     }
-    .privacy-point {
-      display: flex;
-      gap: 10px;
+
+    .privacy-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light-medium);
+      border-radius: var(--radius-md);
+      padding: 20px;
     }
-    .privacy-point-icon {
+
+    .privacy-card-icon {
       width: 22px;
       height: 22px;
-      color: var(--accent-green);
-      flex-shrink: 0;
-      margin-top: 2px;
+      color: #10B981;
+      margin-bottom: 10px;
     }
-    .privacy-point h4 {
-      font-size: 16px;
+
+    .privacy-card h4 {
+      font-size: 15px;
       font-weight: 700;
-      color: var(--text-heading);
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
-    .privacy-point p {
-      font-size: 14px;
-      color: var(--text-muted);
+
+    .privacy-card p {
+      font-size: 13px;
+      color: var(--text-body);
       line-height: 1.45;
     }
 
-    /* ---- 7. FAQ (Accordion) ---- */
-    .faq-wrapper {
-      max-width: 820px;
-      margin: 0 auto;
+    /* ==========================================================================
+       SECTION: FAQ
+       ========================================================================== */
+    .faq-section {
+      padding: 80px 0;
+      background-color: var(--bg-canvas-subtle);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
     }
+
+    .faq-list {
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 860px;
+    }
+
     .faq-item {
-      border-bottom: 1px solid var(--border-subtle);
+      background: #FFFFFF;
+      border: 1px solid var(--border-light-medium);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color 0.2s ease;
     }
-    .faq-item:first-child {
-      border-top: 1px solid var(--border-subtle);
+    .faq-item.active {
+      border-color: var(--text-dark);
     }
-    .faq-question-btn {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 16px 0;
+
+    .faq-question {
+      padding: 18px 22px;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-dark);
       cursor: pointer;
-      text-align: left;
-      font-family: inherit;
-      font-size: 17px;
-      font-weight: 600;
-      color: var(--text-heading);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      transition: color 0.15s ease;
+      user-select: none;
     }
-    .faq-question-btn:hover {
-      color: var(--accent-blue);
-    }
-    .faq-toggle-icon {
+
+    .faq-icon {
+      width: 17px;
+      height: 17px;
+      transition: transform 0.25s ease;
       flex-shrink: 0;
-      width: 18px;
-      height: 18px;
-      color: var(--text-muted);
-      transition: transform 0.2s ease;
     }
-    .faq-item.active .faq-toggle-icon {
-      transform: rotate(180deg);
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
     }
-    .faq-answer-panel {
+
+    .faq-answer {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.25s ease, padding-bottom 0.25s ease;
-      font-size: 15.5px;
+      transition: max-height 0.3s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
+      padding: 0 22px;
+      font-size: 14px;
       color: var(--text-body);
       line-height: 1.55;
     }
-    .faq-item.active .faq-answer-panel {
-      max-height: 160px;
-      padding-bottom: 16px;
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding-bottom: 18px;
     }
 
-    /* ---- FINAL CTA ---- */
-    .final-cta-section {
-      background: var(--bg-dark);
-      color: #ffffff;
-      padding: 60px 0 64px;
-      text-align: center;
-    }
-    .final-cta-section h2 {
-      font-size: clamp(32px, 3.8vw, 42px);
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      margin-bottom: 10px;
-      color: #ffffff;
-    }
-    .final-cta-section p {
-      font-size: 18px;
-      color: var(--text-light-muted);
-      margin-bottom: 24px;
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .fintra-footer {
+      background-color: var(--dark-card);
+      color: var(--text-light);
+      padding: 72px 0 32px;
+      position: relative;
+      overflow: hidden;
     }
 
-    /* ---- FOOTER ---- */
-    .site-footer {
-      background: #090d16;
-      color: var(--text-light-muted);
-      padding: 36px 0 24px;
-      font-size: 14.5px;
-      border-top: 1px solid #1e293b;
-    }
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #1e293b;
-      margin-bottom: 20px;
-    }
-    .footer-brand {
+    .footer-cta-card {
+      background: var(--dark-card-inner);
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-lg);
+      padding: 38px 36px;
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-weight: 700;
-      font-size: 16.5px;
-      color: #ffffff;
-      margin-bottom: 4px;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 52px;
     }
-    .footer-brand img {
-      width: 22px;
-      height: 22px;
-      border-radius: 6px;
+
+    .footer-cta-title {
+      font-size: clamp(22px, 2.8vw, 30px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
     }
+
+    .footer-cta-sub {
+      font-size: 14.5px;
+      color: var(--text-light-muted);
+    }
+
+    .footer-brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border-dark);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-brand-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .footer-brand-left img {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+    }
+
     .footer-nav {
       display: flex;
-      gap: 24px;
+      align-items: center;
+      gap: 22px;
+      list-style: none;
       flex-wrap: wrap;
     }
     .footer-nav a {
+      font-size: 13.5px;
+      font-weight: 600;
       color: var(--text-light-muted);
-      text-decoration: none;
-      font-size: 14.5px;
       transition: color 0.15s ease;
     }
     .footer-nav a:hover {
-      color: #ffffff;
+      color: var(--neon);
     }
-    .footer-legal {
+
+    .footer-bottom-copy {
+      font-size: 12.5px;
+      color: var(--text-light-muted);
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       flex-wrap: wrap;
       gap: 12px;
-      font-size: 13.5px;
-    }
-    .footer-legal a {
-      color: #60a5fa;
-      text-decoration: none;
     }
 
-    /* ---- Responsive Design ---- */
-    @media (max-width: 960px) {
-      .features-grid { grid-template-columns: repeat(2, 1fr); }
-      .protection-content-grid { grid-template-columns: 1fr; gap: 32px; }
-      .showcase-comparison-grid { grid-template-columns: 1fr; gap: 24px; }
-      .analytics-banner-container { grid-template-columns: 1fr; gap: 24px; }
-      .privacy-grid { grid-template-columns: 1fr; gap: 28px; }
-      .timeline-steps { grid-template-columns: 1fr; gap: 20px; }
+    /* ==========================================================================
+       RESPONSIVE
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .pillar-card:nth-child(2) {
+        border-right: none;
+      }
+      .showcase-grid {
+        grid-template-columns: 1fr;
+      }
+      .dash-header-split {
+        grid-template-columns: 1fr;
+      }
+      .bento-card-7, .bento-card-5, .bento-card-6 {
+        grid-column: span 12;
+      }
+      .privacy-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    @media (max-width: 640px) {
-      .nav-links { display: none; }
-      .mobile-toggle { display: block; }
-      .features-grid { grid-template-columns: 1fr; }
-      .privacy-items { grid-template-columns: 1fr; }
-      .footer-inner { flex-direction: column; }
+    @media (max-width: 768px) {
+      .nav-links, .nav-actions .btn {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+      .pillar-card {
+        border-right: none;
+        border-bottom: 1px solid var(--border-light-medium);
+        min-height: auto;
+      }
+      .footer-cta-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .privacy-points {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
+
+  <!-- Schema.org SoftwareApplication Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Blockium",
+    "operatingSystem": "Chrome, Brave, Edge, Chromium",
+    "applicationCategory": "BrowserApplication",
+    "applicationSubCategory": "Ad Blocker & Privacy Extension",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Blockium is an ultra-fast Chrome ad blocker built natively on Manifest V3. Eliminates video ads, popups, cookie consent banners, and tracking beacons with zero telemetry.",
+    "url": "https://blockium.pages.dev/",
+    "downloadUrl": "https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh",
+    "featureList": [
+      "Manifest V3 Native Declarative Net Request",
+      "YouTube & Streaming Video Ad Fast-Forward",
+      "Automated Cookie Consent Banner Dismissal",
+      "Anti-Fingerprinting Canvas & Audio Shield",
+      "Precision Visual Element Zapper",
+      "Zero Telemetry 100% Local Evaluation",
+      "7 Built-In Multi-Themes",
+      "10 Native Language Localizations"
+    ],
+    "author": {
+      "@type": "Organization",
+      "name": "Blockium",
+      "url": "https://blockium.pages.dev"
+    }
+  }
+  </script>
+
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a href="#" class="logo">
+  <!-- Floating Capsule Navbar -->
+  <div class="nav-wrapper">
+    <div class="nav-capsule">
+      <a href="/" class="nav-brand">
         <img src="assets/logo.png" alt="Blockium">
         <span>Blockium</span>
+        <div class="live-dot" title="Engine Active"></div>
       </a>
 
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#features">Features</a></li>
-          <li><a href="#protection">Protection</a></li>
-          <li><a href="#product">Product</a></li>
-          <li><a href="#privacy">Privacy</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </nav>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#protection">Deep Dive</a></li>
+        <li><a href="#product">Product</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
 
-      <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-        Add to Chrome
-      </a>
-
-      <button class="mobile-toggle"  aria-label="Toggle Menu">
-        <svg width="24" height="24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
-      </button>
+      <div class="nav-actions">
+        <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer" class="btn btn-neon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8" stroke="currentColor" stroke-width="2"/><line x1="3.95" y1="6.06" x2="8.54" y2="14" stroke="currentColor" stroke-width="2"/><line x1="10.88" y1="21.94" x2="15.46" y2="14" stroke="currentColor" stroke-width="2"/></svg>
+          Add to Chrome
+        </a>
+        <button class="mobile-menu-btn" id="mobileToggle" aria-label="Toggle Navigation">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
     </div>
-  </header>
+  </div>
 
   <!-- Mobile Drawer -->
-  <div id="mobileNav" class="mobile-nav">
-    <a href="#features" >Features</a>
-    <a href="#protection" >Protection</a>
-    <a href="#product" >Product</a>
-    <a href="#privacy" >Privacy</a>
-    <a href="#faq" >FAQ</a>
-    <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large" style="margin-top: 8px;">
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="#features" class="mobile-link">Features</a>
+    <a href="#protection" class="mobile-link">Deep Dive</a>
+    <a href="#product" class="mobile-link">Product</a>
+    <a href="/privacy" class="mobile-link">Privacy</a>
+    <a href="#faq" class="mobile-link">FAQ</a>
+    <a href="/report" class="mobile-link">Report an Issue</a>
+    <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer" class="btn btn-neon btn-large" style="margin-top: 8px;">
       Add to Chrome — Free
     </a>
   </div>
 
-  <!-- 1. HERO SECTION (High-Impact Minimalist) -->
-  <section class="hero">
+  <!-- ==========================================================================
+       HERO SECTION — BALANCED PROPORTIONS (ZERO EMPTY WHITESPACE)
+       ========================================================================== -->
+  <section class="hero-section">
     <div class="wrap">
-      <div class="hero-content-max">
-        <div class="hero-badge">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          Chrome Extension
-        </div>
-
-        <h1>A faster, cleaner, safer web.</h1>
-        <p class="hero-p">
-          Blockium blocks intrusive ads, trackers, popups and unwanted web content, helping you browse with fewer distractions.
-        </p>
-
-        <div class="hero-actions">
-          <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
-            Add to Chrome — It's Free
-          </a>
-          <a href="#product" class="btn btn-secondary btn-large">
-            Explore Product
-          </a>
-        </div>
-
-        <div class="hero-trust">
-          <span>Free to use</span>
-          <span class="trust-dot"></span>
-          <span>Privacy focused</span>
-          <span class="trust-dot"></span>
-          <span>No account required</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2. FEATURES (3x2 Clean Editorial Grid) -->
-  <section id="features" class="section section-neutral">
-    <div class="wrap">
-      <div class="section-header-center">
-        <span class="section-label">Features</span>
-        <h2 class="section-heading">Everything you need for a better web.</h2>
-        <p class="section-desc">Practical tools that keep pages clean, eliminate distractions, and stop intrusive telemetry.</p>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+      
+      <div class="hero-layout">
+        
+        <!-- Left: Headline, Lead, Action CTAs, Highlights & Trust -->
+        <div class="hero-content">
+          <div class="pill-tag">
+            <span class="live-dot"></span>
+            <span>Chrome Extension • MV3 Native Engine</span>
           </div>
-          <h3>Ad Blocking</h3>
-          <p>Filters banners, video overlays, and cluttered sponsored segments before page elements finish loading.</p>
-        </div>
 
-        <div class="feature-card">
-          <div class="feature-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          </div>
-          <h3>Tracker Protection</h3>
-          <p>Halts cross-site tracking scripts, analytics beacons, and behavioral profiling networks.</p>
-        </div>
+          <h1 class="hero-headline">
+            A faster, cleaner,<br>
+            <span class="highlight">safer web.</span>
+          </h1>
 
-        <div class="feature-card">
-          <div class="feature-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3>Malware & Phishing</h3>
-          <p>Scans domain reputations locally and prevents connection to known deceptive destinations.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
-          </div>
-          <h3>Popup Blocking</h3>
-          <p>Suppresses intrusive pop-unders, new-tab spawns, and deceptive click redirects.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          </div>
-          <h3>Cookie Consent</h3>
-          <p>Automatically clears repetitive GDPR and cookie banners without accepting tracking permissions.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon-box">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          </div>
-          <h3>Faster Pages</h3>
-          <p>Conserves RAM and bandwidth by dropping heavy advertising code before it renders.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3. PROTECTION (Sleek UI Cards - No Redundant Screenshot) -->
-  <section id="protection" class="section section-dark">
-    <div class="wrap">
-      <div class="protection-content-grid">
-        <div>
-          <span class="section-label">SECURITY & PROTECTION</span>
-          <h2 class="section-heading">Protection that works quietly in the background.</h2>
-          <p class="section-desc">
-            Local browser inspection flags and stops suspicious web requests without compromising browsing speed or transmitting your private browsing data.
+          <p class="hero-p">
+            Blockium eradicates video ads, invasive trackers, cookie consent walls, and deceptive overlays before they touch your browser. Engineered natively with zero CPU overhead and zero personal data collection.
           </p>
-        </div>
 
-        <div class="protection-status-card">
-          <h4>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Active Defense Engine
-          </h4>
+          <div class="hero-actions">
+            <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer" class="btn btn-neon btn-large">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8" stroke="currentColor" stroke-width="2"/><line x1="3.95" y1="6.06" x2="8.54" y2="14" stroke="currentColor" stroke-width="2"/><line x1="10.88" y1="21.94" x2="15.46" y2="14" stroke="currentColor" stroke-width="2"/></svg>
+              Add to Chrome — It's Free
+            </a>
+            <a href="#features" class="btn btn-outline btn-large">
+              Explore All Features ↓
+            </a>
+          </div>
 
-          <div class="indicators-list">
-            <div class="indicator-row">
-              <div>
-                <span class="indicator-label">Ad Engine</span>
-                <span class="indicator-title">Network Request Filtering</span>
-              </div>
-              <span class="indicator-pill pill-active">Active</span>
+          <!-- Feature Highlights Bar (Balances the left column height perfectly) -->
+          <div class="hero-highlight-chips">
+            <div class="chip-item">
+              <span class="chip-icon">⚡</span>
+              <span>0ms Latency (Native DNR)</span>
             </div>
-
-            <div class="indicator-row">
-              <div>
-                <span class="indicator-label">Threat Radar</span>
-                <span class="indicator-title">Malware & Phishing Shields</span>
-              </div>
-              <span class="indicator-pill pill-protected">Protected</span>
+            <div class="chip-item">
+              <span class="chip-icon">🛡️</span>
+              <span>4,500+ Rules Loaded</span>
             </div>
-
-            <div class="indicator-row">
-              <div>
-                <span class="indicator-label">Tracker Guard</span>
-                <span class="indicator-title">Third-Party Scripts</span>
-              </div>
-              <span class="indicator-pill pill-reduced">Reduced</span>
+            <div class="chip-item">
+              <span class="chip-icon">⏱️</span>
+              <span>Real-Time "Time Saved" Metric</span>
             </div>
           </div>
+
+          <div class="hero-trust">
+            <span>⭐ 5.0 Rating</span>
+            <span class="trust-dot"></span>
+            <span>Free to use</span>
+            <span class="trust-dot"></span>
+            <span>Privacy focused</span>
+            <span class="trust-dot"></span>
+            <span>No account required</span>
+          </div>
         </div>
+
+        <!-- Right: Real Simple Mode Popup (Sleek, Shorter Height to Balance Left Side) -->
+        <div class="hero-visual">
+          <div class="hero-image-frame">
+            <div class="frame-header">
+              <div class="frame-status">
+                <span class="live-dot"></span>
+                <span>Active Protection</span>
+              </div>
+              <span class="frame-badge">Simple Mode</span>
+            </div>
+            <img src="assets/popup-simple-new.png" alt="Blockium Simple Mode Interface" class="hero-real-img">
+          </div>
+        </div>
+
       </div>
+
     </div>
   </section>
 
-  <!-- 4. HOW IT WORKS (Timeline) -->
-  <section class="section section-compact section-white">
+  <!-- ==========================================================================
+       SECTION: NUMBERED PILLARS (01 02 03 04) — INDUSTRIAL TECHNICAL SPECS
+       ========================================================================== -->
+  <section class="pillars-section" id="features">
     <div class="wrap">
-      <div class="section-header-center">
-        <span class="section-label">HOW IT WORKS</span>
-        <h2 class="section-heading">Up and running in seconds.</h2>
-        <p class="section-desc">Zero complex configuration. Seamless protection right from installation.</p>
-      </div>
-
-      <div class="timeline-steps">
-        <div class="timeline-step">
-          <div class="step-header">
-            <div class="step-badge">01</div>
-            <h3>Install Blockium</h3>
-          </div>
-          <p>Add the extension from the Chrome Web Store in one click. No registration or account setup needed.</p>
-        </div>
-
-        <div class="timeline-step">
-          <div class="step-header">
-            <div class="step-badge">02</div>
-            <h3>Browse normally</h3>
-          </div>
-          <p>Filtering runs natively in Chrome's engine, suppressing ads and trackers automatically in the background.</p>
-        </div>
-
-        <div class="timeline-step">
-          <div class="step-header">
-            <div class="step-badge">03</div>
-            <h3>Stay protected</h3>
-          </div>
-          <p>Review real-time security scores and manage custom site rules directly from the extension popup.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. PRODUCT SHOWCASE (Dedicated Side-by-Side Comparison) -->
-  <section id="product" class="section section-neutral">
-    <div class="wrap">
-      <div class="section-header-center">
-        <span class="section-label">PRODUCT SHOWCASE</span>
-        <h2 class="section-heading">Simple when you want it. Powerful when you need it.</h2>
+      
+      <div class="section-header">
+        <span class="section-eyebrow">CORE ARCHITECTURE</span>
+        <h2 class="section-title">Everything you need for a better web.</h2>
         <p class="section-desc">
-          Blockium keeps everyday protection simple while giving you advanced controls when you need them.
+          Four foundational pillars engineered natively into Google Chrome's modern declarative networking stack.
         </p>
       </div>
 
-      <!-- Side-by-Side Mode Cards -->
-      <div class="showcase-comparison-grid">
+      <div class="pillars-grid">
+        
+        <!-- Pillar 01 -->
+        <div class="pillar-card">
+          <div class="pillar-num">01</div>
+          <div class="pillar-body">
+            <h3>Declarative MV3 Engine</h3>
+            <p>All network filtering runs directly in Chrome's native C++ networking thread. No background JavaScript slowdowns, zero lag, and 4,500+ dynamic rules evaluated instantly.</p>
+            <span class="pillar-tag">&lt; 0.2ms Latency</span>
+          </div>
+        </div>
+
+        <!-- Pillar 02 -->
+        <div class="pillar-card">
+          <div class="pillar-num">02</div>
+          <div class="pillar-body">
+            <h3>Zero Telemetry Guarantee</h3>
+            <p>Your visited URLs, search queries, and cookies never leave your machine. Rules evaluate strictly in volatile local memory without external tracking pings.</p>
+            <span class="pillar-tag">100% Local</span>
+          </div>
+        </div>
+
+        <!-- Pillar 03 -->
+        <div class="pillar-card">
+          <div class="pillar-num">03</div>
+          <div class="pillar-body">
+            <h3>Streaming Ad Suppression</h3>
+            <p>Fast-forwards unskippable video ads at 16× speed with instant audio muting on YouTube, Prime Video, Disney+ Hotstar, and SonyLIV without breaking player controls.</p>
+            <span class="pillar-tag">16x Fast-Forward</span>
+          </div>
+        </div>
+
+        <!-- Pillar 04 -->
+        <div class="pillar-card">
+          <div class="pillar-num">04</div>
+          <div class="pillar-body">
+            <h3>Cookie Dismiss &amp; Whitelist</h3>
+            <p>Automatically rejects GDPR consent banners across 10+ major CMP frameworks, with a 1-click site whitelist switch so banking portals never break.</p>
+            <span class="pillar-tag">10+ CMPs Covered</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION: DEEP DIVE BENTO GRID (PRODUCTION-GRADE FEATURE SHOWCASE)
+       ========================================================================== -->
+  <section class="bento-section" id="protection">
+    <div class="wrap">
+      
+      <div class="section-header">
+        <span class="section-eyebrow">COMPREHENSIVE DEFENSE MATRIX</span>
+        <h2 class="section-title">Built for maximum protection and zero friction.</h2>
+        <p class="section-desc">
+          Explore all the capabilities engineered into Blockium to keep your browsing private, fast, and free from annoyances.
+        </p>
+      </div>
+
+      <div class="bento-grid">
+        
+        <!-- Card 1: Streaming Ad Suppression (7 Cols, Dark) -->
+        <div class="bento-card bento-card-7 bento-card-dark">
+          <div>
+            <div class="bento-badge">STREAMING &amp; OTT ENGINE</div>
+            <h3 class="bento-title">Intelligent Streaming Ad Suppression</h3>
+            <p class="bento-desc">
+              Tired of unskippable 30-second pre-roll ads and annoying video overlays? Blockium's scriptlet engine seamlessly handles streaming media without breaking player interfaces:
+            </p>
+            <ul class="feature-point-list">
+              <li>
+                <span class="check-bullet">✓</span>
+                <span><strong>YouTube:</strong> Fast-forwards unskippable ads at 16× speed, mutes audio instantly, and auto-clicks "Skip Ad".</span>
+              </li>
+              <li>
+                <span class="check-bullet">✓</span>
+                <span><strong>Prime Video &amp; Hotstar:</strong> Duration-aware detection skips trailers and mid-rolls without breaking segment playback.</span>
+              </li>
+              <li>
+                <span class="check-bullet">✓</span>
+                <span><strong>SonyLIV:</strong> Auto-clicks skip prompts and bypasses anti-adblock detection walls.</span>
+              </li>
+              <li>
+                <span class="check-bullet">✓</span>
+                <span><strong>Floating Video Blocker:</strong> Automatically neutralizes annoying picture-in-picture floating mini-players that follow you as you scroll news sites.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="badge-wrap">
+            <span class="badge-chip badge-chip-neon">YouTube 16×</span>
+            <span class="badge-chip">Amazon Prime</span>
+            <span class="badge-chip">Disney+ Hotstar</span>
+            <span class="badge-chip">SonyLIV</span>
+            <span class="badge-chip">Floating Video Killer</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Cookie Auto-Dismiss (5 Cols, Light) -->
+        <div class="bento-card bento-card-5">
+          <div>
+            <div class="bento-badge">ANNOYANCE REMOVAL</div>
+            <h3 class="bento-title">Automated Cookie Consent Dismissal</h3>
+            <p class="bento-desc">
+              Stop clicking "Reject All" on every single website. Blockium automatically rejects tracking cookies across all major consent management platforms:
+            </p>
+            <ul class="feature-point-list">
+              <li>
+                <span class="check-bullet">✓</span>
+                <span>Auto-dismisses OneTrust, Cookiebot, Osano, Didomi, Complianz, CookieYes, and Termly.</span>
+              </li>
+              <li>
+                <span class="check-bullet">✓</span>
+                <span><strong>Dedicated Cookie Whitelist:</strong> Toggle <code>🍪 AUTO</code> vs <code>🍪 ALLOWED</code> per site so e-commerce checkouts and banking logins always function.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="badge-wrap">
+            <span class="badge-chip">OneTrust</span>
+            <span class="badge-chip">Cookiebot</span>
+            <span class="badge-chip">Didomi</span>
+            <span class="badge-chip">Site Whitelist</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Visual Element Zapper (5 Cols, Light) -->
+        <div class="bento-card bento-card-5">
+          <div>
+            <div class="bento-badge">CUSTOM FILTERING</div>
+            <h3 class="bento-title">Precision Visual Element Zapper</h3>
+            <p class="bento-desc">
+              Take complete control over any webpage. Click to target and permanently vaporize elements that bother you:
+            </p>
+            <ul class="feature-point-list">
+              <li>
+                <span class="check-bullet">✓</span>
+                <span>Point-and-click targeting with high-contrast element highlighting.</span>
+              </li>
+              <li>
+                <span class="check-bullet">✓</span>
+                <span>Permanently deletes newsletter prompts, sticky paywall banners, and social share bars.</span>
+              </li>
+              <li>
+                <span class="check-bullet">✓</span>
+                <span>Generates persistent custom CSS filter rules saved locally in extension storage.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="badge-wrap">
+            <span class="badge-chip">Point &amp; Click</span>
+            <span class="badge-chip">Persistent CSS</span>
+            <span class="badge-chip">Paywall Hider</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Anti-Fingerprinting & Security (7 Cols, Dark) -->
+        <div class="bento-card bento-card-7 bento-card-dark">
+          <div>
+            <div class="bento-badge">CYBERSECURITY &amp; PRIVACY</div>
+            <h3 class="bento-title">Anti-Fingerprinting &amp; Threat Firewall</h3>
+            <p class="bento-desc">
+              Websites use subtle device signals to track you even in incognito mode. Blockium actively cloaks your digital footprint:
+            </p>
+            <ul class="feature-point-list">
+              <li>
+                <span class="check-bullet">✓</span>
+                <span><strong>Canvas &amp; AudioContext Noise:</strong> Injects imperceptible mathematical noise into fingerprinting APIs to defeat profiling without distorting visuals or web audio.</span>
+              </li>
+              <li>
+                <span class="check-bullet">✓</span>
+                <span><strong>Phishing &amp; Malware Firewall:</strong> Blocks deceptive domains and hidden cryptocurrency mining scripts before TCP sockets connect.</span>
+              </li>
+              <li>
+                <span class="check-bullet">✓</span>
+                <span><strong>0% Idle CPU Overhead:</strong> Observers pause immediately when tabs are hidden (<code>visibilityState === 'hidden'</code>), preserving laptop battery.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="badge-wrap">
+            <span class="badge-chip badge-chip-neon">Anti-Fingerprinting</span>
+            <span class="badge-chip">Crypto-Miner Block</span>
+            <span class="badge-chip">0% Idle CPU</span>
+            <span class="badge-chip">Memory-Leak Safe</span>
+          </div>
+        </div>
+
+        <!-- Card 5: Real-World Metrics (6 Cols, Light) -->
+        <div class="bento-card bento-card-6">
+          <div>
+            <div class="bento-badge">HUMAN IMPACT METRICS</div>
+            <h3 class="bento-title">Time Saved &amp; Security Ratings</h3>
+            <p class="bento-desc">
+              Understand the concrete benefits of clean browsing with real human-centric analytics:
+            </p>
+            <ul class="feature-point-list">
+              <li>
+                <span class="check-bullet">✓</span>
+                <span><strong>"Time Saved" Tracker:</strong> Measures real browsing minutes saved based on skipped video ads and suppressed load scripts.</span>
+              </li>
+              <li>
+                <span class="check-bullet">✓</span>
+                <span><strong>Data Savings Counter:</strong> Calculates exact megabytes of bandwidth preserved from downloading heavy media banners.</span>
+              </li>
+              <li>
+                <span class="check-bullet">✓</span>
+                <span><strong>0–100% Site Safety Score:</strong> Evaluates current domain SSL encryption, tracker density, and known threat risks at a glance.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="badge-wrap">
+            <span class="badge-chip">⏱️ Time Saved</span>
+            <span class="badge-chip">💾 Data Saved (MB)</span>
+            <span class="badge-chip">🔒 0-100% Safety Score</span>
+          </div>
+        </div>
+
+        <!-- Card 6: Dashboard & 7 Themes (6 Cols, Dark) -->
+        <div class="bento-card bento-card-6 bento-card-dark">
+          <div>
+            <div class="bento-badge">CONTROL &amp; CUSTOMIZATION</div>
+            <h3 class="bento-title">Command Center &amp; 7 Custom Themes</h3>
+            <p class="bento-desc">
+              Personalize your security HUD with 7 hand-crafted cyber themes and access comprehensive historical metrics:
+            </p>
+            <ul class="feature-point-list">
+              <li>
+                <span class="check-bullet">✓</span>
+                <span><strong>Timeframe Analytics:</strong> Filter charts across <code>Today</code>, <code>Last 7 Days</code>, and <code>All Time</code> on the full dashboard.</span>
+              </li>
+              <li>
+                <span class="check-bullet">✓</span>
+                <span><strong>Top 5 Tracker Leaderboard:</strong> Identifies the heaviest tracking domains attempting to build profiles on you.</span>
+              </li>
+              <li>
+                <span class="check-bullet">✓</span>
+                <span><strong>7 Multi-Themes:</strong> Red Team HUD, Cyber Neon, OLED Obsidian, Nordic Aurora, Pure Minimal, Liquid Dark, and Frost.</span>
+              </li>
+              <li>
+                <span class="check-bullet">✓</span>
+                <span><strong>10 Locales:</strong> English, Hindi, Japanese, French, German, Spanish, Portuguese, Italian, Dutch, and Russian.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="badge-wrap">
+            <span class="badge-chip badge-chip-neon">Red Team HUD</span>
+            <span class="badge-chip">Cyber Neon</span>
+            <span class="badge-chip">OLED Obsidian</span>
+            <span class="badge-chip">10 Locales</span>
+          </div>
+        </div>
+
+        <!-- Card 7: Multi-Language Support (12 Cols Wide) -->
+        <div class="bento-card bento-card-12">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px;">
+            <div>
+              <div class="bento-badge">GLOBAL LOCALIZATION &amp; ACCESSIBILITY</div>
+              <h3 class="bento-title">Native Support Across 10 Languages</h3>
+              <p class="bento-desc" style="max-width: 760px; margin-bottom: 0;">
+                Blockium automatically detects your operating system and Chrome browser language to serve fully localized extension interfaces, buttons, notifications, and store listings. Zero configuration required.
+              </p>
+            </div>
+            <span class="pill-tag" style="background: var(--bg-canvas);">
+              <span class="live-dot"></span>
+              <span>Auto Browser Language Detection</span>
+            </span>
+          </div>
+
+          <div class="lang-grid">
+            <div class="lang-card">
+              <div class="lang-card-top">
+                <span class="lang-card-title">🇺🇸 English</span>
+                <span class="lang-code">en</span>
+              </div>
+              <div class="lang-card-sub">Fast Adblock &amp; Privacy</div>
+            </div>
+
+            <div class="lang-card">
+              <div class="lang-card-top">
+                <span class="lang-card-title">🇮🇳 हिन्दी (Hindi)</span>
+                <span class="lang-code">hi</span>
+              </div>
+              <div class="lang-card-sub">विज्ञापन और ट्रैकर रोके</div>
+            </div>
+
+            <div class="lang-card">
+              <div class="lang-card-top">
+                <span class="lang-card-title">🇯🇵 日本語</span>
+                <span class="lang-code">ja</span>
+              </div>
+              <div class="lang-card-sub">高速＆プライバシー</div>
+            </div>
+
+            <div class="lang-card">
+              <div class="lang-card-top">
+                <span class="lang-card-title">🇩🇪 Deutsch</span>
+                <span class="lang-code">de</span>
+              </div>
+              <div class="lang-card-sub">Schnell &amp; Datenschutz</div>
+            </div>
+
+            <div class="lang-card">
+              <div class="lang-card-top">
+                <span class="lang-card-title">🇫🇷 Français</span>
+                <span class="lang-code">fr</span>
+              </div>
+              <div class="lang-card-sub">Rapide &amp; Privé</div>
+            </div>
+
+            <div class="lang-card">
+              <div class="lang-card-top">
+                <span class="lang-card-title">🇪🇸 Español</span>
+                <span class="lang-code">es</span>
+              </div>
+              <div class="lang-card-sub">Bloqueador de Anuncios</div>
+            </div>
+
+            <div class="lang-card">
+              <div class="lang-card-top">
+                <span class="lang-card-title">🇧🇷 Português</span>
+                <span class="lang-code">pt_BR</span>
+              </div>
+              <div class="lang-card-sub">Bloqueador de Anúncios</div>
+            </div>
+
+            <div class="lang-card">
+              <div class="lang-card-top">
+                <span class="lang-card-title">🇮🇹 Italiano</span>
+                <span class="lang-code">it</span>
+              </div>
+              <div class="lang-card-sub">Blocco Pubblicità</div>
+            </div>
+
+            <div class="lang-card">
+              <div class="lang-card-top">
+                <span class="lang-card-title">🇷🇺 Русский</span>
+                <span class="lang-code">ru</span>
+              </div>
+              <div class="lang-card-sub">Блокировщик рекламы</div>
+            </div>
+
+            <div class="lang-card">
+              <div class="lang-card-top">
+                <span class="lang-card-title">🇳🇱 Nederlands</span>
+                <span class="lang-code">nl</span>
+              </div>
+              <div class="lang-card-sub">Snel &amp; Privacy</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border-light); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 13px; color: var(--text-muted);">
+            <div>🌐 Covering over 3.5 billion native speakers worldwide.</div>
+            <div style="font-weight: 600; color: var(--text-dark);">Unsupported browser locales automatically fall back to English.</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION: PRODUCT SHOWCASE (REAL SCREENSHOTS: SIMPLE & ADVANCED MODES)
+       ========================================================================== -->
+  <section class="showcase-section" id="product">
+    <div class="wrap">
+      
+      <div class="section-header" style="text-align: center; max-width: 650px; margin: 0 auto 40px;">
+        <span class="section-eyebrow">PRODUCT SHOWCASE</span>
+        <h2 class="section-title">Simple when you want it.<br>Powerful when you need it.</h2>
+        <p class="section-desc" style="margin: 0 auto;">
+          Blockium keeps everyday protection intuitive while providing advanced granular controls for power users.
+        </p>
+      </div>
+
+      <!-- Side-by-Side Comparison Cards -->
+      <div class="showcase-grid">
+        
         <!-- Card 1: Simple Mode -->
         <div class="showcase-card">
           <div class="showcase-card-header">
-            <span class="section-label">SIMPLE MODE</span>
-            <h3>Protection at a glance</h3>
-            <p>Clear metrics, current site safety ratings, and one-click site pause switches.</p>
+            <span class="section-eyebrow">EVERYDAY USAGE</span>
+            <h3>Simple Mode</h3>
+            <p>Clear metrics, current site safety ratings, time saved counters, and one-click site pause switches.</p>
           </div>
 
-          <div class="showcase-screenshot-wrapper">
-            <img src="assets/popup-simple-new.png" alt="Blockium Simple Mode Interface">
+          <div class="showcase-img-wrap">
+            <img src="assets/popup-simple-new.png" alt="Blockium Simple Mode Popup" loading="lazy" width="380" height="565">
           </div>
 
           <ul class="showcase-features-list">
             <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Protection status
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Instant 1-click domain pause and resume switch</span>
             </li>
             <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Blocked activity & data saved
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Live blocked count, time saved, and data savings</span>
             </li>
             <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              One-click pause toggle
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Current domain safety &amp; risk assessment score</span>
+            </li>
+            <li>
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>1-Click "Report Broken Site" button</span>
             </li>
           </ul>
         </div>
@@ -1012,263 +1746,251 @@
         <!-- Card 2: Advanced Mode -->
         <div class="showcase-card">
           <div class="showcase-card-header">
-            <span class="section-label">ADVANCED CONTROLS</span>
-            <h3>Granular control</h3>
-            <p>Fine-tune threat alerts, cookie dismissals, and customize UI themes.</p>
+            <span class="section-eyebrow">GRANULAR CONTROL</span>
+            <h3>Advanced Mode</h3>
+            <p>Toggle individual filter categories, customize cookie dismissals, and zap custom page elements.</p>
           </div>
 
-          <div class="showcase-screenshot-wrapper">
-            <img src="assets/popup-advanced-new.png" alt="Blockium Advanced Mode Interface">
+          <div class="showcase-img-wrap">
+            <img src="assets/popup-advanced-new.png" alt="Blockium Advanced Mode Popup" loading="lazy" width="380" height="630">
           </div>
 
           <ul class="showcase-features-list">
             <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Site controls & shields
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Individual toggles for Ads, Trackers, Social &amp; Annoyances</span>
             </li>
             <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Threat & phishing alerts
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Visual Element Zapper with persistent CSS rule persistence</span>
             </li>
             <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              Cookie auto-dismiss
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Automated Cookie Dismissal toggle &amp; Threat Alerts</span>
             </li>
             <li>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              7 custom themes
+              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>One-click shortcut to the full Command Center Dashboard</span>
             </li>
           </ul>
         </div>
+
       </div>
 
-      <!-- Integrated Analytics Banner -->
-      <div class="analytics-banner-container">
-        <div class="analytics-banner-info">
-          <span class="section-label">ANALYTICS COMMAND CENTER</span>
-          <h3>Everything you need, right in your browser.</h3>
-          <p>
-            Track historical blocking statistics, monitor high-frequency tracking domains, and review bandwidth savings over time without cloud sync.
-          </p>
+      <!-- Real Dashboard Banner -->
+      <div class="dashboard-wide-card">
+        <div class="dash-header-split">
+          <div>
+            <span class="pill-tag pill-tag-dark" style="margin-bottom: 12px;">COMMAND CENTER</span>
+            <h3>Comprehensive analytics, timeline feeds &amp; custom rules.</h3>
+            <p style="font-size: 14.5px; color: var(--text-light-muted); margin-top: 8px;">
+              Open the full privacy dashboard to inspect historical blocked request graphs across Today, 7 Days, or All-Time, analyze the Top 5 Tracker Leaderboard, and manage custom filter rules.
+            </p>
+          </div>
+          <div style="display: flex; gap: 12px; justify-content: flex-end; flex-wrap: wrap;">
+            <div style="background: var(--dark-card-inner); padding: 12px 18px; border-radius: var(--radius-md); border: 1px solid var(--border-dark);">
+              <div style="font-size: 22px; font-weight: 800; color: var(--neon);">4,500+</div>
+              <div style="font-size: 11.5px; color: var(--text-light-muted);">Dynamic Rules</div>
+            </div>
+            <div style="background: var(--dark-card-inner); padding: 12px 18px; border-radius: var(--radius-md); border: 1px solid var(--border-dark);">
+              <div style="font-size: 22px; font-weight: 800; color: var(--neon);">&lt;0.2ms</div>
+              <div style="font-size: 11.5px; color: var(--text-light-muted);">Evaluation Latency</div>
+            </div>
+            <div style="background: var(--dark-card-inner); padding: 12px 18px; border-radius: var(--radius-md); border: 1px solid var(--border-dark);">
+              <div style="font-size: 22px; font-weight: 800; color: var(--neon);">489</div>
+              <div style="font-size: 11.5px; color: var(--text-light-muted);">Tests Passing</div>
+            </div>
+          </div>
         </div>
 
-        <div class="analytics-banner-img">
-          <img src="assets/dashboard-new.png" alt="Blockium Privacy Analytics Dashboard" loading="lazy">
+        <div class="dash-img-frame">
+          <img src="assets/dashboard-new.png" alt="Blockium Analytics Dashboard" loading="lazy" width="1024" height="587">
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- 6. PRIVACY (Editorial 2-Column) -->
-  <section id="privacy" class="section section-white">
+  <!-- ==========================================================================
+       SECTION: PRIVACY EDITORIAL
+       ========================================================================== -->
+  <section class="privacy-section" id="privacy">
     <div class="wrap">
+      
       <div class="privacy-grid">
         <div>
-          <span class="section-label">PRIVACY</span>
-          <h2 class="section-heading">Your browsing should belong to you.</h2>
+          <span class="section-eyebrow">PRIVACY GUARANTEE</span>
+          <h2 class="section-title">Your browsing should belong to you.</h2>
           <p class="section-desc">
-            Blockium handles filtering natively on your machine without transmitting user histories or profile logs to outside databases.
+            Blockium handles filtering natively on your machine without transmitting user histories, search queries, or profile logs to outside databases.
           </p>
         </div>
 
-        <div class="privacy-items">
-          <div class="privacy-point">
-            <svg class="privacy-point-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div>
-              <h4>No account required</h4>
-              <p>Start immediately without giving your email or credentials.</p>
-            </div>
+        <div class="privacy-points">
+          <div class="privacy-card">
+            <svg class="privacy-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <h4>No account required</h4>
+            <p>Start immediately without giving your email, phone, or login credentials.</p>
           </div>
 
-          <div class="privacy-point">
-            <svg class="privacy-point-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div>
-              <h4>No browsing history required</h4>
-              <p>Filter rules evaluate locally; visited URLs are never tracked.</p>
-            </div>
+          <div class="privacy-card">
+            <svg class="privacy-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <h4>No browsing history</h4>
+            <p>Filter rules evaluate locally; visited URLs are never tracked or uploaded.</p>
           </div>
 
-          <div class="privacy-point">
-            <svg class="privacy-point-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div>
-              <h4>No data monetization</h4>
-              <p>We do not collect or sell user activity to third parties.</p>
-            </div>
+          <div class="privacy-card">
+            <svg class="privacy-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <h4>No data monetization</h4>
+            <p>We do not collect, monetize, or sell user activity to third parties or brokers.</p>
           </div>
 
-          <div class="privacy-point">
-            <svg class="privacy-point-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            <div>
-              <h4>Local browser processing</h4>
-              <p>All network inspection runs directly inside Google Chrome.</p>
-            </div>
+          <div class="privacy-card">
+            <svg class="privacy-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <h4>Local processing</h4>
+            <p>All network inspection runs directly inside your local Google Chrome memory.</p>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- 7. FAQ (Accordion) -->
-  <section id="faq" class="section section-neutral">
+  <!-- ==========================================================================
+       SECTION: FAQ
+       ========================================================================== -->
+  <section class="faq-section" id="faq">
     <div class="wrap">
-      <div class="section-header-center">
-        <span class="section-label">FAQ</span>
-        <h2 class="section-heading">Frequently asked questions.</h2>
-        <p class="section-desc">Short, transparent answers to common inquiries.</p>
+      
+      <div class="section-header">
+        <span class="section-eyebrow">COMMON QUESTIONS</span>
+        <h2 class="section-title">Frequently asked questions.</h2>
+        <p class="section-desc">
+          Everything you need to know about Blockium installation, rules, and privacy protections.
+        </p>
       </div>
 
-      <div class="faq-wrapper">
-        <div class="faq-item">
-          <button class="faq-question-btn" >
-            Is Blockium free?
-            <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-answer-panel">
-            Yes. Blockium is completely free to install and use on Google Chrome without any hidden subscriptions.
+      <div class="faq-list" role="region" aria-label="Frequently Asked Questions">
+        
+        <div class="faq-item active">
+          <div class="faq-question" role="button" tabindex="0" aria-expanded="true" aria-controls="faq-ans-1">
+            <span>Is Blockium completely free?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+          <div class="faq-answer" id="faq-ans-1" role="region">
+            Yes, Blockium is 100% free with no paid subscriptions, premium paywalls, or hidden charges. It operates entirely on open declarative filter lists.
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question-btn" >
-            How does Blockium block ads?
-            <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-answer-panel">
-            Blockium leverages Chrome's native Declarative Net Request (Manifest V3) API to evaluate network rules directly in the browser process before network requests are dispatched.
+          <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-2">
+            <span>How does Blockium protect my privacy?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+          <div class="faq-answer" id="faq-ans-2" role="region">
+            Blockium performs filter evaluation directly inside Chrome using native declarative rules. Visited pages, browsing history, and personal inputs are never recorded, transmitted, or monetized.
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question-btn" >
-            Does Blockium collect my browsing history?
-            <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-answer-panel">
-            No. Blockium does not send your visited URLs or search histories to external servers. All rule matching and analytics are computed and stored on your computer.
+          <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-3">
+            <span>What should I do if a website breaks or displays incorrectly?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+          <div class="faq-answer" id="faq-ans-3" role="region">
+            You can pause protection for that specific website directly from the extension popup with one click. You can also toggle cookie notices to <code>🍪 ALLOWED</code>, or submit details via our <a href="/report" style="color: var(--text-dark); text-decoration: underline; font-weight:700;">Report an Issue</a> form so our team can update filter rules.
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question-btn" >
-            Does Blockium slow down Chrome?
-            <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-answer-panel">
-            Quite the opposite. By blocking megabytes of video ads, tracking scripts, and popups before they download, web pages typically load faster and use less RAM.
+          <div class="faq-question" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-ans-4">
+            <span>Does Blockium work on streaming video sites like YouTube?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+          <div class="faq-answer" id="faq-ans-4" role="region">
+            Yes! Blockium includes dedicated streaming scriptlets that suppress pre-roll, mid-roll, and overlay ads, fast-forwarding them at 16× speed with instant mute so your content plays without interruption.
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-question-btn" >
-            Can I disable Blockium for a website?
-            <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-answer-panel">
-            Yes. Simply click the extension icon in your browser toolbar and click the Pause Site button to allowlist the current domain.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question-btn">
-            What should I do if a site breaks or an ad is missed?
-            <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-answer-panel">
-            You can report it directly from the extension popup by clicking &ldquo;Report Broken Site&rdquo;, or submit details via our <a href="/report" style="color: var(--accent-blue); text-decoration: underline;">Report an Issue</a> form. Our team regularly updates filter rules based on user submissions.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question-btn" >
-            Does Blockium work on video websites?
-            <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-answer-panel">
-            Blockium includes specialized scriptlets for video and streaming platforms like YouTube to handle banner dismissal and fast-forward unskippable video ads where supported.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question-btn" >
-            How does threat protection work?
-            <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="faq-answer-panel">
-            Blockium cross-checks destination domains against curated, offline blocklists of known deceptive, malware, and phishing sources, immediately aborting compromised requests.
-          </div>
-        </div>
       </div>
+
     </div>
   </section>
 
-  <!-- FINAL CTA -->
-  <section class="final-cta-section">
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="fintra-footer">
     <div class="wrap">
-      <h2>Take back control of your browsing.</h2>
-      <p>Browse cleaner. Browse faster. Browse with Blockium.</p>
-      <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
-        Add Blockium to Chrome — Free
-      </a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-inner">
+      
+      <!-- CTA Card -->
+      <div class="footer-cta-card">
         <div>
-          <div class="footer-brand">
-            <img src="assets/logo.png" alt="Blockium Logo">
-            <span>Blockium</span>
-          </div>
-          <p style="font-size: 14px; color: var(--text-light-muted);">Cleaner browsing. Better privacy.</p>
+          <h2 class="footer-cta-title">Take back control of your browsing.</h2>
+          <p class="footer-cta-sub">Install Blockium in seconds. Free forever on the Chrome Web Store.</p>
         </div>
-
-        <nav class="footer-nav">
-          <a href="#features">Features</a>
-          <a href="#protection">Protection</a>
-          <a href="#product">Product</a>
-          <a href="#privacy">Privacy</a>
-          <a href="#faq">FAQ</a>
-          <a href="/report">Report an Issue</a>
-          <a href="mailto:blockiumapps@gmail.com">Support</a>
-        </nav>
+        <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer" class="btn btn-neon btn-large">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8" stroke="currentColor" stroke-width="2"/><line x1="3.95" y1="6.06" x2="8.54" y2="14" stroke="currentColor" stroke-width="2"/><line x1="10.88" y1="21.94" x2="15.46" y2="14" stroke="currentColor" stroke-width="2"/></svg>
+          Add to Chrome — It's Free
+        </a>
       </div>
 
-      <div class="footer-legal">
-        <div>© 2026 Blockium. All rights reserved.</div>
-        <div>
-          <a href="https://github.com/krjangid/adblocker/blob/main/PRIVACY_POLICY.md" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-          &nbsp;·&nbsp;
-          <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer">Chrome Web Store</a>
+      <div class="footer-brand-row">
+        <div class="footer-brand-left">
+          <img src="assets/logo.png" alt="Blockium">
+          <span>Blockium</span>
+        </div>
+
+        <ul class="footer-nav">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#protection">Deep Dive</a></li>
+          <li><a href="#product">Product</a></li>
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="/terms">Terms</a></li>
+          <li><a href="/report">Report an Issue</a></li>
+          <li><a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer">Chrome Web Store</a></li>
+          <li><a href="mailto:blockiumapps@gmail.com">Support</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom-copy">
+        <div>&copy; 2026 Blockium. Cleaner browsing. Better privacy.</div>
+        <div style="display: flex; gap: 16px;">
+          <span>Zero Telemetry</span>
+          <span>Manifest V3</span>
+          <span>489 Tests Passing</span>
         </div>
       </div>
+
     </div>
   </footer>
 
-
+  <!-- Scripts -->
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var mobileToggle = document.querySelector('.mobile-toggle');
-      var mobileNav = document.getElementById('mobileNav');
-      if (mobileToggle && mobileNav) {
-        mobileToggle.addEventListener('click', function () {
-          mobileNav.classList.toggle('open');
-        });
-        var navLinks = mobileNav.querySelectorAll('a');
-        for (var i = 0; i < navLinks.length; i++) {
-          navLinks[i].addEventListener('click', function () {
-            mobileNav.classList.remove('open');
-          });
-        }
-      }
+    // Mobile Drawer Toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    if (mobileToggle && mobileDrawer) {
+      mobileToggle.addEventListener('click', () => {
+        mobileDrawer.classList.toggle('open');
+      });
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => mobileDrawer.classList.remove('open'));
+      });
+    }
 
-      var faqButtons = document.querySelectorAll('.faq-question-btn');
-      for (var j = 0; j < faqButtons.length; j++) {
-        faqButtons[j].addEventListener('click', function () {
-          var item = this.parentElement;
-          if (item) {
-            item.classList.toggle('active');
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      if (question) {
+        question.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          faqItems.forEach(el => el.classList.remove('active'));
+          if (!isActive) {
+            item.classList.add('active');
           }
         });
       }

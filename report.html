@@ -4,412 +4,400 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Report an Issue – Blockium</title>
-  <meta name="description" content="Report broken site layouts, undetected ads, or video playback errors to the Blockium team.">
+  <meta name="description" content="Report broken web pages, unblocked ads, or video playback errors to the Blockium team.">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <link rel="icon" type="image/png" href="/assets/logo.png">
   <link rel="canonical" href="https://blockium.pages.dev/report">
 
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
 
     :root {
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --bg-white: #ffffff;
-      --bg-neutral: #f8fafc;
-      --bg-dark: #0f172a;
-      
-      --text-heading: #0f172a;
-      --text-body: #334155;
-      --text-muted: #64748b;
-      --text-light-muted: #94a3b8;
-
-      --accent-blue: #2563eb;
-      --accent-blue-hover: #1d4ed8;
-      --accent-blue-subtle: #eff6ff;
-      --accent-green: #10b981;
-      
-      --border-subtle: #e2e8f0;
-      --border-medium: #cbd5e1;
-      
-      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 14px -2px rgba(15, 23, 42, 0.08);
-
+      --bg-canvas: #F4F3EE;
+      --surface-white: #FFFFFF;
+      --dark-card: #111215;
+      --neon: #D4F639;
+      --neon-hover: #C5E92B;
+      --neon-glow: rgba(212, 246, 57, 0.35);
+      --text-dark: #111215;
+      --text-body: #4A4E5C;
+      --text-muted: #727685;
+      --border-light: rgba(17, 18, 21, 0.08);
+      --border-light-medium: rgba(17, 18, 21, 0.12);
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
       --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
       --radius-full: 9999px;
+      --shadow-sm: 0 1px 3px rgba(17, 18, 21, 0.05);
+      --shadow-md: 0 8px 24px -4px rgba(17, 18, 21, 0.08);
     }
 
     body {
+      background-color: var(--bg-canvas);
+      color: var(--text-dark);
       font-family: var(--font-sans);
-      background: var(--bg-neutral);
-      color: var(--text-body);
       line-height: 1.6;
-      font-size: 16px;
+      padding-top: 100px;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
     .wrap {
-      max-width: 1060px;
+      max-width: 880px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 24px 64px;
       width: 100%;
+      flex: 1;
     }
 
-    /* ---- Header ---- */
-    .site-header {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-subtle);
+    /* Floating Capsule Navbar */
+    .nav-wrapper {
+      position: fixed;
+      top: 16px;
+      left: 0;
+      right: 0;
+      z-index: 1000;
     }
-    .header-inner {
+    .nav-capsule {
+      max-width: 880px;
+      margin: 0 auto;
+      background: rgba(244, 243, 238, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-light-medium);
+      box-shadow: 0 6px 20px -6px rgba(17, 18, 21, 0.08);
+      border-radius: var(--radius-full);
+      padding: 8px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 64px;
     }
-    .logo {
+    .nav-brand {
       display: flex;
       align-items: center;
       gap: 10px;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-dark);
       text-decoration: none;
-      color: var(--text-heading);
     }
-    .logo img {
-      width: 32px;
-      height: 32px;
-      border-radius: 7px;
-    }
-    .logo span {
-      font-weight: 700;
-      font-size: 19px;
-      letter-spacing: -0.02em;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      list-style: none;
-    }
+    .nav-brand img { width: 26px; height: 26px; border-radius: 6px; }
+    .nav-links { display: flex; align-items: center; gap: 22px; list-style: none; }
     .nav-links a {
-      color: var(--text-body);
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 500;
-      transition: color 0.15s ease;
-    }
-    .nav-links a:hover {
-      color: var(--accent-blue);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+      font-size: 13.5px;
       font-weight: 600;
-      font-size: 15px;
-      padding: 9px 18px;
-      border-radius: var(--radius-sm);
+      color: var(--text-muted);
       text-decoration: none;
-      transition: all 0.15s ease;
-      cursor: pointer;
-      border: 1px solid transparent;
-      white-space: nowrap;
+      transition: color 0.15s;
     }
-    .btn-primary {
-      background: var(--accent-blue);
-      color: #ffffff;
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text-dark);
     }
-    .btn-primary:hover {
-      background: var(--accent-blue-hover);
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-    }
-    .btn-secondary {
-      background: #ffffff;
-      color: var(--text-heading);
-      border-color: var(--border-medium);
-    }
-    .btn-secondary:hover {
-      background: var(--bg-neutral);
-      border-color: var(--text-body);
-    }
-
-    /* ---- Main Container ---- */
-    .main-content {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 48px 0 64px;
-    }
-
-    .report-card {
-      background: #ffffff;
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-md);
-      max-width: 620px;
-      width: 100%;
-      padding: 36px 32px;
-      margin: 0 auto;
-    }
-
-    .badge {
+    .nav-cta {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: var(--accent-blue-subtle);
-      color: var(--accent-blue);
       font-size: 13px;
-      font-weight: 600;
-      padding: 4px 12px;
+      font-weight: 700;
+      background: var(--text-dark);
+      color: #FFFFFF;
+      padding: 8px 16px;
       border-radius: var(--radius-full);
-      margin-bottom: 12px;
+      text-decoration: none;
+      transition: opacity 0.15s, transform 0.15s;
+    }
+    .nav-cta:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    /* Centered Form Card */
+    .report-card {
+      max-width: 620px;
+      margin: 36px auto 0;
+      background: var(--surface-white);
+      border: 1px solid var(--border-light-medium);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(17, 18, 21, 0.05);
+      color: var(--text-dark);
+      border: 1px solid var(--border-light-medium);
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      margin-bottom: 16px;
     }
 
     .report-card h1 {
-      font-size: 26px;
-      font-weight: 700;
-      color: var(--text-heading);
-      letter-spacing: -0.02em;
+      font-size: clamp(26px, 3.5vw, 32px);
+      font-weight: 800;
+      color: var(--text-dark);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
       margin-bottom: 8px;
     }
     .report-card p.subtitle {
       font-size: 15px;
-      color: var(--text-muted);
-      line-height: 1.5;
-      margin-bottom: 24px;
+      color: var(--text-body);
+      line-height: 1.55;
+      margin-bottom: 28px;
     }
 
     .form-group {
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
     .form-group label {
       display: block;
       font-size: 14px;
-      font-weight: 600;
-      color: var(--text-heading);
+      font-weight: 700;
+      color: var(--text-dark);
       margin-bottom: 6px;
     }
     .form-group label span.req {
-      color: #ef4444;
+      color: #E11D48;
+      margin-left: 2px;
     }
-    .form-control {
-      width: 100%;
-      padding: 10px 14px;
-      border: 1px solid var(--border-medium);
-      border-radius: var(--radius-sm);
-      font-family: inherit;
-      font-size: 15px;
-      color: var(--text-heading);
-      background: #ffffff;
-      transition: border-color 0.15s ease, box-shadow 0.15s ease;
-    }
-    .form-control:focus {
-      outline: none;
-      border-color: var(--accent-blue);
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
-    }
-    textarea.form-control {
-      min-height: 100px;
-      resize: vertical;
-    }
-    select.form-control {
-      cursor: pointer;
-    }
-
     .form-hint {
       font-size: 12.5px;
       color: var(--text-muted);
-      margin-top: 4px;
+      margin-top: 5px;
     }
 
-    .btn-submit {
+    .form-control {
       width: 100%;
-      padding: 12px;
-      font-size: 16px;
+      padding: 12px 15px;
+      border: 1px solid var(--border-light-medium);
+      border-radius: var(--radius-md);
+      font-family: var(--font-sans);
+      font-size: 14.5px;
+      color: var(--text-dark);
+      background: var(--bg-canvas);
+      transition: all 0.2s ease;
+    }
+    .form-control:focus {
+      outline: none;
+      background: #FFFFFF;
+      border-color: var(--text-dark);
+      box-shadow: 0 0 0 3px rgba(17, 18, 21, 0.08);
+    }
+    textarea.form-control {
+      min-height: 110px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+    select.form-control {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%234A4E5C' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 14.5px;
+      padding: 13px 24px;
+      border-radius: var(--radius-full);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      text-decoration: none;
+      width: 100%;
       margin-top: 8px;
     }
+    .btn-neon {
+      background-color: var(--neon);
+      color: var(--text-dark);
+      box-shadow: 0 2px 10px var(--neon-glow);
+    }
+    .btn-neon:hover {
+      background-color: var(--neon-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px var(--neon-glow);
+    }
+    .btn-neon:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
 
+    /* Status Notifications */
     .status-msg {
       display: none;
-      padding: 14px 16px;
-      border-radius: var(--radius-sm);
-      font-size: 14.5px;
-      margin-top: 18px;
-      text-align: center;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      line-height: 1.5;
+      margin-top: 20px;
+      text-align: left;
     }
     .status-success {
-      background: #ecfdf5;
-      color: #065f46;
-      border: 1px solid #a7f3d0;
+      background: #ECFDF5;
+      color: #065F46;
+      border: 1px solid #A7F3D0;
     }
     .status-error {
-      background: #fef2f2;
-      color: #991b1b;
-      border: 1px solid #fecaca;
+      background: #FEF2F2;
+      color: #991B1B;
+      border: 1px solid #FECACA;
     }
 
     .footer-note {
       text-align: center;
-      margin-top: 20px;
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-light);
       font-size: 13.5px;
       color: var(--text-muted);
     }
     .footer-note a {
-      color: var(--accent-blue);
-      text-decoration: none;
-      font-weight: 500;
+      color: var(--text-dark);
+      text-decoration: underline;
+      font-weight: 600;
     }
-    .footer-note a:hover {
+
+    /* Page Footer */
+    .site-footer {
+      text-align: center;
+      padding-top: 32px;
+      margin-top: 40px;
+      border-top: 1px solid var(--border-light-medium);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .site-footer a {
+      color: var(--text-dark);
       text-decoration: underline;
     }
 
-    /* ---- Footer ---- */
-    .site-footer {
-      background: #090d16;
-      color: var(--text-light-muted);
-      padding: 28px 0;
-      font-size: 14px;
-      border-top: 1px solid #1e293b;
-    }
-    .footer-legal {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .footer-legal a {
-      color: #60a5fa;
-      text-decoration: none;
-    }
-
     @media (max-width: 640px) {
-      .report-card { padding: 24px 20px; }
       .nav-links { display: none; }
-      .footer-legal { flex-direction: column; text-align: center; }
+      .report-card { padding: 28px 20px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a href="/" class="logo">
+  <!-- Floating Capsule Navigation -->
+  <header class="nav-wrapper">
+    <div class="nav-capsule">
+      <a href="/" class="nav-brand">
         <img src="/assets/logo.png" alt="Blockium">
         <span>Blockium</span>
       </a>
 
-      <nav>
-        <ul class="nav-links">
-          <li><a href="/#features">Features</a></li>
-          <li><a href="/#protection">Protection</a></li>
-          <li><a href="/#product">Product</a></li>
-          <li><a href="/#privacy">Privacy</a></li>
-          <li><a href="/#faq">FAQ</a></li>
-        </ul>
-      </nav>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/terms">Terms</a></li>
+        <li><a href="/report" class="active">Report an Issue</a></li>
+      </ul>
 
-      <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-        Add to Chrome
+      <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer" class="nav-cta">
+        Add to Chrome →
       </a>
     </div>
   </header>
 
-  <!-- Main Report Form -->
-  <main class="main-content">
-    <div class="wrap">
-      <div class="report-card">
-        <div class="badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          Community Support
+  <!-- Main Content -->
+  <main class="wrap">
+
+    <div class="report-card">
+      <div class="badge-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Community Support
+      </div>
+
+      <h1>Report a Broken Site or Ad</h1>
+      <p class="subtitle">
+        Encountered an undetected banner, broken video player, or anti-adblock message? Let us know so we can update our filter rules.
+      </p>
+
+      <form id="reportForm">
+        <input type="hidden" name="_subject" id="emailSubject" value="[Blockium Report] Broken Site Submission">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="form-group">
+          <label for="domainInput">Website Domain or URL <span class="req">*</span></label>
+          <input type="text" id="domainInput" name="domain" class="form-control" placeholder="e.g. sonyliv.com or https://example.com" required>
+          <div class="form-hint">The website where the issue occurred.</div>
         </div>
 
-        <h1>Report a Broken Site or Ad</h1>
-        <p class="subtitle">
-          Encountered an undetected banner, broken video player, or anti-adblock message? Let us know so we can update our filter rules.
-        </p>
-
-        <form id="reportForm">
-          <input type="hidden" name="_subject" id="emailSubject" value="[Blockium Report] Broken Site Submission">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-
-          <div class="form-group">
-            <label for="domainInput">Website Domain or URL <span class="req">*</span></label>
-            <input type="text" id="domainInput" name="domain" class="form-control" placeholder="e.g. sonyliv.com or https://example.com" required>
-            <div class="form-hint">The website where the issue occurred.</div>
-          </div>
-
-          <div class="form-group">
-            <label for="issueType">Issue Category <span class="req">*</span></label>
-            <select id="issueType" name="issue_type" class="form-control" required>
-              <option value="Video Playback Issue (Video won't play / player error)">Video Playback Error (Video won't load / player error)</option>
-              <option value="Undetected Ads (Banners / Overlays / Popups)">Undetected Ads (Banners / Popups / Video ads)</option>
-              <option value="Anti-Adblock Warning (Blocker detected banner / Paywall)">Anti-Adblock Warning (Blocker detected / Paywall)</option>
-              <option value="Broken Page Layout (Buttons / Images / Navigation broken)">Broken Page Layout (Buttons / Layout / Navigation)</option>
-              <option value="Other Issue">Other Issue</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="detailsInput">Description & Steps to Reproduce <span class="form-hint" style="display:inline;">(Optional)</span></label>
-            <textarea id="detailsInput" name="details" class="form-control" placeholder="Tell us what went wrong (e.g. video displayed error code, ad was unskippable, etc.)"></textarea>
-          </div>
-
-          <div class="form-group">
-            <label for="emailInput">Your Email <span class="form-hint" style="display:inline;">(Optional, for fix confirmation)</span></label>
-            <input type="email" id="emailInput" name="user_email" class="form-control" placeholder="you@example.com">
-          </div>
-
-          <button type="submit" id="submitBtn" class="btn btn-primary btn-submit">
-            Submit Report
-          </button>
-
-          <div id="statusSuccess" class="status-msg status-success">
-            <strong>✓ Thank you!</strong> Your report has been submitted. Our team reviews submissions to update filter rules.
-          </div>
-
-          <div id="statusError" class="status-msg status-error">
-            <strong>Oops!</strong> Submission failed. You can email us directly at <a href="mailto:blockiumapps@gmail.com" style="color: inherit; text-decoration: underline;">blockiumapps@gmail.com</a>.
-          </div>
-        </form>
-
-        <div class="footer-note">
-          Prefer your email client? 
-          <a id="directMailLink" href="mailto:blockiumapps@gmail.com?subject=Blockium%20Broken%20Site%20Report">Send directly to blockiumapps@gmail.com</a>
+        <div class="form-group">
+          <label for="issueType">Issue Category <span class="req">*</span></label>
+          <select id="issueType" name="issue_type" class="form-control" required>
+            <option value="Video Playback Issue (Video won't play / player error)">Video Playback Error (Video won't load / player error)</option>
+            <option value="Undetected Ads (Banners / Overlays / Popups)">Undetected Ads (Banners / Popups / Video ads)</option>
+            <option value="Anti-Adblock Warning (Blocker detected banner / Paywall)">Anti-Adblock Warning (Blocker detected / Paywall)</option>
+            <option value="Broken Page Layout (Buttons / Images / Navigation broken)">Broken Page Layout (Buttons / Layout / Navigation)</option>
+            <option value="Other Issue">Other Issue</option>
+          </select>
         </div>
+
+        <div class="form-group">
+          <label for="detailsInput">Description &amp; Steps to Reproduce <span class="form-hint" style="display:inline; font-weight:normal;">(Optional)</span></label>
+          <textarea id="detailsInput" name="details" class="form-control" placeholder="Tell us what went wrong (e.g. video displayed error code, ad was unskippable, etc.)"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="emailInput">Your Email <span class="form-hint" style="display:inline; font-weight:normal;">(Optional, for fix confirmation)</span></label>
+          <input type="email" id="emailInput" name="user_email" class="form-control" placeholder="you@example.com">
+        </div>
+
+        <button type="submit" id="submitBtn" class="btn btn-neon">
+          Submit Report
+        </button>
+
+        <div id="statusSuccess" class="status-msg status-success">
+          <strong>✓ Thank you!</strong> Your report has been submitted. Our team reviews submissions to update filter rules.
+        </div>
+
+        <div id="statusError" class="status-msg status-error">
+          <strong>Oops!</strong> Submission failed. You can email us directly at <a href="mailto:blockiumapps@gmail.com" style="color: inherit; text-decoration: underline;">blockiumapps@gmail.com</a>.
+        </div>
+      </form>
+
+      <div class="footer-note">
+        Prefer your email client? 
+        <a id="directMailLink" href="mailto:blockiumapps@gmail.com?subject=Blockium%20Broken%20Site%20Report">Send directly to blockiumapps@gmail.com</a>
       </div>
     </div>
+
+    <footer class="site-footer">
+      &copy; 2026 Blockium. All rights reserved. Zero telemetry.
+    </footer>
+
   </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-legal">
-        <div>© 2026 Blockium. All rights reserved.</div>
-        <div>
-          <a href="/#features">Features</a> · 
-          <a href="/#privacy">Privacy</a> · 
-          <a href="mailto:blockiumapps@gmail.com">Support</a>
-        </div>
-      </div>
-    </div>
-  </footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -434,9 +422,10 @@
       // Update subject when user edits domain
       if (domainInput && subjectInput) {
         domainInput.addEventListener('input', function () {
-          subjectInput.value = '[Blockium Report] Broken Site: ' + (domainInput.value.trim() || 'General');
+          var userVal = domainInput.value.trim();
+          subjectInput.value = '[Blockium Report] Broken Site: ' + (userVal || 'General');
           if (directMailLink) {
-            directMailLink.href = 'mailto:blockiumapps@gmail.com?subject=' + encodeURIComponent('Broken Site Report: ' + (domainInput.value.trim() || '')) + '&body=' + encodeURIComponent('Domain: ' + (domainInput.value.trim() || '') + '\n\nPlease describe the issue:');
+            directMailLink.href = 'mailto:blockiumapps@gmail.com?subject=' + encodeURIComponent('Broken Site Report: ' + userVal) + '&body=' + encodeURIComponent('Domain: ' + userVal + '\n\nPlease describe the issue:');
           }
         });
       }
