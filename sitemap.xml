@@ -1,27 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://blockium.pages.dev/</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://blockium.pages.dev/privacy</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://blockium.pages.dev/terms</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://blockium.pages.dev/report</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+<url><loc>https://blockium.pages.dev/</loc></url>
+<url><loc>https://blockium.pages.dev/privacy/</loc></url>
+<url><loc>https://blockium.pages.dev/terms/</loc></url>
+<url><loc>https://blockium.pages.dev/report/</loc></url>
+<url><loc>https://blockium.pages.dev/hi/</loc></url>
+<url><loc>https://blockium.pages.dev/hi/privacy/</loc></url>
+<url><loc>https://blockium.pages.dev/hi/terms/</loc></url>
+<url><loc>https://blockium.pages.dev/hi/report/</loc></url>
+<url><loc>https://blockium.pages.dev/de/</loc></url>
+<url><loc>https://blockium.pages.dev/de/privacy/</loc></url>
+<url><loc>https://blockium.pages.dev/de/terms/</loc></url>
+<url><loc>https://blockium.pages.dev/de/report/</loc></url>
+<url><loc>https://blockium.pages.dev/es/</loc></url>
+<url><loc>https://blockium.pages.dev/es/privacy/</loc></url>
+<url><loc>https://blockium.pages.dev/es/terms/</loc></url>
+<url><loc>https://blockium.pages.dev/es/report/</loc></url>
+<url><loc>https://blockium.pages.dev/fr/</loc></url>
+<url><loc>https://blockium.pages.dev/fr/privacy/</loc></url>
+<url><loc>https://blockium.pages.dev/fr/terms/</loc></url>
+<url><loc>https://blockium.pages.dev/fr/report/</loc></url>
+<url><loc>https://blockium.pages.dev/pt-BR/</loc></url>
+<url><loc>https://blockium.pages.dev/pt-BR/privacy/</loc></url>
+<url><loc>https://blockium.pages.dev/pt-BR/terms/</loc></url>
+<url><loc>https://blockium.pages.dev/pt-BR/report/</loc></url>
+<url><loc>https://blockium.pages.dev/ja/</loc></url>
+<url><loc>https://blockium.pages.dev/ja/privacy/</loc></url>
+<url><loc>https://blockium.pages.dev/ja/terms/</loc></url>
+<url><loc>https://blockium.pages.dev/ja/report/</loc></url>
+<url><loc>https://blockium.pages.dev/it/</loc></url>
+<url><loc>https://blockium.pages.dev/it/privacy/</loc></url>
+<url><loc>https://blockium.pages.dev/it/terms/</loc></url>
+<url><loc>https://blockium.pages.dev/it/report/</loc></url>
+<url><loc>https://blockium.pages.dev/ru/</loc></url>
+<url><loc>https://blockium.pages.dev/ru/privacy/</loc></url>
+<url><loc>https://blockium.pages.dev/ru/terms/</loc></url>
+<url><loc>https://blockium.pages.dev/ru/report/</loc></url>
+<url><loc>https://blockium.pages.dev/nl/</loc></url>
+<url><loc>https://blockium.pages.dev/nl/privacy/</loc></url>
+<url><loc>https://blockium.pages.dev/nl/terms/</loc></url>
+<url><loc>https://blockium.pages.dev/nl/report/</loc></url>
 </urlset>

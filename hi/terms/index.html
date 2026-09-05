@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>सेवा की शर्तें – Blockium</title>
+  <meta name="description" content="Blockium की आधिकारिक शर्तें। एक्सटेंशन और वेबसाइट के उपयोग की शर्तें पढ़ें।">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <link rel="icon" type="image/svg+xml" href="/assets/blockium-favicon.svg">
+  <link rel="canonical" href="https://blockium.pages.dev/hi/terms/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+    :root {
+      --bg-canvas: #F4F3EE;
+      --surface-white: #FFFFFF;
+      --dark-card: #111215;
+      --neon: #D4F639;
+      --text-dark: #111215;
+      --text-body: #4A4E5C;
+      --text-muted: #727685;
+      --border-light-medium: rgba(17, 18, 21, 0.12);
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 1px 3px rgba(17, 18, 21, 0.05);
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-dark);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      padding-top: 100px;
+    }
+
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* Floating Capsule Navbar */
+    .nav-wrapper {
+      position: fixed;
+      top: 16px;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+    .nav-capsule {
+      max-width: 880px;
+      margin: 0 auto;
+      background: rgba(244, 243, 238, 0.9);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-light-medium);
+      box-shadow: 0 6px 20px -6px rgba(17, 18, 21, 0.08);
+      border-radius: var(--radius-full);
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+    .nav-brand img { width: 26px; height: 26px; border-radius: 6px; }
+    .nav-links { display: flex; align-items: center; gap: 20px; list-style: none; }
+    .nav-links a { font-size: 13.5px; font-weight: 600; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text-dark); }
+
+    .terms-header {
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-light-medium);
+    }
+    .terms-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .terms-title {
+      font-size: clamp(32px, 4vw, 44px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .terms-meta {
+      font-size: 13.5px;
+      color: var(--text-muted);
+    }
+
+    .terms-card {
+      background: var(--surface-white);
+      border: 1px solid var(--border-light-medium);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 32px;
+    }
+
+    .terms-section {
+      margin-bottom: 32px;
+    }
+    .terms-section:last-child {
+      margin-bottom: 0;
+    }
+    .terms-section h2 {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      color: var(--text-dark);
+    }
+    .terms-section p {
+      font-size: 14.5px;
+      color: var(--text-body);
+      line-height: 1.65;
+      margin-bottom: 12px;
+    }
+    .terms-section ul {
+      margin-left: 20px;
+      margin-bottom: 12px;
+      color: var(--text-body);
+      font-size: 14px;
+    }
+    .terms-section li { margin-bottom: 6px; }
+
+    .terms-footer {
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-light-medium);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .terms-footer a { color: var(--text-dark); text-decoration: underline; }
+
+    /* Shared reading layout, matching the homepage. */
+    :root { --bg-canvas: #f7f8f5; --text-muted: #606573; }
+    body { padding-top: 36px; }
+    .nav-wrapper { position: relative; top: auto; margin: 0 24px 48px; }
+    .nav-capsule { background: white; padding: 14px 20px; flex-wrap: wrap; gap: 16px; }
+    .nav-links { flex-wrap: wrap; gap: 8px 20px; }
+    .nav-links a { display: inline-block; padding: 6px 0; font-size: 14px; }
+    .nav-links a[aria-current="page"] { color: #354600; text-decoration: underline; text-underline-offset: 6px; }
+    .policy-section p, .terms-section p, .policy-section ul, .terms-section ul { font-size: 16px; line-height: 1.8; }
+    .policy-meta, .terms-meta { font-size: 14px; flex-wrap: wrap; }
+    .policy-eyebrow, .terms-eyebrow, .badge-pill { font-size: 14px; }
+    .policy-card, .terms-card { padding: clamp(22px, 5vw, 48px); }
+    .policy-section h2, .terms-section h2 { font-size: 22px; line-height: 1.4; scroll-margin-top: 24px; }
+    .permission-table { font-size: 15px; table-layout: fixed; }
+    .permission-table th { font-size: 14px; }
+    .permission-table th, .permission-table td { overflow-wrap: anywhere; vertical-align: top; }
+    .permission-table th:first-child { width: 38%; }
+    .legal-intro { font-size: 18px; color: var(--text-body); line-height: 1.75; margin-top: 20px; }
+    .legal-toc { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+    .legal-toc a { font-size: 14px; padding: 10px 14px; background: white; border: 1px solid var(--border-light-medium); border-radius: 999px; color: var(--text-dark); text-decoration: none; }
+    .legal-toc a:hover { background: #eaf5bd; }
+    .policy-footer, .terms-footer { font-size: 14px; }
+    .policy-footer a, .terms-footer a { display: inline-block; margin: 8px; }
+    a { overflow-wrap: anywhere; }
+    :focus-visible { outline: 3px solid #557500; outline-offset: 4px; }
+    .skip-link { position: absolute; left: 20px; top: -90px; background: white; padding: 12px; z-index: 2000; }
+    .skip-link:focus { top: 10px; }
+    @media (max-width: 600px) {
+      body { padding-top: 16px; }
+      .nav-wrapper { margin: 0 16px 32px; }
+      .nav-capsule { border-radius: 20px; }
+      .nav-links { width: 100%; gap: 4px 16px; }
+      .wrap { padding-inline: 16px; }
+      .permission-table th, .permission-table td { padding: 10px 6px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+</style>
+<link rel="stylesheet" href="/assets/languages.css">
+<script src="/assets/languages.js" defer></script>
+<link rel="alternate" hreflang="en" href="https://blockium.pages.dev/terms/">
+<link rel="alternate" hreflang="hi" href="https://blockium.pages.dev/hi/terms/">
+<link rel="alternate" hreflang="de" href="https://blockium.pages.dev/de/terms/">
+<link rel="alternate" hreflang="es" href="https://blockium.pages.dev/es/terms/">
+<link rel="alternate" hreflang="fr" href="https://blockium.pages.dev/fr/terms/">
+<link rel="alternate" hreflang="pt-BR" href="https://blockium.pages.dev/pt-BR/terms/">
+<link rel="alternate" hreflang="ja" href="https://blockium.pages.dev/ja/terms/">
+<link rel="alternate" hreflang="it" href="https://blockium.pages.dev/it/terms/">
+<link rel="alternate" hreflang="ru" href="https://blockium.pages.dev/ru/terms/">
+<link rel="alternate" hreflang="nl" href="https://blockium.pages.dev/nl/terms/">
+<link rel="alternate" hreflang="x-default" href="https://blockium.pages.dev/terms/">
+<script type="application/json" id="locale-messages">{"Submitting...": "भेज रहे हैं…", "Report Submitted": "रिपोर्ट भेज दी गई", "Submit Report": "रिपोर्ट भेजें"}</script>
+</head>
+<body data-locale="hi" data-page="terms">
+<a class="skip-link" href="#main">मुख्य सामग्री पर जाएँ</a>
+
+  <!-- Floating Navigation -->
+  <div class="nav-wrapper">
+    <div class="nav-capsule">
+      <a href="/hi/" class="nav-brand">
+        <img src="/assets/blockium-mark.svg" alt="Blockium">
+        <span data-no-translate>Blockium<span class="brand-dot" aria-hidden="true">.</span></span>
+      </a>
+
+      <label class="language-control"><span>भाषा</span><select class="language-select" aria-label="वेबसाइट की भाषा"><option value="en" lang="en" data-no-translate>English</option><option value="hi" lang="hi" data-no-translate selected>हिन्दी</option><option value="de" lang="de" data-no-translate>Deutsch</option><option value="es" lang="es" data-no-translate>Español</option><option value="fr" lang="fr" data-no-translate>Français</option><option value="pt-BR" lang="pt-BR" data-no-translate>Português (Brasil)</option><option value="ja" lang="ja" data-no-translate>日本語</option><option value="it" lang="it" data-no-translate>Italiano</option><option value="ru" lang="ru" data-no-translate>Русский</option><option value="nl" lang="nl" data-no-translate>Nederlands</option></select></label><ul class="nav-links"><li><a href="/hi/#protection">सुविधाएँ</a></li><li><a href="/hi/privacy/">गोपनीयता</a></li><li><a href="/hi/terms/" aria-current="page">शर्तें</a></li><li><a href="/hi/report/">समस्या बताएँ</a></li></ul>
+    </div>
+  </div>
+
+  <aside class="language-suggestion" aria-label="भाषा का सुझाव" hidden><span>यह वेबसाइट अपनी पसंद की भाषा में पढ़ें।</span><a class="suggested-language" data-no-translate></a><button type="button" class="dismiss-language">बंद करें</button></aside><main class="wrap" id="main">
+
+    <div class="terms-header">
+      <span class="terms-eyebrow">कानूनी समझौता</span>
+      <h1 class="terms-title">सेवा की शर्तें</h1><p class="legal-intro">एक्सटेंशन और वेबसाइट की शर्तें, जिनमें अनुकूलता, अनुमत उपयोग और सहायता शामिल हैं।</p>
+      <div class="terms-meta">
+        <span>आखिरी अपडेट: 5 सितंबर 2026 • संस्करण 3.1.2</span>
+      </div>
+    </div>
+
+    <nav class="legal-toc" aria-label="इस पेज पर"><a href="#section-1">1. शर्तें स्वीकार करना</a><a href="#section-2">2. सेवा का विवरण</a><a href="#section-3">3. लाइसेंस और अनुमत उपयोग</a><a href="#section-4">4. उपयोगकर्ता की गोपनीयता</a><a href="#section-5">5. वेबसाइट अनुकूलता और बाहरी सामग्री</a><a href="#section-6">6. वारंटी का अस्वीकरण</a><a href="#section-7">7. दायित्व की सीमा</a><a href="#section-8">8. सेवा और शर्तों में बदलाव</a><a href="#section-9">9. संपर्क करें</a></nav>
+<div class="terms-card">
+
+      <div class="terms-section">
+        <h2 id="section-1">1. शर्तें स्वीकार करना</h2>
+        <p>
+          Blockium ब्राउज़र एक्सटेंशन ("एक्सटेंशन") डाउनलोड, इंस्टॉल या इस्तेमाल करने पर, या यहाँ की वेबसाइट खोलने पर: <a href="https://blockium.pages.dev" style="color: var(--text-dark); text-decoration: underline;">blockium.pages.dev</a> ("साइट"), आप इन सेवा शर्तों ("शर्तें") से सहमत होते हैं। सहमत न हों तो एक्सटेंशन इंस्टॉल या इस्तेमाल न करें।
+        </p>
+      </div>
+
+      <div class="terms-section">
+        <h2 id="section-2">2. सेवा का विवरण</h2>
+        <p>
+          Blockium एक मुफ़्त एक्सटेंशन है, जो मूल नेटवर्क फ़िल्टर, पेज एलिमेंट फ़िल्टर और पहचाने गए स्ट्रीमिंग विज्ञापन छोड़ने या तेज़ चलाने के साधनों से गति, गोपनीयता और पढ़ने में सुधार करता है।
+        </p>
+      </div>
+
+      <div class="terms-section">
+        <h2 id="section-3">3. लाइसेंस और अनुमत उपयोग</h2>
+        <p>
+          इन शर्तों के अधीन Blockium व्यक्तिगत, गैर-वाणिज्यिक या आंतरिक कारोबारी ब्राउज़िंग के लिए व्यक्तिगत, गैर-विशिष्ट, गैर-हस्तांतरणीय और रद्द किया जा सकने वाला लाइसेंस देता है। आप ये काम न करने पर सहमत हैं:
+        </p>
+        <ul>
+          <li>लागू ओपन-सोर्स लाइसेंस की अनुमति के अलावा एक्सटेंशन की रिवर्स इंजीनियरिंग, डीकंपाइल या डिसअसेंबल करना।</li>
+          <li>हानिकारक बदलाव बाँटना या भ्रामक नामों से एक्सटेंशन दोबारा पैक करना।</li>
+          <li>स्थानीय या अंतरराष्ट्रीय कानून तोड़ने वाले तरीके से एक्सटेंशन इस्तेमाल करना।</li>
+        </ul>
+      </div>
+
+      <div class="terms-section">
+        <h2 id="section-4">4. उपयोगकर्ता की गोपनीयता</h2>
+        <p>
+          Blockium स्थानीय फ़िल्टर करता है और ब्राउज़िंग विश्लेषण या प्रोफ़ाइल सर्वर पर नहीं भेजता। सेटिंग और आँकड़े डिवाइस पर रहते हैं; डाउनलोड और सहायता में बाहरी सेवाएँ शामिल हैं। हमारी पूरी <a href="/hi/privacy/" style="color: var(--text-dark); font-weight: 700; text-decoration: underline;">गोपनीयता नीति</a> में विवरण देखें।
+        </p>
+      </div>
+
+      <div class="terms-section">
+        <h2 id="section-5">5. वेबसाइट अनुकूलता और बाहरी सामग्री</h2>
+        <p>
+          वेबसाइटें पेज, वीडियो प्लेयर और स्क्रिप्ट अक्सर बदलती हैं। Blockium साइट को प्रभावित किए बिना विज्ञापन रोकने की कोशिश करता है, फिर भी:
+        </p>
+        <ul>
+          <li>हर वेबसाइट पर सभी विज्ञापन या ट्रैकिंग स्क्रिप्ट रुकने की गारंटी नहीं है।</li>
+          <li>कभी-कभी एंटी-एडब्लॉक से साइट या प्लेयर खराब हो सकता है। ऐसे में उस डोमेन की सुरक्षा बंद करें या यहाँ रिपोर्ट दें: <a href="/hi/report/" style="color: var(--text-dark); text-decoration: underline;">रिपोर्ट फ़ॉर्म</a>.</li>
+        </ul>
+      </div>
+
+      <div class="terms-section">
+        <h2 id="section-6">6. वारंटी का अस्वीकरण</h2>
+        <p>
+          एक्सटेंशन और साइट <strong>"जैसे हैं"</strong> और <strong>"जैसे उपलब्ध हैं"</strong> के आधार पर दिए जाते हैं। कोई स्पष्ट या निहित वारंटी नहीं है, जिसमें व्यापारयोग्यता, विशेष उद्देश्य के लिए उपयुक्तता या अधिकारों का उल्लंघन न होने की वारंटी शामिल है।
+        </p>
+      </div>
+
+      <div class="terms-section">
+        <h2 id="section-7">7. दायित्व की सीमा</h2>
+        <p>
+          कानून की अधिकतम अनुमत सीमा तक, Blockium के डेवलपर और योगदानकर्ता उपयोग या उपयोग न कर पाने से होने वाले अप्रत्यक्ष, आकस्मिक, विशेष, परिणामी या दंडात्मक नुकसान के लिए उत्तरदायी नहीं होंगे।
+        </p>
+      </div>
+
+      <div class="terms-section">
+        <h2 id="section-8">8. सेवा और शर्तों में बदलाव</h2>
+        <p>
+          हम एक्सटेंशन, फ़िल्टर या शर्तें किसी भी समय अपडेट करने का अधिकार रखते हैं। अपडेट के बाद उपयोग जारी रखना संशोधित शर्तों की स्वीकृति है।
+        </p>
+      </div>
+
+      <div class="terms-section">
+        <h2 id="section-9">9. संपर्क करें</h2>
+        <p>
+          इन शर्तों पर सवाल हों तो यहाँ संपर्क करें: <a href="mailto:blockiumapps@gmail.com" style="color: var(--text-dark); font-weight: 700;">blockiumapps@gmail.com</a>.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="terms-footer"><p><a href="/hi/">Blockium पर वापस जाएँ</a><a href="/hi/privacy/">गोपनीयता</a><a href="/hi/terms/">शर्तें</a><a href="/hi/report/">सहायता पाएँ</a></p>
+      © 2026 Blockium. सर्वाधिकार सुरक्षित। टेलीमेट्री नहीं।
+    </div>
+
+  </main>
+
+<noscript><nav class="language-grid" aria-label="वेबसाइट की भाषा"><a href="/terms/" lang="en">English</a><a href="/hi/terms/" lang="hi">हिन्दी</a><a href="/de/terms/" lang="de">Deutsch</a><a href="/es/terms/" lang="es">Español</a><a href="/fr/terms/" lang="fr">Français</a><a href="/pt-BR/terms/" lang="pt-BR">Português (Brasil)</a><a href="/ja/terms/" lang="ja">日本語</a><a href="/it/terms/" lang="it">Italiano</a><a href="/ru/terms/" lang="ru">Русский</a><a href="/nl/terms/" lang="nl">Nederlands</a></nav></noscript></body>
+</html>

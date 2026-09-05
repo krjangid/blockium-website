@@ -4,20 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy – Blockium</title>
-  <meta name="description" content="Blockium's official Privacy Policy. We operate on a strict Zero-Telemetry model with zero data collection, zero tracking, and 100% local on-device rule evaluation.">
+  <meta name="description" content="How Blockium handles local settings, blocking statistics, filter downloads, and information you choose to send through support.">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <link rel="icon" type="image/png" href="/assets/logo.png">
-  <link rel="canonical" href="https://blockium.pages.dev/privacy">
+  <link rel="icon" type="image/svg+xml" href="/assets/blockium-favicon.svg">
+  <link rel="canonical" href="https://blockium.pages.dev/privacy/">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
-    
+
     :root {
       --bg-canvas: #F4F3EE;
       --surface-white: #FFFFFF;
@@ -217,70 +217,118 @@
       color: var(--text-muted);
     }
     .policy-footer a { color: var(--text-dark); text-decoration: underline; }
-  </style>
+
+    /* Shared reading layout, matching the homepage. */
+    :root { --bg-canvas: #f7f8f5; --text-muted: #606573; }
+    body { padding-top: 36px; }
+    .nav-wrapper { position: relative; top: auto; margin: 0 24px 48px; }
+    .nav-capsule { background: white; padding: 14px 20px; flex-wrap: wrap; gap: 16px; }
+    .nav-links { flex-wrap: wrap; gap: 8px 20px; }
+    .nav-links a { display: inline-block; padding: 6px 0; font-size: 14px; }
+    .nav-links a[aria-current="page"] { color: #354600; text-decoration: underline; text-underline-offset: 6px; }
+    .policy-section p, .terms-section p, .policy-section ul, .terms-section ul { font-size: 16px; line-height: 1.8; }
+    .policy-meta, .terms-meta { font-size: 14px; flex-wrap: wrap; }
+    .policy-eyebrow, .terms-eyebrow, .badge-pill { font-size: 14px; }
+    .policy-card, .terms-card { padding: clamp(22px, 5vw, 48px); }
+    .policy-section h2, .terms-section h2 { font-size: 22px; line-height: 1.4; scroll-margin-top: 24px; }
+    .permission-table { font-size: 15px; table-layout: fixed; }
+    .permission-table th { font-size: 14px; }
+    .permission-table th, .permission-table td { overflow-wrap: anywhere; vertical-align: top; }
+    .permission-table th:first-child { width: 38%; }
+    .legal-intro { font-size: 18px; color: var(--text-body); line-height: 1.75; margin-top: 20px; }
+    .legal-toc { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+    .legal-toc a { font-size: 14px; padding: 10px 14px; background: white; border: 1px solid var(--border-light-medium); border-radius: 999px; color: var(--text-dark); text-decoration: none; }
+    .legal-toc a:hover { background: #eaf5bd; }
+    .policy-footer, .terms-footer { font-size: 14px; }
+    .policy-footer a, .terms-footer a { display: inline-block; margin: 8px; }
+    a { overflow-wrap: anywhere; }
+    :focus-visible { outline: 3px solid #557500; outline-offset: 4px; }
+    .skip-link { position: absolute; left: 20px; top: -90px; background: white; padding: 12px; z-index: 2000; }
+    .skip-link:focus { top: 10px; }
+    @media (max-width: 600px) {
+      body { padding-top: 16px; }
+      .nav-wrapper { margin: 0 16px 32px; }
+      .nav-capsule { border-radius: 20px; }
+      .nav-links { width: 100%; gap: 4px 16px; }
+      .wrap { padding-inline: 16px; }
+      .permission-table th, .permission-table td { padding: 10px 6px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+</style>
+<link rel="stylesheet" href="/assets/languages.css">
+<script src="/assets/languages.js" defer></script>
+<link rel="alternate" hreflang="en" href="https://blockium.pages.dev/privacy/">
+<link rel="alternate" hreflang="hi" href="https://blockium.pages.dev/hi/privacy/">
+<link rel="alternate" hreflang="de" href="https://blockium.pages.dev/de/privacy/">
+<link rel="alternate" hreflang="es" href="https://blockium.pages.dev/es/privacy/">
+<link rel="alternate" hreflang="fr" href="https://blockium.pages.dev/fr/privacy/">
+<link rel="alternate" hreflang="pt-BR" href="https://blockium.pages.dev/pt-BR/privacy/">
+<link rel="alternate" hreflang="ja" href="https://blockium.pages.dev/ja/privacy/">
+<link rel="alternate" hreflang="it" href="https://blockium.pages.dev/it/privacy/">
+<link rel="alternate" hreflang="ru" href="https://blockium.pages.dev/ru/privacy/">
+<link rel="alternate" hreflang="nl" href="https://blockium.pages.dev/nl/privacy/">
+<link rel="alternate" hreflang="x-default" href="https://blockium.pages.dev/privacy/">
+<script type="application/json" id="locale-messages">{"Submitting...": "Submitting...", "Report Submitted": "Report Submitted", "Submit Report": "Submit Report"}</script>
 </head>
-<body>
+<body data-locale="en" data-page="privacy">
+<a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Floating Navigation -->
   <div class="nav-wrapper">
     <div class="nav-capsule">
       <a href="/" class="nav-brand">
-        <img src="/assets/logo.png" alt="Blockium">
-        <span>Blockium</span>
+        <img src="/assets/blockium-mark.svg" alt="Blockium">
+        <span data-no-translate>Blockium<span class="brand-dot" aria-hidden="true">.</span></span>
       </a>
 
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/terms">Terms</a></li>
-        <li><a href="/report">Report an Issue</a></li>
-        <li><a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer">Chrome Web Store</a></li>
-      </ul>
+      <label class="language-control"><span>Language</span><select class="language-select" aria-label="Website language"><option value="en" lang="en" data-no-translate selected>English</option><option value="hi" lang="hi" data-no-translate>हिन्दी</option><option value="de" lang="de" data-no-translate>Deutsch</option><option value="es" lang="es" data-no-translate>Español</option><option value="fr" lang="fr" data-no-translate>Français</option><option value="pt-BR" lang="pt-BR" data-no-translate>Português (Brasil)</option><option value="ja" lang="ja" data-no-translate>日本語</option><option value="it" lang="it" data-no-translate>Italiano</option><option value="ru" lang="ru" data-no-translate>Русский</option><option value="nl" lang="nl" data-no-translate>Nederlands</option></select></label><ul class="nav-links"><li><a href="/#protection">Features</a></li><li><a href="/privacy/" aria-current="page">Privacy</a></li><li><a href="/terms/">Terms</a></li><li><a href="/report/">Report an Issue</a></li></ul>
     </div>
   </div>
 
-  <div class="wrap">
-    
+  <aside class="language-suggestion" aria-label="Language suggestion" hidden><span>Read this website in your preferred language.</span><a class="suggested-language" data-no-translate></a><button type="button" class="dismiss-language">Dismiss</button></aside><main class="wrap" id="main">
+
     <div class="policy-header">
       <span class="policy-eyebrow">LEGAL &amp; TRANSPARENCY</span>
-      <h1 class="policy-title">Privacy Policy</h1>
+      <h1 class="policy-title">Privacy Policy</h1><p class="legal-intro">How Blockium filters requests, what stays on your device, and when it connects to external services.</p>
       <div class="policy-meta">
-        <span>Last Updated: September 4, 2026</span>
+        <span>Last Updated: September 5, 2026</span>
         <span class="badge-pill">ZERO TELEMETRY</span>
         <span>Version 3.1.2</span>
       </div>
     </div>
 
-    <div class="policy-card">
-      
+    <nav class="legal-toc" aria-label="On this page"><a href="#section-1">1. Core Philosophy: Absolute Zero Telemetry</a><a href="#section-2">2. Information We Do NOT Collect</a><a href="#section-3">3. Local On-Device Data Storage</a><a href="#section-4">4. Chrome Permissions &amp; Plain-English Justification</a><a href="#section-5">5. Third-Party Services &amp; Network Requests</a><a href="#section-6">6. Data Deletion &amp; User Control</a><a href="#section-7">7. Contact Information</a></nav>
+<div class="policy-card">
+
       <!-- Section 1 -->
       <div class="policy-section">
-        <h2>1. Core Philosophy: Absolute Zero Telemetry</h2>
+        <h2 id="section-1">1. Core Philosophy: Absolute Zero Telemetry</h2>
         <p>
           Blockium was built on a foundational principle: <strong>your browsing activity is private, personal, and belongs exclusively to you</strong>.
         </p>
         <p>
-          Unlike legacy ad blockers and commercial extensions that inject telemetry SDKs, track visited domains, or monetize anonymized analytics, Blockium maintains a strict <strong>Zero-Telemetry Architecture</strong>. We do not operate external tracking servers, analytics endpoints, or remote profiling databases.
+          Blockium performs filtering in your browser and stores dashboard activity on your device. We do not operate external tracking servers, analytics endpoints, or remote profiling databases.
         </p>
         <div class="highlight-box">
-          <strong>The Blockium Privacy Promise:</strong> We do not track, collect, store, log, or transmit your browsing history, search queries, IP address, form inputs, or visited URLs under any circumstances.
+          <strong>The Blockium Privacy Promise:</strong> We do not upload your browsing activity or personal inputs to analytics or profiling servers. Settings and blocking activity used by the dashboard are stored locally on your device, as described below.
         </div>
       </div>
 
       <!-- Section 2 -->
       <div class="policy-section">
-        <h2>2. Information We Do NOT Collect</h2>
-        <p>For absolute clarity, Blockium does NOT collect, inspect, or transmit any of the following:</p>
+        <h2 id="section-2">2. Information We Do NOT Collect</h2>
+        <p>You do not need an account to use the extension. Its filtering features do not upload personal browsing activity to us:</p>
         <ul>
           <li><strong>Personal Identifiable Information (PII):</strong> No names, email addresses, phone numbers, or account credentials. You can use Blockium immediately without creating an account or logging in.</li>
-          <li><strong>Browsing History &amp; URLs:</strong> Filter rules are evaluated natively inside your local Chrome browser memory. The URLs of websites you visit are never logged or sent to any remote server.</li>
-          <li><strong>Form Data &amp; Passwords:</strong> Blockium has zero access to user passwords, credit card numbers, or form submissions.</li>
+          <li><strong>Browsing History &amp; URLs:</strong> Filter rules are evaluated inside Chrome. The dashboard keeps local blocked-domain activity as described below; this is not uploaded to us.</li>
+          <li><strong>Form Data &amp; Passwords:</strong> Blockium does not collect or transmit passwords, credit card numbers, or form submissions. Content scripts access page elements to carry out filtering features.</li>
           <li><strong>Analytics &amp; Fingerprinting:</strong> We do not use Google Analytics, Mixpanel, Amplitude, or any third-party behavioral analytics scripts inside the extension or on our marketing website.</li>
         </ul>
       </div>
 
       <!-- Section 3 -->
       <div class="policy-section">
-        <h2>3. Local On-Device Data Storage</h2>
+        <h2 id="section-3">3. Local On-Device Data Storage</h2>
         <p>
           Blockium uses Chrome's local storage API (<code>chrome.storage.local</code>) strictly on your personal device to preserve your preferences across browser sessions:
         </p>
@@ -288,13 +336,14 @@
           <li><strong>Active Module Toggles:</strong> Your customized preferences (e.g., whether Cookie Auto-Dismiss or Threat Alerts are enabled).</li>
           <li><strong>Custom Filter Rules:</strong> Elements you manually remove using the Visual Element Zapper are saved as local CSS selectors on your device.</li>
           <li><strong>Domain Whitelist:</strong> Websites where you have toggled protection OFF or allowed cookie notices.</li>
-          <li><strong>Aggregate Local Statistics:</strong> Total count of blocked ads and estimated data saved. These metrics are stored in your local browser storage and are never uploaded.</li>
+          <li><strong>Aggregate Local Statistics:</strong> Blocked-request counts, estimated savings, recent activity with blocked domains and timestamps, domain counts, and page-load statistics. These records are stored in local extension storage for the dashboard and are not uploaded.</li>
         </ul>
       </div>
 
-      <!-- Section 4 -->
+      <p>Your website language choice and dismissed language suggestions are saved in this browser. They are not sent to us.</p>
+<!-- Section 4 -->
       <div class="policy-section">
-        <h2>4. Chrome Permissions &amp; Plain-English Justification</h2>
+        <h2 id="section-4">4. Chrome Permissions &amp; Plain-English Justification</h2>
         <p>
           In accordance with Google Chrome Web Store Developer Program Policies, here is the exact technical justification for every permission declared in our <code>manifest.json</code>:
         </p>
@@ -313,7 +362,7 @@
             </tr>
             <tr>
               <td class="perm-name">declarativeNetRequestWithHostAccess</td>
-              <td>Allows custom cosmetic rules and scriptlets to be targeted safely to user-specified domains.</td>
+              <td>Allows declarative network rules to operate on requests covered by the extension’s host permissions.</td>
             </tr>
             <tr>
               <td class="perm-name">storage</td>
@@ -321,7 +370,7 @@
             </tr>
             <tr>
               <td class="perm-name">tabs &amp; webNavigation</td>
-              <td>Used solely to update the extension toolbar icon badge showing the number of blocked ads on your active tab, and to detect tab navigation to reset per-tab counters.</td>
+              <td>Used for current-site controls, toolbar counts, navigation events, per-tab statistics, and page-load measurements.</td>
             </tr>
             <tr>
               <td class="perm-name">alarms</td>
@@ -329,7 +378,7 @@
             </tr>
             <tr>
               <td class="perm-name">notifications</td>
-              <td>Used exclusively to display optional local desktop alerts when a known malware or phishing URL is intercepted.</td>
+              <td>Used to display optional local desktop alerts for detected malware or tracker activity.</td>
             </tr>
             <tr>
               <td class="perm-name">&lt;all_urls&gt;</td>
@@ -341,30 +390,32 @@
 
       <!-- Section 5 -->
       <div class="policy-section">
-        <h2>5. Third-Party Services &amp; Network Requests</h2>
+        <h2 id="section-5">5. Third-Party Services &amp; Network Requests</h2>
         <p>
-          Blockium does not transmit user data to any third party. The only outbound network requests made by the extension are:
+          Automatic filter updates and the website’s support features involve external services:
         </p>
         <ul>
-          <li><strong>Filter List Updates:</strong> The extension periodically downloads updated public, open-source filter rule lists from established repositories (such as <code>https://easylist.to</code> and <code>https://raw.githubusercontent.com</code>). These requests are standard HTTP GET requests for static text files and contain zero user telemetry.</li>
+          <li><strong>Filter List Updates:</strong> The extension periodically downloads updated public, open-source filter rule lists from established repositories (such as <code>https://easylist.to</code> and <code>https://raw.githubusercontent.com</code>). These requests download filter text without attaching browsing history or dashboard statistics. As with other web requests, the provider receives connection information such as your IP address.</li>
+          <li><strong>Website hosting and fonts:</strong> The website is served through Cloudflare Pages and loads fonts from Google Fonts. Requests to these services include ordinary connection information such as your IP address.</li>
+          <li><strong>Support you choose to send:</strong> The report form uses FormSubmit to deliver the information you submit, including your email and report details. Email support also sends your message to our support mailbox. Avoid including passwords or other sensitive information in a report.</li>
         </ul>
       </div>
 
       <!-- Section 6 -->
       <div class="policy-section">
-        <h2>6. Data Deletion &amp; User Control</h2>
+        <h2 id="section-6">6. Data Deletion &amp; User Control</h2>
         <p>
           Because all settings and stats exist strictly on your local machine, you have complete and immediate control over your data:
         </p>
         <ul>
-          <li><strong>Clearing Storage:</strong> You can clear all custom rules and whitelists at any time directly in the extension dashboard by clicking "Reset to Defaults".</li>
+          <li><strong>Clearing Storage:</strong> You can delete custom rules and cookie notice exceptions in the dashboard. Site protection exceptions can be changed in the popup, and the zapper reset restores elements hidden on the current site.</li>
           <li><strong>Uninstalling:</strong> Removing Blockium from Google Chrome immediately and permanently erases all locally stored extension data from your machine.</li>
         </ul>
       </div>
 
       <!-- Section 7 -->
       <div class="policy-section">
-        <h2>7. Contact Information</h2>
+        <h2 id="section-7">7. Contact Information</h2>
         <p>
           If you have questions, feedback, or verification requests regarding this Privacy Policy or Blockium's security architecture, please contact us:
         </p>
@@ -377,11 +428,11 @@
 
     </div>
 
-    <div class="policy-footer">
-      &copy; 2026 Blockium. All rights reserved. Zero telemetry. Verified Chrome Web Store Extension.
+    <div class="policy-footer"><p><a href="/">Back to Blockium</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/report/">Get support</a></p>
+      © 2026 Blockium. All rights reserved. Zero telemetry. Verified Chrome Web Store Extension.
     </div>
 
-  </div>
+  </main>
 
-</body>
+<noscript><nav class="language-grid" aria-label="Website language"><a href="/privacy/" lang="en">English</a><a href="/hi/privacy/" lang="hi">हिन्दी</a><a href="/de/privacy/" lang="de">Deutsch</a><a href="/es/privacy/" lang="es">Español</a><a href="/fr/privacy/" lang="fr">Français</a><a href="/pt-BR/privacy/" lang="pt-BR">Português (Brasil)</a><a href="/ja/privacy/" lang="ja">日本語</a><a href="/it/privacy/" lang="it">Italiano</a><a href="/ru/privacy/" lang="ru">Русский</a><a href="/nl/privacy/" lang="nl">Nederlands</a></nav></noscript></body>
 </html>

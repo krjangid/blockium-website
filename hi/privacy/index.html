@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>गोपनीयता नीति – Blockium</title>
+  <meta name="description" content="Blockium स्थानीय सेटिंग, आँकड़े, फ़िल्टर डाउनलोड और सहायता के लिए भेजी जानकारी कैसे सँभालता है।">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <link rel="icon" type="image/svg+xml" href="/assets/blockium-favicon.svg">
+  <link rel="canonical" href="https://blockium.pages.dev/hi/privacy/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+    :root {
+      --bg-canvas: #F4F3EE;
+      --surface-white: #FFFFFF;
+      --dark-card: #111215;
+      --dark-card-inner: #18191E;
+      --neon: #D4F639;
+      --text-dark: #111215;
+      --text-body: #4A4E5C;
+      --text-muted: #727685;
+      --text-light: #FFFFFF;
+      --text-light-muted: #9498A8;
+      --border-light: rgba(17, 18, 21, 0.08);
+      --border-light-medium: rgba(17, 18, 21, 0.12);
+      --border-dark: rgba(255, 255, 255, 0.09);
+      --font-sans: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 1px 3px rgba(17, 18, 21, 0.05);
+      --shadow-md: 0 8px 24px -4px rgba(17, 18, 21, 0.08);
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-dark);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      padding-top: 100px;
+    }
+
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* Floating Capsule Navbar */
+    .nav-wrapper {
+      position: fixed;
+      top: 16px;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+    .nav-capsule {
+      max-width: 880px;
+      margin: 0 auto;
+      background: rgba(244, 243, 238, 0.9);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-light-medium);
+      box-shadow: 0 6px 20px -6px rgba(17, 18, 21, 0.08);
+      border-radius: var(--radius-full);
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+    .nav-brand img { width: 26px; height: 26px; border-radius: 6px; }
+    .nav-links { display: flex; align-items: center; gap: 20px; list-style: none; }
+    .nav-links a { font-size: 13.5px; font-weight: 600; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--text-dark); }
+
+    /* Policy Content */
+    .policy-header {
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-light-medium);
+    }
+    .policy-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .policy-title {
+      font-size: clamp(32px, 4vw, 44px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+    .policy-meta {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .badge-pill {
+      background: #D1FAE5;
+      color: #065F46;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+    }
+
+    .policy-card {
+      background: var(--surface-white);
+      border: 1px solid var(--border-light-medium);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 32px;
+    }
+
+    .policy-section {
+      margin-bottom: 36px;
+    }
+    .policy-section:last-child {
+      margin-bottom: 0;
+    }
+    .policy-section h2 {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .policy-section p {
+      font-size: 15px;
+      color: var(--text-body);
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+    .policy-section ul {
+      margin-left: 20px;
+      margin-bottom: 14px;
+      color: var(--text-body);
+      font-size: 14.5px;
+    }
+    .policy-section li {
+      margin-bottom: 8px;
+      line-height: 1.55;
+    }
+    .highlight-box {
+      background: var(--bg-canvas);
+      border-left: 4px solid var(--neon);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 16px 20px;
+      margin: 18px 0;
+      font-size: 14px;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+
+    .permission-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 18px 0;
+      font-size: 13.5px;
+    }
+    .permission-table th, .permission-table td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .permission-table th {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: var(--bg-canvas);
+    }
+    .perm-name {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    /* Footer */
+    .policy-footer {
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-light-medium);
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .policy-footer a { color: var(--text-dark); text-decoration: underline; }
+
+    /* Shared reading layout, matching the homepage. */
+    :root { --bg-canvas: #f7f8f5; --text-muted: #606573; }
+    body { padding-top: 36px; }
+    .nav-wrapper { position: relative; top: auto; margin: 0 24px 48px; }
+    .nav-capsule { background: white; padding: 14px 20px; flex-wrap: wrap; gap: 16px; }
+    .nav-links { flex-wrap: wrap; gap: 8px 20px; }
+    .nav-links a { display: inline-block; padding: 6px 0; font-size: 14px; }
+    .nav-links a[aria-current="page"] { color: #354600; text-decoration: underline; text-underline-offset: 6px; }
+    .policy-section p, .terms-section p, .policy-section ul, .terms-section ul { font-size: 16px; line-height: 1.8; }
+    .policy-meta, .terms-meta { font-size: 14px; flex-wrap: wrap; }
+    .policy-eyebrow, .terms-eyebrow, .badge-pill { font-size: 14px; }
+    .policy-card, .terms-card { padding: clamp(22px, 5vw, 48px); }
+    .policy-section h2, .terms-section h2 { font-size: 22px; line-height: 1.4; scroll-margin-top: 24px; }
+    .permission-table { font-size: 15px; table-layout: fixed; }
+    .permission-table th { font-size: 14px; }
+    .permission-table th, .permission-table td { overflow-wrap: anywhere; vertical-align: top; }
+    .permission-table th:first-child { width: 38%; }
+    .legal-intro { font-size: 18px; color: var(--text-body); line-height: 1.75; margin-top: 20px; }
+    .legal-toc { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+    .legal-toc a { font-size: 14px; padding: 10px 14px; background: white; border: 1px solid var(--border-light-medium); border-radius: 999px; color: var(--text-dark); text-decoration: none; }
+    .legal-toc a:hover { background: #eaf5bd; }
+    .policy-footer, .terms-footer { font-size: 14px; }
+    .policy-footer a, .terms-footer a { display: inline-block; margin: 8px; }
+    a { overflow-wrap: anywhere; }
+    :focus-visible { outline: 3px solid #557500; outline-offset: 4px; }
+    .skip-link { position: absolute; left: 20px; top: -90px; background: white; padding: 12px; z-index: 2000; }
+    .skip-link:focus { top: 10px; }
+    @media (max-width: 600px) {
+      body { padding-top: 16px; }
+      .nav-wrapper { margin: 0 16px 32px; }
+      .nav-capsule { border-radius: 20px; }
+      .nav-links { width: 100%; gap: 4px 16px; }
+      .wrap { padding-inline: 16px; }
+      .permission-table th, .permission-table td { padding: 10px 6px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+</style>
+<link rel="stylesheet" href="/assets/languages.css">
+<script src="/assets/languages.js" defer></script>
+<link rel="alternate" hreflang="en" href="https://blockium.pages.dev/privacy/">
+<link rel="alternate" hreflang="hi" href="https://blockium.pages.dev/hi/privacy/">
+<link rel="alternate" hreflang="de" href="https://blockium.pages.dev/de/privacy/">
+<link rel="alternate" hreflang="es" href="https://blockium.pages.dev/es/privacy/">
+<link rel="alternate" hreflang="fr" href="https://blockium.pages.dev/fr/privacy/">
+<link rel="alternate" hreflang="pt-BR" href="https://blockium.pages.dev/pt-BR/privacy/">
+<link rel="alternate" hreflang="ja" href="https://blockium.pages.dev/ja/privacy/">
+<link rel="alternate" hreflang="it" href="https://blockium.pages.dev/it/privacy/">
+<link rel="alternate" hreflang="ru" href="https://blockium.pages.dev/ru/privacy/">
+<link rel="alternate" hreflang="nl" href="https://blockium.pages.dev/nl/privacy/">
+<link rel="alternate" hreflang="x-default" href="https://blockium.pages.dev/privacy/">
+<script type="application/json" id="locale-messages">{"Submitting...": "भेज रहे हैं…", "Report Submitted": "रिपोर्ट भेज दी गई", "Submit Report": "रिपोर्ट भेजें"}</script>
+</head>
+<body data-locale="hi" data-page="privacy">
+<a class="skip-link" href="#main">मुख्य सामग्री पर जाएँ</a>
+
+  <!-- Floating Navigation -->
+  <div class="nav-wrapper">
+    <div class="nav-capsule">
+      <a href="/hi/" class="nav-brand">
+        <img src="/assets/blockium-mark.svg" alt="Blockium">
+        <span data-no-translate>Blockium<span class="brand-dot" aria-hidden="true">.</span></span>
+      </a>
+
+      <label class="language-control"><span>भाषा</span><select class="language-select" aria-label="वेबसाइट की भाषा"><option value="en" lang="en" data-no-translate>English</option><option value="hi" lang="hi" data-no-translate selected>हिन्दी</option><option value="de" lang="de" data-no-translate>Deutsch</option><option value="es" lang="es" data-no-translate>Español</option><option value="fr" lang="fr" data-no-translate>Français</option><option value="pt-BR" lang="pt-BR" data-no-translate>Português (Brasil)</option><option value="ja" lang="ja" data-no-translate>日本語</option><option value="it" lang="it" data-no-translate>Italiano</option><option value="ru" lang="ru" data-no-translate>Русский</option><option value="nl" lang="nl" data-no-translate>Nederlands</option></select></label><ul class="nav-links"><li><a href="/hi/#protection">सुविधाएँ</a></li><li><a href="/hi/privacy/" aria-current="page">गोपनीयता</a></li><li><a href="/hi/terms/">शर्तें</a></li><li><a href="/hi/report/">समस्या बताएँ</a></li></ul>
+    </div>
+  </div>
+
+  <aside class="language-suggestion" aria-label="भाषा का सुझाव" hidden><span>यह वेबसाइट अपनी पसंद की भाषा में पढ़ें।</span><a class="suggested-language" data-no-translate></a><button type="button" class="dismiss-language">बंद करें</button></aside><main class="wrap" id="main">
+
+    <div class="policy-header">
+      <span class="policy-eyebrow">कानूनी जानकारी और पारदर्शिता</span>
+      <h1 class="policy-title">गोपनीयता नीति</h1><p class="legal-intro">Blockium अनुरोध कैसे फ़िल्टर करता है, क्या डिवाइस पर रहता है और बाहरी सेवाओं से कब जुड़ता है।</p>
+      <div class="policy-meta">
+        <span>आखिरी अपडेट: 5 सितंबर 2026</span>
+        <span class="badge-pill">टेलीमेट्री नहीं</span>
+        <span>संस्करण 3.1.2</span>
+      </div>
+    </div>
+
+    <nav class="legal-toc" aria-label="इस पेज पर"><a href="#section-1">1. मूल सिद्धांत: कोई टेलीमेट्री नहीं</a><a href="#section-2">2. जानकारी जो हम इकट्ठा नहीं करते</a><a href="#section-3">3. डिवाइस पर स्थानीय स्टोरेज</a><a href="#section-4">4. Chrome की अनुमतियाँ और कारण</a><a href="#section-5">5. बाहरी सेवाएँ और नेटवर्क अनुरोध</a><a href="#section-6">6. डेटा हटाना और उपयोगकर्ता नियंत्रण</a><a href="#section-7">7. संपर्क जानकारी</a></nav>
+<div class="policy-card">
+
+      <!-- Section 1 -->
+      <div class="policy-section">
+        <h2 id="section-1">1. मूल सिद्धांत: कोई टेलीमेट्री नहीं</h2>
+        <p>
+          Blockium एक मूल सिद्धांत पर बना है: <strong>आपकी ब्राउज़िंग निजी, व्यक्तिगत और केवल आपकी है</strong>.
+        </p>
+        <p>
+          Blockium ब्राउज़र में फ़िल्टर करता है और डैशबोर्ड गतिविधि डिवाइस पर रखता है। हम बाहरी ट्रैकिंग सर्वर, विश्लेषण एंडपॉइंट या दूरस्थ प्रोफ़ाइल डेटाबेस नहीं चलाते।
+        </p>
+        <div class="highlight-box">
+          <strong>Blockium का गोपनीयता वादा:</strong> हम आपकी ब्राउज़िंग या निजी इनपुट विश्लेषण या प्रोफ़ाइल सर्वर पर अपलोड नहीं करते। नीचे बताए अनुसार सेटिंग और डैशबोर्ड गतिविधि डिवाइस पर रहती है।
+        </div>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="policy-section">
+        <h2 id="section-2">2. जानकारी जो हम इकट्ठा नहीं करते</h2>
+        <p>एक्सटेंशन के लिए खाता ज़रूरी नहीं। इसकी फ़िल्टर सुविधाएँ आपकी निजी ब्राउज़िंग हमें नहीं भेजतीं:</p>
+        <ul>
+          <li><strong>व्यक्तिगत पहचान की जानकारी:</strong> नाम, ईमेल, फ़ोन या खाते की जानकारी की ज़रूरत नहीं। बिना खाता बनाए या लॉगिन किए Blockium इस्तेमाल कर सकते हैं।</li>
+          <li><strong>ब्राउज़िंग इतिहास और URL:</strong> फ़िल्टर नियम Chrome में जाँचे जाते हैं। डैशबोर्ड नीचे बताई ब्लॉक किए गए डोमेन की गतिविधि स्थानीय रूप से रखता है; हमें नहीं भेजता।</li>
+          <li><strong>फ़ॉर्म डेटा और पासवर्ड:</strong> Blockium पासवर्ड, कार्ड नंबर या जमा किए फ़ॉर्म इकट्ठा या भेजता नहीं है। कंटेंट स्क्रिप्ट फ़िल्टर करने के लिए पेज एलिमेंट तक पहुँचती हैं।</li>
+          <li><strong>विश्लेषण और फ़िंगरप्रिंटिंग:</strong> हम एक्सटेंशन या प्रचार वेबसाइट में Google Analytics, Mixpanel, Amplitude या दूसरे व्यवहार विश्लेषण स्क्रिप्ट इस्तेमाल नहीं करते।</li>
+        </ul>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="policy-section">
+        <h2 id="section-3">3. डिवाइस पर स्थानीय स्टोरेज</h2>
+        <p>
+          Blockium Chrome की स्थानीय स्टोरेज API (<code>chrome.storage.local</code>) केवल आपके डिवाइस पर इस्तेमाल करता है, ताकि अलग ब्राउज़र सत्रों में पसंद बनी रहे:
+        </p>
+        <ul>
+          <li><strong>मॉड्यूल स्विच:</strong> आपकी पसंद, जैसे कुकी बैनर हटाना या खतरे की चेतावनी चालू है या नहीं।</li>
+          <li><strong>अपने फ़िल्टर नियम:</strong> दृश्य ज़ैपर से छिपाए गए एलिमेंट आपके डिवाइस पर स्थानीय CSS सिलेक्टर के रूप में सेव होते हैं।</li>
+          <li><strong>अनुमत डोमेन सूची:</strong> वे साइटें जहाँ आपने सुरक्षा बंद की या कुकी नोटिस की अनुमति दी है।</li>
+          <li><strong>कुल स्थानीय आँकड़े:</strong> ब्लॉक अनुरोध की गिनती, अनुमानित बचत, डोमेन और समय सहित हाल की गतिविधि, डोमेन गिनती और लोड समय। ये रिकॉर्ड डैशबोर्ड के लिए स्थानीय स्टोरेज में रहते हैं, अपलोड नहीं होते।</li>
+        </ul>
+      </div>
+
+      <p>वेबसाइट की भाषा और बंद किए गए भाषा सुझाव इस ब्राउज़र में सेव होते हैं। हमें नहीं भेजे जाते।</p>
+<!-- Section 4 -->
+      <div class="policy-section">
+        <h2 id="section-4">4. Chrome की अनुमतियाँ और कारण</h2>
+        <p>
+          Chrome Web Store की डेवलपर नीतियों के अनुसार, निम्न फ़ाइल में घोषित हर अनुमति का तकनीकी कारण यहाँ दिया गया है: <code>manifest.json</code>:
+        </p>
+
+        <table class="permission-table">
+          <thead>
+            <tr>
+              <th>अनुमति</th>
+              <th>तकनीकी काम और उपयोगकर्ता लाभ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="perm-name">declarativeNetRequest</td>
+              <td>Chrome का मूल C++ इंजन पेज दिखने से पहले विज्ञापन सर्वर और ट्रैकिंग अनुरोध रोकता है। ट्रैफ़िक बाहरी सर्वर को नहीं भेजा जाता।</td>
+            </tr>
+            <tr>
+              <td class="perm-name">declarativeNetRequestWithHostAccess</td>
+              <td>एक्सटेंशन की होस्ट अनुमतियों के अंतर्गत आने वाले अनुरोधों पर घोषणात्मक नेटवर्क नियम लागू करता है।</td>
+            </tr>
+            <tr>
+              <td class="perm-name">storage</td>
+              <td>थीम, अनुमत साइट और ज़ैपर नियम डिवाइस पर सेव करने के लिए ज़रूरी।</td>
+            </tr>
+            <tr>
+              <td class="perm-name">tabs &amp; webNavigation</td>
+              <td>वर्तमान साइट के नियंत्रण, गिनती, नेविगेशन, टैब आँकड़े और पेज लोड समय मापने के लिए।</td>
+            </tr>
+            <tr>
+              <td class="perm-name">alarms</td>
+              <td>EasyList जैसी खुली सूचियों के समय-समय पर बैकग्राउंड अपडेट तय करने के लिए।</td>
+            </tr>
+            <tr>
+              <td class="perm-name">notifications</td>
+              <td>पहचाने गए मैलवेयर या ट्रैकर की वैकल्पिक स्थानीय डेस्कटॉप चेतावनी दिखाने के लिए।</td>
+            </tr>
+            <tr>
+              <td class="perm-name">&lt;all_urls&gt;</td>
+              <td>वीडियो रुकावट घटाने, कुकी बैनर हटाने और देखे गए डोमेन पर एलिमेंट छिपाने के लिए ज़रूरी।</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Section 5 -->
+      <div class="policy-section">
+        <h2 id="section-5">5. बाहरी सेवाएँ और नेटवर्क अनुरोध</h2>
+        <p>
+          स्वचालित फ़िल्टर अपडेट और साइट की सहायता सुविधाएँ बाहरी सेवाएँ इस्तेमाल करती हैं:
+        </p>
+        <ul>
+          <li><strong>फ़िल्टर सूची अपडेट:</strong> एक्सटेंशन समय-समय पर स्थापित रिपॉज़िटरी से नई सार्वजनिक, खुली सूचियाँ डाउनलोड करता है, जैसे <code>https://easylist.to</code> और <code>https://raw.githubusercontent.com</code>)। इन अनुरोधों में इतिहास या डैशबोर्ड आँकड़े नहीं जोड़े जाते। सामान्य वेब अनुरोध की तरह प्रदाता को IP पते जैसी कनेक्शन जानकारी मिलती है।</li>
+          <li><strong>वेबसाइट होस्टिंग और फ़ॉन्ट:</strong> वेबसाइट Cloudflare Pages से आती है और Google Fonts से फ़ॉन्ट लेती है। इन अनुरोधों में IP पते जैसी सामान्य कनेक्शन जानकारी होती है।</li>
+          <li><strong>सहायता को आपकी भेजी जानकारी:</strong> रिपोर्ट फ़ॉर्म FormSubmit से आपके ईमेल और समस्या विवरण सहित जानकारी पहुँचाता है। ईमेल सहायता भी संदेश हमारे सहायता मेलबॉक्स में भेजती है। पासवर्ड या संवेदनशील जानकारी रिपोर्ट में न डालें।</li>
+        </ul>
+      </div>
+
+      <!-- Section 6 -->
+      <div class="policy-section">
+        <h2 id="section-6">6. डेटा हटाना और उपयोगकर्ता नियंत्रण</h2>
+        <p>
+          सभी सेटिंग और आँकड़े आपके डिवाइस पर होने से डेटा पर आपका पूरा और तुरंत नियंत्रण है:
+        </p>
+        <ul>
+          <li><strong>स्टोरेज सँभालना:</strong> डैशबोर्ड में अपने नियम और कुकी अपवाद हटा सकते हैं। साइट के सुरक्षा अपवाद एक्सटेंशन की विंडो से बदलते हैं। ज़ैपर रीसेट मौजूदा साइट के छिपे एलिमेंट वापस लाता है।</li>
+          <li><strong>अनइंस्टॉल करना:</strong> Chrome से Blockium हटाने पर डिवाइस का स्थानीय एक्सटेंशन डेटा तुरंत और स्थायी रूप से मिट जाता है।</li>
+        </ul>
+      </div>
+
+      <!-- Section 7 -->
+      <div class="policy-section">
+        <h2 id="section-7">7. संपर्क जानकारी</h2>
+        <p>
+          इस नीति या Blockium की सुरक्षा संरचना पर सवाल, सुझाव या जाँच के अनुरोध के लिए संपर्क करें:
+        </p>
+        <p style="margin-top: 8px;">
+          <strong>ईमेल:</strong> <a href="mailto:blockiumapps@gmail.com" style="color: var(--text-dark); font-weight: 700;">blockiumapps@gmail.com</a><br>
+          <strong>आधिकारिक वेबसाइट:</strong> <a href="https://blockium.pages.dev" style="color: var(--text-dark);">https://blockium.pages.dev</a><br>
+          <strong>समस्या रिपोर्ट:</strong> <a href="https://blockium.pages.dev/report" style="color: var(--text-dark);">https://blockium.pages.dev/report</a>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="policy-footer"><p><a href="/hi/">Blockium पर वापस जाएँ</a><a href="/hi/privacy/">गोपनीयता</a><a href="/hi/terms/">शर्तें</a><a href="/hi/report/">सहायता पाएँ</a></p>
+      © 2026 Blockium. सर्वाधिकार सुरक्षित। टेलीमेट्री नहीं। Chrome Web Store का सत्यापित एक्सटेंशन।
+    </div>
+
+  </main>
+
+<noscript><nav class="language-grid" aria-label="वेबसाइट की भाषा"><a href="/privacy/" lang="en">English</a><a href="/hi/privacy/" lang="hi">हिन्दी</a><a href="/de/privacy/" lang="de">Deutsch</a><a href="/es/privacy/" lang="es">Español</a><a href="/fr/privacy/" lang="fr">Français</a><a href="/pt-BR/privacy/" lang="pt-BR">Português (Brasil)</a><a href="/ja/privacy/" lang="ja">日本語</a><a href="/it/privacy/" lang="it">Italiano</a><a href="/ru/privacy/" lang="ru">Русский</a><a href="/nl/privacy/" lang="nl">Nederlands</a></nav></noscript></body>
+</html>
