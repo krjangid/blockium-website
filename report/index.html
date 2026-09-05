@@ -7,13 +7,13 @@
   <meta name="description" content="Report broken web pages, unblocked ads, or video playback errors to the Blockium team.">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <link rel="icon" type="image/png" href="/assets/logo.png">
-  <link rel="canonical" href="https://blockium.pages.dev/report">
+  <link rel="icon" type="image/svg+xml" href="/assets/blockium-favicon.svg">
+  <link rel="canonical" href="https://blockium.pages.dev/report/">
 
   <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -304,36 +304,50 @@
       .report-card { padding: 28px 20px; }
     }
   </style>
+<link rel="stylesheet" href="/assets/languages.css">
+<script src="/assets/languages.js" defer></script>
+<link rel="alternate" hreflang="en" href="https://blockium.pages.dev/report/">
+<link rel="alternate" hreflang="hi" href="https://blockium.pages.dev/hi/report/">
+<link rel="alternate" hreflang="de" href="https://blockium.pages.dev/de/report/">
+<link rel="alternate" hreflang="es" href="https://blockium.pages.dev/es/report/">
+<link rel="alternate" hreflang="fr" href="https://blockium.pages.dev/fr/report/">
+<link rel="alternate" hreflang="pt-BR" href="https://blockium.pages.dev/pt-BR/report/">
+<link rel="alternate" hreflang="ja" href="https://blockium.pages.dev/ja/report/">
+<link rel="alternate" hreflang="it" href="https://blockium.pages.dev/it/report/">
+<link rel="alternate" hreflang="ru" href="https://blockium.pages.dev/ru/report/">
+<link rel="alternate" hreflang="nl" href="https://blockium.pages.dev/nl/report/">
+<link rel="alternate" hreflang="x-default" href="https://blockium.pages.dev/report/">
+<script type="application/json" id="locale-messages">{"Submitting...": "Submitting...", "Report Submitted": "Report Submitted", "Submit Report": "Submit Report"}</script>
 </head>
-<body>
+<body data-locale="en" data-page="report">
 
   <!-- Floating Capsule Navigation -->
   <header class="nav-wrapper">
     <div class="nav-capsule">
       <a href="/" class="nav-brand">
-        <img src="/assets/logo.png" alt="Blockium">
-        <span>Blockium</span>
+        <img src="/assets/blockium-mark.svg" alt="Blockium">
+        <span data-no-translate>Blockium<span class="brand-dot" aria-hidden="true">.</span></span>
       </a>
 
-      <ul class="nav-links">
+      <label class="language-control"><span>Language</span><select class="language-select" aria-label="Website language"><option value="en" lang="en" data-no-translate selected>English</option><option value="hi" lang="hi" data-no-translate>हिन्दी</option><option value="de" lang="de" data-no-translate>Deutsch</option><option value="es" lang="es" data-no-translate>Español</option><option value="fr" lang="fr" data-no-translate>Français</option><option value="pt-BR" lang="pt-BR" data-no-translate>Português (Brasil)</option><option value="ja" lang="ja" data-no-translate>日本語</option><option value="it" lang="it" data-no-translate>Italiano</option><option value="ru" lang="ru" data-no-translate>Русский</option><option value="nl" lang="nl" data-no-translate>Nederlands</option></select></label><ul class="nav-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/privacy">Privacy</a></li>
-        <li><a href="/terms">Terms</a></li>
-        <li><a href="/report" class="active">Report an Issue</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+        <li><a href="/report/" class="active">Report an Issue</a></li>
       </ul>
 
       <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer" class="nav-cta">
         Add to Chrome →
       </a>
     </div>
-  </header>
+  </header><aside class="language-suggestion" aria-label="Language suggestion" hidden><span>Read this website in your preferred language.</span><a class="suggested-language" data-no-translate></a><button type="button" class="dismiss-language">Dismiss</button></aside>
 
   <!-- Main Content -->
   <main class="wrap">
 
     <div class="report-card">
       <div class="badge-pill">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
         Community Support
       </div>
 
@@ -356,7 +370,7 @@
         <div class="form-group">
           <label for="issueType">Issue Category <span class="req">*</span></label>
           <select id="issueType" name="issue_type" class="form-control" required>
-            <option value="Video Playback Issue (Video won't play / player error)">Video Playback Error (Video won't load / player error)</option>
+            <option value="Video Playback Issue (Video won&#x27;t play / player error)">Video Playback Error (Video won't load / player error)</option>
             <option value="Undetected Ads (Banners / Overlays / Popups)">Undetected Ads (Banners / Popups / Video ads)</option>
             <option value="Anti-Adblock Warning (Blocker detected banner / Paywall)">Anti-Adblock Warning (Blocker detected / Paywall)</option>
             <option value="Broken Page Layout (Buttons / Images / Navigation broken)">Broken Page Layout (Buttons / Layout / Navigation)</option>
@@ -378,23 +392,23 @@
           Submit Report
         </button>
 
-        <div id="statusSuccess" class="status-msg status-success">
+        <div id="statusSuccess" role="status" class="status-msg status-success">
           <strong>✓ Thank you!</strong> Your report has been submitted. Our team reviews submissions to update filter rules.
         </div>
 
-        <div id="statusError" class="status-msg status-error">
+        <div id="statusError" role="alert" class="status-msg status-error">
           <strong>Oops!</strong> Submission failed. You can email us directly at <a href="mailto:blockiumapps@gmail.com" style="color: inherit; text-decoration: underline;">blockiumapps@gmail.com</a>.
         </div>
       </form>
 
       <div class="footer-note">
-        Prefer your email client? 
-        <a id="directMailLink" href="mailto:blockiumapps@gmail.com?subject=Blockium%20Broken%20Site%20Report">Send directly to blockiumapps@gmail.com</a>
+        Prefer your email client?
+        <a id="directMailLink" href="mailto:blockiumapps@gmail.com?subject=Blockium%20Broken%20Site%20Report">blockiumapps@gmail.com</a>
       </div>
     </div>
 
     <footer class="site-footer">
-      &copy; 2026 Blockium. All rights reserved. Zero telemetry.
+      © 2026 Blockium. All rights reserved. Zero telemetry.
     </footer>
 
   </main>
@@ -440,7 +454,7 @@
         form.addEventListener('submit', function (e) {
           e.preventDefault();
           submitBtn.disabled = true;
-          submitBtn.textContent = 'Submitting...';
+          submitBtn.textContent = window.BlockiumLanguage.text('Submitting...');
           statusSuccess.style.display = 'none';
           statusError.style.display = 'none';
 
@@ -466,17 +480,17 @@
           })
           .then(function () {
             form.reset();
-            submitBtn.textContent = 'Report Submitted';
+            submitBtn.textContent = window.BlockiumLanguage.text('Report Submitted');
             statusSuccess.style.display = 'block';
           })
           .catch(function () {
             submitBtn.disabled = false;
-            submitBtn.textContent = 'Submit Report';
+            submitBtn.textContent = window.BlockiumLanguage.text('Submit Report');
             statusError.style.display = 'block';
           });
         });
       }
     });
   </script>
-</body>
+<noscript><nav class="language-grid" aria-label="Website language"><a href="/report/" lang="en">English</a><a href="/hi/report/" lang="hi">हिन्दी</a><a href="/de/report/" lang="de">Deutsch</a><a href="/es/report/" lang="es">Español</a><a href="/fr/report/" lang="fr">Français</a><a href="/pt-BR/report/" lang="pt-BR">Português (Brasil)</a><a href="/ja/report/" lang="ja">日本語</a><a href="/it/report/" lang="it">Italiano</a><a href="/ru/report/" lang="ru">Русский</a><a href="/nl/report/" lang="nl">Nederlands</a></nav></noscript></body>
 </html>

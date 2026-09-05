@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Report an Issue – Blockium</title>
-  <meta name="description" content="Report broken web pages, unblocked ads, or video playback errors to the Blockium team.">
+  <title>Problem melden – Blockium</title>
+  <meta name="description" content="Melde fehlerhafte Seiten, nicht blockierte Werbung oder Videofehler an das Blockium-Team.">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <link rel="icon" type="image/svg+xml" href="/assets/blockium-favicon.svg">
-  <link rel="canonical" href="https://blockium.pages.dev/report/">
+  <link rel="canonical" href="https://blockium.pages.dev/de/report/">
 
   <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -317,30 +317,30 @@
 <link rel="alternate" hreflang="ru" href="https://blockium.pages.dev/ru/report/">
 <link rel="alternate" hreflang="nl" href="https://blockium.pages.dev/nl/report/">
 <link rel="alternate" hreflang="x-default" href="https://blockium.pages.dev/report/">
-<script type="application/json" id="locale-messages">{"Submitting...": "Submitting...", "Report Submitted": "Report Submitted", "Submit Report": "Submit Report"}</script>
+<script type="application/json" id="locale-messages">{"Submitting...": "Wird gesendet…", "Report Submitted": "Meldung gesendet", "Submit Report": "Meldung senden"}</script>
 </head>
-<body data-locale="en" data-page="report">
+<body data-locale="de" data-page="report">
 
   <!-- Floating Capsule Navigation -->
   <header class="nav-wrapper">
     <div class="nav-capsule">
-      <a href="/" class="nav-brand">
+      <a href="/de/" class="nav-brand">
         <img src="/assets/blockium-mark.svg" alt="Blockium">
         <span data-no-translate>Blockium<span class="brand-dot" aria-hidden="true">.</span></span>
       </a>
 
-      <label class="language-control"><span>Language</span><select class="language-select" aria-label="Website language"><option value="en" lang="en" data-no-translate selected>English</option><option value="hi" lang="hi" data-no-translate>हिन्दी</option><option value="de" lang="de" data-no-translate>Deutsch</option><option value="es" lang="es" data-no-translate>Español</option><option value="fr" lang="fr" data-no-translate>Français</option><option value="pt-BR" lang="pt-BR" data-no-translate>Português (Brasil)</option><option value="ja" lang="ja" data-no-translate>日本語</option><option value="it" lang="it" data-no-translate>Italiano</option><option value="ru" lang="ru" data-no-translate>Русский</option><option value="nl" lang="nl" data-no-translate>Nederlands</option></select></label><ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/privacy/">Privacy</a></li>
-        <li><a href="/terms/">Terms</a></li>
-        <li><a href="/report/" class="active">Report an Issue</a></li>
+      <label class="language-control"><span>Sprache</span><select class="language-select" aria-label="Sprache der Website"><option value="en" lang="en" data-no-translate>English</option><option value="hi" lang="hi" data-no-translate>हिन्दी</option><option value="de" lang="de" data-no-translate selected>Deutsch</option><option value="es" lang="es" data-no-translate>Español</option><option value="fr" lang="fr" data-no-translate>Français</option><option value="pt-BR" lang="pt-BR" data-no-translate>Português (Brasil)</option><option value="ja" lang="ja" data-no-translate>日本語</option><option value="it" lang="it" data-no-translate>Italiano</option><option value="ru" lang="ru" data-no-translate>Русский</option><option value="nl" lang="nl" data-no-translate>Nederlands</option></select></label><ul class="nav-links">
+        <li><a href="/de/">Startseite</a></li>
+        <li><a href="/de/privacy/">Datenschutz</a></li>
+        <li><a href="/de/terms/">Nutzungsbedingungen</a></li>
+        <li><a href="/de/report/" class="active">Problem melden</a></li>
       </ul>
 
       <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer" class="nav-cta">
-        Add to Chrome →
+        Zu Chrome hinzufügen →
       </a>
     </div>
-  </header><aside class="language-suggestion" aria-label="Language suggestion" hidden><span>Read this website in your preferred language.</span><a class="suggested-language" data-no-translate></a><button type="button" class="dismiss-language">Dismiss</button></aside>
+  </header><aside class="language-suggestion" aria-label="Sprachvorschlag" hidden><span>Lies diese Website in deiner bevorzugten Sprache.</span><a class="suggested-language" data-no-translate></a><button type="button" class="dismiss-language">Schließen</button></aside>
 
   <!-- Main Content -->
   <main class="wrap">
@@ -348,12 +348,12 @@
     <div class="report-card">
       <div class="badge-pill">
         <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-        Community Support
+        Community-Support
       </div>
 
-      <h1>Report a Broken Site or Ad</h1>
+      <h1>Fehlerhafte Website oder Werbung melden</h1>
       <p class="subtitle">
-        Encountered an undetected banner, broken video player, or anti-adblock message? Let us know so we can update our filter rules.
+        Eine übersehene Werbung, ein fehlerhafter Player oder eine Anti-Adblock-Meldung? Informiere uns, damit wir die Filter aktualisieren können.
       </p>
 
       <form id="reportForm">
@@ -362,53 +362,53 @@
         <input type="hidden" name="_captcha" value="false">
 
         <div class="form-group">
-          <label for="domainInput">Website Domain or URL <span class="req">*</span></label>
-          <input type="text" id="domainInput" name="domain" class="form-control" placeholder="e.g. sonyliv.com or https://example.com" required>
-          <div class="form-hint">The website where the issue occurred.</div>
+          <label for="domainInput">Website-Domain oder URL <span class="req">*</span></label>
+          <input type="text" id="domainInput" name="domain" class="form-control" placeholder="z. B. sonyliv.com oder https://example.com" required>
+          <div class="form-hint">Die Website, auf der das Problem auftrat.</div>
         </div>
 
         <div class="form-group">
-          <label for="issueType">Issue Category <span class="req">*</span></label>
+          <label for="issueType">Problemkategorie <span class="req">*</span></label>
           <select id="issueType" name="issue_type" class="form-control" required>
-            <option value="Video Playback Issue (Video won&#x27;t play / player error)">Video Playback Error (Video won't load / player error)</option>
-            <option value="Undetected Ads (Banners / Overlays / Popups)">Undetected Ads (Banners / Popups / Video ads)</option>
-            <option value="Anti-Adblock Warning (Blocker detected banner / Paywall)">Anti-Adblock Warning (Blocker detected / Paywall)</option>
-            <option value="Broken Page Layout (Buttons / Images / Navigation broken)">Broken Page Layout (Buttons / Layout / Navigation)</option>
-            <option value="Other Issue">Other Issue</option>
+            <option value="Video Playback Issue (Video won&#x27;t play / player error)">Videofehler (Video lädt nicht / Playerfehler)</option>
+            <option value="Undetected Ads (Banners / Overlays / Popups)">Nicht erkannte Werbung (Banner / Pop-ups / Video)</option>
+            <option value="Anti-Adblock Warning (Blocker detected banner / Paywall)">Anti-Adblock-Warnung (Blocker erkannt / Bezahlschranke)</option>
+            <option value="Broken Page Layout (Buttons / Images / Navigation broken)">Fehlerhafte Seite (Schaltflächen / Layout / Navigation)</option>
+            <option value="Other Issue">Anderes Problem</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="detailsInput">Description &amp; Steps to Reproduce <span class="form-hint" style="display:inline; font-weight:normal;">(Optional)</span></label>
-          <textarea id="detailsInput" name="details" class="form-control" placeholder="Tell us what went wrong (e.g. video displayed error code, ad was unskippable, etc.)"></textarea>
+          <label for="detailsInput">Beschreibung und Schritte zum Nachstellen <span class="form-hint" style="display:inline; font-weight:normal;">(Optional)</span></label>
+          <textarea id="detailsInput" name="details" class="form-control" placeholder="Beschreibe den Fehler, etwa einen Videofehlercode oder nicht überspringbare Werbung."></textarea>
         </div>
 
         <div class="form-group">
-          <label for="emailInput">Your Email <span class="form-hint" style="display:inline; font-weight:normal;">(Optional, for fix confirmation)</span></label>
+          <label for="emailInput">Deine E-Mail-Adresse <span class="form-hint" style="display:inline; font-weight:normal;">(Optional, zur Bestätigung der Behebung)</span></label>
           <input type="email" id="emailInput" name="user_email" class="form-control" placeholder="you@example.com">
         </div>
 
         <button type="submit" id="submitBtn" class="btn btn-neon">
-          Submit Report
+          Meldung senden
         </button>
 
         <div id="statusSuccess" role="status" class="status-msg status-success">
-          <strong>✓ Thank you!</strong> Your report has been submitted. Our team reviews submissions to update filter rules.
+          <strong>✓ Vielen Dank!</strong> Deine Meldung wurde gesendet. Unser Team prüft Meldungen, um die Filter zu aktualisieren.
         </div>
 
         <div id="statusError" role="alert" class="status-msg status-error">
-          <strong>Oops!</strong> Submission failed. You can email us directly at <a href="mailto:blockiumapps@gmail.com" style="color: inherit; text-decoration: underline;">blockiumapps@gmail.com</a>.
+          <strong>Hoppla!</strong> Senden fehlgeschlagen. Du kannst uns direkt schreiben an <a href="mailto:blockiumapps@gmail.com" style="color: inherit; text-decoration: underline;">blockiumapps@gmail.com</a>.
         </div>
       </form>
 
       <div class="footer-note">
-        Prefer your email client?
+        Lieber dein E-Mail-Programm verwenden?
         <a id="directMailLink" href="mailto:blockiumapps@gmail.com?subject=Blockium%20Broken%20Site%20Report">blockiumapps@gmail.com</a>
       </div>
     </div>
 
     <footer class="site-footer">
-      © 2026 Blockium. All rights reserved. Zero telemetry.
+      © 2026 Blockium. Alle Rechte vorbehalten. Keine Telemetrie.
     </footer>
 
   </main>
@@ -492,5 +492,5 @@
       }
     });
   </script>
-<noscript><nav class="language-grid" aria-label="Website language"><a href="/report/" lang="en">English</a><a href="/hi/report/" lang="hi">हिन्दी</a><a href="/de/report/" lang="de">Deutsch</a><a href="/es/report/" lang="es">Español</a><a href="/fr/report/" lang="fr">Français</a><a href="/pt-BR/report/" lang="pt-BR">Português (Brasil)</a><a href="/ja/report/" lang="ja">日本語</a><a href="/it/report/" lang="it">Italiano</a><a href="/ru/report/" lang="ru">Русский</a><a href="/nl/report/" lang="nl">Nederlands</a></nav></noscript></body>
+<noscript><nav class="language-grid" aria-label="Sprache der Website"><a href="/report/" lang="en">English</a><a href="/hi/report/" lang="hi">हिन्दी</a><a href="/de/report/" lang="de">Deutsch</a><a href="/es/report/" lang="es">Español</a><a href="/fr/report/" lang="fr">Français</a><a href="/pt-BR/report/" lang="pt-BR">Português (Brasil)</a><a href="/ja/report/" lang="ja">日本語</a><a href="/it/report/" lang="it">Italiano</a><a href="/ru/report/" lang="ru">Русский</a><a href="/nl/report/" lang="nl">Nederlands</a></nav></noscript></body>
 </html>
