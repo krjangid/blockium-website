@@ -1,9 +1,9 @@
 /* Product hierarchy and accessible screenshot previews. */
 .hero-layout { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 56px; align-items: center; }
-.hero-image-frame { max-width: 480px; padding: 20px; box-shadow: 0 28px 70px -30px #26321766; }
+.hero-image-frame { max-width: 400px; padding: 20px; box-shadow: 0 28px 70px -30px #26321766; }
 .hero-visual { min-width: 0; }
 .hero-screenshot { display: block; }
-.hero-real-img { max-height: 680px; width: 100%; height: auto; object-fit: contain; }
+.hero-real-img { max-height: min(590px, 68vh); width: 100%; height: auto; object-fit: contain; }
  .hero-section { background: #f7f8f5; }
 .store-proof { display: inline-flex; align-items: center; gap: 9px; margin: 6px 0 10px; font-size: 14px; color: #384525; text-decoration: underline; text-underline-offset: 4px; }
 .feature-section { background: #f0f2eb; }
