@@ -80,3 +80,7 @@ body[data-page="home"]:has(.language-suggestion:not([hidden])) .hero-section { p
 .streaming-layout img { width: auto; max-width: 100%; max-height: 480px; border-radius: 16px; }
 .streaming-layout figcaption { font-size: 14px; line-height: 1.6; margin-top: 16px; }
 @media(max-width: 800px) { .streaming-layout { grid-template-columns: 1fr; gap: 32px; } .streaming-section { padding: 44px 0; } }
+
+.marquee-section { padding: 40px 0 70px; }
+.marquee-figure { margin: 0; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 60px -20px rgba(18, 28, 12, 0.35); border: 1px solid #d5dccb; }
+.marquee-figure .marquee-promo-img { width: 100%; height: auto; display: block; }
