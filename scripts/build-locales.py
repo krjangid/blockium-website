@@ -7,7 +7,7 @@ import hashlib, html, json, re
 ROOT = Path(__file__).resolve().parents[1]
 LANGUAGES = {'en':'English','hi':'हिन्दी','de':'Deutsch','es':'Español','fr':'Français','pt-BR':'Português (Brasil)','ja':'日本語','it':'Italiano','ru':'Русский','nl':'Nederlands'}
 PAGES = {'home':'','privacy':'privacy/','terms':'terms/','report':'report/','404':'404.html'}
-ORIGIN = 'https://blockium.pages.dev'
+ORIGIN = 'https://blockium.in'
 def route(lang, page):
     return ('/' if lang == 'en' else '/' + lang + '/') + PAGES[page]
 def text_key(text):

@@ -236,7 +236,7 @@
   "s_3c331e964e0c": "8. Modifications du service et des conditions",
   "s_ca2825bc081e": "9. Nous contacter",
   "s_13aa535d6036": "En téléchargeant, installant ou utilisant l’extension de navigateur Blockium (« Extension »), ou en accédant au site Blockium à l’adresse",
-  "s_ea9c3f139d2c": "blockium.pages.dev",
+  "s_9308a807b4f5": "blockium.in",
   "s_6166c8ac8ad6": "(« Site »), vous acceptez les présentes conditions d’utilisation (« Conditions »). Si vous ne les acceptez pas, n’installez pas et n’utilisez pas l’Extension.",
   "s_4e57c5cfca57": "Blockium est une extension gratuite destinée à améliorer la vitesse, la confidentialité et la lisibilité grâce au filtrage réseau natif, au filtrage des éléments de page et aux outils de saut ou d’accélération des publicités vidéo détectées.",
   "s_a6cd813eff71": "Sous réserve des présentes Conditions, Blockium vous accorde une licence personnelle, non exclusive, non transférable et révocable pour utiliser l’Extension à des fins de navigation personnelles, non commerciales ou professionnelles internes. Vous vous engagez à ne pas :",
@@ -304,9 +304,9 @@
   "s_cd67aed76eb9": "Comment fonctionne le blocage des fenêtres contextuelles et comment les autoriser sur un site ?",
   "s_80c3eaddf9a2": "Lorsqu’une fenêtre contextuelle non sollicitée est bloquée, une interface propose deux options : « Ouvrir une fois » pour ouvrir la destination une seule fois sans inscrire le domaine sur liste blanche, ou « Autoriser ici » pour ajouter le site à vos exceptions de popups. Comme la protection utilise un hook isolé enregistré par Chrome, n’oubliez pas d’actualiser la page après avoir modifié les autorisations pour que les nouvelles règles s’appliquent.",
   "s_01ad3c037fb8": "Après avoir basculé la protection, modifié les autorisations de fenêtres contextuelles ou ajouté une exception de site, actualisez la page ouverte pour que le navigateur applique le script et les règles de filtrage mis à jour.",
-  "s_18c4dae08b2c": "Version 3.1.6",
+  "s_e579f7c5c52c": "Version 3.2.0",
   "s_2877e27b5b6a": "Explorez la fenêtre de l’extension et le tableau de bord. Captures réelles avec le thème Pure Minimal.",
   "s_479388bc9e0e": "Mode simple · Pure Minimal",
   "s_d9cf73ea072c": "Mode avancé · Pure Minimal",
-  "s_12c73ffbbcf7": "Dernière mise à jour : 9 septembre 2026 • Version 3.1.6"
+  "s_6e03762a6d51": "Dernière mise à jour : 13 septembre 2026 • Version 3.2.0"
 }
