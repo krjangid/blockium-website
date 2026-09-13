@@ -304,9 +304,9 @@
   "s_cd67aed76eb9": "¿Cómo funciona el bloqueo de ventanas emergentes y cómo las permito en un sitio?",
   "s_80c3eaddf9a2": "Cuando se bloquea una ventana emergente no solicitada, una superposición le ofrece opciones: \"Abrir una vez\" para abrir el destino una sola vez sin incluir el dominio en la lista de permitidos, o \"Permitir aquí\" para agregar el sitio a sus excepciones de ventanas emergentes. Como la protección contra ventanas emergentes utiliza un enlace aislado registrado por Chrome, recuerde actualizar la página después de cambiar los permisos para que surtan efecto las nuevas reglas.",
   "s_01ad3c037fb8": "Después de alternar la protección, actualizar los permisos de ventanas emergentes o agregar una excepción para el sitio, actualice la página abierta para que el navegador aplique el script y las reglas de filtrado actualizadas.",
-  "s_18c4dae08b2c": "Versión 3.1.6",
+  "s_e579f7c5c52c": "Versión 3.2.0",
   "s_2877e27b5b6a": "Explora la ventana de la extensión y el panel. Capturas reales con el tema Pure Minimal.",
   "s_479388bc9e0e": "Modo sencillo · Pure Minimal",
   "s_d9cf73ea072c": "Modo avanzado · Pure Minimal",
-  "s_12c73ffbbcf7": "Última actualización: 9 de septiembre de 2026 • Versión 3.1.6"
+  "s_6e03762a6d51": "Última actualización: 13 de septiembre de 2026 • Versión 3.2.0"
 }

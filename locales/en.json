@@ -304,9 +304,9 @@
   "s_cd67aed76eb9": "How does popup blocking work, and how do I allow popups on a site?",
   "s_80c3eaddf9a2": "When an unsolicited popup is blocked, an overlay gives you options: \"Open once\" to open the destination once without whitelisting the domain, or \"Allow here\" to add the site to your popup exceptions. Because popup protection uses an isolated hook registered by Chrome, remember to refresh the page after changing popup permissions so the new rules take effect.",
   "s_01ad3c037fb8": "After toggling protection, updating popup allowance, or adding a site exception, refresh the open page so the browser applies the updated script and filtering rules.",
-  "s_18c4dae08b2c": "Version 3.1.6",
+  "s_e579f7c5c52c": "Version 3.2.0",
   "s_2877e27b5b6a": "Explore the popup and dashboard. Real extension screenshots, shown in the Pure Minimal theme.",
   "s_479388bc9e0e": "Simple mode · Pure Minimal",
   "s_d9cf73ea072c": "Advanced mode · Pure Minimal",
-  "s_12c73ffbbcf7": "Last Updated: September 9, 2026 • Version 3.1.6"
+  "s_6e03762a6d51": "Last Updated: September 13, 2026 • Version 3.2.0"
 }

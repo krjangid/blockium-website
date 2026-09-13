@@ -304,9 +304,9 @@
   "s_cd67aed76eb9": "Wie funktioniert das Blockieren von Popups und wie erlaube ich Popups auf einer Website?",
   "s_80c3eaddf9a2": "Wenn ein unerwünschtes Popup blockiert wird, bietet ein Overlay Optionen: „Einmal öffnen“, um das Ziel einmalig ohne Whitelisting der Domain zu öffnen, oder „Hier erlauben“, um die Website zu Ihren Popup-Ausnahmen hinzuzufügen. Da der Popup-Schutz einen von Chrome registrierten isolierten Hook verwendet, aktualisieren Sie die Seite nach dem Ändern der Berechtigungen, damit die neuen Regeln wirksam werden.",
   "s_01ad3c037fb8": "Aktualisieren Sie nach dem Umschalten des Schutzes, dem Ändern der Popup-Erlaubnis oder dem Hinzufügen einer Website-Ausnahme die geöffnete Seite, damit der Browser die aktualisierten Skripte und Filterregeln anwendet.",
-  "s_18c4dae08b2c": "Version 3.1.6",
+  "s_e579f7c5c52c": "Version 3.2.0",
   "s_2877e27b5b6a": "Entdecke Erweiterungsfenster und Dashboard. Echte Screenshots mit dem Design Pure Minimal.",
   "s_479388bc9e0e": "Einfacher Modus · Pure Minimal",
   "s_d9cf73ea072c": "Erweiterter Modus · Pure Minimal",
-  "s_12c73ffbbcf7": "Zuletzt aktualisiert: 9. September 2026 • Version 3.1.6"
+  "s_6e03762a6d51": "Zuletzt aktualisiert: 13. September 2026 • Version 3.2.0"
 }

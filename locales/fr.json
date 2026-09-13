@@ -304,9 +304,9 @@
   "s_cd67aed76eb9": "Comment fonctionne le blocage des fenêtres contextuelles et comment les autoriser sur un site ?",
   "s_80c3eaddf9a2": "Lorsqu’une fenêtre contextuelle non sollicitée est bloquée, une interface propose deux options : « Ouvrir une fois » pour ouvrir la destination une seule fois sans inscrire le domaine sur liste blanche, ou « Autoriser ici » pour ajouter le site à vos exceptions de popups. Comme la protection utilise un hook isolé enregistré par Chrome, n’oubliez pas d’actualiser la page après avoir modifié les autorisations pour que les nouvelles règles s’appliquent.",
   "s_01ad3c037fb8": "Après avoir basculé la protection, modifié les autorisations de fenêtres contextuelles ou ajouté une exception de site, actualisez la page ouverte pour que le navigateur applique le script et les règles de filtrage mis à jour.",
-  "s_18c4dae08b2c": "Version 3.1.6",
+  "s_e579f7c5c52c": "Version 3.2.0",
   "s_2877e27b5b6a": "Explorez la fenêtre de l’extension et le tableau de bord. Captures réelles avec le thème Pure Minimal.",
   "s_479388bc9e0e": "Mode simple · Pure Minimal",
   "s_d9cf73ea072c": "Mode avancé · Pure Minimal",
-  "s_12c73ffbbcf7": "Dernière mise à jour : 9 septembre 2026 • Version 3.1.6"
+  "s_6e03762a6d51": "Dernière mise à jour : 13 septembre 2026 • Version 3.2.0"
 }

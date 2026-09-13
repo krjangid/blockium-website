@@ -304,9 +304,9 @@
   "s_cd67aed76eb9": "Come funziona il blocco dei popup e come posso consentire i popup su un sito?",
   "s_80c3eaddf9a2": "Quando un popup non richiesto viene bloccato, una schermata offre delle opzioni: \"Apri una volta\" per aprire la destinazione una sola volta senza aggiungere il dominio alla whitelist, o \"Consenti qui\" per aggiungere il sito alle eccezioni popup. Poiché la protezione popup utilizza un hook isolato registrato da Chrome, ricordati di aggiornare la pagina dopo aver modificato i permessi affinché le nuove regole abbiano effetto.",
   "s_01ad3c037fb8": "Dopo aver attivato/disattivato la protezione, aggiornato i permessi dei popup o aggiunto un'eccezione per il sito, aggiorna la pagina aperta in modo che il browser applichi lo script e le regole di filtro aggiornate.",
-  "s_18c4dae08b2c": "Versione 3.1.6",
+  "s_e579f7c5c52c": "Versione 3.2.0",
   "s_2877e27b5b6a": "Esplora la finestra e la dashboard. Schermate reali dell’estensione con il tema Pure Minimal.",
   "s_479388bc9e0e": "Modalità semplice · Pure Minimal",
   "s_d9cf73ea072c": "Modalità avanzata · Pure Minimal",
-  "s_12c73ffbbcf7": "Ultimo aggiornamento: 9 settembre 2026 • Versione 3.1.6"
+  "s_6e03762a6d51": "Ultimo aggiornamento: 13 settembre 2026 • Versione 3.2.0"
 }

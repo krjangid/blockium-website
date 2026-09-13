@@ -304,9 +304,9 @@
   "s_cd67aed76eb9": "Hoe werkt het blokkeren van pop-ups en hoe sta ik pop-ups toe op een site?",
   "s_80c3eaddf9a2": "Wanneer een ongevraagde pop-up wordt geblokkeerd, toont een melding opties: \"Eenmalig openen\" om de bestemming eenmalig te openen zonder het domein op de whitelist te zetten, of \"Hier toestaan\" om de site toe te voegen aan uw pop-upuitzonderingen. Omdat de pop-upbescherming gebruikmaakt van een geïsoleerde haak die door Chrome is geregistreerd, moet u de pagina vernieuwen na het wijzigen van de machtigingen, zodat de nieuwe regels van kracht worden.",
   "s_01ad3c037fb8": "Vernieuw na het in-/uitschakelen van bescherming, het bijwerken van de pop-uptoestemming of het toevoegen van een site-uitzondering de geopende pagina, zodat de browser de bijgewerkte scripts en filterregels toepast.",
-  "s_18c4dae08b2c": "Versie 3.1.6",
+  "s_e579f7c5c52c": "Versie 3.2.0",
   "s_2877e27b5b6a": "Ontdek het extensievenster en dashboard. Echte schermafbeeldingen met het thema Pure Minimal.",
   "s_479388bc9e0e": "Eenvoudige modus · Pure Minimal",
   "s_d9cf73ea072c": "Uitgebreide modus · Pure Minimal",
-  "s_12c73ffbbcf7": "Laatst bijgewerkt: 9 september 2026 • Versie 3.1.6"
+  "s_6e03762a6d51": "Laatst bijgewerkt: 13 september 2026 • Versie 3.2.0"
 }
