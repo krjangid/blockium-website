@@ -196,7 +196,7 @@
   "s_ee1239683f3e": "Permite al motor nativo C++ de Chrome bloquear servidores publicitarios y solicitudes de rastreo antes de mostrar el contenido, sin enviar tráfico a servidores externos.",
   "s_c02f342d7ea3": "Permite aplicar reglas declarativas a solicitudes cubiertas por los permisos de host de la extensión.",
   "s_05f655e470f0": "Necesario para guardar localmente tus ajustes de tema, sitios permitidos y reglas del selector visual.",
-  "s_4c1f1c540061": "Se usa para controles del sitio actual, contadores, navegación, estadísticas por pestaña y mediciones de carga.",
+  "s_57adbbe9c64e": "Permite a Blockium contar cuáles de sus propias reglas de bloqueo coincidieron, para que la ventana emergente y el panel muestren cifras reales. Chrome informa de la regla y la pestaña, nunca del contenido de la página. Este permiso es el motivo del aviso de instalación de Chrome «Leer tu historial de navegación».",
   "s_ca7ae02a30ac": "Programa en segundo plano las actualizaciones periódicas de listas abiertas como EasyList.",
   "s_243621d26824": "Muestra alertas locales opcionales de malware o rastreadores detectados.",
   "s_f74f36f92ad4": "Necesario para reducir interrupciones de vídeo, cerrar avisos de cookies y ocultar elementos en los dominios visitados.",
@@ -298,15 +298,15 @@
   "s_0d0979852366": "Más funciones",
   "s_5e113c0c0694": "Menos interrupciones mientras miras.",
   "s_04dee4149b68": "Controles de Blockium · No es una demostración de reproducción",
-  "s_6a1f2824e2f9": "Última actualización: 9 de septiembre de 2026",
+  "s_b67b5f443f6f": "Última actualización: 17 de septiembre de 2026",
   "s_f9a9a79593cc": "Sí, Blockium es 100% gratuito, sin suscripciones de pago, muros de pago premium ni cargos ocultos.",
   "s_27a79bd655e5": "Registra el gancho de bloqueo de ventanas emergentes en el entorno de ejecución principal con exclusiones de dominio, evitando que los scripts de sitios web eludan la protección.",
   "s_cd67aed76eb9": "¿Cómo funciona el bloqueo de ventanas emergentes y cómo las permito en un sitio?",
   "s_80c3eaddf9a2": "Cuando se bloquea una ventana emergente no solicitada, una superposición le ofrece opciones: \"Abrir una vez\" para abrir el destino una sola vez sin incluir el dominio en la lista de permitidos, o \"Permitir aquí\" para agregar el sitio a sus excepciones de ventanas emergentes. Como la protección contra ventanas emergentes utiliza un enlace aislado registrado por Chrome, recuerde actualizar la página después de cambiar los permisos para que surtan efecto las nuevas reglas.",
   "s_01ad3c037fb8": "Después de alternar la protección, actualizar los permisos de ventanas emergentes o agregar una excepción para el sitio, actualice la página abierta para que el navegador aplique el script y las reglas de filtrado actualizadas.",
-  "s_e579f7c5c52c": "Versión 3.2.0",
+  "s_52c84fdc4b7d": "Versión 3.2.1",
   "s_2877e27b5b6a": "Explora la ventana de la extensión y el panel. Capturas reales con el tema Pure Minimal.",
   "s_479388bc9e0e": "Modo sencillo · Pure Minimal",
   "s_d9cf73ea072c": "Modo avanzado · Pure Minimal",
-  "s_6e03762a6d51": "Última actualización: 13 de septiembre de 2026 • Versión 3.2.0"
+  "s_2e27b6d458db": "Última actualización: 13 de septiembre de 2026 • Versión 3.2.1"
 }

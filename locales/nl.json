@@ -196,7 +196,7 @@
   "s_ee1239683f3e": "Laat de ingebouwde C++-engine van Chrome advertentie- en trackingverzoeken blokkeren voordat de pagina verschijnt, zonder verkeer naar externe servers te sturen.",
   "s_c02f342d7ea3": "Laat declaratieve netwerkregels werken op verzoeken die onder de hostmachtigingen van de extensie vallen.",
   "s_05f655e470f0": "Nodig om thema's, toegestane websites en eigen elementregels lokaal te bewaren.",
-  "s_4c1f1c540061": "Gebruikt voor huidige websitebediening, tellers, navigatie, tabstatistieken en laadtijdmetingen.",
+  "s_57adbbe9c64e": "Laat Blockium tellen welke van zijn eigen blokkeerregels zijn toegepast, zodat de pop-up en het dashboard echte aantallen tonen. Chrome meldt alleen de regel en het tabblad, nooit de pagina-inhoud. Deze machtiging is de reden voor Chrome’s installatiewaarschuwing “Je browsegeschiedenis lezen”.",
   "s_ca7ae02a30ac": "Plant regelmatige achtergrondupdates van open filterlijsten, zoals EasyList.",
   "s_243621d26824": "Toont optionele lokale desktopwaarschuwingen voor herkende malware of trackers.",
   "s_f74f36f92ad4": "Nodig om video-onderbrekingen te verminderen, cookiebanners te sluiten en elementen op bezochte domeinen te verbergen.",
@@ -298,15 +298,15 @@
   "s_0d0979852366": "Meer functies",
   "s_5e113c0c0694": "Minder onderbrekingen tijdens het kijken.",
   "s_04dee4149b68": "Blockium-bediening · Geen demonstratie van videoweergave",
-  "s_6a1f2824e2f9": "Laatst bijgewerkt: 9 september 2026",
+  "s_b67b5f443f6f": "Laatst bijgewerkt: 17 september 2026",
   "s_f9a9a79593cc": "Ja, Blockium is 100% gratis zonder betaalde abonnementen, premiumpaywalls of verborgen kosten.",
   "s_27a79bd655e5": "Registreert de pop-upblokkeringshaak in de hoofduitvoeringsomgeving met domeinuitsluitingen, waardoor wordt voorkomen dat websitescripts de pop-upbescherming omzeilen.",
   "s_cd67aed76eb9": "Hoe werkt het blokkeren van pop-ups en hoe sta ik pop-ups toe op een site?",
   "s_80c3eaddf9a2": "Wanneer een ongevraagde pop-up wordt geblokkeerd, toont een melding opties: \"Eenmalig openen\" om de bestemming eenmalig te openen zonder het domein op de whitelist te zetten, of \"Hier toestaan\" om de site toe te voegen aan uw pop-upuitzonderingen. Omdat de pop-upbescherming gebruikmaakt van een geïsoleerde haak die door Chrome is geregistreerd, moet u de pagina vernieuwen na het wijzigen van de machtigingen, zodat de nieuwe regels van kracht worden.",
   "s_01ad3c037fb8": "Vernieuw na het in-/uitschakelen van bescherming, het bijwerken van de pop-uptoestemming of het toevoegen van een site-uitzondering de geopende pagina, zodat de browser de bijgewerkte scripts en filterregels toepast.",
-  "s_e579f7c5c52c": "Versie 3.2.0",
+  "s_52c84fdc4b7d": "Versie 3.2.1",
   "s_2877e27b5b6a": "Ontdek het extensievenster en dashboard. Echte schermafbeeldingen met het thema Pure Minimal.",
   "s_479388bc9e0e": "Eenvoudige modus · Pure Minimal",
   "s_d9cf73ea072c": "Uitgebreide modus · Pure Minimal",
-  "s_6e03762a6d51": "Laatst bijgewerkt: 13 september 2026 • Versie 3.2.0"
+  "s_2e27b6d458db": "Laatst bijgewerkt: 13 september 2026 • Versie 3.2.1"
 }
