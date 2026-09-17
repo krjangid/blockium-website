@@ -236,7 +236,7 @@
   "s_3c331e964e0c": "8. Änderungen an Dienst und Bedingungen",
   "s_ca2825bc081e": "9. Kontakt",
   "s_13aa535d6036": "Durch Herunterladen, Installieren oder Verwenden der Blockium-Browsererweiterung („Erweiterung“) oder den Zugriff auf die Blockium-Website unter",
-  "s_ea9c3f139d2c": "blockium.pages.dev",
+  "s_9308a807b4f5": "blockium.in",
   "s_6166c8ac8ad6": "(„Website“) erklärst du dich mit diesen Nutzungsbedingungen („Bedingungen“) einverstanden. Wenn du nicht einverstanden bist, installiere oder nutze die Erweiterung nicht.",
   "s_4e57c5cfca57": "Blockium ist eine kostenlose Browsererweiterung zur Verbesserung von Geschwindigkeit, Datenschutz und Lesbarkeit durch native Netzwerkfilterung, Seitenelementfilterung und Helfer zum Überspringen oder Beschleunigen erkannter Streaming-Werbung.",
   "s_a6cd813eff71": "Vorbehaltlich dieser Bedingungen gewährt Blockium eine persönliche, nicht ausschließliche, nicht übertragbare und widerrufliche Lizenz zur persönlichen, nicht kommerziellen oder unternehmensinternen Browsernutzung. Du verpflichtest dich, Folgendes zu unterlassen:",
@@ -304,9 +304,9 @@
   "s_cd67aed76eb9": "Wie funktioniert das Blockieren von Popups und wie erlaube ich Popups auf einer Website?",
   "s_80c3eaddf9a2": "Wenn ein unerwünschtes Popup blockiert wird, bietet ein Overlay Optionen: „Einmal öffnen“, um das Ziel einmalig ohne Whitelisting der Domain zu öffnen, oder „Hier erlauben“, um die Website zu Ihren Popup-Ausnahmen hinzuzufügen. Da der Popup-Schutz einen von Chrome registrierten isolierten Hook verwendet, aktualisieren Sie die Seite nach dem Ändern der Berechtigungen, damit die neuen Regeln wirksam werden.",
   "s_01ad3c037fb8": "Aktualisieren Sie nach dem Umschalten des Schutzes, dem Ändern der Popup-Erlaubnis oder dem Hinzufügen einer Website-Ausnahme die geöffnete Seite, damit der Browser die aktualisierten Skripte und Filterregeln anwendet.",
-  "s_18c4dae08b2c": "Version 3.1.6",
+  "s_e579f7c5c52c": "Version 3.2.0",
   "s_2877e27b5b6a": "Entdecke Erweiterungsfenster und Dashboard. Echte Screenshots mit dem Design Pure Minimal.",
   "s_479388bc9e0e": "Einfacher Modus · Pure Minimal",
   "s_d9cf73ea072c": "Erweiterter Modus · Pure Minimal",
-  "s_12c73ffbbcf7": "Zuletzt aktualisiert: 9. September 2026 • Version 3.1.6"
+  "s_6e03762a6d51": "Zuletzt aktualisiert: 13. September 2026 • Version 3.2.0"
 }

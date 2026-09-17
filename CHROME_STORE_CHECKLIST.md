@@ -53,11 +53,11 @@ Copy and paste these exact explanations into the **Privacy Practices** tab of yo
 * **Short Description (≤ 132 chars):**
   `Block video ads, intrusive trackers, cookie consent popups, and malicious domains with zero telemetry and 0ms latency.`
 * **Official Website URL:**
-  `https://blockium.pages.dev`
+  `https://blockium.in`
 * **Official Privacy Policy URL:**
-  `https://blockium.pages.dev/privacy`
+  `https://blockium.in/privacy`
 * **Official Terms of Service URL:**
-  `https://blockium.pages.dev/terms`
+  `https://blockium.in/terms`
 * **Support Email:**
   `blockiumapps@gmail.com`
 * **Category:**

@@ -236,7 +236,7 @@
   "s_3c331e964e0c": "8. Modifiche al servizio e ai termini",
   "s_ca2825bc081e": "9. Contatti",
   "s_13aa535d6036": "Scaricando, installando o usando l’estensione Blockium (\"Estensione\") o accedendo al sito Blockium su",
-  "s_ea9c3f139d2c": "blockium.pages.dev",
+  "s_9308a807b4f5": "blockium.in",
   "s_6166c8ac8ad6": "(\"Sito\"), accetti questi Termini di servizio (\"Termini\"). Se non li accetti, non installare né usare l’Estensione.",
   "s_4e57c5cfca57": "Blockium è un’estensione gratuita per migliorare velocità, privacy e leggibilità tramite filtri di rete nativi, filtri degli elementi e strumenti per saltare o accelerare gli annunci in streaming rilevati.",
   "s_a6cd813eff71": "In base ai presenti Termini, Blockium concede una licenza personale, non esclusiva, non trasferibile e revocabile per usi personali, non commerciali o di navigazione aziendale interna. Ti impegni a non:",
@@ -304,9 +304,9 @@
   "s_cd67aed76eb9": "Come funziona il blocco dei popup e come posso consentire i popup su un sito?",
   "s_80c3eaddf9a2": "Quando un popup non richiesto viene bloccato, una schermata offre delle opzioni: \"Apri una volta\" per aprire la destinazione una sola volta senza aggiungere il dominio alla whitelist, o \"Consenti qui\" per aggiungere il sito alle eccezioni popup. Poiché la protezione popup utilizza un hook isolato registrato da Chrome, ricordati di aggiornare la pagina dopo aver modificato i permessi affinché le nuove regole abbiano effetto.",
   "s_01ad3c037fb8": "Dopo aver attivato/disattivato la protezione, aggiornato i permessi dei popup o aggiunto un'eccezione per il sito, aggiorna la pagina aperta in modo che il browser applichi lo script e le regole di filtro aggiornate.",
-  "s_18c4dae08b2c": "Versione 3.1.6",
+  "s_e579f7c5c52c": "Versione 3.2.0",
   "s_2877e27b5b6a": "Esplora la finestra e la dashboard. Schermate reali dell’estensione con il tema Pure Minimal.",
   "s_479388bc9e0e": "Modalità semplice · Pure Minimal",
   "s_d9cf73ea072c": "Modalità avanzata · Pure Minimal",
-  "s_12c73ffbbcf7": "Ultimo aggiornamento: 9 settembre 2026 • Versione 3.1.6"
+  "s_6e03762a6d51": "Ultimo aggiornamento: 13 settembre 2026 • Versione 3.2.0"
 }

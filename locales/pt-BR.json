@@ -236,7 +236,7 @@
   "s_3c331e964e0c": "8. Alterações no serviço e nos termos",
   "s_ca2825bc081e": "9. Contato",
   "s_13aa535d6036": "Ao baixar, instalar ou usar a extensão Blockium (\"Extensão\") ou acessar o site Blockium em",
-  "s_ea9c3f139d2c": "blockium.pages.dev",
+  "s_9308a807b4f5": "blockium.in",
   "s_6166c8ac8ad6": "(\"Site\"), você concorda com estes Termos de serviço (\"Termos\"). Se não concordar, não instale nem use a Extensão.",
   "s_4e57c5cfca57": "O Blockium é uma extensão gratuita para melhorar velocidade, privacidade e legibilidade por meio de filtros de rede nativos, filtros de elementos e ferramentas para pular ou acelerar anúncios de streaming detectados.",
   "s_a6cd813eff71": "Sujeito a estes Termos, o Blockium concede uma licença pessoal, não exclusiva, intransferível e revogável para uso pessoal, não comercial ou de navegação empresarial interna. Você concorda em não:",
@@ -304,9 +304,9 @@
   "s_cd67aed76eb9": "Como funciona o bloqueio de pop-ups e como posso permitir pop-ups em um site?",
   "s_80c3eaddf9a2": "Quando um pop-up indesejado é bloqueado, uma sobreposição oferece opções: \"Abrir uma vez\" para abrir o destino apenas desta vez sem colocar o domínio na lista de permissões, ou \"Permitir aqui\" para adicionar o site às suas exceções de pop-up. Como a proteção contra pop-ups usa um interceptor isolado registrado pelo Chrome, lembre-se de atualizar a página após alterar as permissões para que as novas regras entrem em vigor.",
   "s_01ad3c037fb8": "Depois de alternar a proteção, atualizar a permissão de pop-ups ou adicionar uma exceção para o site, atualize a página aberta para que o navegador aplique o script e as regras de filtragem atualizadas.",
-  "s_18c4dae08b2c": "Versão 3.1.6",
+  "s_e579f7c5c52c": "Versão 3.2.0",
   "s_2877e27b5b6a": "Explore a janela e o painel. Capturas reais da extensão com o tema Pure Minimal.",
   "s_479388bc9e0e": "Modo simples · Pure Minimal",
   "s_d9cf73ea072c": "Modo avançado · Pure Minimal",
-  "s_12c73ffbbcf7": "Última atualização: 9 de setembro de 2026 • Versão 3.1.6"
+  "s_6e03762a6d51": "Última atualização: 13 de setembro de 2026 • Versão 3.2.0"
 }
