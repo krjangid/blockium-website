@@ -196,7 +196,7 @@
   "s_ee1239683f3e": "Enables Chrome's native C++ engine to block ad servers and tracking requests before page content renders, without transmitting network traffic to any external server.",
   "s_c02f342d7ea3": "Allows declarative network rules to operate on requests covered by the extension’s host permissions.",
   "s_05f655e470f0": "Required to save your user settings (theme preference, whitelisted websites, custom zapper rules) locally on your device.",
-  "s_4c1f1c540061": "Used for current-site controls, toolbar counts, navigation events, per-tab statistics, and page-load measurements.",
+  "s_57adbbe9c64e": "Lets Blockium count which of its own blocking rules matched, so the popup and dashboard can show real numbers. Chrome reports the rule and the tab, never page content. This is the permission behind Chrome’s “Read your browsing history” install warning.",
   "s_ca7ae02a30ac": "Used to schedule periodic local updates of open-source filter lists (e.g. EasyList) in the background.",
   "s_243621d26824": "Used to display optional local desktop alerts for detected malware or tracker activity.",
   "s_f74f36f92ad4": "Necessary for content scriptlets to suppress video ad interruptions (e.g., YouTube), auto-dismiss cookie banners, and apply cosmetic element hiding across all visited domains.",
@@ -298,15 +298,15 @@
   "s_0d0979852366": "More features",
   "s_5e113c0c0694": "Fewer interruptions while you watch.",
   "s_04dee4149b68": "Blockium controls · Not a streaming playback demonstration",
-  "s_6a1f2824e2f9": "Last Updated: September 9, 2026",
+  "s_b67b5f443f6f": "Last Updated: September 17, 2026",
   "s_f9a9a79593cc": "Yes, Blockium is 100% free with no paid subscriptions, premium paywalls, or hidden charges.",
   "s_27a79bd655e5": "Registers the popup-blocking hook in the main execution world with domain exclusions, preventing website scripts from bypassing popup protection.",
   "s_cd67aed76eb9": "How does popup blocking work, and how do I allow popups on a site?",
   "s_80c3eaddf9a2": "When an unsolicited popup is blocked, an overlay gives you options: \"Open once\" to open the destination once without whitelisting the domain, or \"Allow here\" to add the site to your popup exceptions. Because popup protection uses an isolated hook registered by Chrome, remember to refresh the page after changing popup permissions so the new rules take effect.",
   "s_01ad3c037fb8": "After toggling protection, updating popup allowance, or adding a site exception, refresh the open page so the browser applies the updated script and filtering rules.",
-  "s_e579f7c5c52c": "Version 3.2.0",
+  "s_52c84fdc4b7d": "Version 3.2.1",
   "s_2877e27b5b6a": "Explore the popup and dashboard. Real extension screenshots, shown in the Pure Minimal theme.",
   "s_479388bc9e0e": "Simple mode · Pure Minimal",
   "s_d9cf73ea072c": "Advanced mode · Pure Minimal",
-  "s_6e03762a6d51": "Last Updated: September 13, 2026 • Version 3.2.0"
+  "s_2e27b6d458db": "Last Updated: September 13, 2026 • Version 3.2.1"
 }

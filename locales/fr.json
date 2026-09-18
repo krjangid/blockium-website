@@ -196,7 +196,7 @@
   "s_ee1239683f3e": "Permet au moteur natif C++ de Chrome de bloquer les serveurs publicitaires et les requêtes de suivi avant l’affichage de la page, sans transmettre le trafic à un serveur externe.",
   "s_c02f342d7ea3": "Permet aux règles réseau déclaratives de traiter les requêtes couvertes par les autorisations d’hôte de l’extension.",
   "s_05f655e470f0": "Nécessaire pour enregistrer localement vos réglages : thème, exceptions de sites et règles du sélecteur visuel.",
-  "s_4c1f1c540061": "Utilisé pour les commandes du site actuel, les compteurs, la navigation, les statistiques par onglet et les mesures de chargement.",
+  "s_57adbbe9c64e": "Permet à Blockium de compter lesquelles de ses propres règles de blocage ont été appliquées, afin que la fenêtre et le tableau de bord affichent des chiffres réels. Chrome signale la règle et l’onglet, jamais le contenu de la page. Cette autorisation explique l’avertissement d’installation « Lire votre historique de navigation ».",
   "s_ca7ae02a30ac": "Utilisé pour planifier en arrière-plan les mises à jour périodiques des listes de filtres ouvertes, comme EasyList.",
   "s_243621d26824": "Utilisé pour afficher des alertes locales facultatives concernant les logiciels malveillants ou les traqueurs détectés.",
   "s_f74f36f92ad4": "Nécessaire pour réduire les interruptions vidéo, fermer les bannières de cookies et masquer des éléments sur les sites visités.",
@@ -298,15 +298,15 @@
   "s_0d0979852366": "Plus de fonctionnalités",
   "s_5e113c0c0694": "Moins d’interruptions pendant vos vidéos.",
   "s_04dee4149b68": "Commandes Blockium · Pas une démonstration de lecture vidéo",
-  "s_6a1f2824e2f9": "Dernière mise à jour : 9 septembre 2026",
+  "s_b67b5f443f6f": "Dernière mise à jour : 17 septembre 2026",
   "s_f9a9a79593cc": "Oui, Blockium est 100 % gratuit, sans abonnement payant, sans paywall premium ni frais cachés.",
   "s_27a79bd655e5": "Enregistre le crochet de blocage des fenêtres contextuelles dans le contexte d'exécution principal avec des exclusions de domaine, empêchant les scripts des sites de contourner la protection.",
   "s_cd67aed76eb9": "Comment fonctionne le blocage des fenêtres contextuelles et comment les autoriser sur un site ?",
   "s_80c3eaddf9a2": "Lorsqu’une fenêtre contextuelle non sollicitée est bloquée, une interface propose deux options : « Ouvrir une fois » pour ouvrir la destination une seule fois sans inscrire le domaine sur liste blanche, ou « Autoriser ici » pour ajouter le site à vos exceptions de popups. Comme la protection utilise un hook isolé enregistré par Chrome, n’oubliez pas d’actualiser la page après avoir modifié les autorisations pour que les nouvelles règles s’appliquent.",
   "s_01ad3c037fb8": "Après avoir basculé la protection, modifié les autorisations de fenêtres contextuelles ou ajouté une exception de site, actualisez la page ouverte pour que le navigateur applique le script et les règles de filtrage mis à jour.",
-  "s_e579f7c5c52c": "Version 3.2.0",
+  "s_52c84fdc4b7d": "Version 3.2.1",
   "s_2877e27b5b6a": "Explorez la fenêtre de l’extension et le tableau de bord. Captures réelles avec le thème Pure Minimal.",
   "s_479388bc9e0e": "Mode simple · Pure Minimal",
   "s_d9cf73ea072c": "Mode avancé · Pure Minimal",
-  "s_6e03762a6d51": "Dernière mise à jour : 13 septembre 2026 • Version 3.2.0"
+  "s_2e27b6d458db": "Dernière mise à jour : 13 septembre 2026 • Version 3.2.1"
 }
