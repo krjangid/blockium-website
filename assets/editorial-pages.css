@@ -1,0 +1,60 @@
+/* Ivory editorial styling for legal and support pages. */
+:root { --bg-canvas:#f2efe9; --surface-white:#fcfbf8; --text-dark:#171714; --text-body:#55554f; --text-muted:#66645e; --neon:#a32f19; --font-sans:Arial,Helvetica,sans-serif; --font-mono:monospace; --border-light:#d4cfc5; --border-light-medium:#c9c5bd; }
+html { scroll-padding-top:24px; }
+body { padding-top:0; background:#f2efe9; font-family:Arial,Helvetica,sans-serif; }
+body::before { display:none; }
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible { outline:3px solid #a32f19; outline-offset:4px; }
+.nav-wrapper { position:relative; top:auto; padding:0 28px; }
+.nav-capsule { max-width:1200px; border:0; border-radius:0 0 48px 48px; background:#fcfbf8; box-shadow:none; backdrop-filter:none; padding:22px 30px; display:flex; flex-wrap:wrap; gap:24px; align-items:center; justify-content:space-between; }
+.nav-brand { display:flex; gap:10px; align-items:center; font:30px Georgia,serif; color:#171714; letter-spacing:-1px; }
+.nav-brand img { width:28px; height:34px; }
+.brand-dot { display:none; }
+.nav-links { display:flex!important; flex-wrap:wrap; gap:20px; list-style:none; align-items:center; }
+.nav-links a { color:#55554f; font-size:14px; font-weight:400; }
+.nav-links a:hover,.nav-links a[aria-current=page],.nav-links a.active { color:#a32f19; background:transparent; text-decoration:underline; text-underline-offset:6px; }
+.nav-cta { background:#a32f19; color:white; border-radius:40px; padding:11px 22px; }
+.language-control { font-weight:400; }
+.language-control select { border-color:#c9c5bd; background:#f2efe9; border-radius:24px; }
+.wrap { max-width:1050px; width:100%; padding:0 32px 50px; margin:auto; }
+.policy-header,.terms-header { text-align:left; margin:80px 0 40px; padding:0; }
+.policy-eyebrow,.terms-eyebrow { color:#a32f19; font:12px Arial,sans-serif; letter-spacing:.15em; background:none; border:0; padding:0; }
+.policy-title,.terms-title,.report-card h1 { font:400 clamp(42px,6vw,76px)/1.06 Georgia,serif; color:#a32f19; letter-spacing:-.045em; margin:20px 0 24px; }
+.legal-intro,.report-card p.subtitle { font-size:19px; line-height:1.6; color:#55554f; max-width:760px; }
+.policy-meta,.terms-meta { justify-content:flex-start; margin-top:26px; font-family:Arial,sans-serif; color:#66645e; }
+.badge-pill { background:transparent; border:1px solid #c9c5bd; color:#a32f19; font-weight:400; }
+.legal-toc { display:grid; grid-template-columns:1fr 1fr; gap:14px 30px; padding:28px 0; margin:0 0 36px; background:transparent; border:0; border-top:1px solid #c9c5bd; border-bottom:1px solid #c9c5bd; border-radius:0; }
+.legal-toc a { color:#55554f; font-size:14px; }
+.legal-toc a:hover { color:#a32f19; }
+.policy-card,.terms-card { background:transparent; padding:0; border:0; border-radius:0; box-shadow:none; }
+.policy-section,.terms-section { padding:28px 0; border-bottom:1px solid #d4cfc5; margin:0; }
+.policy-section h2,.terms-section h2 { font-size:27px; font-weight:400; letter-spacing:-.025em; color:#171714; margin-bottom:20px; }
+.policy-section p,.terms-section p,.policy-section li,.terms-section li { color:#55554f; font-size:17px; line-height:1.8; }
+.policy-section a,.terms-section a,.footer-note a { color:#a32f19; text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }
+.highlight-box { background:#e9e3da; color:#171714; border:0; border-left:3px solid #a32f19; border-radius:0; padding:24px; }
+.permission-table { width:100%; table-layout:fixed; border-collapse:collapse; font-size:15px; }
+.permission-table th { background:#e9e3da; color:#171714; }
+.permission-table td,.permission-table th { overflow-wrap:anywhere; padding:16px; border-color:#c9c5bd; }
+.permission-table .perm-name { color:#a32f19; font-size:13px; }
+.policy-footer,.terms-footer,.site-footer { color:#66645e; border-top:1px solid #c9c5bd; margin-top:40px; padding:30px 0; }
+.policy-footer p,.terms-footer p { display:flex; flex-wrap:wrap; gap:20px; }
+.report-card { max-width:780px; background:transparent; margin:70px auto 0; padding:0; border:0; box-shadow:none; }
+.report-card h1 { max-width:720px; }
+.report-card form { background:#fcfbf8; border:1px solid #d4cfc5; border-radius:24px; padding:36px; margin-top:36px; }
+.form-group { margin-bottom:26px; }
+.form-group label { font-size:15px; font-weight:400; }
+.form-control { background:#f2efe9; border:1px solid #c9c5bd; border-radius:10px; font:16px/1.5 Arial,sans-serif; color:#171714; padding:14px; min-width:0; max-width:100%; }
+.form-control:focus { border-color:#a32f19; box-shadow:none; outline:2px solid #a32f19; outline-offset:2px; }
+textarea.form-control { min-height:150px; resize:vertical; }
+.form-hint { color:#66645e; }
+.btn-neon { background:#a32f19; color:white; border:0; border-radius:40px; padding:15px 28px; min-height:48px; font-size:16px; font-weight:400; box-shadow:none; }
+.btn-neon:hover { background:#812512; box-shadow:none; transform:none; }
+.btn-neon:disabled { opacity:.6; cursor:wait; }
+.footer-note { margin-top:28px; color:#66645e; }
+.language-suggestion { background:#e9e3da; color:#171714; }
+.language-suggestion button { border-color:#a32f19; }
+@media(max-width:700px) { .nav-wrapper{padding:0 14px}.nav-capsule{padding:22px;gap:18px;border-radius:0 0 28px 28px}.nav-links{width:100%;gap:14px}.nav-links a{font-size:13px}.nav-cta{display:none}.nav-brand{font-size:26px}.language-control>span{display:none}.language-control select{max-width:122px}.wrap{padding:0 22px 35px}.policy-header,.terms-header{margin-top:48px}.legal-toc{grid-template-columns:1fr}.report-card{margin-top:48px}.report-card form{padding:22px 16px}.report-card h1{font-size:43px}.permission-table td,.permission-table th{padding:10px;font-size:13px}.policy-section h2,.terms-section h2{font-size:25px}.legal-intro,.report-card p.subtitle{font-size:17px} }
+@media(prefers-reduced-motion:reduce) { html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important} }
+.skip-link { position:fixed; top:-100px; left:20px; z-index:2000; background:#fcfbf8; color:#a32f19; padding:12px 18px; border-radius:6px; }
+.skip-link:focus { top:12px; }
+.legal-toc a { background:transparent; border:0; border-radius:0; box-shadow:none; padding:8px 0; text-decoration:none; }
+.legal-toc a:hover { text-decoration:underline; text-underline-offset:4px; }
