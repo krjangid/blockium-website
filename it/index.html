@@ -30,6 +30,8 @@
 
 <script src="/assets/product-preview.js" defer></script>
 <link rel="stylesheet" href="/assets/editorial.css">
+<link rel="stylesheet" href="/assets/fonts/poppins.css">
+<link rel="stylesheet" href="/assets/brand.css">
 <link rel="alternate" hreflang="en" href="https://blockium.in/">
 <link rel="alternate" hreflang="hi" href="https://blockium.in/hi/">
 <link rel="alternate" hreflang="de" href="https://blockium.in/de/">
@@ -48,12 +50,12 @@
 
 <header class="site-header">
 <button class="menu-button" id="mobileToggle" aria-label="Apri navigazione" aria-expanded="false" aria-controls="mobileDrawer">☰ <span>Menu</span></button>
-<nav class="nav-island" aria-label="Primary"><a href="#features">Funzioni</a><a class="wordmark" href="/it/" data-no-translate><svg width="28" height="34" viewbox="0 0 24 30" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 22 5v10c0 6-10 12-10 12S2 21 2 15V5Z"></path></svg>Blockium</a><a href="#privacy">Privacy</a></nav>
+<nav class="nav-island" aria-label="Primary"><a href="#features">Funzioni</a><a class="wordmark" href="/it/" data-no-translate><img src="/assets/blockium-mark.svg" width="34" height="45" alt=""><span>Blockium<span class="brand-dot" aria-hidden="true">.</span></span></a><a href="#privacy">Privacy</a></nav>
 <a class="header-install" href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer">Aggiungi a Chrome <span aria-hidden="true">↗</span></a></header>
   <!-- Mobile Drawer -->
   <div class="mobile-drawer" id="mobileDrawer">
     <a href="#features" class="mobile-link">Funzioni</a>
-    <a href="#protection" class="mobile-link">Tutte le funzioni</a>
+    <a href="#how-it-works" class="mobile-link">How It Works</a>
     <a href="#product" class="mobile-link">Prodotto</a>
     <a href="/it/privacy/" class="mobile-link">Privacy</a>
     <a href="#faq" class="mobile-link">Domande frequenti</a>
@@ -70,72 +72,17 @@
 <section class="hero-section wrap">
 <div class="hero-content"><h1><span>Internet,</span><span>senza</span><em>interruzioni.</em></h1>
 <p class="hero-lead">Blocca annunci, tracker e popup indesiderati.<br>Mantieni il controllo della navigazione.</p>
-<div class="hero-actions"><a class="btn btn-neon" href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer">Aggiungi a Chrome <span aria-hidden="true">↗</span></a><a class="text-link" href="#features">Scopri Blockium <span aria-hidden="true">↓</span></a></div></div>
+<div class="hero-actions"><a class="btn btn-neon" href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer">Aggiungi a Chrome <span aria-hidden="true">↗</span></a><a class="text-link" href="#features">Scopri Blockium <span aria-hidden="true">↓</span></a></div><p class="trust-row"><span>Nessun account richiesto</span><span>Statistiche sul dispositivo</span><a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer">Chrome Web Store ↗</a></p>
+<div class="hero-stats"><span>0 TELEMETRY LOGS</span><span>0ms DNR LATENCY</span><span>100% ON-DEVICE</span><span>MANIFEST V3</span></div></div>
 <div class="hero-art"><img src="/assets/editorial-shield.jpg" width="1448" height="1086" fetchpriority="high" alt=""><span class="art-caption">Meno pubblicità e tracker<br>Controlli semplici per sito</span></div>
 </section>
-<section class="intro-strip wrap" aria-label="Panoramica"><div><span class="section-eyebrow">PROTEZIONE QUOTIDIANA</span><h2>Più spazio per<br>ciò che conta.</h2></div><article><span class="line-icon" aria-hidden="true">◇</span><h3>Blocco degli annunci</h3><p>Blocca richieste ai domini pubblicitari e di tracciamento presenti nelle liste e nascondi gli spazi pubblicitari più comuni.</p></article><article><span class="line-icon" aria-hidden="true">▢</span><h3>Controllo dei popup</h3><p>Sopprimi i comuni inviti alle newsletter e i popup indesiderati. Le richieste di autorizzazione alle notifiche vengono rifiutate automaticamente.</p></article><article><span class="line-icon" aria-hidden="true">♧</span><h3>Prima la privacy</h3><p>Impostazioni e statistiche restano sul dispositivo. Nessun account, invio di analisi della navigazione o profilo pubblicitario.</p></article></section>
-  <section class="pillars-section" id="features">
-    <div class="wrap">
 
-      <div class="section-header">
-        <span class="section-eyebrow">PROTEZIONE QUOTIDIANA</span>
-        <h2 class="section-title">Meno rumore. Più controllo.</h2>
-        <p class="section-desc">
-          Protezione per la navigazione quotidiana, con eccezioni facili da gestire.
-        </p>
-      </div>
 
-      <div class="pillars-grid">
-
-        <!-- Pillar 01 -->
-        <div class="pillar-card">
-          <div class="pillar-num">01</div>
-          <div class="pillar-body">
-            <h3>Meno pubblicità e tracker</h3>
-            <p>Il filtro integrato in Chrome blocca richieste a domini pubblicitari e di tracciamento. Le liste pubbliche si aggiornano automaticamente.</p>
-            <span class="pillar-tag">Filtri nativi di Chrome</span>
-          </div>
-        </div>
-
-        <!-- Pillar 02 -->
-        <div class="pillar-card">
-          <div class="pillar-num">02</div>
-          <div class="pillar-body">
-            <h3>La privacy resta locale</h3>
-            <p>Impostazioni e statistiche restano sul dispositivo. Nessun account, invio di analisi della navigazione o profilo pubblicitario.</p>
-            <span class="pillar-tag">100% locale</span>
-          </div>
-        </div>
-
-        <!-- Pillar 03 -->
-        <div class="pillar-card">
-          <div class="pillar-num">03</div>
-          <div class="pillar-body">
-            <h3>Meno interruzioni video</h3>
-            <p>Strumenti dedicati saltano o accelerano gli annunci rilevati su YouTube, Prime Video, Hotstar e SonyLIV. I risultati variano quando i siti cambiano.</p>
-            <span class="pillar-tag">Strumenti per lo streaming</span>
-          </div>
-        </div>
-
-        <!-- Pillar 04 -->
-        <div class="pillar-card">
-          <div class="pillar-num">04</div>
-          <div class="pillar-body">
-            <h3>Il tuo sito, le tue impostazioni</h3>
-            <p>Attiva la chiusura facoltativa dei banner dei cookie, consenti gli avvisi su alcuni siti o sospendi la protezione quando serve.</p>
-            <span class="pillar-tag">Controlli semplici per sito</span>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
 
   <!-- ==========================================================================
        SECTION: DEEP DIVE BENTO GRID (PRODUCTION-GRADE FEATURE SHOWCASE)
        ========================================================================== -->
-  <section class="feature-section" id="protection">
+  <section class="feature-section" id="features"><div id="protection"></div>
   <div class="wrap">
     <div class="section-header"><span class="section-eyebrow">COSA INCLUDE</span><h2 class="section-title">Tutti gli strumenti per un web più pulito.</h2><p class="section-desc">Dal blocco quotidiano degli annunci ai controlli dettagliati per sito: ecco cosa offre Blockium.</p></div>
     <div class="feature-catalog"><article class="feature-card" data-feature="1" data-featured><span class="feature-icon" aria-hidden="true"><svg width="26" height="26" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m8 9 8 6m0-6-8 6"></path></svg></span><h3>Pubblicità e tracker</h3><p>Blocca richieste ai domini pubblicitari e di tracciamento presenti nelle liste e nascondi gli spazi pubblicitari più comuni.</p><span class="feature-label">Aggiornamenti automatici dei filtri</span></article><article class="feature-card" data-feature="2" data-featured><span class="feature-icon" aria-hidden="true"><svg width="26" height="26" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"></rect><path d="m10 9 5 3-5 3Z"></path></svg></span><h3>Strumenti contro gli annunci in streaming</h3><p>Pulsanti Salta, disattivazione audio e accelerazione riducono gli annunci rilevati su YouTube, Prime Video, Hotstar e SonyLIV.</p><span class="feature-label">Risultati variabili per sito</span></article><article class="feature-card" data-feature="8" data-featured><span class="feature-icon" aria-hidden="true"><svg width="26" height="26" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="11" rx="3"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"></path></svg></span><h3>Protezione dal fingerprinting</h3><p>Aggiunge rumore ad alcune API canvas e audio per rendere meno affidabili certe tecniche di identificazione.</p><span class="feature-label">Protezione aggiuntiva della privacy</span></article><article class="feature-card" data-feature="5"><span class="feature-icon" aria-hidden="true"><svg width="26" height="26" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="m3 6 9 7 9-7"></path></svg></span><h3>Controlli per newsletter e popup</h3><p>Sopprimi i comuni inviti alle newsletter e i popup indesiderati. Le richieste di autorizzazione alle notifiche vengono rifiutate automaticamente.</p><span class="feature-label">Meno interruzioni</span></article><article class="feature-card" data-feature="6"><span class="feature-icon" aria-hidden="true"><svg width="26" height="26" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m5 3 14 10-7 1-3 7Z"></path></svg></span><h3>Selettore visivo di elementi</h3><p>Punta un elemento indesiderato per nasconderlo. Salva il selettore per quel sito o ripristina gli elementi dalla finestra dell’estensione.</p><span class="feature-label">Regole salvate per sito</span></article><article class="feature-card" data-feature="7"><span class="feature-icon" aria-hidden="true"><svg width="26" height="26" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 8 4v6c0 5-8 10-8 10S4 17 4 12V6Z"></path><path d="m8 12 3 3 5-6"></path></svg></span><h3>Protezione dalle minacce</h3><p>Blocca i domini elencati nelle regole incluse contro malware, phishing e mining di criptovalute. Attiva gli avvisi desktop facoltativi.</p><span class="feature-label">Controlli dello scudo antiminacce</span></article></div><details class="more-features"><summary>Altre funzionalità</summary><div class="feature-catalog"><article class="feature-card" data-feature="3"><span class="feature-icon" aria-hidden="true"><svg width="26" height="26" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 3 3 5-6"></path></svg></span><h3>Chiusura dei banner dei cookie</h3><p>Attiva la chiusura automatica dei banner supportati. Consenti gli avvisi dove servono per accedere o pagare.</p><span class="feature-label">Facoltativo · disattivato inizialmente</span></article><article class="feature-card" data-feature="4"><span class="feature-icon" aria-hidden="true"><svg width="26" height="26" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"></rect><rect x="12" y="11" width="7" height="6" rx="1"></rect></svg></span><h3>Blocco dei video flottanti</h3><p>Nascondi e silenzia i lettori flottanti indesiderati su articoli e notizie, con eccezioni per i siti di streaming supportati.</p><span class="feature-label">Meno distrazioni durante lo scorrimento</span></article><article class="feature-card" data-feature="9"><span class="feature-icon" aria-hidden="true"><svg width="26" height="26" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"></path><circle cx="8" cy="6" r="2"></circle><circle cx="16" cy="12" r="2"></circle><circle cx="10" cy="18" r="2"></circle></svg></span><h3>Eccezioni per siti e cookie</h3><p>Sospendi il blocco su un sito e gestisci separatamente le eccezioni per i cookie. Segnala siti non funzionanti dall’estensione.</p><span class="feature-label">Mantieni il controllo</span></article><article class="feature-card" data-feature="10"><span class="feature-icon" aria-hidden="true"><svg width="26" height="26" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3v17h17M8 16v-5m5 5V7m5 9v-8"></path></svg></span><h3>Dashboard locale della privacy</h3><p>Esplora domini bloccati di recente, categorie, tendenze giornaliere e classifiche dei domini. Gestisci le regole in un unico posto.</p><span class="feature-label">Statistiche sul dispositivo</span></article><article class="feature-card" data-feature="11"><span class="feature-icon" aria-hidden="true"><svg width="26" height="26" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 6v6l4 2"></path></svg></span><h3>Risparmio e indicatori del sito</h3><p>Consulta stime di tempo e dati risparmiati, tempi di caricamento e un punteggio basato sull’attività. Sono indicatori, non un audit di sicurezza.</p><span class="feature-label">Stime chiaramente indicate</span></article><article class="feature-card" data-feature="12"><span class="feature-icon" aria-hidden="true"><svg width="26" height="26" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="2"></rect><rect x="14" y="3" width="7" height="7" rx="2"></rect><rect x="3" y="14" width="7" height="7" rx="2"></rect><rect x="14" y="14" width="7" height="7" rx="2"></rect></svg></span><h3>Due modalità. Sette temi.</h3><p>Passa dalla vista semplice a quella avanzata, scegli un tema e usa un’interfaccia tradotta in dieci lingue.</p><span class="feature-label">La configurazione che preferisci</span></article></div></details>
@@ -145,14 +92,66 @@
 </section>
 
   <!-- ==========================================================================
+       SECTION: HOW IT WORKS (ON-DEVICE DNR FLOW)
+       ========================================================================== -->
+  <section class="flow-section" id="how-it-works">
+    <div class="wrap">
+      <div class="split-head">
+        <div>
+          <span class="section-eyebrow">HOW BLOCKIUM WORKS</span>
+          <h2>Your browser stays private.<br><em>The trackers stop on your device.</em></h2>
+        </div>
+        <p>Instead of routing your traffic through remote servers, Blockium uses Chrome's native Declarative Net Request engine. Rules evaluate in local memory before network packets hit the wire.</p>
+      </div>
+
+      <div class="flow-card">
+        <div class="flow-grid">
+          <div class="flow-node">
+            <span class="node-label">01 · INCOMING REQUESTS</span>
+            <span class="node-value">Raw Web Traffic</span>
+            <span class="node-desc">Ad tracking beacons, analytics scripts, preroll videos, floating overlays.</span>
+          </div>
+
+          <svg class="flow-arrow" viewbox="0 0 120 40" aria-hidden="true">
+            <line x1="0" y1="20" x2="120" y2="20"></line>
+            <polygon points="112,14 120,20 112,26"></polygon>
+          </svg>
+
+          <div class="flow-node flow-node--brand">
+            <span class="node-label">02 · BLOCKIUM ENGINE</span>
+            <span class="node-value">Native Declarative Net Request</span>
+            <div class="flow-tags">
+              <span>0ms Latency</span>
+              <span>Zero Cloud Logs</span>
+              <span>On-Device RAM</span>
+              <span>Dynamic DNR Rules</span>
+            </div>
+          </div>
+
+          <svg class="flow-arrow" viewbox="0 0 120 40" aria-hidden="true">
+            <line x1="0" y1="20" x2="120" y2="20"></line>
+            <polygon points="112,14 120,20 112,26"></polygon>
+          </svg>
+
+          <div class="flow-node">
+            <span class="node-label">03 · CLEAN EXPERIENCE</span>
+            <span class="node-value">Fast &amp; Distraction-Free</span>
+            <span class="node-desc">Clean web pages, instant video playback, zero popups, and saved battery life.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
        SECTION: PRODUCT SHOWCASE (REAL SCREENSHOTS: SIMPLE & ADVANCED MODES)
        ========================================================================== -->
-  <section class="streaming-section" id="streaming"><div class="wrap streaming-layout"><div><span class="section-eyebrow">YouTube · Hotstar · SonyLIV · Prime Video</span><h2 class="section-title">Meno interruzioni mentre guardi.</h2><p>Strumenti dedicati saltano o accelerano gli annunci rilevati su YouTube, Prime Video, Hotstar e SonyLIV. I risultati variano quando i siti cambiano.</p><a class="text-link" href="#product">I tuoi controlli, a un clic.</a></div><figure><a class="screenshot-link" href="/assets/popup-simple-new.png"><img src="/assets/popup-simple-new.png" alt="Finestra semplice di Blockium con controlli di protezione e risparmio stimato" loading="lazy"></a><figcaption>Controlli Blockium · Non è una dimostrazione di riproduzione</figcaption></figure></div></section>
+  <section class="streaming-section" id="streaming"><div class="wrap streaming-layout"><div><span class="section-eyebrow">YouTube · Hotstar · SonyLIV · Prime Video</span><h2 class="section-title"><em>Meno interruzioni mentre guardi.</em></h2><p>Strumenti dedicati saltano o accelerano gli annunci rilevati su YouTube, Prime Video, Hotstar e SonyLIV. I risultati variano quando i siti cambiano.</p><a class="text-link" href="#product">I tuoi controlli, a un clic.</a></div><figure class="stream-demo"><div class="demo-player" aria-hidden="true"><div class="demo-window"><i></i><i></i><i></i><span>Blockium</span></div><div class="demo-landscape"><div class="demo-sun"></div><div class="demo-hill back"></div><div class="demo-hill front"></div><span class="demo-play">▶</span></div><div class="demo-controls"><span>▶</span><div class="demo-timeline"><span></span></div><span>♪</span><span>⛶</span></div></div><figcaption>Illustrazione dell’assistente streaming · I risultati variano per sito</figcaption></figure></div></section>
 <section class="showcase-section" id="product">
     <div class="wrap">
       <div class="section-header">
         <span class="section-eyebrow">GUARDA DA VICINO</span>
-        <h2 class="section-title">Semplice in superficie.<br>Più controllo all’interno.</h2>
+        <h2 class="section-title">Semplice in superficie.<br><em>Più controllo all’interno.</em></h2>
         <p class="section-desc">Esplora la finestra e la dashboard. Schermate reali dell’estensione con il tema Pure Minimal.</p>
       </div>
       <div class="preview-tabs" role="tablist" aria-label="Viste del prodotto">
@@ -175,9 +174,7 @@
     </div>
   </section>
 
-  <!-- ==========================================================================
-       SECTION: MARQUEE PROMO BANNER
-       ========================================================================== -->
+
 
 
   <!-- ==========================================================================
@@ -228,7 +225,7 @@
   <!-- ==========================================================================
        SECTION: FAQ
        ========================================================================== -->
-  <section class="language-section" id="languages"><div class="wrap"><span class="section-eyebrow">NELLA TUA LINGUA</span><h2>Dieci lingue. Un web più pulito.</h2><p>Scopri Blockium nella tua lingua, dalle funzioni al modulo di assistenza. Anche l’estensione segue la lingua del browser, usando l’inglese se non disponibile.</p><label class="language-control"><span>Lingua</span><select class="language-select" aria-label="Lingua del sito"><option value="en" lang="en" data-no-translate>English</option><option value="hi" lang="hi" data-no-translate>हिन्दी</option><option value="de" lang="de" data-no-translate>Deutsch</option><option value="es" lang="es" data-no-translate>Español</option><option value="fr" lang="fr" data-no-translate>Français</option><option value="pt-BR" lang="pt-BR" data-no-translate>Português (Brasil)</option><option value="ja" lang="ja" data-no-translate>日本語</option><option value="it" lang="it" data-no-translate selected>Italiano</option><option value="ru" lang="ru" data-no-translate>Русский</option><option value="nl" lang="nl" data-no-translate>Nederlands</option></select></label><div class="language-grid"><a href="/" lang="en" hreflang="en" data-language-link="en" data-no-translate>English</a><a href="/hi/" lang="hi" hreflang="hi" data-language-link="hi" data-no-translate>हिन्दी</a><a href="/de/" lang="de" hreflang="de" data-language-link="de" data-no-translate>Deutsch</a><a href="/es/" lang="es" hreflang="es" data-language-link="es" data-no-translate>Español</a><a href="/fr/" lang="fr" hreflang="fr" data-language-link="fr" data-no-translate>Français</a><a href="/pt-BR/" lang="pt-BR" hreflang="pt-BR" data-language-link="pt-BR" data-no-translate>Português (Brasil)</a><a href="/ja/" lang="ja" hreflang="ja" data-language-link="ja" data-no-translate>日本語</a><a href="/it/" lang="it" hreflang="it" data-language-link="it" data-no-translate aria-current="page">Italiano</a><a href="/ru/" lang="ru" hreflang="ru" data-language-link="ru" data-no-translate>Русский</a><a href="/nl/" lang="nl" hreflang="nl" data-language-link="nl" data-no-translate>Nederlands</a></div></div></section><section class="faq-section" id="faq">
+  <section class="faq-section" id="faq">
     <div class="wrap">
 
       <div class="section-header">
@@ -374,5 +371,7 @@
   <div class="preview-toolbar"><h2 id="preview-title">Anteprima della schermata</h2><form method="dialog"><button type="submit" class="preview-close">Chiudi anteprima</button></form></div>
   <img id="preview-image" alt="">
 </dialog>
+<aside class="mobile-install" hidden><span>Disponibile per Chrome su computer</span><a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer">Chrome Web Store ↗</a></aside>
+<script src="/assets/editorial-interactions.js" defer></script>
 <noscript><nav class="language-grid" aria-label="Lingua del sito"><a href="/" lang="en">English</a><a href="/hi/" lang="hi">हिन्दी</a><a href="/de/" lang="de">Deutsch</a><a href="/es/" lang="es">Español</a><a href="/fr/" lang="fr">Français</a><a href="/pt-BR/" lang="pt-BR">Português (Brasil)</a><a href="/ja/" lang="ja">日本語</a><a href="/it/" lang="it">Italiano</a><a href="/ru/" lang="ru">Русский</a><a href="/nl/" lang="nl">Nederlands</a></nav></noscript></body>
 </html>

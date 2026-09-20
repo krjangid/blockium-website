@@ -1,0 +1,6 @@
+/* Approved uppercase B identity: local vector mark and bundled wordmark font. */
+.wordmark,.nav-brand,.footer-brand-left { display:flex; align-items:center; gap:10px; font-family:'Poppins',Arial,sans-serif; font-size:28px; font-weight:700; line-height:1; letter-spacing:-1.1px; color:#171714; }
+.wordmark img,.nav-brand img,.footer-brand-left img { display:block; width:26px; height:34px; object-fit:contain; border-radius:0; flex-shrink:0; }
+.brand-dot { display:inline; color:#a32f19; }
+.nav-island { gap:30px; }
+@media(max-width:700px) { .wordmark,.nav-brand { font-size:25px; gap:8px; } .wordmark img,.nav-brand img { width:23px; height:30px; } }

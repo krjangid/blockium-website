@@ -253,7 +253,9 @@
 </style>
 <link rel="stylesheet" href="/assets/languages.css?v=3.2.0-ui">
 <script src="/assets/languages.js" defer></script>
-<link rel="stylesheet" href="/assets/editorial-pages.css">
+<link rel="stylesheet" href="/assets/editorial-pages.css?v=single-line-title">
+<link rel="stylesheet" href="/assets/fonts/poppins.css">
+<link rel="stylesheet" href="/assets/brand.css">
 <link rel="alternate" hreflang="en" href="https://blockium.in/privacy/">
 <link rel="alternate" hreflang="hi" href="https://blockium.in/hi/privacy/">
 <link rel="alternate" hreflang="de" href="https://blockium.in/de/privacy/">
@@ -274,7 +276,7 @@
   <div class="nav-wrapper">
     <div class="nav-capsule">
       <a href="/hi/" class="nav-brand">
-        <svg aria-hidden="true" width="28" height="34" viewbox="0 0 24 30" fill="none" stroke="#a32f19" stroke-width="2"><path d="M12 2 22 5v10c0 6-10 12-10 12S2 21 2 15V5Z"></path></svg>
+        <img src="/assets/blockium-mark.svg" width="34" height="45" alt="">
         <span data-no-translate>Blockium<span class="brand-dot" aria-hidden="true">.</span></span>
       </a>
 
@@ -366,8 +368,8 @@
               <td>थीम, अनुमत साइट और ज़ैपर नियम डिवाइस पर सेव करने के लिए ज़रूरी।</td>
             </tr>
             <tr>
-              <td class="perm-name">tabs &amp; webNavigation</td>
-              <td>वर्तमान साइट के नियंत्रण, गिनती, नेविगेशन, टैब आँकड़े और पेज लोड समय मापने के लिए।</td>
+              <td class="perm-name">declarativeNetRequestFeedback</td>
+              <td>Allows the extension to read which of its own blocking rules matched so local popup and dashboard counters reflect blocked network requests. Stored on-device only.</td>
             </tr>
             <tr>
               <td class="perm-name">scripting</td>
