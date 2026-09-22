@@ -87,6 +87,7 @@ def build():
             document = '\n'.join(line.rstrip() for line in document.splitlines())+'\n'
             path = route(lang,page).lstrip('/')
             if path.endswith('/') or not path: path += 'index.html'
+            document = document.replace('<span class="language-name" data-no-translate>English</span>', f'<span class="language-name" data-no-translate>{LANGUAGES[lang]}</span>')
             dest = ROOT/path;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(document)
             if lang == 'en' and page in ('privacy','terms','report'): (ROOT/(page+'.html')).write_text(document)
             if page != '404': urls.append(ORIGIN+route(lang,page))

@@ -1136,36 +1136,52 @@ html:not([lang=en]) .hero-content h1 em {
   align-items: center;
 }
 .language-pill {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   background: transparent;
   border: 1px solid #44433f;
   border-radius: 50px;
-  padding: 0 16px;
+  padding: 9px 20px;
   min-height: 44px;
+  font-size: 14px;
+  font-family: inherit;
   color: #181715;
   cursor: pointer;
+  box-sizing: border-box;
+  text-decoration: none;
   transition: border-color 0.2s, background 0.2s;
 }
 .language-pill:hover {
   border-color: #181715;
-  background: rgba(24, 23, 21, 0.04);
+  background: rgba(24, 23, 21, 0.05);
 }
 .language-pill .lang-icon {
-  color: #44433f;
+  color: #181715;
   flex-shrink: 0;
 }
-.language-pill select.language-select {
-  border: none;
-  background: transparent;
-  font: inherit;
+.language-pill .language-name {
   font-size: 14px;
   font-weight: 500;
-  color: inherit;
+  color: #181715;
+  line-height: 1;
+}
+.language-pill .lang-chevron {
+  font-size: 12px;
+  color: #44433f;
+  margin-left: -2px;
+}
+.language-pill select.language-select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
   cursor: pointer;
-  outline: none;
-  padding: 0;
+  border-radius: 50px;
+  -webkit-appearance: none;
+  appearance: none;
 }
 .mobile-language-row {
   margin-top: 4px;
@@ -1177,69 +1193,22 @@ html:not([lang=en]) .hero-content h1 em {
   justify-content: center;
 }
 .language-pill--footer {
-  border-color: rgba(255, 255, 255, 0.2);
-  color: #f7f6f2;
+  border: 1px solid #44433f;
+  color: #181715;
 }
-.language-pill--footer .lang-icon {
-  color: #a8a49c;
+.language-pill--footer .lang-icon,
+.language-pill--footer .language-name {
+  color: #181715;
 }
-.language-pill--footer select.language-select {
-  color: #f7f6f2;
-}
-.language-pill--footer select.language-select option {
-  background: #181715;
-  color: #f7f6f2;
+.language-pill--footer .lang-chevron {
+  color: #44433f;
 }
 .language-pill--footer:hover {
-  border-color: rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.05);
+  border-color: #181715;
+  background: rgba(24, 23, 21, 0.05);
 }
 @media (max-width: 860px) {
   .header-language {
     display: none;
   }
-}
-
-/* Round Language Icon Button */
-.header-language {
-  display: flex;
-  align-items: center;
-}
-.language-round-btn {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  min-width: 44px;
-  min-height: 44px;
-  border-radius: 50%;
-  border: 1px solid #44433f;
-  background: transparent;
-  color: #181715;
-  cursor: pointer;
-  transition: border-color 0.2s, background 0.2s, transform 0.15s;
-}
-.language-round-btn:hover {
-  border-color: #181715;
-  background: rgba(24, 23, 21, 0.05);
-  transform: scale(1.04);
-}
-.language-round-btn:active {
-  transform: scale(0.96);
-}
-.language-round-btn .lang-icon {
-  color: #181715;
-}
-.language-round-btn select.language-select {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: pointer;
-  border-radius: 50%;
-  -webkit-appearance: none;
-  appearance: none;
 }

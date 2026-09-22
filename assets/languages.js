@@ -6,6 +6,9 @@
   const paths = {home:'',privacy:'privacy/',terms:'terms/',report:'report/','404':'404.html'};
   const messages = JSON.parse(document.getElementById('locale-messages').textContent);
   window.BlockiumLanguage = {text: value => messages[value] || value};
+  document.querySelectorAll('.language-name').forEach(el => {
+    el.textContent = names[locale] || 'English';
+  });
   function read(key) { try { return localStorage.getItem(key); } catch { return null; } }
   function save(key, value) { try { localStorage.setItem(key, value); } catch {} }
   function path(lang) { return (lang === 'en' ? '/' : `/${lang}/`) + (paths[page] || '') + location.search + location.hash; }
