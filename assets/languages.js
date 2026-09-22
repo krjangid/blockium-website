@@ -11,7 +11,7 @@
   });
   function read(key) { try { return localStorage.getItem(key); } catch { return null; } }
   function save(key, value) { try { localStorage.setItem(key, value); } catch {} }
-  function path(lang) { return (lang === 'en' ? '/' : `/${lang}/`) + (paths[page] || '') + location.search + location.hash; }
+  function path(lang) { return (lang === 'en' ? '/' : `/${lang}/`) + (paths[page] || '') + location.search; }
   document.querySelectorAll('.language-select').forEach(select => {
     select.value = locale;
     select.addEventListener('change', () => {
