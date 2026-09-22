@@ -1129,3 +1129,73 @@ html:not([lang=en]) .hero-content h1 em {
   .flow-arrow { display: none; }
   .flow-card { padding: 32px 20px; }
 }
+
+/* Language Controls */
+.header-language {
+  display: flex;
+  align-items: center;
+}
+.language-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid #44433f;
+  border-radius: 50px;
+  padding: 0 16px;
+  min-height: 44px;
+  color: #181715;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.language-pill:hover {
+  border-color: #181715;
+  background: rgba(24, 23, 21, 0.04);
+}
+.language-pill .lang-icon {
+  color: #44433f;
+  flex-shrink: 0;
+}
+.language-pill select.language-select {
+  border: none;
+  background: transparent;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+.mobile-language-row {
+  margin-top: 4px;
+  padding-top: 12px;
+  border-top: 1px solid #dcd4c9;
+}
+.mobile-language-row .language-pill {
+  width: 100%;
+  justify-content: center;
+}
+.language-pill--footer {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #f7f6f2;
+}
+.language-pill--footer .lang-icon {
+  color: #a8a49c;
+}
+.language-pill--footer select.language-select {
+  color: #f7f6f2;
+}
+.language-pill--footer select.language-select option {
+  background: #181715;
+  color: #f7f6f2;
+}
+.language-pill--footer:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+}
+@media (max-width: 860px) {
+  .header-language {
+    display: none;
+  }
+}
