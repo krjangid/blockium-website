@@ -1199,3 +1199,47 @@ html:not([lang=en]) .hero-content h1 em {
     display: none;
   }
 }
+
+/* Round Language Icon Button */
+.header-language {
+  display: flex;
+  align-items: center;
+}
+.language-round-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  border: 1px solid #44433f;
+  background: transparent;
+  color: #181715;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+}
+.language-round-btn:hover {
+  border-color: #181715;
+  background: rgba(24, 23, 21, 0.05);
+  transform: scale(1.04);
+}
+.language-round-btn:active {
+  transform: scale(0.96);
+}
+.language-round-btn .lang-icon {
+  color: #181715;
+}
+.language-round-btn select.language-select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  appearance: none;
+}
