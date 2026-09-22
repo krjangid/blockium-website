@@ -46,7 +46,7 @@
       "Anti-Fingerprinting Canvas & Audio Shield",
       "Precision Visual Element Zapper",
       "Zero Telemetry 100% Local Evaluation",
-      "7 Built-In Multi-Themes",
+      "4 Curated Themes",
       "10 Native Language Localizations"
     ],
     "author": {
@@ -93,7 +93,7 @@
 <div class="hero-content"><h1><span>The internet,</span><span>without the</span><em>interruptions.</em></h1>
 <p class="hero-lead">Block ads, trackers and unwanted popups.<br>Keep control of your browsing.</p>
 <div class="hero-actions"><a class="btn btn-neon" href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer">Add to Chrome <span aria-hidden="true">↗</span></a><a class="text-link" href="#features">Explore Blockium <span aria-hidden="true">↓</span></a></div><p class="trust-row"><span>No account required</span><span>On-device statistics</span><a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer">Chrome Web Store ↗</a></p>
-<div class="hero-stats"><span>0 TELEMETRY LOGS</span><span>0ms DNR LATENCY</span><span>100% ON-DEVICE</span><span>MANIFEST V3</span></div></div>
+<div class="hero-stats"><span>0 TELEMETRY LOGS</span><span>LOW-LATENCY DNR</span><span>100% ON-DEVICE</span><span>MANIFEST V3</span></div></div>
 <div class="hero-art"><img src="/assets/editorial-shield.jpg" width="1448" height="1086" fetchpriority="high" alt=""><span class="art-caption">A cleaner browser.<br>A little more calm.</span></div>
 </section>
 
@@ -141,7 +141,7 @@
             <span class="node-label">02 · BLOCKIUM ENGINE</span>
             <span class="node-value">Native Declarative Net Request</span>
             <div class="flow-tags">
-              <span>0ms Latency</span>
+              <span>Sub-ms Latency</span>
               <span>Zero Cloud Logs</span>
               <span>On-Device RAM</span>
               <span>Dynamic DNR Rules</span>
@@ -156,7 +156,7 @@
           <div class="flow-node">
             <span class="node-label">03 · CLEAN EXPERIENCE</span>
             <span class="node-value">Fast &amp; Distraction-Free</span>
-            <span class="node-desc">Clean web pages, instant video playback, zero popups, and saved battery life.</span>
+            <span class="node-desc">Clean web pages, smoother video playback, blocked popups, and saved battery life.</span>
           </div>
         </div>
       </div>
@@ -355,7 +355,9 @@
     function setMenu(open) {
       mobileDrawer.classList.toggle('open', open);
       mobileToggle.setAttribute('aria-expanded', String(open));
-      mobileToggle.innerHTML = open ? '✕ <span>Close</span>' : '☰ <span>Menu</span>';
+      const closeText = window.BlockiumLanguage?.text ? window.BlockiumLanguage.text('Close') : 'Close';
+      const menuText = window.BlockiumLanguage?.text ? window.BlockiumLanguage.text('Menu') : 'Menu';
+      mobileToggle.innerHTML = open ? ('✕ <span>' + closeText + '</span>') : ('☰ <span>' + menuText + '</span>');
       mobileDrawer.inert = !open;
     }
     setMenu(false);

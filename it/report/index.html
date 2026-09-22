@@ -317,7 +317,7 @@
 <link rel="alternate" hreflang="ru" href="https://blockium.in/ru/report/">
 <link rel="alternate" hreflang="nl" href="https://blockium.in/nl/report/">
 <link rel="alternate" hreflang="x-default" href="https://blockium.in/report/">
-<script type="application/json" id="locale-messages">{"Submitting...": "Invio in corso…", "Report Submitted": "Segnalazione inviata", "Submit Report": "Invia segnalazione"}</script>
+<script type="application/json" id="locale-messages">{"Submitting...": "Invio in corso…", "Report Submitted": "Segnalazione inviata", "Submit Report": "Invia segnalazione", "Menu": "Menu", "Close": "Chiudi"}</script>
 </head>
 <body data-locale="it" data-page="report">
 <a class="skip-link" href="#main">Vai al contenuto</a>
@@ -465,26 +465,38 @@
             payload[key] = value;
           });
 
+          var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+          var timeoutId = controller ? setTimeout(function () {
+            controller.abort();
+          }, 12000) : null;
+
           fetch('https://formsubmit.co/ajax/blockiumapps@gmail.com', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
               'Accept': 'application/json'
             },
-            body: JSON.stringify(payload)
+            body: JSON.stringify(payload),
+            signal: controller ? controller.signal : undefined
           })
           .then(function (response) {
-            if (response.ok) {
-              return response.json();
+            if (timeoutId) clearTimeout(timeoutId);
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
             }
-            throw new Error('Network response was not ok');
+            return response.json();
           })
-          .then(function () {
-            form.reset();
-            submitBtn.textContent = window.BlockiumLanguage?.text ? window.BlockiumLanguage.text('Report Submitted') : 'Report Submitted';
-            statusSuccess.style.display = 'block';
+          .then(function (data) {
+            if (data && (data.success === 'true' || data.success === true || (data.message && data.error !== true))) {
+              form.reset();
+              submitBtn.textContent = window.BlockiumLanguage?.text ? window.BlockiumLanguage.text('Report Submitted') : 'Report Submitted';
+              statusSuccess.style.display = 'block';
+            } else {
+              throw new Error(data && data.message ? data.message : 'Submission failed');
+            }
           })
           .catch(function () {
+            if (timeoutId) clearTimeout(timeoutId);
             submitBtn.disabled = false;
             submitBtn.textContent = window.BlockiumLanguage?.text ? window.BlockiumLanguage.text('Submit Report') : 'Submit Report';
             statusError.style.display = 'block';

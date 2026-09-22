@@ -76,10 +76,10 @@ def build():
                 data = json.loads(match[1]);data['inLanguage'] = lang;data['url'] = ORIGIN+route(lang,page)
                 desc = re.search(r'<meta name="description" content="([^"]*)"',document)
                 if desc: data['description'] = html.unescape(desc[1])
-                data.pop('featureList',None)
+                if lang != 'en': data.pop('featureList',None)
                 return '<script type="application/ld+json">'+json.dumps(data,ensure_ascii=False).replace('<','\\u003c')+'</script>'
             document = re.sub(r'<script type="application/ld\+json">(.*?)</script>',schema,document,flags=re.S)
-            dynamic = {text:target[text_key(text)] for text in ('Submitting...','Report Submitted','Submit Report')}
+            dynamic = {text:target[text_key(text)] for text in ('Submitting...','Report Submitted','Submit Report','Menu','Close')}
             document = document.replace('</head>','<script type="application/json" id="locale-messages">'+json.dumps(dynamic,ensure_ascii=False).replace('<','\\u003c')+'</script>\n</head>')
             # Links remain usable without scripting.
             fallback = '<noscript><nav class="language-grid" aria-label="'+html.escape(target[text_key('Website language')])+'">'+''.join(f'<a href="{route(code,page)}" lang="{code}">{label}</a>' for code,label in LANGUAGES.items())+'</nav></noscript>'

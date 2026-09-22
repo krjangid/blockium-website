@@ -51,7 +51,7 @@ Copy and paste these exact explanations into the **Privacy Practices** tab of yo
 * **Title (≤ 45 chars):**
   `Blockium Ad Blocker — Fast Adblock & Privacy`
 * **Short Description (≤ 132 chars):**
-  `Block video ads, intrusive trackers, cookie consent popups, and malicious domains with zero telemetry and 0ms latency.`
+  `Block video ads, intrusive trackers, cookie consent popups, and malicious domains with zero telemetry and low-latency DNR.`
 * **Official Website URL:**
   `https://blockium.in`
 * **Official Privacy Policy URL:**
