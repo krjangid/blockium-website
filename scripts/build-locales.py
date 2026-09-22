@@ -91,6 +91,26 @@ def build():
             dest = ROOT/path;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(document)
             if lang == 'en' and page in ('privacy','terms','report'): (ROOT/(page+'.html')).write_text(document)
             if page != '404': urls.append(ORIGIN+route(lang,page))
-    (ROOT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join('<url><loc>'+url+'</loc></url>\n' for url in urls)+'</urlset>\n')
+    sitemap_lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+        '        xmlns:xhtml="http://www.w3.org/1999/xhtml">'
+    ]
+    today = '2026-09-22'
+    for p_name in ('home', 'privacy', 'terms', 'report'):
+        for l_code in LANGUAGES:
+            loc_url = ORIGIN + route(l_code, p_name)
+            prio = '1.0' if p_name == 'home' and l_code == 'en' else ('0.9' if p_name == 'home' else '0.7')
+            sitemap_lines.append('  <url>')
+            sitemap_lines.append(f'    <loc>{loc_url}</loc>')
+            sitemap_lines.append(f'    <lastmod>{today}</lastmod>')
+            sitemap_lines.append('    <changefreq>weekly</changefreq>')
+            sitemap_lines.append(f'    <priority>{prio}</priority>')
+            for alt_code in LANGUAGES:
+                sitemap_lines.append(f'    <xhtml:link rel="alternate" hreflang="{alt_code}" href="{ORIGIN + route(alt_code, p_name)}"/>')
+            sitemap_lines.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{ORIGIN + route("en", p_name)}"/>')
+            sitemap_lines.append('  </url>')
+    sitemap_lines.append('</urlset>\n')
+    (ROOT / 'sitemap.xml').write_text('\n'.join(sitemap_lines))
     print(f'Built {len(LANGUAGES)*len(PAGES)} pages in {len(LANGUAGES)} languages; no network requests.')
 if __name__ == '__main__': build()
