@@ -443,7 +443,7 @@
         form.addEventListener('submit', function (e) {
           e.preventDefault();
           submitBtn.disabled = true;
-          submitBtn.textContent = window.BlockiumLanguage.text('Submitting...');
+          submitBtn.textContent = window.BlockiumLanguage?.text ? window.BlockiumLanguage.text('Submitting...') : 'Submitting...';
           statusSuccess.style.display = 'none';
           statusError.style.display = 'none';
 
@@ -469,12 +469,12 @@
           })
           .then(function () {
             form.reset();
-            submitBtn.textContent = window.BlockiumLanguage.text('Report Submitted');
+            submitBtn.textContent = window.BlockiumLanguage?.text ? window.BlockiumLanguage.text('Report Submitted') : 'Report Submitted';
             statusSuccess.style.display = 'block';
           })
           .catch(function () {
             submitBtn.disabled = false;
-            submitBtn.textContent = window.BlockiumLanguage.text('Submit Report');
+            submitBtn.textContent = window.BlockiumLanguage?.text ? window.BlockiumLanguage.text('Submit Report') : 'Submit Report';
             statusError.style.display = 'block';
           });
         });
