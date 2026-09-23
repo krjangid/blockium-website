@@ -28,7 +28,7 @@ class Renderer(HTMLParser):
         if not self.skip:
             for attr in ('alt','title','placeholder','aria-label'):
                 if attr in attrs: attrs[attr] = self.tr(attrs[attr])
-            if tag == 'meta' and (attrs.get('name') in ('description','twitter:title','twitter:description') or attrs.get('property') in ('og:title','og:description')):
+            if tag == 'meta' and (attrs.get('name') in ('title','description','twitter:title','twitter:description') or attrs.get('property') in ('og:title','og:description')):
                 attrs['content'] = self.tr(attrs['content'])
         if tag == 'html': attrs['lang'] = self.lang
         if tag == 'body': attrs.update({'data-locale':self.lang,'data-page':self.page})
