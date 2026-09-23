@@ -96,7 +96,7 @@ def build():
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
         '        xmlns:xhtml="http://www.w3.org/1999/xhtml">'
     ]
-    today = '2026-09-22'
+    today = '2026-09-23'
     for p_name in ('home', 'privacy', 'terms', 'report'):
         for l_code in LANGUAGES:
             loc_url = ORIGIN + route(l_code, p_name)
