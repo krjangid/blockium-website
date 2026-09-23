@@ -196,7 +196,6 @@
   "s_ee1239683f3e": "Permet au moteur natif C++ de Chrome de bloquer les serveurs publicitaires et les requêtes de suivi avant l’affichage de la page, sans transmettre le trafic à un serveur externe.",
   "s_c02f342d7ea3": "Permet aux règles réseau déclaratives de traiter les requêtes couvertes par les autorisations d’hôte de l’extension.",
   "s_05f655e470f0": "Nécessaire pour enregistrer localement vos réglages : thème, exceptions de sites et règles du sélecteur visuel.",
-  "s_4c1f1c540061": "Utilisé pour les commandes du site actuel, les compteurs, la navigation, les statistiques par onglet et les mesures de chargement.",
   "s_ca7ae02a30ac": "Utilisé pour planifier en arrière-plan les mises à jour périodiques des listes de filtres ouvertes, comme EasyList.",
   "s_243621d26824": "Utilisé pour afficher des alertes locales facultatives concernant les logiciels malveillants ou les traqueurs détectés.",
   "s_f74f36f92ad4": "Nécessaire pour réduire les interruptions vidéo, fermer les bannières de cookies et masquer des éléments sur les sites visités.",
@@ -298,7 +297,6 @@
   "s_0d0979852366": "Plus de fonctionnalités",
   "s_5e113c0c0694": "Moins d’interruptions pendant vos vidéos.",
   "s_04dee4149b68": "Commandes Blockium · Pas une démonstration de lecture vidéo",
-  "s_6a1f2824e2f9": "Dernière mise à jour : 9 septembre 2026",
   "s_f9a9a79593cc": "Oui, Blockium est 100 % gratuit, sans abonnement payant, sans paywall premium ni frais cachés.",
   "s_27a79bd655e5": "Enregistre le crochet de blocage des fenêtres contextuelles dans le contexte d'exécution principal avec des exclusions de domaine, empêchant les scripts des sites de contourner la protection.",
   "s_cd67aed76eb9": "Comment fonctionne le blocage des fenêtres contextuelles et comment les autoriser sur un site ?",
@@ -358,5 +356,6 @@
   "s_50badffe5ae4": "Découvrez le popup et le tableau de bord. Captures d'écran réelles de l'extension avec le thème Ivory Night.",
   "s_379f3fa9e5ec": "Mode simple · Ivory Night",
   "s_4653679b0aa8": "Mode avancé · Ivory Night",
-  "s_7f7984714a4f": "Permet à l'extension d'identifier lesquelles de ses propres règles de blocage ont correspondu, afin que les compteurs locaux du popup et du tableau de bord reflètent les requêtes réseau bloquées. Stocké uniquement sur l'appareil."
+  "s_b67b5f443f6f": "Dernière mise à jour : 17 septembre 2026",
+  "s_57adbbe9c64e": "Permet à Blockium de compter lesquelles de ses propres règles de blocage ont été appliquées, afin que la fenêtre et le tableau de bord affichent des chiffres réels. Chrome signale la règle et l’onglet, jamais le contenu de la page. Cette autorisation explique l’avertissement d’installation « Lire votre historique de navigation »."
 }

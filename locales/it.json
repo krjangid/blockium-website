@@ -196,7 +196,6 @@
   "s_ee1239683f3e": "Consente al motore nativo C++ di Chrome di bloccare server pubblicitari e richieste di tracciamento prima di mostrare la pagina, senza inviare traffico a server esterni.",
   "s_c02f342d7ea3": "Consente alle regole dichiarative di operare sulle richieste coperte dalle autorizzazioni host dell’estensione.",
   "s_05f655e470f0": "Necessaria per salvare localmente tema, siti consentiti e regole del selettore.",
-  "s_4c1f1c540061": "Usata per controlli del sito attuale, contatori, navigazione, statistiche per scheda e tempi di caricamento.",
   "s_ca7ae02a30ac": "Programma gli aggiornamenti periodici in background di liste aperte, come EasyList.",
   "s_243621d26824": "Mostra avvisi locali facoltativi per malware o tracker rilevati.",
   "s_f74f36f92ad4": "Necessaria per ridurre le interruzioni video, chiudere banner dei cookie e nascondere elementi sui domini visitati.",
@@ -298,7 +297,6 @@
   "s_0d0979852366": "Altre funzionalità",
   "s_5e113c0c0694": "Meno interruzioni mentre guardi.",
   "s_04dee4149b68": "Controlli Blockium · Non è una dimostrazione di riproduzione",
-  "s_6a1f2824e2f9": "Ultimo aggiornamento: 9 settembre 2026",
   "s_f9a9a79593cc": "Sì, Blockium è gratuito al 100% senza abbonamenti a pagamento, paywall premium o costi nascosti.",
   "s_27a79bd655e5": "Registra l'hook di blocco dei popup nel contesto di esecuzione principale con esclusioni di dominio, impedendo agli script dei siti di aggirare la protezione dei popup.",
   "s_cd67aed76eb9": "Come funziona il blocco dei popup e come posso consentire i popup su un sito?",
@@ -358,5 +356,6 @@
   "s_50badffe5ae4": "Esplora il popup e la dashboard. Schermate reali dell'estensione, mostrate nel tema Ivory Night.",
   "s_379f3fa9e5ec": "Modalità semplice · Ivory Night",
   "s_4653679b0aa8": "Modalità avanzata · Ivory Night",
-  "s_7f7984714a4f": "Consente all'estensione di identificare quali delle proprie regole di blocco sono state applicate, in modo che i contatori locali del popup e della dashboard riflettano le richieste di rete bloccate. Memorizzato solo sul dispositivo."
+  "s_b67b5f443f6f": "Ultimo aggiornamento: 17 settembre 2026",
+  "s_57adbbe9c64e": "Consente a Blockium di contare quali delle proprie regole di blocco sono state applicate, così il popup e la dashboard mostrano numeri reali. Chrome riporta la regola e la scheda, mai il contenuto della pagina. Questa autorizzazione è il motivo dell’avviso di installazione di Chrome «Leggere la cronologia di navigazione»."
 }

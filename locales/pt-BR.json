@@ -196,7 +196,6 @@
   "s_ee1239683f3e": "Permite ao mecanismo nativo C++ do Chrome bloquear servidores de anúncios e solicitações de rastreamento antes de exibir a página, sem enviar tráfego a servidores externos.",
   "s_c02f342d7ea3": "Permite que regras declarativas atuem nas solicitações cobertas pelas permissões de host da extensão.",
   "s_05f655e470f0": "Necessária para salvar localmente tema, sites permitidos e regras do seletor visual.",
-  "s_4c1f1c540061": "Usada nos controles do site atual, contadores, navegação, estatísticas por aba e medições de carregamento.",
   "s_ca7ae02a30ac": "Agenda atualizações periódicas em segundo plano de listas abertas, como EasyList.",
   "s_243621d26824": "Exibe alertas locais opcionais de malware ou rastreadores detectados.",
   "s_f74f36f92ad4": "Necessária para reduzir interrupções de vídeo, fechar avisos de cookies e ocultar elementos nos domínios visitados.",
@@ -298,7 +297,6 @@
   "s_0d0979852366": "Mais recursos",
   "s_5e113c0c0694": "Menos interrupções enquanto você assiste.",
   "s_04dee4149b68": "Controles do Blockium · Não é uma demonstração de reprodução",
-  "s_6a1f2824e2f9": "Última atualização: 9 de setembro de 2026",
   "s_f9a9a79593cc": "Sim, o Blockium é 100% gratuito, sem assinaturas pagas, paywalls premium ou cobranças ocultas.",
   "s_27a79bd655e5": "Registra o interceptor de pop-ups no contexto de execução principal com exclusões de domínio, impedindo que scripts do site contornem a proteção contra pop-ups.",
   "s_cd67aed76eb9": "Como funciona o bloqueio de pop-ups e como posso permitir pop-ups em um site?",
@@ -358,5 +356,6 @@
   "s_50badffe5ae4": "Explore o pop-up e o painel. Capturas de tela reais da extensão no tema Ivory Night.",
   "s_379f3fa9e5ec": "Modo simples · Ivory Night",
   "s_4653679b0aa8": "Modo avançado · Ivory Night",
-  "s_7f7984714a4f": "Permite que a extensão leia quais de suas próprias regras de bloqueio foram correspondidas, para que os contadores locais do pop-up e do painel reflitam as solicitações bloqueadas. Armazenado apenas no dispositivo."
+  "s_b67b5f443f6f": "Última atualização: 17 de setembro de 2026",
+  "s_57adbbe9c64e": "Permite que o Blockium conte quais das suas próprias regras de bloqueio foram acionadas, para que o popup e o painel mostrem números reais. O Chrome informa a regra e a aba, nunca o conteúdo da página. Esta permissão é o motivo do aviso de instalação do Chrome “Ler seu histórico de navegação”."
 }

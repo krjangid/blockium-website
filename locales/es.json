@@ -196,7 +196,6 @@
   "s_ee1239683f3e": "Permite al motor nativo C++ de Chrome bloquear servidores publicitarios y solicitudes de rastreo antes de mostrar el contenido, sin enviar tráfico a servidores externos.",
   "s_c02f342d7ea3": "Permite aplicar reglas declarativas a solicitudes cubiertas por los permisos de host de la extensión.",
   "s_05f655e470f0": "Necesario para guardar localmente tus ajustes de tema, sitios permitidos y reglas del selector visual.",
-  "s_4c1f1c540061": "Se usa para controles del sitio actual, contadores, navegación, estadísticas por pestaña y mediciones de carga.",
   "s_ca7ae02a30ac": "Programa en segundo plano las actualizaciones periódicas de listas abiertas como EasyList.",
   "s_243621d26824": "Muestra alertas locales opcionales de malware o rastreadores detectados.",
   "s_f74f36f92ad4": "Necesario para reducir interrupciones de vídeo, cerrar avisos de cookies y ocultar elementos en los dominios visitados.",
@@ -298,7 +297,6 @@
   "s_0d0979852366": "Más funciones",
   "s_5e113c0c0694": "Menos interrupciones mientras miras.",
   "s_04dee4149b68": "Controles de Blockium · No es una demostración de reproducción",
-  "s_6a1f2824e2f9": "Última actualización: 9 de septiembre de 2026",
   "s_f9a9a79593cc": "Sí, Blockium es 100% gratuito, sin suscripciones de pago, muros de pago premium ni cargos ocultos.",
   "s_27a79bd655e5": "Registra el gancho de bloqueo de ventanas emergentes en el entorno de ejecución principal con exclusiones de dominio, evitando que los scripts de sitios web eludan la protección.",
   "s_cd67aed76eb9": "¿Cómo funciona el bloqueo de ventanas emergentes y cómo las permito en un sitio?",
@@ -358,5 +356,6 @@
   "s_50badffe5ae4": "Explora el menú emergente y el panel de control. Capturas reales de la extensión en el tema Ivory Night.",
   "s_379f3fa9e5ec": "Modo simple · Ivory Night",
   "s_4653679b0aa8": "Modo avanzado · Ivory Night",
-  "s_7f7984714a4f": "Permite que la extensión identifique cuáles de sus propias reglas de bloqueo coincidieron para que los contadores locales del menú y panel reflejen las solicitudes bloqueadas. Solo se almacena en el dispositivo."
+  "s_b67b5f443f6f": "Última actualización: 17 de septiembre de 2026",
+  "s_57adbbe9c64e": "Permite a Blockium contar cuáles de sus propias reglas de bloqueo coincidieron, para que la ventana emergente y el panel muestren cifras reales. Chrome informa de la regla y la pestaña, nunca del contenido de la página. Este permiso es el motivo del aviso de instalación de Chrome «Leer tu historial de navegación»."
 }

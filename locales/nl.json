@@ -196,7 +196,6 @@
   "s_ee1239683f3e": "Laat de ingebouwde C++-engine van Chrome advertentie- en trackingverzoeken blokkeren voordat de pagina verschijnt, zonder verkeer naar externe servers te sturen.",
   "s_c02f342d7ea3": "Laat declaratieve netwerkregels werken op verzoeken die onder de hostmachtigingen van de extensie vallen.",
   "s_05f655e470f0": "Nodig om thema's, toegestane websites en eigen elementregels lokaal te bewaren.",
-  "s_4c1f1c540061": "Gebruikt voor huidige websitebediening, tellers, navigatie, tabstatistieken en laadtijdmetingen.",
   "s_ca7ae02a30ac": "Plant regelmatige achtergrondupdates van open filterlijsten, zoals EasyList.",
   "s_243621d26824": "Toont optionele lokale desktopwaarschuwingen voor herkende malware of trackers.",
   "s_f74f36f92ad4": "Nodig om video-onderbrekingen te verminderen, cookiebanners te sluiten en elementen op bezochte domeinen te verbergen.",
@@ -298,7 +297,6 @@
   "s_0d0979852366": "Meer functies",
   "s_5e113c0c0694": "Minder onderbrekingen tijdens het kijken.",
   "s_04dee4149b68": "Blockium-bediening · Geen demonstratie van videoweergave",
-  "s_6a1f2824e2f9": "Laatst bijgewerkt: 9 september 2026",
   "s_f9a9a79593cc": "Ja, Blockium is 100% gratis zonder betaalde abonnementen, premiumpaywalls of verborgen kosten.",
   "s_27a79bd655e5": "Registreert de pop-upblokkeringshaak in de hoofduitvoeringsomgeving met domeinuitsluitingen, waardoor wordt voorkomen dat websitescripts de pop-upbescherming omzeilen.",
   "s_cd67aed76eb9": "Hoe werkt het blokkeren van pop-ups en hoe sta ik pop-ups toe op een site?",
@@ -358,5 +356,6 @@
   "s_50badffe5ae4": "Ontdek de pop-up en het dashboard. Echte screenshots van de extensie in het Ivory Night-thema.",
   "s_379f3fa9e5ec": "Eenvoudige modus · Ivory Night",
   "s_4653679b0aa8": "Geavanceerde modus · Ivory Night",
-  "s_7f7984714a4f": "Stelt de extensie in staat te lezen welke van de eigen blokkeerregels overeenkwamen, zodat lokale tellers in de pop-up en het dashboard geblokkeerde netwerkverzoeken weergeven. Alleen op het apparaat opgeslagen."
+  "s_b67b5f443f6f": "Laatst bijgewerkt: 17 september 2026",
+  "s_57adbbe9c64e": "Laat Blockium tellen welke van zijn eigen blokkeerregels zijn toegepast, zodat de pop-up en het dashboard echte aantallen tonen. Chrome meldt alleen de regel en het tabblad, nooit de pagina-inhoud. Deze machtiging is de reden voor Chrome’s installatiewaarschuwing “Je browsegeschiedenis lezen”."
 }
