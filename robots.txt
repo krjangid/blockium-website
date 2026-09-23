@@ -1,3 +1,14 @@
 User-agent: *
 Allow: /
+
+# Internal source templates, scripts, and translation dictionaries
+Disallow: /site-src/
+Disallow: /scripts/
+Disallow: /locales/
+
+# Prevent duplicate indexing of legacy flat HTML endpoints (redirected to trailing-slash directories)
+Disallow: /privacy.html
+Disallow: /terms.html
+Disallow: /report.html
+
 Sitemap: https://blockium.in/sitemap.xml

@@ -11,9 +11,6 @@
   <link rel="canonical" href="https://blockium.in/nl/report/">
 
   <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -304,8 +301,11 @@
       .report-card { padding: 28px 20px; }
     }
   </style>
-<link rel="stylesheet" href="/assets/languages.css?v=3.2.0-ui">
-<script src="/assets/languages.js" defer></script>
+<link rel="stylesheet" href="/assets/languages.css?v=3.2.3-ui">
+<script src="/assets/languages.js?v=3.2.3-clean-path" defer></script>
+<link rel="stylesheet" href="/assets/editorial-pages.css?v=single-line-v2">
+<link rel="stylesheet" href="/assets/fonts/poppins.css">
+<link rel="stylesheet" href="/assets/brand.css">
 <link rel="alternate" hreflang="en" href="https://blockium.in/report/">
 <link rel="alternate" hreflang="hi" href="https://blockium.in/hi/report/">
 <link rel="alternate" hreflang="de" href="https://blockium.in/de/report/">
@@ -317,15 +317,16 @@
 <link rel="alternate" hreflang="ru" href="https://blockium.in/ru/report/">
 <link rel="alternate" hreflang="nl" href="https://blockium.in/nl/report/">
 <link rel="alternate" hreflang="x-default" href="https://blockium.in/report/">
-<script type="application/json" id="locale-messages">{"Submitting...": "Versturen…", "Report Submitted": "Melding verzonden", "Submit Report": "Melding versturen"}</script>
+<script type="application/json" id="locale-messages">{"Submitting...": "Versturen…", "Report Submitted": "Melding verzonden", "Submit Report": "Melding versturen", "Menu": "Menu", "Close": "Sluiten"}</script>
 </head>
 <body data-locale="nl" data-page="report">
+<a class="skip-link" href="#main">Naar inhoud</a>
 
   <!-- Floating Capsule Navigation -->
   <header class="nav-wrapper">
     <div class="nav-capsule">
       <a href="/nl/" class="nav-brand">
-        <img src="/assets/blockium-mark.svg" alt="Blockium">
+        <img src="/assets/blockium-mark.svg" width="34" height="45" alt="">
         <span data-no-translate>Blockium<span class="brand-dot" aria-hidden="true">.</span></span>
       </a>
 
@@ -343,7 +344,7 @@
   </header><aside class="language-suggestion" aria-label="Taalsuggestie" hidden><span>Lees deze website in je voorkeurstaal.</span><a class="suggested-language" data-no-translate></a><button type="button" class="dismiss-language">Sluiten</button></aside>
 
   <!-- Main Content -->
-  <main class="wrap">
+  <main class="wrap" id="main">
 
     <div class="report-card">
       <div class="badge-pill">
@@ -454,7 +455,7 @@
         form.addEventListener('submit', function (e) {
           e.preventDefault();
           submitBtn.disabled = true;
-          submitBtn.textContent = window.BlockiumLanguage.text('Submitting...');
+          submitBtn.textContent = window.BlockiumLanguage?.text ? window.BlockiumLanguage.text('Submitting...') : 'Submitting...';
           statusSuccess.style.display = 'none';
           statusError.style.display = 'none';
 
@@ -464,28 +465,40 @@
             payload[key] = value;
           });
 
+          var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+          var timeoutId = controller ? setTimeout(function () {
+            controller.abort();
+          }, 12000) : null;
+
           fetch('https://formsubmit.co/ajax/blockiumapps@gmail.com', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
               'Accept': 'application/json'
             },
-            body: JSON.stringify(payload)
+            body: JSON.stringify(payload),
+            signal: controller ? controller.signal : undefined
           })
           .then(function (response) {
-            if (response.ok) {
-              return response.json();
+            if (timeoutId) clearTimeout(timeoutId);
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
             }
-            throw new Error('Network response was not ok');
+            return response.json();
           })
-          .then(function () {
-            form.reset();
-            submitBtn.textContent = window.BlockiumLanguage.text('Report Submitted');
-            statusSuccess.style.display = 'block';
+          .then(function (data) {
+            if (data && (data.success === 'true' || data.success === true || (data.message && data.error !== true))) {
+              form.reset();
+              submitBtn.textContent = window.BlockiumLanguage?.text ? window.BlockiumLanguage.text('Report Submitted') : 'Report Submitted';
+              statusSuccess.style.display = 'block';
+            } else {
+              throw new Error(data && data.message ? data.message : 'Submission failed');
+            }
           })
           .catch(function () {
+            if (timeoutId) clearTimeout(timeoutId);
             submitBtn.disabled = false;
-            submitBtn.textContent = window.BlockiumLanguage.text('Submit Report');
+            submitBtn.textContent = window.BlockiumLanguage?.text ? window.BlockiumLanguage.text('Submit Report') : 'Submit Report';
             statusError.style.display = 'block';
           });
         });

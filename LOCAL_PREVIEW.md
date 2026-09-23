@@ -1,15 +1,22 @@
-# Local preview
+# Ivory editorial design preview
 
-Branch: `codex/website-refinements`
+Branch: `codex/ivory-editorial-redesign`. No deployment or PR.
 
-From the website folder, run:
+Run from this folder:
 
 ```sh
-python3 -m http.server 4173 --bind 127.0.0.1
+python3 -m http.server 4175 --bind 127.0.0.1
 ```
 
-Open http://127.0.0.1:4173. Stop with Ctrl+C. No dependencies or build step are required.
+Open http://127.0.0.1:4175/ . Stop with Ctrl+C.
 
-Check the Simple / Advanced / Dashboard buttons (including arrow keys), screenshot links, FAQ disclosures, mobile navigation, and the privacy and report pages. Installation buttons point to the real Chrome Web Store; the report form remains the existing live submission flow.
+Check desktop/mobile layouts, Menu and Escape, product tabs and arrow keys, screenshot previews and Escape, FAQ, language links, and Privacy/Terms/Report routes. Installation links open the real store. Do not submit the report form for testing: it uses the existing live endpoint.
 
-Nothing has been deployed. The original screenshots are retained without changing the extension UI depicted in them.
+Edit `site-src/home.template.html` and `assets/editorial.css`, then run:
+
+```sh
+python3 scripts/build-locales.py
+python3 scripts/check-locales.py
+```
+
+The hero illustration `assets/editorial-shield.jpg` is a compressed AI-generated concept asset. Product screenshots are unchanged. New translated headlines are draft translations and should receive native-language review before release.

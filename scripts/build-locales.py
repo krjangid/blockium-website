@@ -28,7 +28,7 @@ class Renderer(HTMLParser):
         if not self.skip:
             for attr in ('alt','title','placeholder','aria-label'):
                 if attr in attrs: attrs[attr] = self.tr(attrs[attr])
-            if tag == 'meta' and (attrs.get('name') in ('description','twitter:title','twitter:description') or attrs.get('property') in ('og:title','og:description')):
+            if tag == 'meta' and (attrs.get('name') in ('title','description','twitter:title','twitter:description') or attrs.get('property') in ('og:title','og:description')):
                 attrs['content'] = self.tr(attrs['content'])
         if tag == 'html': attrs['lang'] = self.lang
         if tag == 'body': attrs.update({'data-locale':self.lang,'data-page':self.page})
@@ -76,10 +76,10 @@ def build():
                 data = json.loads(match[1]);data['inLanguage'] = lang;data['url'] = ORIGIN+route(lang,page)
                 desc = re.search(r'<meta name="description" content="([^"]*)"',document)
                 if desc: data['description'] = html.unescape(desc[1])
-                data.pop('featureList',None)
+                if lang != 'en': data.pop('featureList',None)
                 return '<script type="application/ld+json">'+json.dumps(data,ensure_ascii=False).replace('<','\\u003c')+'</script>'
             document = re.sub(r'<script type="application/ld\+json">(.*?)</script>',schema,document,flags=re.S)
-            dynamic = {text:target[text_key(text)] for text in ('Submitting...','Report Submitted','Submit Report')}
+            dynamic = {text:target[text_key(text)] for text in ('Submitting...','Report Submitted','Submit Report','Menu','Close')}
             document = document.replace('</head>','<script type="application/json" id="locale-messages">'+json.dumps(dynamic,ensure_ascii=False).replace('<','\\u003c')+'</script>\n</head>')
             # Links remain usable without scripting.
             fallback = '<noscript><nav class="language-grid" aria-label="'+html.escape(target[text_key('Website language')])+'">'+''.join(f'<a href="{route(code,page)}" lang="{code}">{label}</a>' for code,label in LANGUAGES.items())+'</nav></noscript>'
@@ -87,9 +87,30 @@ def build():
             document = '\n'.join(line.rstrip() for line in document.splitlines())+'\n'
             path = route(lang,page).lstrip('/')
             if path.endswith('/') or not path: path += 'index.html'
+            document = document.replace('<span class="language-name" data-no-translate>English</span>', f'<span class="language-name" data-no-translate>{LANGUAGES[lang]}</span>')
             dest = ROOT/path;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(document)
             if lang == 'en' and page in ('privacy','terms','report'): (ROOT/(page+'.html')).write_text(document)
             if page != '404': urls.append(ORIGIN+route(lang,page))
-    (ROOT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join('<url><loc>'+url+'</loc></url>\n' for url in urls)+'</urlset>\n')
+    sitemap_lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+        '        xmlns:xhtml="http://www.w3.org/1999/xhtml">'
+    ]
+    today = '2026-09-23'
+    for p_name in ('home', 'privacy', 'terms', 'report'):
+        for l_code in LANGUAGES:
+            loc_url = ORIGIN + route(l_code, p_name)
+            prio = '1.0' if p_name == 'home' and l_code == 'en' else ('0.9' if p_name == 'home' else '0.7')
+            sitemap_lines.append('  <url>')
+            sitemap_lines.append(f'    <loc>{loc_url}</loc>')
+            sitemap_lines.append(f'    <lastmod>{today}</lastmod>')
+            sitemap_lines.append('    <changefreq>weekly</changefreq>')
+            sitemap_lines.append(f'    <priority>{prio}</priority>')
+            for alt_code in LANGUAGES:
+                sitemap_lines.append(f'    <xhtml:link rel="alternate" hreflang="{alt_code}" href="{ORIGIN + route(alt_code, p_name)}"/>')
+            sitemap_lines.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{ORIGIN + route("en", p_name)}"/>')
+            sitemap_lines.append('  </url>')
+    sitemap_lines.append('</urlset>\n')
+    (ROOT / 'sitemap.xml').write_text('\n'.join(sitemap_lines))
     print(f'Built {len(LANGUAGES)*len(PAGES)} pages in {len(LANGUAGES)} languages; no network requests.')
 if __name__ == '__main__': build()
