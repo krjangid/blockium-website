@@ -302,11 +302,9 @@
   "s_cd67aed76eb9": "Comment fonctionne le blocage des fenêtres contextuelles et comment les autoriser sur un site ?",
   "s_80c3eaddf9a2": "Lorsqu’une fenêtre contextuelle non sollicitée est bloquée, une interface propose deux options : « Ouvrir une fois » pour ouvrir la destination une seule fois sans inscrire le domaine sur liste blanche, ou « Autoriser ici » pour ajouter le site à vos exceptions de popups. Comme la protection utilise un hook isolé enregistré par Chrome, n’oubliez pas d’actualiser la page après avoir modifié les autorisations pour que les nouvelles règles s’appliquent.",
   "s_01ad3c037fb8": "Après avoir basculé la protection, modifié les autorisations de fenêtres contextuelles ou ajouté une exception de site, actualisez la page ouverte pour que le navigateur applique le script et les règles de filtrage mis à jour.",
-  "s_a6c87598d1a9": "Version 3.2.3",
   "s_2877e27b5b6a": "Explorez la fenêtre de l’extension et le tableau de bord. Captures réelles avec le thème Pure Minimal.",
   "s_479388bc9e0e": "Mode simple · Pure Minimal",
   "s_d9cf73ea072c": "Mode avancé · Pure Minimal",
-  "s_0c430c96a2dc": "Dernière mise à jour : 23 septembre 2026 • Version 3.2.3",
   "s_b905cb7e12d9": "Internet,",
   "s_cfcebf5d3ce0": "sans les",
   "s_fa28e24cb01e": "interruptions.",
@@ -357,5 +355,7 @@
   "s_379f3fa9e5ec": "Mode simple · Ivory Night",
   "s_4653679b0aa8": "Mode avancé · Ivory Night",
   "s_b67b5f443f6f": "Dernière mise à jour : 17 septembre 2026",
-  "s_57adbbe9c64e": "Permet à Blockium de compter lesquelles de ses propres règles de blocage ont été appliquées, afin que la fenêtre et le tableau de bord affichent des chiffres réels. Chrome signale la règle et l’onglet, jamais le contenu de la page. Cette autorisation explique l’avertissement d’installation « Lire votre historique de navigation »."
+  "s_57adbbe9c64e": "Permet à Blockium de compter lesquelles de ses propres règles de blocage ont été appliquées, afin que la fenêtre et le tableau de bord affichent des chiffres réels. Chrome signale la règle et l’onglet, jamais le contenu de la page. Cette autorisation explique l’avertissement d’installation « Lire votre historique de navigation ».",
+  "s_71c5d527804c": "Version 3.2.4",
+  "s_453eefd124a1": "Dernière mise à jour : 25 septembre 2026 • Version 3.2.4"
 }

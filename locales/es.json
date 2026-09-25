@@ -302,11 +302,9 @@
   "s_cd67aed76eb9": "¿Cómo funciona el bloqueo de ventanas emergentes y cómo las permito en un sitio?",
   "s_80c3eaddf9a2": "Cuando se bloquea una ventana emergente no solicitada, una superposición le ofrece opciones: \"Abrir una vez\" para abrir el destino una sola vez sin incluir el dominio en la lista de permitidos, o \"Permitir aquí\" para agregar el sitio a sus excepciones de ventanas emergentes. Como la protección contra ventanas emergentes utiliza un enlace aislado registrado por Chrome, recuerde actualizar la página después de cambiar los permisos para que surtan efecto las nuevas reglas.",
   "s_01ad3c037fb8": "Después de alternar la protección, actualizar los permisos de ventanas emergentes o agregar una excepción para el sitio, actualice la página abierta para que el navegador aplique el script y las reglas de filtrado actualizadas.",
-  "s_a6c87598d1a9": "Versión 3.2.3",
   "s_2877e27b5b6a": "Explora la ventana de la extensión y el panel. Capturas reales con el tema Pure Minimal.",
   "s_479388bc9e0e": "Modo sencillo · Pure Minimal",
   "s_d9cf73ea072c": "Modo avanzado · Pure Minimal",
-  "s_0c430c96a2dc": "Última actualización: 23 de septiembre de 2026 • Versión 3.2.3",
   "s_b905cb7e12d9": "Internet,",
   "s_cfcebf5d3ce0": "sin",
   "s_fa28e24cb01e": "interrupciones.",
@@ -357,5 +355,7 @@
   "s_379f3fa9e5ec": "Modo simple · Ivory Night",
   "s_4653679b0aa8": "Modo avanzado · Ivory Night",
   "s_b67b5f443f6f": "Última actualización: 17 de septiembre de 2026",
-  "s_57adbbe9c64e": "Permite a Blockium contar cuáles de sus propias reglas de bloqueo coincidieron, para que la ventana emergente y el panel muestren cifras reales. Chrome informa de la regla y la pestaña, nunca del contenido de la página. Este permiso es el motivo del aviso de instalación de Chrome «Leer tu historial de navegación»."
+  "s_57adbbe9c64e": "Permite a Blockium contar cuáles de sus propias reglas de bloqueo coincidieron, para que la ventana emergente y el panel muestren cifras reales. Chrome informa de la regla y la pestaña, nunca del contenido de la página. Este permiso es el motivo del aviso de instalación de Chrome «Leer tu historial de navegación».",
+  "s_71c5d527804c": "Versión 3.2.4",
+  "s_453eefd124a1": "Última actualización: 25 de septiembre de 2026 • Versión 3.2.4"
 }

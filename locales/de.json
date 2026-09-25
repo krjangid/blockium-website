@@ -302,11 +302,9 @@
   "s_cd67aed76eb9": "Wie funktioniert das Blockieren von Popups und wie erlaube ich Popups auf einer Website?",
   "s_80c3eaddf9a2": "Wenn ein unerwünschtes Popup blockiert wird, bietet ein Overlay Optionen: „Einmal öffnen“, um das Ziel einmalig ohne Whitelisting der Domain zu öffnen, oder „Hier erlauben“, um die Website zu Ihren Popup-Ausnahmen hinzuzufügen. Da der Popup-Schutz einen von Chrome registrierten isolierten Hook verwendet, aktualisieren Sie die Seite nach dem Ändern der Berechtigungen, damit die neuen Regeln wirksam werden.",
   "s_01ad3c037fb8": "Aktualisieren Sie nach dem Umschalten des Schutzes, dem Ändern der Popup-Erlaubnis oder dem Hinzufügen einer Website-Ausnahme die geöffnete Seite, damit der Browser die aktualisierten Skripte und Filterregeln anwendet.",
-  "s_a6c87598d1a9": "Version 3.2.3",
   "s_2877e27b5b6a": "Entdecke Erweiterungsfenster und Dashboard. Echte Screenshots mit dem Design Pure Minimal.",
   "s_479388bc9e0e": "Einfacher Modus · Pure Minimal",
   "s_d9cf73ea072c": "Erweiterter Modus · Pure Minimal",
-  "s_0c430c96a2dc": "Zuletzt aktualisiert: 23. September 2026 • Version 3.2.3",
   "s_b905cb7e12d9": "Das Internet,",
   "s_cfcebf5d3ce0": "ohne",
   "s_fa28e24cb01e": "Unterbrechungen.",
@@ -357,5 +355,7 @@
   "s_379f3fa9e5ec": "Einfacher Modus · Ivory Night",
   "s_4653679b0aa8": "Erweiterter Modus · Ivory Night",
   "s_b67b5f443f6f": "Zuletzt aktualisiert: 17. September 2026",
-  "s_57adbbe9c64e": "Ermöglicht Blockium zu zählen, welche der eigenen Blockierregeln gegriffen haben, damit Popup und Dashboard echte Zahlen anzeigen. Chrome meldet nur die Regel und den Tab, nie Seiteninhalte. Diese Berechtigung ist der Grund für Chromes Installationswarnung „Ihren Browserverlauf lesen“."
+  "s_57adbbe9c64e": "Ermöglicht Blockium zu zählen, welche der eigenen Blockierregeln gegriffen haben, damit Popup und Dashboard echte Zahlen anzeigen. Chrome meldet nur die Regel und den Tab, nie Seiteninhalte. Diese Berechtigung ist der Grund für Chromes Installationswarnung „Ihren Browserverlauf lesen“.",
+  "s_71c5d527804c": "Version 3.2.4",
+  "s_453eefd124a1": "Zuletzt aktualisiert: 25. September 2026 • Version 3.2.4"
 }

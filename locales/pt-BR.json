@@ -302,11 +302,9 @@
   "s_cd67aed76eb9": "Como funciona o bloqueio de pop-ups e como posso permitir pop-ups em um site?",
   "s_80c3eaddf9a2": "Quando um pop-up indesejado é bloqueado, uma sobreposição oferece opções: \"Abrir uma vez\" para abrir o destino apenas desta vez sem colocar o domínio na lista de permissões, ou \"Permitir aqui\" para adicionar o site às suas exceções de pop-up. Como a proteção contra pop-ups usa um interceptor isolado registrado pelo Chrome, lembre-se de atualizar a página após alterar as permissões para que as novas regras entrem em vigor.",
   "s_01ad3c037fb8": "Depois de alternar a proteção, atualizar a permissão de pop-ups ou adicionar uma exceção para o site, atualize a página aberta para que o navegador aplique o script e as regras de filtragem atualizadas.",
-  "s_a6c87598d1a9": "Versão 3.2.3",
   "s_2877e27b5b6a": "Explore a janela e o painel. Capturas reais da extensão com o tema Pure Minimal.",
   "s_479388bc9e0e": "Modo simples · Pure Minimal",
   "s_d9cf73ea072c": "Modo avançado · Pure Minimal",
-  "s_0c430c96a2dc": "Última atualização: 23 de setembro de 2026 • Versão 3.2.3",
   "s_b905cb7e12d9": "A internet,",
   "s_cfcebf5d3ce0": "sem",
   "s_fa28e24cb01e": "interrupções.",
@@ -357,5 +355,7 @@
   "s_379f3fa9e5ec": "Modo simples · Ivory Night",
   "s_4653679b0aa8": "Modo avançado · Ivory Night",
   "s_b67b5f443f6f": "Última atualização: 17 de setembro de 2026",
-  "s_57adbbe9c64e": "Permite que o Blockium conte quais das suas próprias regras de bloqueio foram acionadas, para que o popup e o painel mostrem números reais. O Chrome informa a regra e a aba, nunca o conteúdo da página. Esta permissão é o motivo do aviso de instalação do Chrome “Ler seu histórico de navegação”."
+  "s_57adbbe9c64e": "Permite que o Blockium conte quais das suas próprias regras de bloqueio foram acionadas, para que o popup e o painel mostrem números reais. O Chrome informa a regra e a aba, nunca o conteúdo da página. Esta permissão é o motivo do aviso de instalação do Chrome “Ler seu histórico de navegação”.",
+  "s_71c5d527804c": "Versão 3.2.4",
+  "s_453eefd124a1": "Última atualização: 25 de setembro de 2026 • Versão 3.2.4"
 }
