@@ -7,76 +7,147 @@
   <meta name="robots" content="noindex, follow">
   <link rel="icon" type="image/svg+xml" href="/assets/blockium-favicon.svg">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@700&amp;display=swap" rel="stylesheet">
-
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+    :root {
+      --bg-canvas: #f2efe9;
+      --surface-white: #fcfbf8;
+      --dark-card: #171714;
+      --rust: #a32f19;
+      --rust-hover: #812512;
+      --text-dark: #171714;
+      --text-body: #5c5b56;
+      --text-muted: #727685;
+      --border-light: rgba(17, 18, 21, 0.08);
+      --border-light-medium: #ded6cc;
+      --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 4px 18px rgba(23, 23, 20, 0.04);
+      --shadow-md: 0 8px 28px rgba(23, 23, 20, 0.06);
+    }
+
     body {
-      background-color: #F4F3EE;
-      color: #111215;
-      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background-color: var(--bg-canvas);
+      color: var(--text-dark);
+      font-family: var(--font-sans);
+      line-height: 1.6;
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
+    }
+
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+      width: 100%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 24px;
-      text-align: center;
     }
+
     .card-404 {
-      background: #FFFFFF;
-      border: 1px solid rgba(17, 18, 21, 0.12);
-      border-radius: 24px;
+      background: var(--surface-white);
+      border: 1px solid var(--border-light-medium);
+      border-radius: var(--radius-lg);
       padding: 56px 40px;
-      max-width: 520px;
-      box-shadow: 0 16px 36px -8px rgba(17, 18, 21, 0.1);
+      max-width: 560px;
+      width: 100%;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
     }
+
     .badge-404 {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
       font-weight: 700;
-      color: #DC2626;
-      background: #FEE2E2;
-      padding: 4px 12px;
-      border-radius: 9999px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--rust);
+      background: #eee1d7;
+      border: 1px solid #dfcabe;
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
       display: inline-block;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
+
     h1 {
-      font-size: 36px;
-      font-weight: 800;
+      font-family: var(--font-sans);
+      font-size: clamp(28px, 4vw, 36px);
+      font-weight: 700;
+      color: var(--text-dark);
       letter-spacing: -0.03em;
-      line-height: 1.15;
-      margin-bottom: 12px;
+      line-height: 1.2;
+      margin-bottom: 14px;
     }
+
     p {
       font-size: 15.5px;
-      color: #4A4E5C;
+      color: var(--text-body);
       line-height: 1.6;
-      margin-bottom: 28px;
+      margin-bottom: 30px;
+      text-wrap: balance;
     }
+
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background-color: #D4F639;
-      color: #111215;
-      font-weight: 700;
+      background-color: var(--rust);
+      color: #ffffff !important;
+      font-family: var(--font-sans);
+      font-weight: 600;
       font-size: 14.5px;
-      padding: 12px 26px;
-      border-radius: 9999px;
+      padding: 12px 28px;
+      border-radius: 12px;
       text-decoration: none;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 14px rgba(212, 246, 57, 0.35);
+      transition: all 0.18s ease;
+      box-shadow: 0 4px 14px rgba(163, 47, 25, 0.22);
     }
+
     .btn:hover {
-      background-color: #C2E42B;
-      transform: translateY(-2px);
+      background-color: var(--rust-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(163, 47, 25, 0.3);
+      color: #ffffff !important;
+    }
+
+    .policy-footer {
+      width: 100%;
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid #c9c5bd;
+      font-size: 13px;
+      color: #5c5b56;
+    }
+    .policy-footer p {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 12px;
+    }
+    .policy-footer a {
+      color: #5c5b56;
+      text-decoration: none;
+    }
+    .policy-footer a:hover {
+      color: var(--rust);
+      text-decoration: underline;
     }
   </style>
 <link rel="stylesheet" href="/assets/languages.css?v=3.2.5-ui">
 <script src="/assets/languages.js?v=3.2.5-clean-path" defer></script>
+<link rel="stylesheet" href="/assets/editorial-pages.css?v=single-line-v2">
 <link rel="stylesheet" href="/assets/fonts/poppins.css">
 <link rel="stylesheet" href="/assets/brand.css">
 <link rel="alternate" hreflang="en" href="https://blockium.in/404.html">
@@ -92,14 +163,44 @@
 <link rel="alternate" hreflang="x-default" href="https://blockium.in/404.html">
 <script type="application/json" id="locale-messages">{"Submitting...": "Enviando…", "Report Submitted": "Informe enviado", "Submit Report": "Enviar informe", "Menu": "Menú", "Close": "Cerrar"}</script>
 </head>
-<body data-locale="es" data-page="404"><div class="locale-utility"><label class="language-control"><span>Idioma</span><select class="language-select" aria-label="Idioma del sitio web"><option value="en" lang="en" data-no-translate>English</option><option value="hi" lang="hi" data-no-translate>हिन्दी</option><option value="de" lang="de" data-no-translate>Deutsch</option><option value="es" lang="es" data-no-translate selected>Español</option><option value="fr" lang="fr" data-no-translate>Français</option><option value="pt-BR" lang="pt-BR" data-no-translate>Português (Brasil)</option><option value="ja" lang="ja" data-no-translate>日本語</option><option value="it" lang="it" data-no-translate>Italiano</option><option value="ru" lang="ru" data-no-translate>Русский</option><option value="nl" lang="nl" data-no-translate>Nederlands</option></select></label></div>
-  <aside class="language-suggestion" aria-label="Sugerencia de idioma" hidden><span>Lee este sitio en tu idioma preferido.</span><a class="suggested-language" data-no-translate></a><button type="button" class="dismiss-language">Descartar</button></aside><div class="card-404">
-    <div class="badge-404">ERROR 404 • ELEMENTO NO ENCONTRADO</div>
-    <h1>Parece que esta página ha desaparecido.</h1>
-    <p>La página puede haberse movido, eliminado o quedado atrapada en nuestro filtro de distracciones.</p>
-    <a href="/es/" class="btn">
-      ← Volver al inicio
-    </a>
-  </div>
+<body data-page="404" data-locale="es">
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <!-- Floating Capsule Navigation -->
+  <header class="nav-wrapper">
+    <div class="nav-capsule">
+      <a href="/es/" class="nav-brand">
+        <img src="/assets/blockium-mark.svg" width="34" height="45" alt="">
+        <span data-no-translate>Blockium<span class="brand-dot" aria-hidden="true">.</span></span>
+      </a>
+
+      <label class="language-control"><span>Idioma</span><select class="language-select" aria-label="Idioma del sitio web"><option value="en" lang="en" data-no-translate>English</option><option value="hi" lang="hi" data-no-translate>हिन्दी</option><option value="de" lang="de" data-no-translate>Deutsch</option><option value="es" lang="es" data-no-translate selected>Español</option><option value="fr" lang="fr" data-no-translate>Français</option><option value="pt-BR" lang="pt-BR" data-no-translate>Português (Brasil)</option><option value="ja" lang="ja" data-no-translate>日本語</option><option value="it" lang="it" data-no-translate>Italiano</option><option value="ru" lang="ru" data-no-translate>Русский</option><option value="nl" lang="nl" data-no-translate>Nederlands</option></select></label><ul class="nav-links">
+        <li><a href="/es/">Inicio</a></li>
+        <li><a href="/es/privacy/">Privacidad</a></li>
+        <li><a href="/es/terms/">Condiciones</a></li>
+        <li><a href="/es/report/">Informar de un problema</a></li>
+      </ul>
+
+      <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer" class="nav-cta">
+        Añadir a Chrome →
+      </a>
+    </div>
+  </header><aside class="language-suggestion" aria-label="Sugerencia de idioma" hidden><span>Lee este sitio en tu idioma preferido.</span><a class="suggested-language" data-no-translate></a><button type="button" class="dismiss-language">Descartar</button></aside>
+
+  <!-- Main Content -->
+  <main class="wrap" id="main">
+    <div class="card-404">
+      <div class="badge-404">ERROR 404 • ELEMENTO NO ENCONTRADO</div>
+      <h1>Parece que esta página ha desaparecido.</h1>
+      <p>La página puede haberse movido, eliminado o quedado atrapada en nuestro filtro de distracciones.</p>
+      <a href="/es/" class="btn">
+        ← Volver al inicio
+      </a>
+    </div>
+
+    <div class="policy-footer"><p><a href="/es/">Volver a Blockium</a><a href="/es/privacy/">Privacidad</a><a href="/es/terms/">Condiciones</a><a href="/es/report/">Obtener ayuda</a></p>
+      © 2026 Blockium. Todos los derechos reservados. Sin telemetría. Extensión verificada de Chrome Web Store.
+    </div>
+  </main>
 <noscript><nav class="language-grid" aria-label="Idioma del sitio web"><a href="/404.html" lang="en">English</a><a href="/hi/404.html" lang="hi">हिन्दी</a><a href="/de/404.html" lang="de">Deutsch</a><a href="/es/404.html" lang="es">Español</a><a href="/fr/404.html" lang="fr">Français</a><a href="/pt-BR/404.html" lang="pt-BR">Português (Brasil)</a><a href="/ja/404.html" lang="ja">日本語</a><a href="/it/404.html" lang="it">Italiano</a><a href="/ru/404.html" lang="ru">Русский</a><a href="/nl/404.html" lang="nl">Nederlands</a></nav></noscript></body>
 </html>
