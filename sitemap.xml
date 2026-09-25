@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blockium.in/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/"/>
@@ -20,7 +20,7 @@
   </url>
   <url>
     <loc>https://blockium.in/hi/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/"/>
@@ -37,7 +37,7 @@
   </url>
   <url>
     <loc>https://blockium.in/de/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/"/>
@@ -54,7 +54,7 @@
   </url>
   <url>
     <loc>https://blockium.in/es/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/"/>
@@ -71,7 +71,7 @@
   </url>
   <url>
     <loc>https://blockium.in/fr/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/"/>
@@ -88,7 +88,7 @@
   </url>
   <url>
     <loc>https://blockium.in/pt-BR/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/"/>
@@ -105,7 +105,7 @@
   </url>
   <url>
     <loc>https://blockium.in/ja/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/"/>
@@ -122,7 +122,7 @@
   </url>
   <url>
     <loc>https://blockium.in/it/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/"/>
@@ -139,7 +139,7 @@
   </url>
   <url>
     <loc>https://blockium.in/ru/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/"/>
@@ -156,7 +156,7 @@
   </url>
   <url>
     <loc>https://blockium.in/nl/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/"/>
@@ -173,7 +173,7 @@
   </url>
   <url>
     <loc>https://blockium.in/privacy/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/privacy/"/>
@@ -190,7 +190,7 @@
   </url>
   <url>
     <loc>https://blockium.in/hi/privacy/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/privacy/"/>
@@ -207,7 +207,7 @@
   </url>
   <url>
     <loc>https://blockium.in/de/privacy/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/privacy/"/>
@@ -224,7 +224,7 @@
   </url>
   <url>
     <loc>https://blockium.in/es/privacy/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/privacy/"/>
@@ -241,7 +241,7 @@
   </url>
   <url>
     <loc>https://blockium.in/fr/privacy/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/privacy/"/>
@@ -258,7 +258,7 @@
   </url>
   <url>
     <loc>https://blockium.in/pt-BR/privacy/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/privacy/"/>
@@ -275,7 +275,7 @@
   </url>
   <url>
     <loc>https://blockium.in/ja/privacy/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/privacy/"/>
@@ -292,7 +292,7 @@
   </url>
   <url>
     <loc>https://blockium.in/it/privacy/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/privacy/"/>
@@ -309,7 +309,7 @@
   </url>
   <url>
     <loc>https://blockium.in/ru/privacy/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/privacy/"/>
@@ -326,7 +326,7 @@
   </url>
   <url>
     <loc>https://blockium.in/nl/privacy/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/privacy/"/>
@@ -343,7 +343,7 @@
   </url>
   <url>
     <loc>https://blockium.in/terms/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/terms/"/>
@@ -360,7 +360,7 @@
   </url>
   <url>
     <loc>https://blockium.in/hi/terms/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/terms/"/>
@@ -377,7 +377,7 @@
   </url>
   <url>
     <loc>https://blockium.in/de/terms/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/terms/"/>
@@ -394,7 +394,7 @@
   </url>
   <url>
     <loc>https://blockium.in/es/terms/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/terms/"/>
@@ -411,7 +411,7 @@
   </url>
   <url>
     <loc>https://blockium.in/fr/terms/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/terms/"/>
@@ -428,7 +428,7 @@
   </url>
   <url>
     <loc>https://blockium.in/pt-BR/terms/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/terms/"/>
@@ -445,7 +445,7 @@
   </url>
   <url>
     <loc>https://blockium.in/ja/terms/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/terms/"/>
@@ -462,7 +462,7 @@
   </url>
   <url>
     <loc>https://blockium.in/it/terms/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/terms/"/>
@@ -479,7 +479,7 @@
   </url>
   <url>
     <loc>https://blockium.in/ru/terms/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/terms/"/>
@@ -496,7 +496,7 @@
   </url>
   <url>
     <loc>https://blockium.in/nl/terms/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/terms/"/>
@@ -513,7 +513,7 @@
   </url>
   <url>
     <loc>https://blockium.in/report/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/report/"/>
@@ -530,7 +530,7 @@
   </url>
   <url>
     <loc>https://blockium.in/hi/report/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/report/"/>
@@ -547,7 +547,7 @@
   </url>
   <url>
     <loc>https://blockium.in/de/report/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/report/"/>
@@ -564,7 +564,7 @@
   </url>
   <url>
     <loc>https://blockium.in/es/report/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/report/"/>
@@ -581,7 +581,7 @@
   </url>
   <url>
     <loc>https://blockium.in/fr/report/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/report/"/>
@@ -598,7 +598,7 @@
   </url>
   <url>
     <loc>https://blockium.in/pt-BR/report/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/report/"/>
@@ -615,7 +615,7 @@
   </url>
   <url>
     <loc>https://blockium.in/ja/report/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/report/"/>
@@ -632,7 +632,7 @@
   </url>
   <url>
     <loc>https://blockium.in/it/report/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/report/"/>
@@ -649,7 +649,7 @@
   </url>
   <url>
     <loc>https://blockium.in/ru/report/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/report/"/>
@@ -666,7 +666,7 @@
   </url>
   <url>
     <loc>https://blockium.in/nl/report/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://blockium.in/report/"/>
