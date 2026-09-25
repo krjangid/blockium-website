@@ -357,5 +357,10 @@
   "s_b67b5f443f6f": "Laatst bijgewerkt: 17 september 2026",
   "s_57adbbe9c64e": "Laat Blockium tellen welke van zijn eigen blokkeerregels zijn toegepast, zodat de pop-up en het dashboard echte aantallen tonen. Chrome meldt alleen de regel en het tabblad, nooit de pagina-inhoud. Deze machtiging is de reden voor Chrome’s installatiewaarschuwing “Je browsegeschiedenis lezen”.",
   "s_71c5d527804c": "Versie 3.2.5",
-  "s_453eefd124a1": "Laatst bijgewerkt: 25 september 2026 • Versie 3.2.5"
+  "s_453eefd124a1": "Laatst bijgewerkt: 25 september 2026 • Versie 3.2.5",
+  "s_3c11e381105b": "Verwijder deze fout",
+  "s_9e39928dee9a": "Storend element verwijderd.",
+  "s_b492bdcdc023": "Niet-bestaande pagina verwijderd uit het DOM. Veilige navigatie hersteld.",
+  "s_ff8c1c8010a6": "Verwijderen ongedaan maken",
+  "s_365d77c376ac": "FOUT 404 • ELEMENT VERWIJDERD"
 }

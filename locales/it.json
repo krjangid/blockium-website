@@ -357,5 +357,10 @@
   "s_b67b5f443f6f": "Ultimo aggiornamento: 17 settembre 2026",
   "s_57adbbe9c64e": "Consente a Blockium di contare quali delle proprie regole di blocco sono state applicate, così il popup e la dashboard mostrano numeri reali. Chrome riporta la regola e la scheda, mai il contenuto della pagina. Questa autorizzazione è il motivo dell’avviso di installazione di Chrome «Leggere la cronologia di navigazione».",
   "s_71c5d527804c": "Versione 3.2.5",
-  "s_453eefd124a1": "Ultimo aggiornamento: 25 settembre 2026 • Versione 3.2.5"
+  "s_453eefd124a1": "Ultimo aggiornamento: 25 settembre 2026 • Versione 3.2.5",
+  "s_3c11e381105b": "Elimina questo errore",
+  "s_9e39928dee9a": "Elemento di disturbo eliminato.",
+  "s_b492bdcdc023": "Pagina non trovata rimossa dal DOM. Navigazione sicura ripristinata.",
+  "s_ff8c1c8010a6": "Annulla eliminazione",
+  "s_365d77c376ac": "ERRORE 404 • ELEMENTO ELIMINATO"
 }
