@@ -54,7 +54,7 @@
 
     /* Floating Capsule Navbar (Exact Main Website Style) */
     .nav-wrapper {
-      max-width: 960px;
+      max-width: 1000px;
       width: 100%;
       margin: 0 auto;
       padding: 0 24px;
@@ -113,9 +113,9 @@
 
     /* Main Container */
     .wrap {
-      max-width: 780px;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 40px 24px 70px;
+      padding: 28px 24px 48px;
       width: 100%;
       flex: 1;
     }
@@ -125,7 +125,7 @@
       background: var(--surface);
       border: 1px solid var(--card-border);
       border-radius: var(--radius-lg);
-      padding: 44px;
+      padding: 32px;
       box-shadow: var(--shadow-soft);
     }
 
@@ -147,7 +147,7 @@
 
     .survey-title {
       font-family: var(--font-sans);
-      font-size: clamp(28px, 4vw, 38px);
+      font-size: clamp(26px, 3vw, 32px);
       font-weight: 700;
       color: var(--ink);
       letter-spacing: -0.03em;
@@ -159,7 +159,7 @@
       font-size: 16px;
       color: var(--muted);
       line-height: 1.6;
-      margin-bottom: 34px;
+      margin-bottom: 24px;
     }
 
     /* Survey Radio Choices (Website Editorial Style) */
@@ -179,8 +179,8 @@
     }
 
     .radio-stack {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
     }
 
@@ -188,7 +188,7 @@
       display: flex;
       align-items: center;
       gap: 16px;
-      padding: 16px 20px;
+      padding: 12px 16px;
       background: var(--paper);
       border: 1.5px solid var(--line);
       border-radius: var(--radius-md);
@@ -266,6 +266,11 @@
       pointer-events: none;
     }
 
+    .radio-option:has(input:focus-visible) {
+      outline: 3px solid var(--rust);
+      outline-offset: 4px;
+    }
+
     /* Form Fields */
     .form-group {
       margin-bottom: 24px;
@@ -336,7 +341,7 @@
     .status-msg {
       display: none;
       margin-top: 18px;
-      padding: 16px 20px;
+      padding: 12px 16px;
       border-radius: var(--radius-sm);
       font-size: 14.5px;
       line-height: 1.5;
@@ -422,6 +427,8 @@
     }
 
     @media (max-width: 680px) {
+      .radio-stack { grid-template-columns: 1fr; }
+      .nav-wrapper { padding-inline: 24px; }
       body { padding-top: 14px; }
       .nav-capsule { padding: 10px 16px; border-radius: var(--radius-lg); }
       .nav-links { display: none; }
@@ -474,7 +481,7 @@
 
       <h1 class="survey-title">Why did you uninstall Blockium?</h1>
       <p class="survey-subtitle">
-        Your feedback directly shapes our filter updates and bug fixes. Takes only 30 seconds to let us know.
+        Help us improve Blockium. This optional survey takes about 30 seconds.
       </p>
 
       <form id="feedbackForm">
@@ -502,52 +509,52 @@
 
             <!-- 2. Undetected Ads -->
             <label class="radio-option">
-              <input type="radio" name="reason" value="Undetected Ads (Ads were still showing up)">
+              <input type="radio" name="reason" value="Ads or unwanted popups still appeared">
               <span class="option-icon" aria-hidden="true">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <rect x="3" y="5" width="18" height="14" rx="3"></rect>
                   <path d="m8 9 8 6m0-6-8 6"></path>
                 </svg>
               </span>
-              <span class="option-text">Ads were still showing up (YouTube, OTT, banners)</span>
+              <span class="option-text">I still saw ads or unwanted popups.</span>
               <span class="custom-radio" aria-hidden="true"></span>
             </label>
 
             <!-- 3. Browsing Speed -->
             <label class="radio-option">
-              <input type="radio" name="reason" value="Performance (Slowed down browsing speed)">
+              <input type="radio" name="reason" value="Performance (Pages or videos loaded slowly)">
               <span class="option-icon" aria-hidden="true">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="m12 14 4-4"/>
                   <path d="M3.34 19a10 10 0 1 1 17.32 0"/>
                 </svg>
               </span>
-              <span class="option-text">It slowed down my browsing speed</span>
+              <span class="option-text">Pages or videos loaded more slowly.</span>
               <span class="custom-radio" aria-hidden="true"></span>
             </label>
 
             <!-- 4. Switched to Another -->
             <label class="radio-option">
-              <input type="radio" name="reason" value="Alternative (Switched to uBlock Origin/AdGuard)">
+              <input type="radio" name="reason" value="Alternative (Switched to another ad blocker)">
               <span class="option-icon" aria-hidden="true">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                 </svg>
               </span>
-              <span class="option-text">Switched to another ad blocker (uBlock Origin, AdGuard)</span>
+              <span class="option-text">I switched to another ad blocker.</span>
               <span class="custom-radio" aria-hidden="true"></span>
             </label>
 
             <!-- 5. Temporary -->
             <label class="radio-option">
-              <input type="radio" name="reason" value="Temporary (Only needed it temporarily / testing)">
+              <input type="radio" name="reason" value="Temporary (I was just trying it out.)">
               <span class="option-icon" aria-hidden="true">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="12" cy="12" r="10"/>
                   <polyline points="12 6 12 12 16 14"/>
                 </svg>
               </span>
-              <span class="option-text">Only needed it temporarily / testing</span>
+              <span class="option-text">I was just trying it out.</span>
               <span class="custom-radio" aria-hidden="true"></span>
             </label>
 
@@ -569,7 +576,7 @@
         <div class="form-group" id="domainGroup">
           <label for="domainInput">Which website gave you trouble? <span class="form-hint" style="display:inline; font-weight:normal;">(Optional)</span></label>
           <input type="text" id="domainInput" name="broken_domain" class="form-control" placeholder="e.g. youtube.com, hotstar.com, mybank.com">
-          <div class="form-hint">Helps our team inspect and defuse anti-adblock traps on this site.</div>
+          <div class="form-hint">A website name helps us investigate. Please don’t include private links or account details.</div>
         </div>
 
         <!-- Freeform Suggestion -->
@@ -584,16 +591,20 @@
           <input type="email" id="emailInput" name="user_email" class="form-control" placeholder="you@example.com">
         </div>
 
+        <p class="form-hint">Your feedback is sent through FormSubmit to Blockium support. Email is optional. Please don’t include passwords or sensitive information. <a href="/privacy/" style="text-decoration: underline;">Privacy Policy</a></p>
+
         <button type="submit" id="submitBtn" class="btn-submit">
           Submit Feedback
         </button>
+
+        <p id="statusPending" role="status" class="form-hint" hidden></p>
 
         <div id="statusSuccess" role="status" class="status-msg status-success">
           <strong>✓ Thank you!</strong> Your feedback has been received. It helps us continually refine Blockium.
         </div>
 
         <div id="statusError" role="alert" class="status-msg status-error">
-          <strong>Submission failed.</strong> You can also email us directly at <a href="mailto:blockiumapps@gmail.com" style="color: inherit; text-decoration: underline;">blockiumapps@gmail.com</a>.
+          <strong id="errorHeading">Submission failed.</strong> You can also email us directly at <a href="mailto:blockiumapps@gmail.com" style="color: inherit; text-decoration: underline;">blockiumapps@gmail.com</a>.
         </div>
       </form>
 
@@ -607,9 +618,9 @@
           </svg>
         </div>
         <div class="winback-content">
-          <h2>Did you know? You don't need to uninstall when a site breaks.</h2>
+          <h2>Had trouble with one website?</h2>
           <p>
-            Blockium has a built-in <strong>"Allow Once"</strong> and <strong>"Pause Site"</strong> toggle in the toolbar popup. You can let a single site load unblocked while keeping ads, crypto-miners, and phishing blocked on all other tabs.
+            You can pause Blockium for a website from the extension popup. Blocking stays enabled on other websites.
           </p>
           <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" class="winback-link" target="_blank" rel="noopener noreferrer">
             <span>Reinstall Blockium on Chrome Web Store →</span>
@@ -650,9 +661,19 @@
       var statusSuccess = document.getElementById("statusSuccess");
       var statusError = document.getElementById("statusError");
 
+      var pending = document.getElementById("statusPending");
+      var errorHeading = document.getElementById("errorHeading");
+      var submitting = false;
       if (form) {
         form.addEventListener("submit", function (e) {
           e.preventDefault();
+          if (submitting) return;
+          submitting = true;
+          pending.hidden = false;
+          pending.textContent = "Sending your feedback…";
+          var slowId = setTimeout(function () {
+            pending.textContent = "The feedback service is taking longer than usual. Please wait…";
+          }, 3000);
           submitBtn.disabled = true;
           submitBtn.textContent = "Submitting...";
           statusSuccess.style.display = "none";
@@ -679,12 +700,14 @@
             signal: controller ? controller.signal : undefined
           })
           .then(function (response) {
-            if (timeoutId) clearTimeout(timeoutId);
             if (!response.ok) throw new Error("Network response was not ok");
             return response.json();
           })
           .then(function (data) {
-            if (data && (data.success === "true" || data.success === true || (data.message && data.error !== true))) {
+            if (timeoutId) clearTimeout(timeoutId);
+            clearTimeout(slowId);
+            pending.hidden = true;
+            if (data && (data.success === "true" || data.success === true)) {
               form.reset();
               document.querySelectorAll(".radio-option").forEach(function (opt) {
                 opt.classList.remove("selected");
@@ -695,7 +718,11 @@
               throw new Error("Submission error");
             }
           })
-          .catch(function () {
+          .catch(function (error) {
+            submitting = false;
+            clearTimeout(slowId);
+            pending.hidden = true;
+            errorHeading.textContent = error.name === "AbortError" ? "No confirmation received. Your feedback may have arrived; wait before retrying." : "Could not confirm submission. Your answers have been kept.";
             if (timeoutId) clearTimeout(timeoutId);
             submitBtn.disabled = false;
             submitBtn.textContent = "Submit Feedback";

@@ -63,3 +63,19 @@ textarea.form-control { min-height:150px; resize:vertical; }
 .report-card h1 { font-family:'Poppins',Arial,sans-serif; font-weight:400; font-size:clamp(26px,2.8vw,40px); color:#a32f19; letter-spacing:-.04em; line-height:1.2; max-width:100%; margin:20px 0 24px; white-space:nowrap; }
 @media(max-width:680px) { .report-card h1 { white-space:normal; text-wrap:balance; } }
 .policy-section h2,.terms-section h2 { line-height:1.4; }
+
+/* Report form: shared edges and compact spacing, without changing legal pages. */
+body[data-page="report"] .nav-wrapper { max-width:1000px; margin:24px auto 0; padding:0 24px; }
+body[data-page="report"] .nav-capsule { max-width:none; border:1px solid #ded6cc; border-radius:28px; padding:16px 24px; gap:16px; }
+body[data-page="report"] .wrap { max-width:1000px; padding:28px 24px 48px; }
+body[data-page="report"] .report-card { max-width:none; margin:0; padding:32px; background:#fcfbf8; border:1px solid #ded6cc; border-radius:22px; }
+body[data-page="report"] .report-card h1 { font-size:clamp(26px,3vw,32px); font-weight:600; color:#171714; white-space:normal; margin:18px 0 12px; }
+body[data-page="report"] .report-card p.subtitle { font-size:16px; max-width:none; margin-bottom:24px; }
+body[data-page="report"] .report-card form { padding:0; border:0; border-radius:0; background:transparent; margin-top:24px; }
+body[data-page="report"] .form-group { margin-bottom:20px; }
+body[data-page="report"] .form-control { padding:12px 14px; }
+body[data-page="report"] textarea.form-control { min-height:110px; }
+@media(max-width:700px) {
+  body[data-page="report"] .nav-capsule { padding:14px 18px; }
+  body[data-page="report"] .report-card { padding:24px 18px; }
+}

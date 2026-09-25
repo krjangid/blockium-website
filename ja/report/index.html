@@ -451,9 +451,12 @@
       var statusSuccess = document.getElementById('statusSuccess');
       var statusError = document.getElementById('statusError');
 
+      var submitting = false;
       if (form) {
         form.addEventListener('submit', function (e) {
           e.preventDefault();
+          if (submitting) return;
+          submitting = true;
           submitBtn.disabled = true;
           submitBtn.textContent = window.BlockiumLanguage?.text ? window.BlockiumLanguage.text('Submitting...') : 'Submitting...';
           statusSuccess.style.display = 'none';
@@ -480,14 +483,14 @@
             signal: controller ? controller.signal : undefined
           })
           .then(function (response) {
-            if (timeoutId) clearTimeout(timeoutId);
             if (!response.ok) {
               throw new Error('Network response was not ok');
             }
             return response.json();
           })
           .then(function (data) {
-            if (data && (data.success === 'true' || data.success === true || (data.message && data.error !== true))) {
+            if (timeoutId) clearTimeout(timeoutId);
+            if (data && (data.success === 'true' || data.success === true)) {
               form.reset();
               submitBtn.textContent = window.BlockiumLanguage?.text ? window.BlockiumLanguage.text('Report Submitted') : 'Report Submitted';
               statusSuccess.style.display = 'block';
@@ -496,6 +499,7 @@
             }
           })
           .catch(function () {
+            submitting = false;
             if (timeoutId) clearTimeout(timeoutId);
             submitBtn.disabled = false;
             submitBtn.textContent = window.BlockiumLanguage?.text ? window.BlockiumLanguage.text('Submit Report') : 'Submit Report';
