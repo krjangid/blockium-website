@@ -352,6 +352,18 @@
       border-width: 0;
     }
 
+    a:focus-visible, button:focus-visible, select:focus-visible {
+      outline: 2px solid var(--rust);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 600px) {
+      .wrap { padding: 20px 16px 40px; }
+      .card-target, .card-clean { padding: 32px 20px; }
+      .actions-row { flex-direction: column; width: 100%; }
+      .actions-row .btn, .actions-row .btn-subtle { width: 100%; justify-content: center; }
+    }
+
     .error-footer {
       width: 100%;
       text-align: center;

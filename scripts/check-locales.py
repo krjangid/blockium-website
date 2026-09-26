@@ -1,3 +1,4 @@
+import sys
 #!/usr/bin/env python3
 """Check generated pages without network access or dependencies."""
 from pathlib import Path
@@ -40,4 +41,5 @@ for lang in build.LANGUAGES:
   if name=='home':assert text.count('class="feature-card"')==12
   count+=1
 for path in (ROOT/'assets/languages.js',):subprocess.run(['node','--check',str(path)],check=True)
+subprocess.run([sys.executable, str(ROOT/'scripts/check-responsive.py')], check=True)
 print(f'PASS: {count} pages; 10 complete dictionaries; local routes, assets, anchors, HTML, metadata and script syntax.')
