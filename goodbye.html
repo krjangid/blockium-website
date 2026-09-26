@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>We're Sorry to See You Go – Blockium</title>
   <meta name="description" content="Help us improve Blockium by sharing why you uninstalled. Your feedback directly shapes our filter updates and bug fixes.">
+  <meta name="robots" content="noindex, follow">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <link rel="icon" type="image/svg+xml" href="../assets/blockium-favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/assets/blockium-favicon.svg">
   <link rel="canonical" href="https://blockium.in/goodbye/">
-  <link rel="stylesheet" href="assets/fonts/poppins.css">
+  <link rel="stylesheet" href="/assets/fonts/poppins.css">
 
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -21,6 +22,8 @@
       --paper: #f2efe9;
       --rust: #a32f19;
       --rust-hover: #812512;
+      --rust-subtle: rgba(163, 47, 25, 0.07);
+      --rust-border: rgba(163, 47, 25, 0.25);
       --line: #c9c5bd;
       --surface: #fcfbf8;
       --card-border: #ded6cc;
@@ -28,11 +31,11 @@
       --icon-border: #dfcabe;
       --font-sans: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 22px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
       --radius-full: 9999px;
-      --shadow-soft: 0 8px 28px rgba(23, 23, 20, 0.05);
-      --shadow-active: 0 6px 20px rgba(163, 47, 25, 0.14);
+      --shadow-soft: 0 8px 30px rgba(23, 23, 20, 0.04);
+      --shadow-active: 0 4px 16px rgba(163, 47, 25, 0.12);
     }
 
     body {
@@ -48,74 +51,53 @@
 
     a { color: inherit; text-decoration: none; }
     a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
-      outline: 3px solid var(--rust);
-      outline-offset: 4px;
+      outline: 2px solid var(--rust);
+      outline-offset: 3px;
     }
 
-    /* Floating Capsule Navbar (Exact Main Website Style) */
+    /* Minimal Capsule Header */
     .nav-wrapper {
-      max-width: 1000px;
+      max-width: 720px;
       width: 100%;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 20px;
     }
     .nav-capsule {
       background: var(--surface);
       border: 1px solid var(--card-border);
       border-radius: var(--radius-full);
-      padding: 12px 24px;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       box-shadow: var(--shadow-soft);
     }
     .nav-brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 10px;
       font-family: 'Poppins', Arial, sans-serif;
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 700;
       color: var(--ink);
       letter-spacing: -0.5px;
     }
     .brand-dot { color: var(--rust); font-weight: bold; }
-
-    .nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
-    .nav-links a {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--muted);
-      transition: color 0.15s;
-    }
-    .nav-links a:hover {
-      color: var(--rust);
-      text-decoration: underline;
-      text-underline-offset: 4px;
-    }
-
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13.5px;
+    .nav-note {
+      font-size: 11.5px;
       font-weight: 600;
-      background: var(--rust);
-      color: #FFFFFF !important;
-      padding: 10px 20px;
+      color: var(--muted);
+      background: #eae6dd;
+      padding: 4px 12px;
       border-radius: var(--radius-full);
-      transition: background 0.15s, transform 0.15s;
-    }
-    .nav-cta:hover {
-      background: var(--rust-hover);
-      transform: translateY(-1px);
+      letter-spacing: 0.02em;
     }
 
     /* Main Container */
     .wrap {
-      max-width: 1000px;
+      max-width: 720px;
       margin: 0 auto;
-      padding: 28px 24px 48px;
+      padding: 24px 20px 48px;
       width: 100%;
       flex: 1;
     }
@@ -125,473 +107,405 @@
       background: var(--surface);
       border: 1px solid var(--card-border);
       border-radius: var(--radius-lg);
-      padding: 32px;
+      padding: 38px 32px;
       box-shadow: var(--shadow-soft);
     }
 
     .eyebrow-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
+      gap: 6px;
+      padding: 4px 12px;
       background: var(--icon-bg);
       border: 1px solid var(--icon-border);
       border-radius: var(--radius-full);
-      font-size: 12px;
-      font-weight: 600;
+      font-size: 11px;
+      font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--rust);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .survey-title {
-      font-family: var(--font-sans);
-      font-size: clamp(26px, 3vw, 32px);
+      font-size: clamp(26px, 3.4vw, 34px);
       font-weight: 700;
-      color: var(--ink);
+      color: var(--rust);
       letter-spacing: -0.03em;
-      line-height: 1.18;
-      margin-bottom: 12px;
+      line-height: 1.2;
+      margin-bottom: 10px;
     }
 
     .survey-subtitle {
-      font-size: 16px;
+      font-size: 15px;
       color: var(--muted);
       line-height: 1.6;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
+      text-wrap: balance;
     }
 
-    /* Survey Radio Choices (Website Editorial Style) */
+    /* Single-Select Reason Grid */
     .survey-group {
-      margin-bottom: 30px;
+      margin-bottom: 22px;
     }
     .survey-group-label {
       display: block;
-      font-size: 14.5px;
+      font-size: 14px;
       font-weight: 600;
       color: var(--ink);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
     .survey-group-label .req {
       color: var(--rust);
-      margin-left: 2px;
     }
 
-    .radio-stack {
+    .reasons-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
+      gap: 10px;
+    }
+    @media (max-width: 600px) {
+      .reasons-grid {
+        grid-template-columns: 1fr;
+      }
+      .survey-card {
+        padding: 26px 20px;
+      }
     }
 
-    .radio-option {
+    .reason-tile {
       display: flex;
       align-items: center;
-      gap: 16px;
-      padding: 12px 16px;
-      background: var(--paper);
-      border: 1.5px solid var(--line);
+      gap: 12px;
+      padding: 12px 14px;
+      background: #faf8f5;
+      border: 1px solid var(--card-border);
       border-radius: var(--radius-md);
       cursor: pointer;
-      transition: all 0.18s ease;
+      transition: all 0.16s ease;
       user-select: none;
+      position: relative;
     }
-    .radio-option:hover {
-      border-color: var(--rust);
-      background: #faf7f2;
-    }
-    .radio-option.selected {
-      border-color: var(--rust);
-      background: #faf4ef;
-      box-shadow: var(--shadow-active);
-    }
-
-    /* Website Feature-Icon Style for Survey */
-    .option-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background: var(--icon-bg);
-      border: 1px solid var(--icon-border);
-      border-radius: 10px;
-      color: var(--rust);
-      flex-shrink: 0;
-      transition: background 0.18s, color 0.18s;
-    }
-    .radio-option.selected .option-icon {
-      background: var(--rust);
-      border-color: var(--rust);
-      color: #FFFFFF;
-    }
-
-    .option-text {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--ink);
-      flex: 1;
-    }
-
-    /* Custom Radio Dot */
-    .custom-radio {
-      width: 20px;
-      height: 20px;
-      border: 2px solid var(--line);
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: all 0.18s ease;
-    }
-    .custom-radio::after {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: transparent;
-      transition: background 0.18s ease;
-    }
-    .radio-option.selected .custom-radio {
-      border-color: var(--rust);
-    }
-    .radio-option.selected .custom-radio::after {
-      background: var(--rust);
-    }
-
-    .radio-option input[type="radio"] {
+    .reason-tile input[type="radio"] {
       position: absolute;
       opacity: 0;
       pointer-events: none;
     }
+    .reason-tile:hover {
+      background: #ffffff;
+      border-color: var(--rust);
+      transform: translateY(-1px);
+    }
+    .reason-tile.is-selected {
+      background: #faf4ef;
+      border-color: var(--rust);
+      box-shadow: var(--shadow-active);
+    }
 
-    .radio-option:has(input:focus-visible) {
-      outline: 3px solid var(--rust);
-      outline-offset: 4px;
+    .reason-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--icon-bg);
+      border: 1px solid var(--icon-border);
+      color: var(--rust);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.16s, color 0.16s;
+    }
+    .reason-tile.is-selected .reason-icon {
+      background: var(--rust);
+      border-color: var(--rust);
+      color: #ffffff;
+    }
+    .reason-text {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.35;
     }
 
     /* Form Fields */
     .form-group {
-      margin-bottom: 24px;
+      margin-bottom: 18px;
     }
     .form-group label {
       display: block;
-      font-size: 14.5px;
-      font-weight: 600;
+      font-size: 13.5px;
+      font-weight: 500;
       color: var(--ink);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
-    .form-hint {
-      font-size: 13px;
+    .form-group .optional {
+      font-size: 12px;
+      font-weight: normal;
       color: var(--muted);
-      margin-top: 6px;
+      margin-left: 4px;
     }
 
     .form-control {
       width: 100%;
-      padding: 13px 16px;
-      background: var(--paper);
-      border: 1.5px solid var(--line);
+      background: #ffffff;
+      border: 1px solid #c9c5bd;
       border-radius: var(--radius-sm);
-      font-family: var(--font-sans);
-      font-size: 15px;
+      padding: 11px 14px;
+      font-family: inherit;
+      font-size: 14px;
       color: var(--ink);
-      transition: border-color 0.15s, background 0.15s;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .form-control::placeholder {
+      color: #9c9a93;
     }
     .form-control:focus {
-      background: #FFFFFF;
       border-color: var(--rust);
       outline: none;
+      box-shadow: 0 0 0 3px rgba(163, 47, 25, 0.12);
     }
     textarea.form-control {
-      min-height: 110px;
       resize: vertical;
-      line-height: 1.5;
+      min-height: 85px;
     }
 
-    /* Submit Button (Website Rust Style) */
-    .btn-submit {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      padding: 16px 28px;
-      background: var(--rust);
-      color: #FFFFFF;
-      border: 0;
-      border-radius: var(--radius-full);
-      font-family: var(--font-sans);
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.15s, transform 0.15s;
-      margin-top: 10px;
+    .form-hint {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 5px;
+      line-height: 1.45;
     }
-    .btn-submit:hover {
-      background: var(--rust-hover);
+
+    .btn-submit {
+      width: 100%;
+      background-color: var(--rust);
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 14.5px;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      margin-top: 6px;
+      transition: background-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+      box-shadow: 0 4px 14px rgba(163, 47, 25, 0.22);
+    }
+    .btn-submit:hover:not(:disabled) {
+      background-color: var(--rust-hover);
       transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(163, 47, 25, 0.3);
     }
     .btn-submit:disabled {
       opacity: 0.65;
-      cursor: wait;
-      transform: none;
+      cursor: not-allowed;
     }
 
+    /* Status Messages */
     .status-msg {
       display: none;
       margin-top: 18px;
-      padding: 12px 16px;
+      padding: 14px 18px;
       border-radius: var(--radius-sm);
-      font-size: 14.5px;
+      font-size: 13.5px;
       line-height: 1.5;
     }
     .status-success {
-      background: #eef7ee;
-      border: 1px solid #c2e2c2;
-      color: #1b5e20;
+      background: #eaf3ed;
+      border: 1px solid #c4dec9;
+      color: #2d6a4f;
     }
     .status-error {
       background: #fdf2f2;
-      border: 1px solid #f8c8c8;
-      color: #991b1b;
+      border: 1px solid #f8c9c9;
+      color: #b91c1c;
     }
 
-    /* Winback Highlight Box (Matches Main Website editorial-pages.css) */
+    /* Win-back Tip Box */
     .winback-box {
-      margin-top: 36px;
-      background: var(--icon-bg);
-      border: 1px solid var(--icon-border);
-      border-left: 4px solid var(--rust);
-      border-radius: var(--radius-md);
-      padding: 24px 28px;
+      margin-top: 26px;
+      padding: 18px 20px;
+      background: #f7f4ee;
+      border: 1px solid var(--card-border);
+      border-left: 3.5px solid var(--rust);
+      border-radius: 14px;
       display: flex;
-      gap: 20px;
       align-items: flex-start;
+      gap: 14px;
     }
     .winback-icon {
-      display: inline-flex;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: var(--icon-bg);
+      border: 1px solid var(--icon-border);
+      color: var(--rust);
+      display: flex;
       align-items: center;
       justify-content: center;
-      width: 44px;
-      height: 44px;
-      background: var(--surface);
-      border: 1px solid var(--icon-border);
-      border-radius: 12px;
-      color: var(--rust);
       flex-shrink: 0;
     }
     .winback-content h2 {
-      font-size: 17px;
+      font-size: 13.5px;
       font-weight: 700;
       color: var(--ink);
-      margin-bottom: 8px;
+      margin-bottom: 3px;
     }
     .winback-content p {
-      font-size: 14.5px;
+      font-size: 12.5px;
       color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 14px;
+      line-height: 1.5;
+      margin-bottom: 6px;
     }
     .winback-link {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      font-size: 14px;
+      gap: 4px;
+      font-size: 12.5px;
       font-weight: 600;
       color: var(--rust);
-      transition: color 0.15s;
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
     .winback-link:hover {
       color: var(--rust-hover);
-      text-decoration: underline;
     }
 
-    /* Footer */
     .site-footer {
-      border-top: 1px solid var(--line);
-      margin-top: 50px;
-      padding: 28px 0;
       text-align: center;
-      font-size: 13.5px;
+      margin-top: 32px;
+      font-size: 12px;
       color: var(--muted);
     }
     .site-footer a {
       color: var(--muted);
-      text-decoration: none;
-      margin: 0 8px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
     .site-footer a:hover {
       color: var(--rust);
-      text-decoration: underline;
-    }
-
-    @media (max-width: 680px) {
-      .radio-stack { grid-template-columns: 1fr; }
-      .nav-wrapper { padding-inline: 24px; }
-      body { padding-top: 14px; }
-      .nav-capsule { padding: 10px 16px; border-radius: var(--radius-lg); }
-      .nav-links { display: none; }
-      .nav-brand { font-size: 22px; }
-      .survey-card { padding: 26px 18px; }
-      .winback-box { flex-direction: column; gap: 14px; padding: 20px; }
     }
   </style>
 </head>
-<body data-locale="en" data-page="goodbye">
+<body data-page="goodbye">
+<a class="skip-link" href="#main" style="position:fixed; top:-100px; left:20px; z-index:2000; background:#fcfbf8; color:#a32f19; padding:12px 18px; border-radius:6px;">Skip to content</a>
 
-  <!-- Floating Capsule Navigation -->
+  <!-- Minimal Capsule Navigation -->
   <header class="nav-wrapper">
     <div class="nav-capsule">
       <a href="/" class="nav-brand">
-        <!-- Official Vector Logo Mark (Never Breaks) -->
-        <svg width="28" height="34" viewBox="6 2 68 90" aria-hidden="true" style="flex-shrink:0;">
-          <path fill="#171714" fill-rule="evenodd" d="M12 5h29c15 0 24 8 24 19 0 8-4 13-11 16 10 3 15 10 15 20 0 14-10 22-28 22H12V5Zm18 15v12h12c5 0 8-2 8-6s-3-6-8-6H30Z"/>
-          <path fill="#a32f19" stroke="#f2efe9" stroke-width="3" d="M11 34 42 46q9 3 8 13c-1 13-11 23-22 29C18 82 11 73 11 61V34Z"/>
-          <circle cx="30" cy="62" r="11" fill="none" stroke="#f2efe9" stroke-width="4"/>
-          <path d="m22 70 16-16" stroke="#f2efe9" stroke-width="4"/>
-        </svg>
+        <img src="/assets/blockium-mark.svg" width="28" height="34" alt="">
         <span>Blockium<span class="brand-dot" aria-hidden="true">.</span></span>
       </a>
-
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/report/">Report Site</a></li>
-        <li><a href="/privacy/">Privacy</a></li>
-        <li><a href="/terms/">Terms</a></li>
-      </ul>
-
-      <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" target="_blank" rel="noopener noreferrer" class="nav-cta">
-        Add to Chrome <span aria-hidden="true">↗</span>
-      </a>
+      <span class="nav-note">Extension Uninstalled</span>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="wrap">
+  <!-- Main Content Wrap -->
+  <main class="wrap" id="main">
     <div class="survey-card">
-      <div class="eyebrow-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="12" y1="8" x2="12" y2="12"></line>
-          <line x1="12" y1="16" x2="12.01" y2="16"></line>
-        </svg>
-        Uninstall Feedback
-      </div>
-
-      <h1 class="survey-title">Why did you uninstall Blockium?</h1>
+      <div class="eyebrow-badge">Feedback</div>
+      <h1 class="survey-title">We're sorry to see you go.</h1>
       <p class="survey-subtitle">
-        Help us improve Blockium. This optional survey takes about 30 seconds.
+        Blockium has been removed from your browser and local statistics were cleared. If you have 30 seconds, letting us know what went wrong helps us improve.
       </p>
 
       <form id="feedbackForm">
-        <input type="hidden" name="_subject" id="emailSubject" value="[Blockium Exit Survey] Extension Uninstalled">
-        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_subject" value="Blockium Uninstall Feedback">
         <input type="hidden" name="_captcha" value="false">
 
-        <!-- Survey Radio Buttons with Website Signature Icons -->
+        <!-- Primary Reason Tiles -->
         <div class="survey-group">
-          <span class="survey-group-label">Primary reason for leaving <span class="req">*</span></span>
-          <div class="radio-stack">
-            <!-- 1. Broken Site -->
-            <label class="radio-option">
-              <input type="radio" name="reason" value="Site Breakage (A site wouldn't load properly)" required>
-              <span class="option-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+          <label class="survey-group-label">What was the primary reason? <span class="req">*</span></label>
+          <div class="reasons-grid">
+            <label class="reason-tile">
+              <input type="radio" name="reason" value="site_broke" required>
+              <span class="reason-icon" aria-hidden="true">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
                   <line x1="12" y1="9" x2="12" y2="13"/>
                   <line x1="12" y1="17" x2="12.01" y2="17"/>
                 </svg>
               </span>
-              <span class="option-text">A website broke or wouldn't load properly</span>
-              <span class="custom-radio" aria-hidden="true"></span>
+              <span class="reason-text">A website broke or wouldn't load</span>
             </label>
 
-            <!-- 2. Undetected Ads -->
-            <label class="radio-option">
-              <input type="radio" name="reason" value="Ads or unwanted popups still appeared">
-              <span class="option-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="5" width="18" height="14" rx="3"></rect>
-                  <path d="m8 9 8 6m0-6-8 6"></path>
+            <label class="reason-tile">
+              <input type="radio" name="reason" value="ads_remain" required>
+              <span class="reason-icon" aria-hidden="true">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="9" y1="9" x2="15" y2="15"/>
+                  <line x1="15" y1="9" x2="9" y2="15"/>
                 </svg>
               </span>
-              <span class="option-text">I still saw ads or unwanted popups.</span>
-              <span class="custom-radio" aria-hidden="true"></span>
+              <span class="reason-text">I still saw ads or unwanted popups</span>
             </label>
 
-            <!-- 3. Browsing Speed -->
-            <label class="radio-option">
-              <input type="radio" name="reason" value="Performance (Pages or videos loaded slowly)">
-              <span class="option-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="m12 14 4-4"/>
-                  <path d="M3.34 19a10 10 0 1 1 17.32 0"/>
-                </svg>
-              </span>
-              <span class="option-text">Pages or videos loaded more slowly.</span>
-              <span class="custom-radio" aria-hidden="true"></span>
-            </label>
-
-            <!-- 4. Switched to Another -->
-            <label class="radio-option">
-              <input type="radio" name="reason" value="Alternative (Switched to another ad blocker)">
-              <span class="option-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                </svg>
-              </span>
-              <span class="option-text">I switched to another ad blocker.</span>
-              <span class="custom-radio" aria-hidden="true"></span>
-            </label>
-
-            <!-- 5. Temporary -->
-            <label class="radio-option">
-              <input type="radio" name="reason" value="Temporary (I was just trying it out.)">
-              <span class="option-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <label class="reason-tile">
+              <input type="radio" name="reason" value="slow_performance" required>
+              <span class="reason-icon" aria-hidden="true">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="12" cy="12" r="10"/>
                   <polyline points="12 6 12 12 16 14"/>
                 </svg>
               </span>
-              <span class="option-text">I was just trying it out.</span>
-              <span class="custom-radio" aria-hidden="true"></span>
+              <span class="reason-text">Pages or videos loaded more slowly</span>
             </label>
 
-            <!-- 6. Other -->
-            <label class="radio-option">
-              <input type="radio" name="reason" value="Other Reason">
-              <span class="option-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <label class="reason-tile">
+              <input type="radio" name="reason" value="switched_blocker" required>
+              <span class="reason-icon" aria-hidden="true">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </span>
+              <span class="reason-text">I switched to another ad blocker</span>
+            </label>
+
+            <label class="reason-tile">
+              <input type="radio" name="reason" value="just_trying" required>
+              <span class="reason-icon" aria-hidden="true">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                </svg>
+              </span>
+              <span class="reason-text">I was just testing it out</span>
+            </label>
+
+            <label class="reason-tile">
+              <input type="radio" name="reason" value="other" required>
+              <span class="reason-icon" aria-hidden="true">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                 </svg>
               </span>
-              <span class="option-text">Other reason</span>
-              <span class="custom-radio" aria-hidden="true"></span>
+              <span class="reason-text">Other reason</span>
             </label>
           </div>
         </div>
 
-        <!-- Problem Domain -->
-        <div class="form-group" id="domainGroup">
-          <label for="domainInput">Which website gave you trouble? <span class="form-hint" style="display:inline; font-weight:normal;">(Optional)</span></label>
+        <!-- Problem Domain (Progressive Disclosure) -->
+        <div class="form-group" id="domainGroup" style="display: none;">
+          <label for="domainInput">Which website had issues? <span class="optional">(Optional)</span></label>
           <input type="text" id="domainInput" name="broken_domain" class="form-control" placeholder="e.g. youtube.com, hotstar.com, mybank.com">
-          <div class="form-hint">A website name helps us investigate. Please don’t include private links or account details.</div>
+          <div class="form-hint">A website name helps our team investigate and update filter rules.</div>
         </div>
 
         <!-- Freeform Suggestion -->
         <div class="form-group">
-          <label for="suggestionInput">What could we have done better? <span class="form-hint" style="display:inline; font-weight:normal;">(Optional)</span></label>
-          <textarea id="suggestionInput" name="suggestion" class="form-control" placeholder="Tell us what went wrong or what feature was missing..."></textarea>
+          <label for="suggestionInput">Any details or missing features? <span class="optional">(Optional)</span></label>
+          <textarea id="suggestionInput" name="suggestion" class="form-control" placeholder="Tell us what went wrong or what could be improved..."></textarea>
         </div>
 
         <!-- Optional Email -->
         <div class="form-group">
-          <label for="emailInput">Your Email <span class="form-hint" style="display:inline; font-weight:normal;">(Optional, if open to a follow-up)</span></label>
+          <label for="emailInput">Your email <span class="optional">(Optional, only if open to a follow-up)</span></label>
           <input type="email" id="emailInput" name="user_email" class="form-control" placeholder="you@example.com">
         </div>
 
-        <p class="form-hint">Your feedback is sent through FormSubmit to Blockium support. Email is optional. Please don’t include passwords or sensitive information. <a href="/privacy/" style="text-decoration: underline;">Privacy Policy</a></p>
+        <p class="form-hint" style="margin-bottom: 14px;">Your feedback is sent directly to Blockium support. No sensitive data is collected. <a href="/privacy/" style="text-decoration: underline;">Privacy Policy</a></p>
 
         <button type="submit" id="submitBtn" class="btn-submit">
           Submit Feedback
@@ -608,19 +522,19 @@
         </div>
       </form>
 
-      <!-- Win-back Educational Card -->
+      <!-- Win-back Tip Box -->
       <div class="winback-box">
         <div class="winback-icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="9" y1="18" x2="15" y2="18"></line>
             <line x1="10" y1="22" x2="14" y2="22"></line>
             <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path>
           </svg>
         </div>
         <div class="winback-content">
-          <h2>Had trouble with one website?</h2>
+          <h2>Need to unblock just one website?</h2>
           <p>
-            You can pause Blockium for a website from the extension popup. Blocking stays enabled on other websites.
+            You can pause Blockium for a specific site from the extension popup while keeping full protection active everywhere else.
           </p>
           <a href="https://chromewebstore.google.com/detail/blockium/nfdagphklmmfiniplbbdlngfnakcodgh" class="winback-link" target="_blank" rel="noopener noreferrer">
             <span>Reinstall Blockium on Chrome Web Store →</span>
@@ -642,15 +556,22 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Highlight selected radio option
       var radios = document.querySelectorAll('input[name="reason"]');
+      var domainGroup = document.getElementById("domainGroup");
+
       radios.forEach(function (radio) {
         radio.addEventListener("change", function () {
-          document.querySelectorAll(".radio-option").forEach(function (opt) {
-            opt.classList.remove("selected");
+          document.querySelectorAll(".reason-tile").forEach(function (opt) {
+            opt.classList.remove("is-selected");
           });
           if (radio.checked) {
-            radio.closest(".radio-option").classList.add("selected");
+            radio.closest(".reason-tile").classList.add("is-selected");
+            // Progressive disclosure: show domain field only for broken sites or remaining ads
+            if (radio.value === "site_broke" || radio.value === "ads_remain") {
+              domainGroup.style.display = "block";
+            } else {
+              domainGroup.style.display = "none";
+            }
           }
         });
       });
@@ -660,10 +581,10 @@
       var submitBtn = document.getElementById("submitBtn");
       var statusSuccess = document.getElementById("statusSuccess");
       var statusError = document.getElementById("statusError");
-
       var pending = document.getElementById("statusPending");
       var errorHeading = document.getElementById("errorHeading");
       var submitting = false;
+
       if (form) {
         form.addEventListener("submit", function (e) {
           e.preventDefault();
@@ -709,9 +630,10 @@
             pending.hidden = true;
             if (data && (data.success === "true" || data.success === true)) {
               form.reset();
-              document.querySelectorAll(".radio-option").forEach(function (opt) {
-                opt.classList.remove("selected");
+              document.querySelectorAll(".reason-tile").forEach(function (opt) {
+                opt.classList.remove("is-selected");
               });
+              if (domainGroup) domainGroup.style.display = "none";
               submitBtn.textContent = "✓ Feedback Received";
               statusSuccess.style.display = "block";
             } else {
