@@ -148,7 +148,7 @@
     .report-card h1 {
       font-size: clamp(26px, 3.5vw, 32px);
       font-weight: 800;
-      color: var(--text-dark);
+      color: #a32f19;
       letter-spacing: -0.03em;
       line-height: 1.2;
       margin-bottom: 8px;
@@ -301,9 +301,9 @@
       .report-card { padding: 28px 20px; }
     }
   </style>
-<link rel="stylesheet" href="/assets/languages.css?v=3.2.4-ui">
-<script src="/assets/languages.js?v=3.2.4-clean-path" defer></script>
-<link rel="stylesheet" href="/assets/editorial-pages.css?v=single-line-v2">
+<link rel="stylesheet" href="/assets/languages.css?v=3.2.5-ui">
+<script src="/assets/languages.js?v=3.2.5-clean-path" defer></script>
+<link rel="stylesheet" href="/assets/editorial-pages.css?v=report-red-h1">
 <link rel="stylesheet" href="/assets/fonts/poppins.css">
 <link rel="stylesheet" href="/assets/brand.css">
 </head>
@@ -439,9 +439,12 @@
       var statusSuccess = document.getElementById('statusSuccess');
       var statusError = document.getElementById('statusError');
 
+      var submitting = false;
       if (form) {
         form.addEventListener('submit', function (e) {
           e.preventDefault();
+          if (submitting) return;
+          submitting = true;
           submitBtn.disabled = true;
           submitBtn.textContent = window.BlockiumLanguage?.text ? window.BlockiumLanguage.text('Submitting...') : 'Submitting...';
           statusSuccess.style.display = 'none';
@@ -468,14 +471,14 @@
             signal: controller ? controller.signal : undefined
           })
           .then(function (response) {
-            if (timeoutId) clearTimeout(timeoutId);
             if (!response.ok) {
               throw new Error('Network response was not ok');
             }
             return response.json();
           })
           .then(function (data) {
-            if (data && (data.success === 'true' || data.success === true || (data.message && data.error !== true))) {
+            if (timeoutId) clearTimeout(timeoutId);
+            if (data && (data.success === 'true' || data.success === true)) {
               form.reset();
               submitBtn.textContent = window.BlockiumLanguage?.text ? window.BlockiumLanguage.text('Report Submitted') : 'Report Submitted';
               statusSuccess.style.display = 'block';
@@ -484,6 +487,7 @@
             }
           })
           .catch(function () {
+            submitting = false;
             if (timeoutId) clearTimeout(timeoutId);
             submitBtn.disabled = false;
             submitBtn.textContent = window.BlockiumLanguage?.text ? window.BlockiumLanguage.text('Submit Report') : 'Submit Report';

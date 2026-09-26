@@ -7,87 +7,535 @@
   <meta name="robots" content="noindex, follow">
   <link rel="icon" type="image/svg+xml" href="/assets/blockium-favicon.svg">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
-
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+    :root {
+      --bg-canvas: #f2efe9;
+      --surface-white: #fcfbf8;
+      --dark-card: #171714;
+      --rust: #a32f19;
+      --rust-hover: #812512;
+      --rust-subtle: rgba(163, 47, 25, 0.08);
+      --rust-border: rgba(163, 47, 25, 0.28);
+      --text-dark: #171714;
+      --text-body: #5c5b56;
+      --text-muted: #727685;
+      --border-light: rgba(17, 18, 21, 0.08);
+      --border-light-medium: #ded6cc;
+      --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 4px 18px rgba(23, 23, 20, 0.04);
+      --shadow-md: 0 10px 32px rgba(23, 23, 20, 0.08);
+    }
+
     body {
-      background-color: #F4F3EE;
-      color: #111215;
-      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background-color: var(--bg-canvas);
+      color: var(--text-dark);
+      font-family: var(--font-sans);
+      line-height: 1.6;
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
+    }
+
+    .wrap {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 30px 24px 60px;
+      width: 100%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 24px;
+      position: relative;
+    }
+
+    .zapper-stage {
+      position: relative;
+      max-width: 560px;
+      width: 100%;
+      perspective: 1000px;
+    }
+
+    /* Target Element Card (Simulates Blockium Element Zapper selection) */
+    .card-target {
+      position: relative;
+      background: var(--surface-white);
+      border: 2px dashed var(--rust-border);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px 44px;
       text-align: center;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.24s ease, opacity 0.24s ease;
     }
-    .card-404 {
-      background: #FFFFFF;
-      border: 1px solid rgba(17, 18, 21, 0.12);
-      border-radius: 24px;
-      padding: 56px 40px;
-      max-width: 520px;
-      box-shadow: 0 16px 36px -8px rgba(17, 18, 21, 0.1);
+
+    .card-target:hover {
+      box-shadow: 0 14px 40px rgba(163, 47, 25, 0.12);
+      border-color: var(--rust);
     }
-    .badge-404 {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      font-weight: 700;
-      color: #DC2626;
-      background: #FEE2E2;
-      padding: 4px 12px;
-      border-radius: 9999px;
+
+    /* Target Reticles (Corner Crosshairs) */
+    .corner-reticle {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-color: var(--rust);
+      border-style: solid;
+      pointer-events: none;
+    }
+    .reticle-tl { top: -2px; left: -2px; border-width: 3px 0 0 3px; border-top-left-radius: 6px; }
+    .reticle-tr { top: -2px; right: -2px; border-width: 3px 3px 0 0; border-top-right-radius: 6px; }
+    .reticle-bl { bottom: -2px; left: -2px; border-width: 0 0 3px 3px; border-bottom-left-radius: 6px; }
+    .reticle-br { bottom: -2px; right: -2px; border-width: 0 3px 3px 0; border-bottom-right-radius: 6px; }
+
+    /* Inspector Floating Pill */
+    .inspector-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      width: 100%;
+      background: var(--rust-subtle);
+      border: 1px solid var(--rust-border);
+      border-radius: var(--radius-sm);
+      padding: 6px 12px;
+      margin-bottom: 24px;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      color: var(--rust);
+    }
+
+    .inspector-selector {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .inspector-crosshair {
       display: inline-block;
-      margin-bottom: 20px;
+      width: 12px;
+      height: 12px;
+      stroke: currentColor;
     }
-    h1 {
-      font-size: 36px;
-      font-weight: 800;
+
+    .inspector-dim {
+      font-size: 10.5px;
+      opacity: 0.75;
+      white-space: nowrap;
+    }
+
+    .badge-404 {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--rust);
+      background: #eee1d7;
+      border: 1px solid #dfcabe;
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      display: inline-block;
+      margin-bottom: 18px;
+    }
+
+    h1, h2 {
+      font-family: var(--font-sans);
+      font-size: clamp(24px, 3.6vw, 32px);
+      font-weight: 700;
+      color: var(--text-dark);
       letter-spacing: -0.03em;
-      line-height: 1.15;
-      margin-bottom: 12px;
+      line-height: 1.25;
+      margin-bottom: 14px;
     }
+
     p {
-      font-size: 15.5px;
-      color: #4A4E5C;
+      font-size: 15px;
+      color: var(--text-body);
       line-height: 1.6;
       margin-bottom: 28px;
+      text-wrap: balance;
     }
+
+    /* Actions Row */
+    .actions-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
     .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
-      background-color: #D4F639;
-      color: #111215;
-      font-weight: 700;
+      background-color: var(--rust);
+      color: #ffffff !important;
+      font-family: var(--font-sans);
+      font-weight: 600;
       font-size: 14.5px;
-      padding: 12px 26px;
-      border-radius: 9999px;
+      padding: 12px 24px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
       text-decoration: none;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 14px rgba(212, 246, 57, 0.35);
+      transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 14px rgba(163, 47, 25, 0.22);
     }
+
     .btn:hover {
-      background-color: #C2E42B;
-      transform: translateY(-2px);
+      background-color: var(--rust-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(163, 47, 25, 0.3);
+      color: #ffffff !important;
+    }
+
+    .btn-zap {
+      background: linear-gradient(135deg, #b8361d 0%, #8e2510 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-zap:active {
+      transform: scale(0.98);
+    }
+
+    .btn-subtle {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 10px 18px;
+      border-radius: 10px;
+      border: 1px solid var(--border-light-medium);
+      background: var(--surface-white);
+      transition: all 0.18s ease;
+    }
+
+    .btn-subtle:hover {
+      color: var(--text-dark);
+      border-color: #c9c0b5;
+      background: #f7f4ed;
+      text-decoration: none;
+    }
+
+    /* Clean Card (Revealed after Zapping) */
+    .card-clean {
+      position: relative;
+      background: var(--surface-white);
+      border: 1px solid var(--border-light-medium);
+      border-radius: var(--radius-lg);
+      padding: 44px 36px 48px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      animation: cardAppear 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .clean-icon-wrap {
+      width: 52px;
+      height: 52px;
+      background: #eaf3e7;
+      border: 1px solid #c7e1c1;
+      color: #2e6930;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .badge-zapped {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #2e6930;
+      background: #eaf3e7;
+      border: 1px solid #c7e1c1;
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+
+    .btn-restore {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: 1px dashed var(--border-light-medium);
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-size: 13.5px;
+      font-weight: 500;
+      padding: 10px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .btn-restore:hover {
+      color: var(--text-dark);
+      border-color: var(--rust);
+      background: var(--rust-subtle);
+    }
+
+    /* Zapping Disintegration Animations */
+    .card-target.is-zapping {
+      animation: zapShake 0.35s cubic-bezier(0.36, 0.07, 0.19, 0.97) both,
+                 zapVaporize 0.35s 0.1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+      pointer-events: none;
+    }
+
+    @keyframes zapShake {
+      0%, 100% { transform: translate3d(0, 0, 0); }
+      20% { transform: translate3d(-4px, 2px, 0) rotate(-1deg); }
+      40% { transform: translate3d(4px, -2px, 0) rotate(1deg); }
+      60% { transform: translate3d(-3px, 1px, 0); }
+      80% { transform: translate3d(3px, -1px, 0); }
+    }
+
+    @keyframes zapVaporize {
+      0% { opacity: 1; transform: scale(1); filter: blur(0px); }
+      50% { opacity: 0.8; border-color: #ff3b30; }
+      100% { opacity: 0; transform: scale(0.92) translateY(12px); filter: blur(8px); }
+    }
+
+    @keyframes cardAppear {
+      0% { opacity: 0; transform: scale(0.95) translateY(14px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    /* Spark Particle Effects */
+    .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--rust);
+      pointer-events: none;
+      animation: particleFly 0.5s ease-out forwards;
+    }
+
+    @keyframes particleFly {
+      0% { opacity: 1; transform: translate(0, 0) scale(1); }
+      100% { opacity: 0; transform: translate(var(--dx), var(--dy)) scale(0); }
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    a:focus-visible, button:focus-visible, select:focus-visible {
+      outline: 2px solid var(--rust);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 600px) {
+      .wrap { padding: 20px 16px 40px; }
+      .card-target, .card-clean { padding: 32px 20px; }
+      .actions-row { flex-direction: column; width: 100%; }
+      .actions-row .btn, .actions-row .btn-subtle { width: 100%; justify-content: center; }
+    }
+
+    .error-footer {
+      width: 100%;
+      text-align: center;
+      margin-top: 36px;
+      font-size: 12.5px;
+      color: var(--text-muted);
     }
   </style>
-<link rel="stylesheet" href="/assets/languages.css?v=3.2.4-ui">
-<script src="/assets/languages.js?v=3.2.4-clean-path" defer></script>
+<link rel="stylesheet" href="/assets/languages.css?v=3.2.5-ui">
+<script src="/assets/languages.js?v=3.2.5-clean-path" defer></script>
+<link rel="stylesheet" href="/assets/editorial-pages.css?v=single-line-v2">
 <link rel="stylesheet" href="/assets/fonts/poppins.css">
 <link rel="stylesheet" href="/assets/brand.css">
 </head>
-<body><div class="locale-utility"><label class="language-control"><span>Language</span><select class="language-select" aria-label="Website language"><option value="en" lang="en" data-no-translate>English</option><option value="hi" lang="hi" data-no-translate>हिन्दी</option><option value="de" lang="de" data-no-translate>Deutsch</option><option value="es" lang="es" data-no-translate>Español</option><option value="fr" lang="fr" data-no-translate>Français</option><option value="pt-BR" lang="pt-BR" data-no-translate>Português (Brasil)</option><option value="ja" lang="ja" data-no-translate>日本語</option><option value="it" lang="it" data-no-translate>Italiano</option><option value="ru" lang="ru" data-no-translate>Русский</option><option value="nl" lang="nl" data-no-translate>Nederlands</option></select></label></div>
-  <aside class="language-suggestion" aria-label="Language suggestion" hidden><span>Read this website in your preferred language.</span><a class="suggested-language" data-no-translate></a><button type="button" class="dismiss-language">Dismiss</button></aside><div class="card-404">
-    <div class="badge-404">ERROR 404 • ELEMENT NOT FOUND</div>
-    <h1>Looks like this page got zapped.</h1>
-    <p>The page you are looking for might have been moved, deleted, or was filtered out by our strict annoyance filter.</p>
-    <a href="/" class="btn">
-      ← Return to Homepage
-    </a>
-  </div>
+<body data-page="404">
+<a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Clean Floating Minimal Header -->
+  <header class="nav-wrapper">
+    <div class="nav-capsule">
+      <a href="/" class="nav-brand">
+        <img src="/assets/blockium-mark.svg" width="30" height="38" alt="">
+        <span data-no-translate>Blockium<span class="brand-dot" aria-hidden="true">.</span></span>
+      </a>
+
+      <label class="language-control"><span>Language</span><select class="language-select" aria-label="Website language"><option value="en" lang="en" data-no-translate>English</option><option value="hi" lang="hi" data-no-translate>हिन्दी</option><option value="de" lang="de" data-no-translate>Deutsch</option><option value="es" lang="es" data-no-translate>Español</option><option value="fr" lang="fr" data-no-translate>Français</option><option value="pt-BR" lang="pt-BR" data-no-translate>Português (Brasil)</option><option value="ja" lang="ja" data-no-translate>日本語</option><option value="it" lang="it" data-no-translate>Italiano</option><option value="ru" lang="ru" data-no-translate>Русский</option><option value="nl" lang="nl" data-no-translate>Nederlands</option></select></label>
+    </div>
+  </header><aside class="language-suggestion" aria-label="Language suggestion" hidden><span>Read this website in your preferred language.</span><a class="suggested-language" data-no-translate></a><button type="button" class="dismiss-language">Dismiss</button></aside>
+
+  <!-- Main Content -->
+  <main class="wrap" id="main">
+    <div class="zapper-stage" id="zapper-stage">
+      
+      <!-- Interactive Target Card -->
+      <section class="card-target" id="card-target" aria-labelledby="card-target-title">
+        <div class="corner-reticle reticle-tl" aria-hidden="true"></div>
+        <div class="corner-reticle reticle-tr" aria-hidden="true"></div>
+        <div class="corner-reticle reticle-bl" aria-hidden="true"></div>
+        <div class="corner-reticle reticle-br" aria-hidden="true"></div>
+
+        <div class="inspector-pill" aria-hidden="true">
+          <span class="inspector-selector" data-no-translate>
+            <svg class="inspector-crosshair" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v4m0 10v4M3 12h4m10 0h4"/></svg>
+            ##.error-404[status="not-found"]
+          </span>
+          <span class="inspector-dim" data-no-translate>540 × 360</span>
+        </div>
+
+        <div class="badge-404">ERROR 404 • ELEMENT NOT FOUND</div>
+        <h1 id="card-target-title">Looks like this page got zapped.</h1>
+        <p>The page you are looking for might have been moved, deleted, or was filtered out by our strict annoyance filter.</p>
+
+        <div class="actions-row">
+          <button type="button" class="btn btn-zap" id="zap-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            <span>Zap this error</span>
+          </button>
+          <a href="/" class="btn-subtle">
+            ← Return to Homepage
+          </a>
+        </div>
+      </section>
+
+      <!-- Clean Card (Revealed after Zapping) -->
+      <section class="card-clean" id="card-clean" aria-labelledby="card-clean-title" hidden>
+        <div class="clean-icon-wrap" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <div class="badge-zapped">ERROR 404 • ELEMENT ZAPPED</div>
+        <h2 id="card-clean-title">Clutter eliminated.</h2>
+        <p>Broken page removed from the DOM. Safe navigation restored.</p>
+
+        <div class="actions-row">
+          <a href="/" class="btn btn-home" id="clean-home-link">
+            ← Return to Homepage
+          </a>
+          <button type="button" class="btn-restore" id="restore-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+            <span>Undo zap</span>
+          </button>
+        </div>
+      </section>
+
+      <div id="zapper-status" class="sr-only" aria-live="polite"></div>
+    </div>
+
+    <footer class="error-footer">
+      © 2026 Blockium. All rights reserved. Zero telemetry.
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      'use strict';
+      var zapBtn = document.getElementById('zap-btn');
+      var restoreBtn = document.getElementById('restore-btn');
+      var cardTarget = document.getElementById('card-target');
+      var cardClean = document.getElementById('card-clean');
+      var cleanHomeLink = document.getElementById('clean-home-link');
+      var statusLive = document.getElementById('zapper-status');
+      var stage = document.getElementById('zapper-stage');
+
+      if (!zapBtn || !cardTarget || !cardClean) return;
+
+      function spawnParticles(x, y) {
+        if (!stage) return;
+        var count = 12;
+        for (var i = 0; i < count; i++) {
+          var p = document.createElement('div');
+          p.className = 'particle';
+          var angle = (i / count) * 2 * Math.PI;
+          var dist = 40 + Math.random() * 60;
+          var dx = Math.cos(angle) * dist + 'px';
+          var dy = Math.sin(angle) * dist + 'px';
+          p.style.setProperty('--dx', dx);
+          p.style.setProperty('--dy', dy);
+          p.style.left = x + 'px';
+          p.style.top = y + 'px';
+          stage.appendChild(p);
+          setTimeout((function (el) { return function () { el.remove(); }; })(p), 550);
+        }
+      }
+
+      function playZapTone() {
+        try {
+          var AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (!AudioCtx) return;
+          var ctx = new AudioCtx();
+          var osc = ctx.createOscillator();
+          var gain = ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(840, ctx.currentTime);
+          osc.frequency.exponentialRampToValueAtTime(140, ctx.currentTime + 0.12);
+          gain.gain.setValueAtTime(0.12, ctx.currentTime);
+          gain.gain.linearRampToValueAtTime(0.01, ctx.currentTime + 0.12);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start();
+          osc.stop(ctx.currentTime + 0.13);
+        } catch (e) {
+          // Audio blocked or unsupported; silent fallback.
+        }
+      }
+
+      zapBtn.addEventListener('click', function (e) {
+        playZapTone();
+        var rect = zapBtn.getBoundingClientRect();
+        var stageRect = stage.getBoundingClientRect();
+        var originX = rect.left + rect.width / 2 - stageRect.left;
+        var originY = rect.top + rect.height / 2 - stageRect.top;
+        spawnParticles(originX, originY);
+
+        cardTarget.classList.add('is-zapping');
+        if (statusLive) statusLive.textContent = 'Element zapped. Page cleaned.';
+
+        setTimeout(function () {
+          cardTarget.hidden = true;
+          cardTarget.classList.remove('is-zapping');
+          cardClean.hidden = false;
+          if (cleanHomeLink) cleanHomeLink.focus();
+        }, 340);
+      });
+
+      if (restoreBtn) {
+        restoreBtn.addEventListener('click', function () {
+          cardClean.hidden = true;
+          cardTarget.hidden = false;
+          if (statusLive) statusLive.textContent = 'Element restored.';
+          zapBtn.focus();
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
