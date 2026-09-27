@@ -356,6 +356,11 @@
   "s_4653679b0aa8": "Modo avanzado · Ivory Night",
   "s_b67b5f443f6f": "Última actualización: 17 de septiembre de 2026",
   "s_57adbbe9c64e": "Permite a Blockium contar cuáles de sus propias reglas de bloqueo coincidieron, para que la ventana emergente y el panel muestren cifras reales. Chrome informa de la regla y la pestaña, nunca del contenido de la página. Este permiso es el motivo del aviso de instalación de Chrome «Leer tu historial de navegación».",
-  "s_71c5d527804c": "Versión 3.2.4",
-  "s_453eefd124a1": "Última actualización: 25 de septiembre de 2026 • Versión 3.2.4"
+  "s_71c5d527804c": "Versión 3.2.5",
+  "s_453eefd124a1": "Última actualización: 25 de septiembre de 2026 • Versión 3.2.5",
+  "s_3c11e381105b": "Eliminar este error",
+  "s_9e39928dee9a": "Elemento molesto eliminado.",
+  "s_b492bdcdc023": "Página rota eliminada del DOM. Navegación segura restablecida.",
+  "s_ff8c1c8010a6": "Deshacer eliminación",
+  "s_365d77c376ac": "ERROR 404 • ELEMENTO ELIMINADO"
 }

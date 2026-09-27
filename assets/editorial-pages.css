@@ -63,3 +63,40 @@ textarea.form-control { min-height:150px; resize:vertical; }
 .report-card h1 { font-family:'Poppins',Arial,sans-serif; font-weight:400; font-size:clamp(26px,2.8vw,40px); color:#a32f19; letter-spacing:-.04em; line-height:1.2; max-width:100%; margin:20px 0 24px; white-space:nowrap; }
 @media(max-width:680px) { .report-card h1 { white-space:normal; text-wrap:balance; } }
 .policy-section h2,.terms-section h2 { line-height:1.4; }
+
+/* Report form: shared edges and compact spacing, without changing legal pages. */
+body[data-page="report"] .nav-wrapper { max-width:1000px; margin:24px auto 0; padding:0 24px; }
+body[data-page="report"] .nav-capsule { max-width:none; border:1px solid #ded6cc; border-radius:28px; padding:16px 24px; gap:16px; }
+body[data-page="report"] .wrap { max-width:1000px; padding:28px 24px 48px; }
+body[data-page="report"] .report-card { max-width:none; margin:0; padding:32px; background:#fcfbf8; border:1px solid #ded6cc; border-radius:22px; }
+body[data-page="report"] .report-card h1 { font-size:clamp(26px,3vw,32px); font-weight:600; color:#a32f19; white-space:normal; margin:18px 0 12px; }
+body[data-page="report"] .report-card p.subtitle { font-size:16px; max-width:none; margin-bottom:24px; }
+body[data-page="report"] .report-card form { padding:0; border:0; border-radius:0; background:transparent; margin-top:24px; }
+body[data-page="report"] .form-group { margin-bottom:20px; }
+body[data-page="report"] .form-control { padding:12px 14px; }
+body[data-page="report"] textarea.form-control { min-height:110px; }
+@media(max-width:700px) {
+  body[data-page="report"] .nav-capsule { padding:14px 18px; }
+  body[data-page="report"] .report-card { padding:24px 18px; }
+}
+
+/* 404 error page: matching Ivory Editorial design system */
+body[data-page="404"] { min-height: 100vh; display: flex; flex-direction: column; background: #f2efe9; }
+body[data-page="404"] .nav-wrapper { max-width: 920px; margin: 24px auto 0; padding: 0 20px; width: 100%; }
+body[data-page="404"] .nav-capsule { max-width: none; border: 1px solid #ded6cc; border-radius: 9999px; padding: 10px 22px; display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; background: #fcfbf8; box-shadow: 0 4px 20px rgba(23, 23, 20, 0.05); }
+body[data-page="404"] .nav-brand { font: 700 20px 'Poppins', Arial, sans-serif; letter-spacing: -0.5px; color: #171714; }
+body[data-page="404"] .nav-brand img { width: 26px; height: 32px; }
+body[data-page="404"] .brand-dot { display: inline; color: #a32f19; }
+body[data-page="404"] .wrap { max-width: 920px; padding: 60px 20px 48px; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+body[data-page="404"] .card-404 { max-width: 520px; width: 100%; margin: 0 auto; padding: 48px 36px; background: #fcfbf8; border: 1px solid #ded6cc; border-radius: 20px; text-align: center; box-shadow: 0 4px 18px rgba(23, 23, 20, 0.04); }
+body[data-page="404"] .badge-404 { font-family: 'Poppins', Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #a32f19; background: #eee1d7; border: 1px solid #dfcabe; padding: 5px 14px; border-radius: 9999px; display: inline-block; margin-bottom: 20px; }
+body[data-page="404"] .card-404 h1 { font-family: 'Poppins', Arial, sans-serif; font-size: clamp(24px, 3.5vw, 32px); font-weight: 700; color: #171714; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 12px; }
+body[data-page="404"] .card-404 p { font-size: 15px; color: #5c5b56; line-height: 1.6; margin-bottom: 28px; }
+body[data-page="404"] .btn { display: inline-flex; align-items: center; gap: 8px; background-color: #a32f19; color: #ffffff !important; font-family: 'Poppins', Arial, sans-serif; font-weight: 600; font-size: 14px; padding: 11px 26px; border-radius: 10px; text-decoration: none; transition: all 0.18s ease; box-shadow: 0 4px 14px rgba(163, 47, 25, 0.22); }
+body[data-page="404"] .btn:hover { background-color: #812512; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(163, 47, 25, 0.3); }
+body[data-page="404"] .error-footer { width: 100%; text-align: center; margin-top: 40px; font-size: 12px; color: #727685; }
+@media (max-width: 600px) {
+  body[data-page="404"] .nav-wrapper { padding: 0 16px; margin-top: 16px; }
+  body[data-page="404"] .nav-capsule { padding: 8px 16px; }
+  body[data-page="404"] .card-404 { padding: 36px 20px; }
+}

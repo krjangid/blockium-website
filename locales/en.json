@@ -356,6 +356,11 @@
   "s_4653679b0aa8": "Advanced mode · Ivory Night",
   "s_b67b5f443f6f": "Last Updated: September 17, 2026",
   "s_57adbbe9c64e": "Lets Blockium count which of its own blocking rules matched, so the popup and dashboard can show real numbers. Chrome reports the rule and the tab, never page content. This is the permission behind Chrome’s “Read your browsing history” install warning.",
-  "s_71c5d527804c": "Version 3.2.4",
-  "s_453eefd124a1": "Last Updated: September 25, 2026 • Version 3.2.4"
+  "s_71c5d527804c": "Version 3.2.5",
+  "s_453eefd124a1": "Last Updated: September 25, 2026 • Version 3.2.5",
+  "s_3c11e381105b": "Zap this error",
+  "s_9e39928dee9a": "Clutter eliminated.",
+  "s_b492bdcdc023": "Broken page removed from the DOM. Safe navigation restored.",
+  "s_ff8c1c8010a6": "Undo zap",
+  "s_365d77c376ac": "ERROR 404 • ELEMENT ZAPPED"
 }
