@@ -124,6 +124,51 @@ for target in [ROOT / 'site-src/404.template.html', ROOT / 'goodbye.html']:
         "Found brittle relative '../assets/' path; use '/assets/' or inline vector"
     )
 
+
+# 6. Multi-Screen & Large Display (TV/4K) Invariants
+print("\n6. Checking Multi-Screen & TV/4K Invariants...")
+editorial_text = (ROOT / "assets/editorial.css").read_text(encoding="utf-8")
+
+# Header max-width capping for 4K / TV screens
+header_capped = bool(re.search(r"\.site-header\s*\{[^}]*max-width\s*:\s*1440px", editorial_text))
+check(
+    "editorial.css .site-header capped at 1440px for 2K/4K/TV screens",
+    header_capped,
+    "Missing max-width: 1440px on .site-header"
+)
+
+# Header language hidden on <= 860px tablet/mobile breakpoint
+lang_hidden = bool(re.search(r"@media\s*\(\s*max-width\s*:\s*860px\s*\)[^}]*\.header-language\s*\{[^}]*display\s*:\s*none\s*!important", editorial_text))
+check(
+    "editorial.css hides .header-language with !important at <= 860px",
+    lang_hidden,
+    "Missing display: none !important for .header-language under @media (max-width: 860px)"
+)
+
+# Small mobile breakpoint (<= 360px)
+small_mobile_bp = bool(re.search(r"@media\s*\(\s*max-width\s*:\s*360px\s*\)", editorial_text))
+check(
+    "editorial.css defines ultra-small mobile breakpoint (<= 360px)",
+    small_mobile_bp,
+    "Missing @media (max-width: 360px) for iPhone SE 1st gen and narrow Android devices"
+)
+
+# Tablet grid accommodation (541px-860px)
+tablet_grid = bool(re.search(r"@media\s*\(\s*min-width\s*:\s*541px\s*\)\s*and\s*\(\s*max-width\s*:\s*860px\s*\)", editorial_text))
+check(
+    "editorial.css defines tablet feature-catalog 2-column layout (541px-860px)",
+    tablet_grid,
+    "Missing @media (min-width: 541px) and (max-width: 860px) tablet grid rules"
+)
+
+# Grid minmax overflow safety
+grid_minmax = "grid-template-columns:40px minmax(0,1fr)" in editorial_text
+check(
+    "editorial.css uses minmax(0, 1fr) on feature-card grid to prevent word blowout",
+    grid_minmax,
+    "Missing minmax(0, 1fr) on .feature-card grid-template-columns"
+)
+
 print("\n" + "=" * 50)
 if failures:
     print(f"\n❌ FAILED: {len(failures)} responsive layout check(s) failed:")
